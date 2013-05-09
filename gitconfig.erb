@@ -2,9 +2,15 @@
 	name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
 	email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
 [alias]
+  b = branch
   co = checkout
   st = status
+  di = diff
+  dc = diff --cached
+  dh1 = diff HEAD~1
+  amend = commit --amend
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lgtt = log --graph --pretty=format:'%Cred%h%Creset%C(yellow bold)%d%Creset %s %Cgreen(%cr) %C(blue bold)<%%an>%Creset' --abbrev-commit
 [color]
 	diff = auto
 	status = auto

@@ -1,18 +1,41 @@
 #!/usr/bin/ruby
-require 'irb/completion'
-require 'irb/ext/save-history'
-
-IRB.conf[:SAVE_HISTORY] = 1000
-IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
-
-IRB.conf[:PROMPT_MODE] = :SIMPLE
-
 %w[rubygems looksee/shortcuts wirble].each do |gem|
   begin
     require gem
   rescue LoadError
   end
 end
+require 'irb/completion'
+require 'irb/ext/save-history'
+require 'interactive_editor'
+
+IRB.conf[:SAVE_HISTORY] = 1000
+IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
+
+IRB.conf[:PROMPT_MODE] = :SIMPLE
+
+begin
+  require 'awesome_print'
+  AwesomePrint.irb!
+rescue LoadError => err
+  warn "Couldn't load awesome print: #{err}"
+end
+
+railssrc_path = File.expand_path('~/.irbrc_rails')
+if ( ENV['RAILS_ENV'] || defined? Rails )
+  # Called after the irb session is initialized and Rails has been loaded
+  begin 
+    load railssrc_path
+  rescue Exception
+    warn "Could not load: #{railssrc_path} because of #{$!.message}"
+  end
+  IRB.conf[:IRB_RC] = Proc.new do
+    logger = Logger.new(STDOUT)
+    ActiveRecord::Base.logger = logger
+    ActiveResource::Base.logger = logger
+  end
+end
+
 
 class Object
   # list methods which aren't in superclass

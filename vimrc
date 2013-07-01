@@ -27,11 +27,17 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-rails.git'
+Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-surround'
+Bundle 'thoughtbot/vim-rspec'
 
 filetype plugin indent on
 
-" Softtabs, 2 spaces
+"Set the Leader key to ','
+let mapleader = ","
+
+"Softtabs, 2 spaces
 set tabstop=2
 set shiftwidth=2
 set expandtab

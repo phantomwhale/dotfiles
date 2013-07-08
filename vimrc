@@ -7,7 +7,7 @@ set nocompatible
 let mapleader = ","
 
 "source $CONFIG/misc.vim
-"source $CONFIG/neobundle.vim
+source $CONFIG/vundle.vim
 source $CONFIG/editing.vim
 "source $CONFIG/colors.vim
 "source $CONFIG/pluginconfig.vim
@@ -15,8 +15,6 @@ source $CONFIG/editing.vim
 "source $CONFIG/functions.vim
 
 "source $CONFIG/keybinds.vim
-
-filetype off    "required by vundle
 
 set backspace=2                " allow backspacing over everything in insert mode
 
@@ -40,18 +38,6 @@ endif
 
 " Switch wrap off for everything
 set nowrap
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-surround'
-Bundle 'thoughtbot/vim-rspec'
-Bundle 'vim-scripts/RelativeNumberCurrentWindow'
-
-filetype plugin indent on
 
 set relativenumber      " relative line numbers
 

@@ -1,17 +1,35 @@
-" Use Vim settings, rather then Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
+let $CONFIG = "$HOME/.vim/config"
+
+" this is VIM country!!!
 set nocompatible
+
+" Set leader
+let mapleader = ","
+
+"source $CONFIG/misc.vim
+"source $CONFIG/neobundle.vim
+source $CONFIG/editing.vim
+"source $CONFIG/colors.vim
+"source $CONFIG/pluginconfig.vim
+"source $CONFIG/filetypes.vim
+"source $CONFIG/functions.vim
+
+"source $CONFIG/keybinds.vim
+
 filetype off    "required by vundle
 
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
+set backspace=2                " allow backspacing over everything in insert mode
 
 set nobackup
 set nowritebackup
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+set history=50                 " keep 50 lines of command line history
+set ruler		                   " show the cursor position all the time
+set showcmd		                 " display incomplete commands
+set incsearch		               " do incremental searching
+
+"Tab complete settings
+set wildmode=longest,list,full
+set wildmenu
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -31,19 +49,11 @@ Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'thoughtbot/vim-rspec'
+Bundle 'vim-scripts/RelativeNumberCurrentWindow'
 
 filetype plugin indent on
 
-"Set the Leader key to ','
-let mapleader = ","
-
-"Softtabs, 2 spaces
-set tabstop=2
-set shiftwidth=2
-set expandtab
-
 set relativenumber      " relative line numbers
-set fileencodings=utf-8,iso-8859-1
 
 "Rspec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>

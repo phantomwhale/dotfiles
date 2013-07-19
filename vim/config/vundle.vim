@@ -1,0 +1,22 @@
+filetype off                  " required by vundle
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Let vundle manage vundle
+Bundle 'gmarik/vundle'
+
+" Declare other vundles here
+" Bundle 'astashov/vim-ruby-debugger'
+Bundle 'scrooloose/nerdtree'
+Bundle 'othree/xml.vim'
+Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'thoughtbot/vim-rspec'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'vim-scripts/RelativeNumberCurrentWindow'
+
+filetype plugin indent on     " required

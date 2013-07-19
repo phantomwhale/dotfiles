@@ -14,7 +14,7 @@ source $CONFIG/editing.vim
 "source $CONFIG/filetypes.vim
 "source $CONFIG/functions.vim
 
-"source $CONFIG/keybinds.vim
+source $CONFIG/keybinds.vim
 
 set backspace=2                " allow backspacing over everything in insert mode
 
@@ -41,10 +41,18 @@ set nowrap
 
 set relativenumber      " relative line numbers
 
+"Quick escape using 'jk' combination
+imap jk <Esc>          
+
 "Rspec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
+"map <Leader>l :call RunLastSpec()<CR>
 
-"Quick escape using 'jk' combination
-imap jk <Esc>          
+"Autocommands
+if has("autocmd")
+  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
+
+  "Autosave when we lose focus, just like Rubymine does
+  autocmd BufLeave,FocusLost * silent! wall
+end

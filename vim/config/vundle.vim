@@ -9,7 +9,6 @@ Bundle 'gmarik/vundle'
 " Declare other vundles here
 " Bundle 'astashov/vim-ruby-debugger'
 Bundle 'scrooloose/nerdtree'
-Bundle 'othree/xml.vim'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'

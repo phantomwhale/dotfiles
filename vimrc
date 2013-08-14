@@ -13,7 +13,6 @@ source $CONFIG/editing.vim
 "source $CONFIG/pluginconfig.vim
 "source $CONFIG/filetypes.vim
 "source $CONFIG/functions.vim
-
 source $CONFIG/keybinds.vim
 
 set backspace=2                " allow backspacing over everything in insert mode
@@ -38,16 +37,7 @@ endif
 
 " Switch wrap off for everything
 set nowrap
-
 set relativenumber      " relative line numbers
-
-"Quick escape using 'jk' combination
-imap jk <Esc>          
-
-"Rspec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-"map <Leader>l :call RunLastSpec()<CR>
 
 "Autocommands
 if has("autocmd")

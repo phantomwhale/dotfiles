@@ -17,5 +17,6 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/RelativeNumberCurrentWindow'
+Bundle 'wincent/Command-T'
 
 filetype plugin indent on     " required

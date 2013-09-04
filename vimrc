@@ -39,6 +39,8 @@ endif
 set nowrap
 set relativenumber      " relative line numbers
 
+let g:rspec_command = "Dispatch rspec {spec}"
+
 "Autocommands
 if has("autocmd")
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab

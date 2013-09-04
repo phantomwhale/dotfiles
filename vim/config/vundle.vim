@@ -8,8 +8,11 @@ Bundle 'gmarik/vundle'
 
 " Declare other vundles here
 " Bundle 'astashov/vim-ruby-debugger'
+" Bundle 'jgdavey/tslime.vim'
+Bundle 'msanders/snipmate.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'

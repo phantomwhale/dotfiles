@@ -23,5 +23,7 @@ cmap w!! w !sudo tee > /dev/null %
 "Rspec.vim mappings
 map <Leader>s :call RunCurrentSpecFile()<CR>
 map <Leader>S :call RunNearestSpec()<CR>
-"map <Leader>l :call RunLastSpec()<CR>
+map <Leader>L :call RunLastSpec()<CR>
 
+" Use F5 to refresh Command-T bindings
+noremap <F5> :CommandTFlush<CR>

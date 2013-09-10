@@ -27,3 +27,17 @@ map <Leader>L :call RunLastSpec()<CR>
 
 " Use F5 to refresh Command-T bindings
 noremap <F5> :CommandTFlush<CR>
+ 
+" XMP Filter keybinds
+map <F2> <Plug>(xmpfilter-mark)
+map <F3> <Plug>(xmpfilter-run)
+
+" Tab navigation
+nnoremap th  :tabfirst<CR>
+nnoremap tj  :tabnext<CR>
+nnoremap tk  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+nnoremap tt  :tabedit<Space>
+nnoremap tn  :tabnext<Space>
+nnoremap tm  :tabm<Space>
+nnoremap td  :tabclose<CR>

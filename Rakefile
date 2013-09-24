@@ -31,6 +31,11 @@ task :install do
   end
 end
 
+task :vim do
+  system "cd ~/.vim/bundle/Command-T/ruby/command-t; ruby extconf.rb"
+  system "cd ~/.vim/bundle/Command-T/ruby/command-t; make"
+end
+
 def replace_file(file)
   system %Q{rm "$HOME/.#{file}"}
   link_file(file)

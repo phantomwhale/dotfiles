@@ -18,6 +18,7 @@ source $CONFIG/keybinds.vim
 set backspace=2                " allow backspacing over everything in insert mode
 
 set nobackup
+set noswapfile                 " no annoying .swp files
 set nowritebackup
 set history=50                 " keep 50 lines of command line history
 set ruler		                   " show the cursor position all the time
@@ -35,11 +36,15 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   set hlsearch
 endif
 
+colorscheme railscasts
+
 " Switch wrap off for everything
 set nowrap
 set relativenumber      " relative line numbers
 
 let g:rspec_command = "Dispatch rspec {spec}"
+
+match ErrorMsg '\s\+$'
 
 "Autocommands
 if has("autocmd")

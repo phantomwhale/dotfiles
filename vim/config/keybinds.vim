@@ -9,7 +9,7 @@ map <C-l> <C-w>l
 noremap \ ,
 
 "Quick escape using 'jk' combination
-imap jk <Esc>          
+imap jk <Esc>
 
 " Remove search highlighting
 noremap <Leader>l :<C-u>nohlsearch<CR>
@@ -25,12 +25,15 @@ map <Leader>s :call RunCurrentSpecFile()<CR>
 map <Leader>S :call RunNearestSpec()<CR>
 map <Leader>L :call RunLastSpec()<CR>
 
-" Use F5 to refresh Command-T bindings
-noremap <F5> :CommandTFlush<CR>
- 
 " XMP Filter keybinds
 map <F2> <Plug>(xmpfilter-mark)
 map <F3> <Plug>(xmpfilter-run)
+
+" Use F5 to refresh Command-T bindings
+noremap <F5> :CommandTFlush<CR>
+
+" Tag bar toggle
+nmap <F8> :TagbarToggle<CR>
 
 " Tab navigation
 nnoremap th  :tabfirst<CR>

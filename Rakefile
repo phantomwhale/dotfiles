@@ -3,7 +3,7 @@ require 'rake'
 desc "install the dot files into user's home directory"
 task :install do
   switch_to_zsh
-  install_zprezto_zsh
+  install_prezto_zsh
   replace_all = false
   Dir['*'].each do |file|
     next if %w[Rakefile README LICENSE id_dsa.pub].include? file
@@ -29,11 +29,7 @@ task :install do
       link_file(file)
     end
   end
-end
-
-task :vim do
-  system "cd ~/.vim/bundle/Command-T/ruby/command-t; ruby extconf.rb"
-  system "cd ~/.vim/bundle/Command-T/ruby/command-t; make"
+  install_vundle
 end
 
 def replace_file(file)
@@ -71,11 +67,31 @@ def install_prezto_zsh
     case $stdin.gets.chomp
     when 'y'
       puts "installing zprezto"
-      system %Q{git clone --recursive https://github.com/phantomwhale/pretzo.git "$HOME/.zprezto"}
+      system %Q{git clone --recursive https://github.com/phantomwhale/pretzo.git "${ZDOTDIR:-$HOME}/.zprezto"}
+      system %Q{for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do; ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"; done}
     when 'q'
       exit
     else
       puts "skipping zpretzo, you will need to change ~/.zshrc"
+    end
+  end
+end
+
+
+def install_vundle
+  if File.exist?(File.join(ENV['HOME'], ".vim", "bundle", "vundle"))
+    puts "found ~/.vim/bundle/vundle"
+  else
+    print "install vundle for vim? [ynq] "
+    case $stdin.gets.chomp
+    when 'y'
+      puts "installing vundle"
+      system %Q{git clone --recursive https://github.com/gmarik/vundle.git "$HOME/.vim/bundle/vundle"}
+      system "vim +BundleInstall +qall"
+    when 'q'
+      exit
+    else
+      puts "skipping vundle, you will need to manually download it to use vim"
     end
   end
 end

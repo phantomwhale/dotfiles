@@ -35,3 +35,5 @@
 	token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
 [init]
 	templatedir = ~/.git_template
+[push]
+	default = simple

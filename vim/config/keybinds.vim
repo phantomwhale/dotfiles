@@ -30,7 +30,7 @@ map <F2> <Plug>(xmpfilter-mark)
 map <F3> <Plug>(xmpfilter-run)
 
 " Use F5 to refresh Command-T bindings
-noremap <F5> :CommandTFlush<CR>
+" noremap <F5> :CommandTFlush<CR>
 
 " Tag bar toggle
 nmap <F8> :TagbarToggle<CR>
@@ -44,3 +44,6 @@ nnoremap tt  :tabedit<Space>
 nnoremap tn  :tabnext<Space>
 nnoremap tm  :tabm<Space>
 nnoremap td  :tabclose<CR>
+
+" Remove trailing whitespace
+:nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>

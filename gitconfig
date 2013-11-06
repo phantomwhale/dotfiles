@@ -1,6 +1,6 @@
 [user]
-	name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
-	email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
+	name =  Ben Turner
+	email = ben.turner@pobox.com
 [alias]
   b = branch
   co = checkout
@@ -18,7 +18,7 @@
 	status = auto
 	branch = auto
 [core]
-	excludesfile = <%= ENV['HOME'] %>/.gitignore
+	excludesfile = ~/.gitignore
 	editor = vim
 	autocrlf = input
 [apply]
@@ -30,9 +30,6 @@
 [branch "master"]
   remote = origin
   merge = refs/heads/master
-[github]
-	user = <%= print("GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
-	token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
 [init]
 	templatedir = ~/.git_template
 [push]

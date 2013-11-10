@@ -36,7 +36,11 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   set hlsearch
 endif
 
-colorscheme railscasts
+" Get our colours right
+set background=dark
+let base16colorspace=256
+colorscheme base16-railscasts
+"colorscheme railscasts
 
 " Switch wrap off for everything
 set nowrap

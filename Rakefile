@@ -1,7 +1,7 @@
 require 'rake'
 
 desc "install the dot files into user's home directory"
-task :install do
+task :install => [:submodules] do
   switch_to_zsh
   install_prezto_zsh
   replace_all = false
@@ -30,6 +30,11 @@ task :install do
     end
   end
   install_vundle
+end
+
+desc "Init and update submodules"
+task :submodules do
+  system('git submodule update --init')
 end
 
 def replace_file(file)

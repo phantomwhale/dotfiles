@@ -8,6 +8,7 @@ Bundle 'gmarik/vundle'
 
 " Declare other vundles here
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'avakhov/vim-yaml'
 " Bundle 'astashov/vim-ruby-debugger'
 " Bundle 'jgdavey/tslime.vim'
 Bundle 'BrunoGrasselli/jasmine-snippets'

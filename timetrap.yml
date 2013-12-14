@@ -1,0 +1,9 @@
+---
+database_file: /home/ben/Dropbox/.timetrap/.timetrap.db
+round_in_seconds: 900
+append_notes_delimiter: ' '
+formatter_search_paths:
+- /home/ben/Dropbox/.timetrap/formatters
+default_formatter: text
+default_command: 
+auto_checkout: false

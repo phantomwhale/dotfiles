@@ -11,7 +11,7 @@
   amend = commit --amend
   lt = describe --tags
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
-  lgtt = log --graph --pretty=format:'%Cred%h%Creset%C(yellow bold)%d%Creset %s %Cgreen(%cr) %C(blue bold)<%%an>%Creset' --abbrev-commit
+  lgtt = log --graph --pretty=format:'%Cred%h%Creset%C(yellow bold)%d%Creset %s %Cgreen(%cr) %C(blue bold)<%an>%Creset' --abbrev-commit
 	ctags = !.git/hooks/ctags
 [color]
 	diff = auto

@@ -43,10 +43,15 @@ set t_Co=256
 let base16colorspace=256
 colorscheme base16-railscasts
 "colorscheme railscasts
+hi MatchParen cterm=bold
 
 " Switch wrap off for everything
 set nowrap
 set relativenumber      " relative line numbers
+
+" let there be folding
+set foldmethod=indent
+set nofoldenable
 
 let g:rspec_command = "Dispatch rspec {spec}"
 

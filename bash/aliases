@@ -12,5 +12,6 @@ alias rc='rails console'
 alias rdm="be rake db:migrate"
 alias rdtp="be rake db:test:prepare"
 alias t="todo"
+alias tt="timetrap"
 alias tmux='tmux -2'
 alias vi='vim'

@@ -5,5 +5,9 @@ append_notes_delimiter: ' '
 formatter_search_paths:
 - /home/ben/Dropbox/.timetrap/formatters
 default_formatter: text
+auto_sheet: dotfiles
+auto_sheet_search_paths:
+- /home/ben/.timetrap/auto_sheets
 default_command: 
 auto_checkout: false
+require_note: false

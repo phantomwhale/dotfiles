@@ -11,7 +11,8 @@ alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log *'
 alias rc='rails console'
 alias rdm="be rake db:migrate"
 alias rdtp="be rake db:test:prepare"
-alias t="todo"
+alias t='todo.sh'
 alias tt="timetrap"
 alias tmux='tmux -2'
 alias vi='vim'
+alias topcom='history | awk '"'"'{a[$2]++}END{for(i in a){print a[i] " " i}}'"'"' | sort -rn | head -20'

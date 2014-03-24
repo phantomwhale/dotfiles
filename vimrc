@@ -6,6 +6,8 @@ set nocompatible
 " Set leader
 let mapleader = ","
 
+let g:ruby_debugger_create_default_mappings = 0
+
 "source $CONFIG/misc.vim
 source $CONFIG/vundle.vim
 source $CONFIG/editing.vim

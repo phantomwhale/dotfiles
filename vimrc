@@ -55,7 +55,7 @@ set relativenumber      " relative line numbers
 set foldmethod=indent
 set nofoldenable
 
-let g:rspec_command = "Dispatch rspec {spec}"
+let g:rspec_command = "Dispatch bundle exec rspec {spec}"
 
 match ErrorMsg '\s\+$'
 

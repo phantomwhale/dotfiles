@@ -63,3 +63,6 @@ nnoremap td  :tabclose<CR>
 
 " Remove trailing whitespace
 :nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+" Apparently, this changed @tpope's life
+nnoremap <silent> <C-W>z :wincmd z<Bar>cclose<Bar>lclose<CR>

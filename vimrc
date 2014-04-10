@@ -66,3 +66,9 @@ if has("autocmd")
   "Autosave when we lose focus, just like Rubymine does
   autocmd BufLeave,FocusLost * silent! wall
 end
+
+" Always show the status bar
+set laststatus=2
+" Put git branch in the status bar
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+

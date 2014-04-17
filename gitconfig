@@ -12,6 +12,7 @@
   lt = describe --tags
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lgtt = log --graph --pretty=format:'%Cred%h%Creset%C(yellow bold)%d%Creset %s %Cgreen(%cr) %C(blue bold)<%an>%Creset' --abbrev-commit
+  tagh = for-each-ref --format '%(refname) %09 %(taggerdate) %(subject) %(taggeremail)' refs/tags  --sort=taggerdate
 	ctags = !.git/hooks/ctags
 [color]
 	diff = auto

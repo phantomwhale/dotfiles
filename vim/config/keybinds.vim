@@ -13,6 +13,11 @@ imap jk <Esc>
 
 " Remove search highlighting
 noremap <Leader>l :<C-u>nohlsearch<CR>
+noremap <Leader><space> :<C-u>nohlsearch<CR>
+
+" Keep searches centered
+noremap n nzzzv
+noremap N Nzzzv
 
 " Nerd Tree
 noremap <Leader>n :NERDTreeToggle<CR>

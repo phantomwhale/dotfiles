@@ -62,6 +62,9 @@ let g:rspec_command = "Dispatch bundle exec rspec {spec}"
 
 match ErrorMsg '\s\+$'
 
+" Quick editing
+nnoremap <leader>ev <C-w>s<C-w>j<C-w>L:e $MYVIMRC<cr>
+
 "Autocommands
 if has("autocmd")
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab

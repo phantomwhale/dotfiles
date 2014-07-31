@@ -64,6 +64,7 @@ match ErrorMsg '\s\+$'
 
 " Quick editing
 nnoremap <leader>ev <C-w>s<C-w>j<C-w>L:e $MYVIMRC<cr>
+nnoremap <leader>eb <C-w>s<C-w>j<C-w>L:e $CONFIG/vundle.vim<cr>
 
 "Autocommands
 if has("autocmd")

@@ -28,6 +28,8 @@ set showcmd		                 " display incomplete commands
 set incsearch		               " do incremental searching
 set hidden                     " allow hidden buffers
 
+set listchars=extends:>,precedes:<   " make incomplete lines visible
+
 "Tab complete settings
 set wildmode=longest,list,full
 set wildmenu
@@ -55,6 +57,7 @@ set relativenumber      " relative line numbers
 set foldmethod=indent
 set nofoldenable
 
+" we'll need an interactive shell if we want to execute our custom bash script command
 let g:rspec_command = "Dispatch bundle exec rspec {spec}"
 
 match ErrorMsg '\s\+$'

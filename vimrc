@@ -42,11 +42,10 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
 endif
 
 " Get our colours right
-set background=dark
 set t_Co=256
+set background=dark
 let base16colorspace=256
 colorscheme base16-railscasts
-"colorscheme railscasts
 hi MatchParen cterm=bold
 
 " Switch wrap off for everything

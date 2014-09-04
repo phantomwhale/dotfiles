@@ -15,6 +15,7 @@ Bundle 'BrunoGrasselli/jasmine-snippets'
 Bundle 'chase/vim-ansible-yaml'
 Bundle 'chriskempson/base16-vim'
 Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'docker/docker', {'rtp': 'contrib/syntax/vim'}
 Bundle 'ecomba/vim-ruby-refactoring'
 " Bundle 'godlygeek/csapprox'
 " Bundle 'docunext/closetag.vim'

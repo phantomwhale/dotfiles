@@ -48,6 +48,9 @@ let base16colorspace=256
 colorscheme base16-railscasts
 hi MatchParen cterm=bold
 
+" Lets allow mouse scrolling, because it's the 21st centuary after all
+set mouse=nicr
+
 " Switch wrap off for everything
 set nowrap
 set relativenumber      " relative line numbers

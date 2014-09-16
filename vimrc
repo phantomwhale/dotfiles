@@ -6,13 +6,11 @@ set nocompatible
 " Set leader
 let mapleader = ","
 
-let g:ruby_debugger_create_default_mappings = 0
-
 "source $CONFIG/misc.vim
 source $CONFIG/vundle.vim
 source $CONFIG/editing.vim
 "source $CONFIG/colors.vim
-"source $CONFIG/pluginconfig.vim
+source $CONFIG/pluginconfig.vim
 "source $CONFIG/filetypes.vim
 "source $CONFIG/functions.vim
 source $CONFIG/keybinds.vim
@@ -49,7 +47,8 @@ colorscheme base16-railscasts
 hi MatchParen cterm=bold
 
 " Lets allow mouse scrolling, because it's the 21st centuary after all
-set mouse=nicr
+set ttymouse=sgr " modern mouse handing
+set mouse=a
 
 " Switch wrap off for everything
 set nowrap
@@ -59,16 +58,6 @@ set relativenumber      " relative line numbers
 set foldmethod=indent
 set nofoldenable
 
-" we'll need an interactive shell if we want to execute our custom bash script command
-let g:rspec_command = "Dispatch bundle exec rspec {spec}"
-
-match ErrorMsg '\s\+$'
-
-" Quick editing
-nnoremap <leader>ev <C-w>s<C-w>j<C-w>L:e $MYVIMRC<cr>
-nnoremap <leader>et <C-w>s<C-w>j<C-w>L:e ~/.tmux.conf<cr>
-nnoremap <leader>eb <C-w>s<C-w>j<C-w>L:e $CONFIG/vundle.vim<cr>
-
 "Autocommands
 if has("autocmd")
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
@@ -76,6 +65,9 @@ if has("autocmd")
   "Autosave when we lose focus, just like Rubymine does
   autocmd BufLeave,FocusLost * silent! wall
 end
+
+" syntax highlighting for the forgotten ruby files
+au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
 
 " Always show the status bar
 set laststatus=2

@@ -71,3 +71,9 @@ nnoremap td  :tabclose<CR>
 
 " Apparently, this changed @tpope's life
 nnoremap <silent> <C-W>z :wincmd z<Bar>cclose<Bar>lclose<CR>
+
+" Quick editing of config files
+nnoremap <leader>ev <C-w>s<C-w>j<C-w>L:e $MYVIMRC<cr>
+nnoremap <leader>et <C-w>s<C-w>j<C-w>L:e ~/.tmux.conf<cr>
+nnoremap <leader>eb <C-w>s<C-w>j<C-w>L:e $CONFIG/vundle.vim<cr>
+

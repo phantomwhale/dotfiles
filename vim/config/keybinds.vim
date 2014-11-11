@@ -47,8 +47,14 @@ map <Leader>S :call RunNearestSpec()<CR>
 map <Leader>L :call RunLastSpec()<CR>
 
 " XMP Filter keybinds
-map <F2> <Plug>(xmpfilter-mark)
-map <F3> <Plug>(xmpfilter-run)
+autocmd FileType ruby nmap <buffer> <F2> <Plug>(xmpfilter-mark)
+autocmd FileType ruby xmap <buffer> <F2> <Plug>(xmpfilter-mark)
+autocmd FileType ruby imap <buffer> <F2> <Plug>(xmpfilter-mark)
+
+autocmd FileType ruby nmap <buffer> <F3> <Plug>(xmpfilter-run)
+autocmd FileType ruby xmap <buffer> <F3> <Plug>(xmpfilter-run)
+autocmd FileType ruby imap <buffer> <F3> <Plug>(xmpfilter-run)
+
 
 " Use F5 to refresh Command-T bindings
 " noremap <F5> :CommandTFlush<CR>
@@ -76,4 +82,4 @@ nnoremap <silent> <C-W>z :wincmd z<Bar>cclose<Bar>lclose<CR>
 nnoremap <leader>ev <C-w>s<C-w>j<C-w>L:e $MYVIMRC<cr>
 nnoremap <leader>et <C-w>s<C-w>j<C-w>L:e ~/.tmux.conf<cr>
 nnoremap <leader>eb <C-w>s<C-w>j<C-w>L:e $CONFIG/vundle.vim<cr>
-
+nnoremap <leader>ek <C-w>s<C-w>j<C-w>L:e $CONFIG/keybinds.vim<cr>

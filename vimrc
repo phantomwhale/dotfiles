@@ -11,7 +11,7 @@ source $CONFIG/vundle.vim
 source $CONFIG/editing.vim
 "source $CONFIG/colors.vim
 source $CONFIG/pluginconfig.vim
-"source $CONFIG/filetypes.vim
+source $CONFIG/filetypes.vim
 "source $CONFIG/functions.vim
 source $CONFIG/keybinds.vim
 

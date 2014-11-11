@@ -5,4 +5,7 @@ match ErrorMsg '\s\+$'
 
 let g:ruby_debugger_create_default_mappings = 0
 
+" unlimited file in CTRL-P
+let g:ctrlp_max_files=0
+
 "let NERDTreeHijackNetrw=1

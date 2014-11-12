@@ -7,6 +7,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Declare other vundles here
+Bundle 'airblade/vim-gitgutter'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'avakhov/vim-yaml'
 Bundle 'astashov/vim-ruby-debugger'

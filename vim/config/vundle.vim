@@ -4,7 +4,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Let vundle manage vundle
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/Vundle.vim'
 
 " Declare other vundles here
 Bundle 'airblade/vim-gitgutter'

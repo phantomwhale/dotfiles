@@ -58,19 +58,32 @@ set relativenumber      " relative line numbers
 set foldmethod=indent
 set nofoldenable
 
-"Autocommands
-if has("autocmd")
-  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
-
-  "Autosave when we lose focus, just like Rubymine does
-  autocmd BufLeave,FocusLost * silent! wall
-end
-
-" syntax highlighting for the forgotten ruby files
-au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
-
 " Always show the status bar
 set laststatus=2
 " Put git branch in the status bar
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
+" Autocommands
+if has("autocmd")
+  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
+
+  " Autosave when we lose focus, just like Rubymine does
+  autocmd BufLeave,FocusLost * silent! wall
+
+  " Trailing whitespace
+  highlight ExtraWhitespace ctermbg=red guibg=red
+  match ExtraWhitespace /\s\+$/
+  autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+  autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+  autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+  autocmd BufWinLeave * call clearmatches()
+
+  " Remove trailing whitespace on save (Ruby only)
+  function! TrimWhiteSpace()
+    %s/\s\+$//e
+  endfunction
+  autocmd BufWritePre     *.rb :call TrimWhiteSpace()
+
+  " syntax highlighting for the forgotten ruby files
+  au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
+end

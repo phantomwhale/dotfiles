@@ -8,9 +8,6 @@ map <C-l> <C-w>l
 " Leader took away our comma - remap to \
 noremap \ ,
 
-"Quick escape using 'jk' combination
-imap jk <Esc>
-
 " Remove search highlighting
 noremap <Leader>l :<C-u>nohlsearch<CR>
 noremap <Leader><space> :<C-u>nohlsearch<CR>

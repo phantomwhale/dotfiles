@@ -16,15 +16,7 @@ alias tt="timetrap"
 alias tmux='tmux -2'
 alias vi='vim'
 alias topcom='history | awk '"'"'{a[$2]++}END{for(i in a){print a[i] " " i}}'"'"' | sort -rn | head -20'
-
-__bundle_exec_custom () {
-  if [ -f Gemfile.local  ]
-  then
-    BUNDLE_GEMFILE="Gemfile.local" bundle exec $@
-  else
-    bundle exec $@
-  fi
-
-}
-
-alias bec='__bundle_exec_custom'
+alias gclean='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
+alias 99ls='99dev exec logo_store'
+alias 99lsr='docker stop logo_store && 99dev start logo_store'
+alias 99r=restart_docker_app

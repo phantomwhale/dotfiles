@@ -1,0 +1,4 @@
+restart_docker_app() {
+  docker stop $1
+  99dev start $1
+}

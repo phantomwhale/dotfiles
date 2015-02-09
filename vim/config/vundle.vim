@@ -18,6 +18,7 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'docker/docker', {'rtp': 'contrib/syntax/vim'}
 Plugin 'ecomba/vim-ruby-refactoring'
+Plugin 'evanmiller/nginx-vim-syntax'
 Plugin 'evidens/vim-twig'
 " Bundle 'godlygeek/csapprox'
 " Bundle 'docunext/closetag.vim'

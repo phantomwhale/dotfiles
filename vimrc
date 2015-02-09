@@ -63,6 +63,9 @@ set laststatus=2
 " Put git branch in the status bar
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
+" use system clipboard
+set clipboard=unnamed
+
 " Autocommands
 if has("autocmd")
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab

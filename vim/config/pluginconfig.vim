@@ -12,4 +12,12 @@ let g:ruby_debugger_create_default_mappings = 0
 " unlimited file in CTRL-P
 let g:ctrlp_max_files=0
 
+" exclude git ignored files
+let g:ctrlp_user_command = {
+  \ 'types': {
+    \ 1: ['.git', 'cd %s && git ls-files --cached --exclude-standard --others'],
+    \ },
+  \ 'fallback': 'find %s -type f'
+  \ }
+
 "let NERDTreeHijackNetrw=1

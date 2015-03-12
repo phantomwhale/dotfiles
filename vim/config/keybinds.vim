@@ -16,10 +16,7 @@ noremap <Leader><space> :<C-u>nohlsearch<CR>
 noremap n nzzzv
 noremap N Nzzzv
 
-" Nerd Tree
-noremap <Leader>n :NERDTreeToggle<CR>
-
-" Follow tags via putty, which ignores Ctrl-]
+" Follow tags when using putty, which ignores Ctrl-]
 noremap <Leader>] <C-]>
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.

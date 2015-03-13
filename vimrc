@@ -68,7 +68,12 @@ set clipboard=unnamed
 
 " Autocommands
 if has("autocmd")
+  " auto-reload on .vimrc changes
+  autocmd BufWritePost .vimrc so $MYVIMRC
+
+  " Four tabs for JS and ERB
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
+  autocmd FileType eruby setlocal ts=4 sts=4 sw=4 expandtab
 
   " Autosave when we lose focus, just like Rubymine does
   autocmd BufLeave,FocusLost * silent! wall

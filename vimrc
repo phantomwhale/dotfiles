@@ -90,7 +90,7 @@ if has("autocmd")
   function! TrimWhiteSpace()
     %s/\s\+$//e
   endfunction
-  autocmd BufWritePre     *.rb :call TrimWhiteSpace()
+  autocmd BufWritePre     *.rb,*.lua :call TrimWhiteSpace()
 
   " syntax highlighting for the forgotten ruby files
   au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby

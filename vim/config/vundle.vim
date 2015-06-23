@@ -1,7 +1,7 @@
-filetype off                  " required by vundle
+filetype off                      " required by vundle
 
-set rtp+=~/.vim/bundle/vundle " required
-call vundle#begin()           " required
+set rtp+=~/.vim/bundle/Vundle.vim " required
+call vundle#begin()               " required
 
 " Let vundle manage vundle
 Plugin 'gmarik/Vundle.vim'
@@ -53,5 +53,5 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/RelativeNumberCurrentWindow'
 
-call vundle#end()             " required
-filetype plugin indent on     " required
+call vundle#end()                 " required
+filetype plugin indent on         " required

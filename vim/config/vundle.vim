@@ -1,7 +1,7 @@
 filetype off                  " required by vundle
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/vundle " required
+call vundle#begin()           " required
 
 " Let vundle manage vundle
 Plugin 'gmarik/Vundle.vim'
@@ -11,7 +11,6 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'avakhov/vim-yaml'
 Plugin 'astashov/vim-ruby-debugger'
-" Bundle 'jgdavey/tslime.vim'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'BrunoGrasselli/jasmine-snippets'
 Plugin 'chase/vim-ansible-yaml'
@@ -21,11 +20,8 @@ Plugin 'docker/docker', {'rtp': 'contrib/syntax/vim'}
 Plugin 'ecomba/vim-ruby-refactoring'
 Plugin 'evanmiller/nginx-vim-syntax'
 Plugin 'evidens/vim-twig'
-" Bundle 'godlygeek/csapprox'
-" Bundle 'docunext/closetag.vim'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'jgdavey/vim-blockle'
-Plugin 'jiangmiao/auto-pairs'
 Plugin 'kana/vim-textobj-user'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
@@ -41,12 +37,10 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'Raimondi/delimitMate'
 Plugin 'rainerborene/vim-reek'
 Plugin 'rking/ag.vim'
-" Bundle 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 't9md/vim-ruby-xmpfilter'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'tomtom/tcomment_vim'
-" Bundle 'tpope/vim-bundler'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-fugitive'
@@ -59,4 +53,5 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/RelativeNumberCurrentWindow'
 
+call vundle#end()             " required
 filetype plugin indent on     " required

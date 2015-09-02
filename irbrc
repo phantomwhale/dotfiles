@@ -11,7 +11,6 @@ require 'interactive_editor'
 
 IRB.conf[:SAVE_HISTORY] = 1000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
-
 IRB.conf[:PROMPT_MODE] = :SIMPLE
 
 begin
@@ -22,9 +21,9 @@ rescue LoadError => err
 end
 
 railssrc_path = File.expand_path('~/.irbrc_rails')
-if ( ENV['RAILS_ENV'] || defined? Rails )
+if ENV['RAILS_ENV'] || defined? Rails
   # Called after the irb session is initialized and Rails has been loaded
-  begin 
+  begin
     load railssrc_path
   rescue Exception
     warn "Could not load: #{railssrc_path} because of #{$!.message}"
@@ -42,7 +41,7 @@ class Object
   def local_methods(obj = self)
     (obj.methods - obj.class.superclass.instance_methods).sort
   end
-  
+
   # print documentation
   #
   #   ri 'Array#pop'

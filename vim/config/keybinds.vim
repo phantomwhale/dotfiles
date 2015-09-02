@@ -78,3 +78,7 @@ nnoremap <leader>et <C-w>s<C-w>j<C-w>L:e ~/.tmux.conf<cr>
 nnoremap <leader>eb <C-w>s<C-w>j<C-w>L:e $CONFIG/vundle.vim<cr>
 nnoremap <leader>ek <C-w>s<C-w>j<C-w>L:e $CONFIG/keybinds.vim<cr>
 nnoremap <leader>ep <C-w>s<C-w>j<C-w>L:e $CONFIG/pluginconfig.vim<cr>
+
+" Auto-create missing rspec tests
+noremap <leader>as :call rails_test#hsplit_spec()<cr>
+noremap <leader>av :call rails_test#vsplit_spec()<cr>

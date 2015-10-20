@@ -1,36 +1,14 @@
-let $CONFIG = "$HOME/.vim/config"
-
 " this is VIM country!!!
 set nocompatible
 
-" Set leader
-let mapleader = ","
-
-"source $CONFIG/misc.vim
-source $CONFIG/vundle.vim
-source $CONFIG/editing.vim
-"source $CONFIG/colors.vim
-source $CONFIG/pluginconfig.vim
-source $CONFIG/filetypes.vim
-source $CONFIG/rails_test.vim
-source $CONFIG/keybinds.vim
-
-set backspace=2                " allow backspacing over everything in insert mode
-
-set nobackup
-set noswapfile                 " no annoying .swp files
-set nowritebackup
-set history=50                 " keep 50 lines of command line history
-set ruler		                   " show the cursor position all the time
-set showcmd		                 " display incomplete commands
-set incsearch		               " do incremental searching
-"set hidden                     " allow hidden buffers
-
-set listchars=extends:>,precedes:<   " make incomplete lines visible
-
-"Tab complete settings
-set wildmode=longest,list,full
-set wildmenu
+" ============ General Config ============
+set relativenumber              " relative line numbers
+set backspace=indent,eol,start  " allow backspacing over everything in insert mode
+set history=1000                " number of lines of command line history to store
+set showcmd		                  " display incomplete commands
+set showmode		                " display current mode
+set autoread                    " Reload files changed outside of vim
+set hidden                      " allow hidden buffers
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -39,32 +17,91 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   set hlsearch
 endif
 
+" Set leader to a comma, becuase backslash is TOO far away
+" We need to do this before vundle gets going
+let mapleader = ","
+
+" ============ Vundle ============
+let $CONFIG = "$HOME/.vim/config"
+source $CONFIG/vundle.vim
+
+" ============ Turn off Swap Files ============
+set noswapfile
+set nobackup
+set nowritebackup
+
+" ============ Persistant Undo ============
+
+if has('persistent_undo') && !isdirectory(expand('~').'/.vim/backups')
+  silent !mkdir ~/.vim/backups > /dev/null 2>&1
+  set undodir=~/.vim/backups
+  set undofile
+endif
+
+" ============ Indentation ============
+set autoindent
+set smartindent
+set smarttab
+set shiftwidth=2                  " Number of spaces to use in each autoindent step
+set softtabstop=2                 " Number of spaces to skip/insert when <BS> or <tab>ing
+set tabstop=2                     " <tab> uses width of two spaces
+set expandtab                     " Use spaces, not tabs
+
+" Auto indent pasted text
+noremap p p=`]<C-o>
+noremap P P=`]<C-o>
+
+" Let file types decide their plugin and indent settings
+filetype plugin on
+filetype indent on
+
 " Get our colours right
 set t_Co=256
 set background=dark
 let base16colorspace=256
-colorscheme base16-railscasts
+colorscheme base16-monokai
 hi MatchParen cterm=bold
 
-" Lets allow mouse scrolling, because it's the 21st centuary after all
-set ttymouse=sgr " modern mouse handing
-set mouse=a
+set listchars=extends:>,precedes:<   " make incomplete lines visible
+
+" ============ Folds ============
+set foldmethod=indent       " fold based on indentation
+set nofoldenable            " dont fold by default
+
+" ============ Completion ============
+
+set wildmode=list:longest
+set wildmenu                " enables <C-n> and <C-p> to scroll matches
+
+" ============ Search =============
+
+set incsearch     " Find the next match as we type the search
+set hlsearch        " Highlight searches by default
+set ignorecase      " Ignore case when searching...
+set smartcase       " ...unless we type a capital"
 
 " Switch wrap off for everything
 set nowrap
-set relativenumber      " relative line numbers
 
-" let there be folding
-set foldmethod=indent
-set nofoldenable
+"source $CONFIG/misc.vim
+"source $CONFIG/colors.vim
+source $CONFIG/pluginconfig.vim
+source $CONFIG/filetypes.vim
+source $CONFIG/rails_test.vim
+source $CONFIG/keybinds.vim
+
+set ruler		                   " show the cursor position all the time
+set incsearch		               " do incremental searching
+
+
+" Lets allow mouse scrolling, because it's the 21st centuary after all
+" set ttymouse=sgr " modern mouse handing
+set mouse=a
 
 " Always show the status bar
 set laststatus=2
 " Put git branch in the status bar
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-
-" use system clipboard
-set clipboard=unnamed
 
 " Autocommands
 if has("autocmd")

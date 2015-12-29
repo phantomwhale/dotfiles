@@ -1,6 +1,7 @@
 #!/bin/sh
 set -e
+mkdir .git/tags_lock 2>/dev/null || exit 0
 PATH="/usr/local/bin:$PATH"
-trap "rm -f .git/tags.$$" EXIT
-ctags --tag-relative -Rf.git/tags.$$ --exclude=.git --languages=-javascript,sql
+trap "rmdir .git/tags_lock; rm -f .git/tags.$$" EXIT
+ctags --tag-relative -Rf.git/tags.$$ --exclude=.git --exclude=node_modules --exclude='*\.min\.*' --languages=-javascript,sql
 mv .git/tags.$$ .git/tags

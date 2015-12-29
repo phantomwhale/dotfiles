@@ -19,6 +19,13 @@ let g:jsx_ext_required = 0
 let g:delimitMate_expand_cr = 1
 let g:delimitMate_expand_space = 1
 
+" leave c-n alone, sparkup !
+let g:sparkupNextMapping = '<C-F>'
+
+" Allow sparkup completion in JS(X) files
+autocmd FileType javascript.jsx runtime! ftplugin/html/sparkup.vim
+autocmd FileType javascript.js runtime! ftplugin/html/sparkup.vim
+
 " unlimited file in CTRL-P
 let g:ctrlp_max_files=0
 

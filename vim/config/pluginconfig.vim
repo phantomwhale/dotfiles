@@ -15,6 +15,10 @@ let g:ruby_debugger_create_default_mappings = 0
 " Format js and jsx files with jsx formatter
 let g:jsx_ext_required = 0
 
+" Add delimit expansion options
+let g:delimitMate_expand_cr = 1
+let g:delimitMate_expand_space = 1
+
 " unlimited file in CTRL-P
 let g:ctrlp_max_files=0
 

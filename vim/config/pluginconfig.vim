@@ -7,7 +7,13 @@ match ErrorMsg '\s\+$'
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 let g:syntastic_aggregate_errors = 1
 
+" ESlint for javascript checking - supports React / JSX / ES6
+let g:syntastic_javascript_checkers = ['eslint']
+
 let g:ruby_debugger_create_default_mappings = 0
+
+" Format js and jsx files with jsx formatter
+let g:jsx_ext_required = 0
 
 " unlimited file in CTRL-P
 let g:ctrlp_max_files=0

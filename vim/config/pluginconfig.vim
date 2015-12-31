@@ -22,6 +22,9 @@ let g:delimitMate_expand_space = 1
 " leave c-n alone, sparkup !
 let g:sparkupNextMapping = '<C-F>'
 
+" ultisnips gives up tab to YCM, so we'll take a different key
+let g:UltiSnipsExpandTrigger='<C-J>'
+
 " Allow sparkup completion in JS(X) files
 autocmd FileType javascript.jsx runtime! ftplugin/html/sparkup.vim
 autocmd FileType javascript.js runtime! ftplugin/html/sparkup.vim

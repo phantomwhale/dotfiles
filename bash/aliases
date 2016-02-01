@@ -5,6 +5,7 @@ alias bu='bundle update'
 alias c='cd ~/code'
 alias d='cd ~/.dotfiles'
 alias get='sudo apt-get install'
+alias loc='git diff --shortstat `git hash-object -t tree /dev/null`'
 alias killruby='killall -9 ruby'
 alias restart_apache="sudo /etc/init.d/apache2 restart"
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log *'

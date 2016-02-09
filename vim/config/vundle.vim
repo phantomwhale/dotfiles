@@ -20,6 +20,7 @@ Plugin 'docker/docker', {'rtp': 'contrib/syntax/vim'}
 Plugin 'ecomba/vim-ruby-refactoring'
 Plugin 'evanmiller/nginx-vim-syntax'
 Plugin 'evidens/vim-twig'
+Plugin 'fatih/vim-go'
 Plugin 'honza/vim-snippets'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'jgdavey/vim-blockle'

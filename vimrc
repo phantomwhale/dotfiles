@@ -123,6 +123,10 @@ if has("autocmd")
   autocmd InsertLeave * match ExtraWhitespace /\s\+$/
   autocmd BufWinLeave * call clearmatches()
 
+  " spellcheck on markdown and git commits
+  autocmd BufRead,BufNewFile *.md setlocal spell
+  autocmd FileType gitcommit setlocal spell
+
   " Remove trailing whitespace on save (Ruby only)
   function! TrimWhiteSpace()
     %s/\s\+$//e

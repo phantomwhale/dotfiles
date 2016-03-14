@@ -4,7 +4,7 @@ set rtp+=~/.vim/bundle/Vundle.vim " required
 call vundle#begin()               " required
 
 " Let vundle manage vundle
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " Declare other vundles here
 Plugin 'airblade/vim-gitgutter'

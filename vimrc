@@ -51,9 +51,14 @@ set expandtab                     " Use spaces, not tabs
 noremap p p=`]<C-o>
 noremap P P=`]<C-o>
 
+
+" ============ File types ============
 " Let file types decide their plugin and indent settings
 filetype plugin on
 filetype indent on
+
+" Allow local .vimrc overrides
+set exrc
 
 " Get our colours right
 set t_Co=256

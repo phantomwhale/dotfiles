@@ -8,6 +8,9 @@ map <C-l> <C-w>l
 " Leader took away our comma - remap to \
 noremap \ ,
 
+" disable ex-mode mapping in normal mode. Because it's werid
+nnoremap Q <nop>
+
 " Remove search highlighting
 noremap <Leader>l :<C-u>nohlsearch<CR>
 noremap <Leader><space> :<C-u>nohlsearch<CR>

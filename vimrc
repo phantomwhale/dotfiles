@@ -67,7 +67,8 @@ let base16colorspace=256
 colorscheme base16-monokai
 hi MatchParen cterm=bold
 
-set listchars=extends:>,precedes:<   " make incomplete lines visible
+" make incomplete lines and tabs visible
+set listchars=tab:▸\ ,extends:>,precedes:<
 
 " ============ Folds ============
 set foldmethod=indent       " fold based on indentation

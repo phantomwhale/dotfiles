@@ -51,7 +51,6 @@ set expandtab                     " Use spaces, not tabs
 noremap p p=`]<C-o>
 noremap P P=`]<C-o>
 
-
 " ============ File types ============
 " Let file types decide their plugin and indent settings
 filetype plugin on
@@ -75,51 +74,52 @@ set foldmethod=indent       " fold based on indentation
 set nofoldenable            " dont fold by default
 
 " ============ Completion ============
-
 set wildmode=list:longest
 set wildmenu                " enables <C-n> and <C-p> to scroll matches
 
 " ============ Search =============
-
-set incsearch     " Find the next match as we type the search
+set incsearch       " Find the next match as we type the search
 set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital"
 
-" Switch wrap off for everything
-set nowrap
-
-"source $CONFIG/misc.vim
-"source $CONFIG/colors.vim
-source $CONFIG/pluginconfig.vim
-source $CONFIG/filetypes.vim
-source $CONFIG/rails_test.vim
-source $CONFIG/keybinds.vim
-
-set ruler		                   " show the cursor position all the time
-set incsearch		               " do incremental searching
-
-
-" Lets allow mouse scrolling, because it's the 21st centuary after all
-" set ttymouse=sgr " modern mouse handing
-set mouse=a
-
+" ============ Status Bar  =============
 " Always show the status bar
 set laststatus=2
 " Put git branch in the status bar
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
-" Autocommands
+" Switch wrap off for everything
+set nowrap
+
+" show the cursor position all the time
+set ruler
+
+" Lets allow mouse scrolling, because it's the 21st centuary after all
+set mouse=a
+
+" ============ Config files  =============
+source $CONFIG/pluginconfig.vim
+source $CONFIG/rails_test.vim
+source $CONFIG/keybinds.vim
+
+" ============ Autocommands =============
 if has("autocmd")
   " auto-reload on .vimrc changes
   autocmd BufWritePost .vimrc so $MYVIMRC
 
-  " Four tabs for JS and ERB
+  " Four tabs for JS, HTML and ERB
+  autocmd FileType html setlocal shiftwidth=4 tabstop=4
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType eruby setlocal ts=4 sts=4 sw=4 expandtab
 
   " Autosave when we lose focus, just like Rubymine does
   autocmd BufLeave,FocusLost * silent! wall
+
+  " Highlight debugging lines
+  autocmd FileType ruby syn match error contained "\<binding.pry\>"
+  autocmd FileType lua syn match error contained "\<Debug.chat\>"
+  autocmd FileType lua syn match error contained "\<Debug.console\>"
 
   " Trailing whitespace
   highlight ExtraWhitespace ctermbg=red guibg=red

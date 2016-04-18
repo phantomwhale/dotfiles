@@ -1,6 +1,6 @@
 [user]
-	name =  Ben Turner
-	email = ben.turner@pobox.com
+  name =  Ben Turner
+  email = ben.turner@pobox.com
 [alias]
   b = branch
   co = checkout
@@ -14,26 +14,26 @@
   lgt = log --graph --pretty=format:'%Cred%h%Creset%C(yellow bold)%d%Creset %s %Cgreen(%cr) %C(blue bold)<%an>%Creset' --abbrev-commit
   lgtt = log --first-parent --topo-order --all --graph --pretty=format:'%Cred%h%Creset%C(yellow bold)%d%Creset %s %Cgreen(%cr) %C(blue bold)<%an>%Creset' --abbrev-commit
   tagh = for-each-ref --format '%(refname) %09 %(taggerdate) %(subject) %(taggeremail)' refs/tags  --sort=taggerdate
-	ctags = !.git/hooks/ctags
+  ctags = !.git/hooks/ctags
   set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+  diff = auto
+  status = auto
+  branch = auto
 [core]
-	excludesfile = ~/.gitignore
-	editor = vim
-	autocrlf = input
+  excludesfile = ~/.gitignore
+  editor = vim
+  autocrlf = input
 [apply]
-	whitespace = nowarn
+  whitespace = nowarn
 [format]
   pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
 [branch]
   autosetuprebase = always
 [init]
-	templatedir = ~/.git_template
+  templatedir = ~/.git_template
 [push]
-	default = current
+  default = current
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f

@@ -33,10 +33,4 @@ autocmd FileType javascript.js runtime! ftplugin/html/sparkup.vim
 let g:ctrlp_max_files=0
 
 " exclude git ignored files
-let g:ctrlp_user_command = {
-  \ 'types': {
-    \ 1: ['.git', 'git --git-dir=%s/.git ls-files --exclude-standard -oc | egrep -v "\.(png|jpg|jpeg|gif)$|node_modules"'],
-    \ },
-  \ 'fallback': 'find %s -type f'
-  \ }
-
+let g:ctrlp_user_command='ag -Q -l --nocolor --hidden -g "" %s'

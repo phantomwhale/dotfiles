@@ -29,6 +29,9 @@ let g:UltiSnipsExpandTrigger='<C-J>'
 autocmd FileType javascript.jsx runtime! ftplugin/html/sparkup.vim
 autocmd FileType javascript.js runtime! ftplugin/html/sparkup.vim
 
+" let ag search hidden files
+let g:ag_prg="ag --vimgrep --hidden"
+
 " unlimited file in CTRL-P
 let g:ctrlp_max_files=0
 

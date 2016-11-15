@@ -1,38 +1,31 @@
 call plug#begin('~/.vim/plugged')
 
 " Plugs go here
-Plug 'airblade/vim-gitgutter'
-Plug 'altercation/vim-colors-solarized'
-Plug 'avakhov/vim-yaml'
-Plug 'astashov/vim-ruby-debugger'
-Plug 'bkad/CamelCaseMotion'
-Plug 'chase/vim-ansible-yaml'
-Plug 'chriskempson/base16-vim'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'docker/docker', {'rtp': 'contrib/syntax/vim'}
-Plug 'ecomba/vim-ruby-refactoring'
+
+" Syntax highlighting
 Plug 'evanmiller/nginx-vim-syntax'
 Plug 'evidens/vim-twig'
 Plug 'fatih/vim-go'
-Plug 'honza/vim-snippets'
 Plug 'jelera/vim-javascript-syntax'
-Plug 'jgdavey/vim-blockle'
-Plug 'kana/vim-textobj-user'
-Plug 'kchmck/vim-coffee-script'
-Plug 'majutsushi/tagbar'
-Plug 'mileszs/ack.vim'
-Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'mxw/vim-jsx'
-Plug 'rstacruz/sparkup'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'nelstrom/vim-textobj-rubyblock'
-Plug 'ngmy/vim-rubocop'
 Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'pangloss/vim-javascript'
+
+Plug 'airblade/vim-gitgutter'
+Plug 'chriskempson/base16-vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ecomba/vim-ruby-refactoring'
+Plug 'honza/vim-snippets'
+Plug 'jgdavey/vim-blockle'
+"Plug 'kana/vim-textobj-user'
+Plug 'majutsushi/tagbar'
+Plug 'mtscout6/syntastic-local-eslint.vim'
+Plug 'rstacruz/sparkup'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'kana/vim-textobj-user' " dependancy
 Plug 'Raimondi/delimitMate'
-Plug 'rainerborene/vim-reek'
 Plug 'rizzatti/dash.vim'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/syntastic'
@@ -44,12 +37,16 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'Valloric/YouCompleteMe'
+function! BuildYCM(info)
+  if a:info.status == 'installed' || a:info.force
+    !./install.py --tern-completer --gocode-completer
+  endif
+endfunction
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/RelativeNumberCurrentWindow'

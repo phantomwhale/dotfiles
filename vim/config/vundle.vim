@@ -18,7 +18,6 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'docker/docker', {'rtp': 'contrib/syntax/vim'}
 Plugin 'ecomba/vim-ruby-refactoring'
-Plugin 'eiginn/netrw'
 Plugin 'evanmiller/nginx-vim-syntax'
 Plugin 'evidens/vim-twig'
 Plugin 'fatih/vim-go'

@@ -18,12 +18,11 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
 endif
 
 " Set leader to a comma, becuase backslash is TOO far away
-" We need to do this before vundle gets going
 let mapleader = ","
 
-" ============ Vundle ============
+" ============ Plug ============
 let $CONFIG = "$HOME/.vim/config"
-source $CONFIG/vundle.vim
+source $CONFIG/plug.vim
 
 " ============ Turn off Swap Files ============
 set noswapfile

@@ -85,3 +85,11 @@ nnoremap <leader>ec <C-w>s<C-w>j<C-w>L:e $CONFIG/pluginconfig.vim<cr>
 " Auto-create missing rspec tests
 noremap <leader>as :call rails_test#hsplit_spec()<cr>
 noremap <leader>av :call rails_test#vsplit_spec()<cr>
+
+" Vimux bindings
+let g:VimuxOrientation = "h"
+noremap <Leader>vp :VimuxPromptCommand<CR>
+noremap <Leader>vl :VimuxRunLastCommand<CR>
+noremap <Leader>vs :call VimuxRunCommand("clear; 99cr workbench rspec " . bufname("%"))<CR>
+noremap <Leader>vi :VimuxInspectRunner<CR>
+noremap <Leader>vz :VimuxZoomRunner<CR>

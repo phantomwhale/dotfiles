@@ -39,3 +39,5 @@
 	smudge = git-media-smudge %f
 [fetch]
 	prune = true
+[url "git@github.com:"]
+	insteadof = https://github.com/

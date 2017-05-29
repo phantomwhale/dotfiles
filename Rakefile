@@ -1,12 +1,30 @@
 require 'rake'
 
-desc "install the dot files into user's home directory"
-task :install => [:submodules] do
-  switch_to_zsh
-  install_prezto_zsh
+desc "install dotfiles into home directory"
+task :install => [:symlink, :base16, :vim_plug, :zsh, :ruby]
+
+desc "Init and update submodules"
+task :submodules do
+  system('git submodule update --init')
+end
+
+desc "Install base16 options"
+task :base16 do
+  system %Q{git clone git@github.com:chriskempson/base16-shell.git ~/.config/base16-shell}
+end
+
+desc "Install vim plugins"
+task :vim_plug do
+  system %Q{curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim}
+  system %Q{vim -c "PlugInstall 4" -c "qall"}
+end
+
+desc "Symlink files"
+task :symlink do
   replace_all = false
   Dir['*'].each do |file|
-    next if %w[Rakefile README LICENSE id_dsa.pub].include? file
+    next if %w[Rakefile Brewfile README.md LICENSE id_dsa.pub].include? file
 
     if File.exist?(File.join(ENV['HOME'], ".#{file}"))
       if replace_all
@@ -29,12 +47,6 @@ task :install => [:submodules] do
       link_file(file)
     end
   end
-  install_vundle
-end
-
-desc "Init and update submodules"
-task :submodules do
-  system('git submodule update --init')
 end
 
 def replace_file(file)
@@ -47,7 +59,7 @@ def link_file(file)
   system %Q{ln -s "$PWD/#{file}" "$HOME/.#{file}"}
 end
 
-def switch_to_zsh
+task :switch_to_zsh do
   if ENV["SHELL"] =~ /zsh/
     puts "using zsh"
   else
@@ -55,7 +67,7 @@ def switch_to_zsh
     case $stdin.gets.chomp
     when 'y'
       puts "switching to zsh"
-      system %Q{chsh -s `which zsh`}
+      system %Q{sudo dscl . -create /Users/$USER UserShell `which zsh`}
     when 'q'
       exit
     else
@@ -64,7 +76,11 @@ def switch_to_zsh
   end
 end
 
-def install_prezto_zsh
+task :ruby do
+  system %Q{ruby-install ruby}
+end
+
+task :prezto do
   if File.exist?(File.join(ENV['HOME'], ".zprezto"))
     puts "found ~/.zprezto"
   else
@@ -72,31 +88,12 @@ def install_prezto_zsh
     case $stdin.gets.chomp
     when 'y'
       puts "installing zprezto"
-      system %Q{git clone --recursive https://github.com/phantomwhale/pretzo.git "${ZDOTDIR:-$HOME}/.zprezto"}
+      system %Q{git clone --recursive https://github.com/phantomwhale/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"}
       system %Q{for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do; ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"; done}
     when 'q'
       exit
     else
       puts "skipping zpretzo, you will need to change ~/.zshrc"
-    end
-  end
-end
-
-
-def install_vundle
-  if File.exist?(File.join(ENV['HOME'], ".vim", "bundle", "vundle"))
-    puts "found ~/.vim/bundle/vundle"
-  else
-    print "install vundle for vim? [ynq] "
-    case $stdin.gets.chomp
-    when 'y'
-      puts "installing vundle"
-      system %Q{git clone --recursive https://github.com/gmarik/vundle.git "$HOME/.vim/bundle/vundle"}
-      system "vim +BundleInstall +qall"
-    when 'q'
-      exit
-    else
-      puts "skipping vundle, you will need to manually download it to use vim"
     end
   end
 end

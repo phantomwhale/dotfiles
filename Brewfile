@@ -1,4 +1,8 @@
+tap "getantibody/tap"
+tap "homebrew/bundle"
+
 brew "awscli"
+brew "getantibody/tap/antibody"
 brew "chruby"
 brew "cmake"
 brew "dos2unix"

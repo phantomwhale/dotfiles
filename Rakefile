@@ -1,11 +1,18 @@
 require 'rake'
 
 desc "install dotfiles into home directory"
-task :install => [:symlink, :base16, :vim_plug, :zsh, :ruby]
+task :install => [:symlink, :base16, :brew, :vim_plug, :zsh, :ruby]
 
 desc "Init and update submodules"
 task :submodules do
   system('git submodule update --init')
+end
+
+desc "Install brew bundle"
+task :brew do
+  system %Q{/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"}
+  system %Q{brew tap Homebrew/bundle}
+  system %Q{brew bundle}
 end
 
 desc "Install base16 options"

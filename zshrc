@@ -1,17 +1,3 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
-
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
-
-# Customize to your needs...
-
 # ensure dotfiles bin directory is loaded first
 PATH="$HOME/.bin:$PATH"
 
@@ -21,7 +7,7 @@ bindkey -e;
 bindkey '^[[1;9C' forward-word;
 bindkey '^[[1;9D' backward-word;
 
-# Set up my bash aliases
+# Set up bash aliases
 source ~/.bash/aliases
 
 # Set up chruby

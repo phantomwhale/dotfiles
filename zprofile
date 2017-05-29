@@ -72,6 +72,3 @@ if [[ ! -d "$TMPDIR" ]]; then
 fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
-
-# Required for docker
-export DOCKER_HOST=tcp://localhost:2375

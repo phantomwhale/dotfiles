@@ -1,4 +1,5 @@
-mafredri/zsh-async     # needed by sindresorhus/pure
+mafredri/zsh-async           # needed by sindresorhus/pure
+Tarrasch/zsh-bd              # adds the bd command to go back directories
 zsh-users/zsh-completions
 
 # these should come last (stated at https://github.com/caarlos0/dotfiles/blob/master/antibody/bundles.txt)

@@ -1,2 +1,6 @@
+mafredri/zsh-async     # needed by sindresorhus/pure
 zsh-users/zsh-completions
+
+# these should come last (stated at https://github.com/caarlos0/dotfiles/blob/master/antibody/bundles.txt)
+sindresorhus/pure
 zsh-users/zsh-syntax-highlighting

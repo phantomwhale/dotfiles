@@ -5,6 +5,7 @@ brew "awscli"
 brew "getantibody/tap/antibody"
 brew "chruby"
 brew "cmake"
+brew "ctags"
 brew "dos2unix"
 brew "go", args: ["cross-compile-common"]
 brew "htop"

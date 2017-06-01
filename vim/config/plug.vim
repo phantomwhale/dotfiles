@@ -26,6 +26,7 @@ Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'rstacruz/sparkup'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'kana/vim-textobj-user' " dependancy
+Plug 'OmniSharp/omnisharp-vim', { 'do': 'cd server && xbuild' }
 Plug 'Raimondi/delimitMate'
 Plug 'rizzatti/dash.vim'
 Plug 'rking/ag.vim'

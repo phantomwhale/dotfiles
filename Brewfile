@@ -31,5 +31,6 @@ cask "slack"
 cask "spectacle"
 cask "virtualbox"
 #cask "virtualbox-extension-pack"
+cask "vlc"
 
 mas "NordVPN", id: 1116599239

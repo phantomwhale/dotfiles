@@ -20,6 +20,7 @@ brew "zsh"
 
 cask "1password"
 cask "aws-vault"
+cask "dash"
 cask "dropbox"
 cask "flux"
 cask "google-chrome"

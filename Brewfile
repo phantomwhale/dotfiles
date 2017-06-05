@@ -35,4 +35,16 @@ cask "virtualbox"
 #cask "virtualbox-extension-pack"
 cask "vlc"
 
+# Quicklook plugins from https://github.com/sindresorhus/quick-look-plugins
+cask "betterzipql"
+cask "qlcolorcode"
+cask "qlimagesize"
+cask "qlmarkdown"
+cask "qlprettypatch"
+cask "qlstephen"
+cask "qlvideo"
+cask "quicklook-csv"
+cask "quicklook-json"
+cask "webpquicklook"
+
 mas "NordVPN", id: 1116599239

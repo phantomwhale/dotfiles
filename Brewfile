@@ -16,6 +16,7 @@ brew "reattach-to-user-namespace"
 brew "ruby-install"
 brew "the_silver_searcher"
 brew "tmux"
+brew "todo-txt"
 brew "vim", args: ["with-override-system-vi"]
 brew "zsh"
 

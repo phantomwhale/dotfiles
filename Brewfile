@@ -6,6 +6,7 @@ brew "getantibody/tap/antibody"
 brew "chruby"
 brew "cmake"
 brew "ctags"
+brew "dfu-util" # for configuring my Ergodox keyboard
 brew "dos2unix"
 brew "go", args: ["cross-compile-common"]
 brew "htop"

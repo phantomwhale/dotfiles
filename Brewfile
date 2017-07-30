@@ -52,3 +52,4 @@ cask "webpquicklook"
 mas "NordVPN", id: 1116599239
 mas "Keynote", id: 409183694
 mas "Monodraw", id: 920404675
+mas "Numbers", id: 409203825

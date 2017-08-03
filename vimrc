@@ -104,9 +104,6 @@ source $CONFIG/keybinds.vim
 
 " ============ Autocommands =============
 if has("autocmd")
-  " auto-reload on .vimrc changes
-  autocmd BufWritePost .vimrc so $MYVIMRC
-
   " Four tabs for JS, HTML and ERB
   autocmd FileType html setlocal shiftwidth=4 tabstop=4
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab

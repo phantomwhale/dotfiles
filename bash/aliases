@@ -22,6 +22,9 @@ alias 99cr='99dev compose run'
 alias 99cu='99dev compose up -d'
 alias 99data='aws-vault exec platform -- 99dev data'
 
+alias git-branches='for branch in `git branch -r --merged | grep -v HEAD`; do echo -e `git show --format="%ci %cr %an" $branch | head -n 1` \\t$branch; done | sort -r'
+alias git-branches-unmerged='for branch in `git branch -r --no-merged | grep -v HEAD`; do echo -e `git show --format="%ci %cr %an" $branch | head -n 1` \\t$branch; done | sort -r'
+
 # Prezto git aliases (https://github.com/sorin-ionescu/prezto/blob/master/modules/git/alias.zsh)
 
 # Log

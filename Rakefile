@@ -13,6 +13,7 @@ task :brew do
   system %Q{/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"}
   system %Q{brew tap Homebrew/bundle}
   system %Q{brew bundle}
+  system %q{mkdir ~/.nvm} # NVM needs this to be created
 end
 
 desc "Install base16 options"

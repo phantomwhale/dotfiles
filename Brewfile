@@ -12,7 +12,7 @@ brew "go", args: ["cross-compile-common"]
 brew "htop"
 brew "hub"
 brew "mono"
-brew "node"
+brew "nvm"
 brew "reattach-to-user-namespace"
 brew "ruby-install"
 brew "the_silver_searcher"

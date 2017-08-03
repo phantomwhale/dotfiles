@@ -21,6 +21,10 @@ BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-monokai.sh"
 # history setup
 source ~/.zsh/lib/history.zsh
 
+# NVM setup
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
+
 # Setup antibody shell plugin manager
 source <(antibody init)
 antibody bundle < ~/.antibody.txt

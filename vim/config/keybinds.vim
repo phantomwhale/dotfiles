@@ -42,6 +42,7 @@ nmap <leader>dd <plug>ruby_debugger_remove_breakpoints
 map <Leader>s :call RunCurrentSpecFile()<CR>
 map <Leader>S :call RunNearestSpec()<CR>
 map <Leader>L :call RunLastSpec()<CR>
+map <Leader>A :call RunAllSpecs()<CR>
 
 " XMP Filter keybinds
 autocmd FileType ruby nmap <buffer> <F2> <Plug>(xmpfilter-mark)

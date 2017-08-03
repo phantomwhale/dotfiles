@@ -140,5 +140,7 @@ if has("autocmd")
   autocmd BufWritePre     *.rb,*.lua :call TrimWhiteSpace()
 
   " syntax highlighting for the forgotten ruby files
-  au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
+  autocmd BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
+
+  autocmd BufRead,BufNewFile */99designs/* let g:rspec_command='call VimuxRunCommand("99dev compose run workbench bundle exec rspec {spec}")'
 end

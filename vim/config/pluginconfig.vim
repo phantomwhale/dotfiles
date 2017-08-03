@@ -1,5 +1,5 @@
 " we'll need an interactive shell if we want to execute our custom bash script command
-let g:rspec_command = "Dispatch bundle exec rspec {spec}"
+let g:rspec_command = 'call VimuxRunCommand("bundle exec rspec {spec}")'
 
 match ErrorMsg '\s\+$'
 

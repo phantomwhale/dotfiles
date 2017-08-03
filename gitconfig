@@ -15,7 +15,9 @@
   lgtt = log --first-parent --topo-order --all --graph --pretty=format:'%Cred%h%Creset%C(yellow bold)%d%Creset %s %Cgreen(%cr) %C(blue bold)<%an>%Creset' --abbrev-commit
   tagh = for-each-ref --format '%(refname) %09 %(taggerdate) %(subject) %(taggeremail)' refs/tags  --sort=taggerdate
   ctags = !.git/hooks/ctags
+  clean=!git branch --merged master | grep -v "\\* master" | xargs -n 1 git branch -d'
   set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
+  clean-remote = !git branch -r --merged | grep -v master | sed 's/origin\\///' | xargs -n 1 git push --delete origin
 [color]
   diff = auto
   status = auto

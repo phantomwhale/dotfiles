@@ -12,7 +12,6 @@ alias tt="timetrap"
 alias tmux='tmux -2'
 alias vi='vim'
 alias topcom='history | awk '"'"'{a[$2]++}END{for(i in a){print a[i] " " i}}'"'"' | sort -rn | head -20'
-alias gclean='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
 alias dclean='docker ps -a | grep "weeks ago" | awk '"'"'{print $1}'"'"' | xargs docker rm'
 alias dc='docker-compose'
 alias dcr='docker-compose run'

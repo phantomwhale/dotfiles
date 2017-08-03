@@ -85,6 +85,7 @@ end
 
 task :ruby do
   system %Q{ruby-install ruby}
+  system %Q{gem install tmuxinator} # will this always be executed for the latest ruby?
 end
 
 task :prezto do

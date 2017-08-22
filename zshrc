@@ -18,6 +18,9 @@ chruby 2.4.1
 BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-monokai.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
+# key binding setup
+source ~/.zsh/lib/keybinds.zsh
+
 # history setup
 source ~/.zsh/lib/history.zsh
 

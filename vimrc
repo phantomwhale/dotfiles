@@ -139,5 +139,7 @@ if has("autocmd")
   " syntax highlighting for the forgotten ruby files
   autocmd BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
 
+  autocmd BufWritePost * if &filetype=='plantuml' | Make!
+
   autocmd BufRead,BufNewFile */99designs/* let g:rspec_command='call VimuxRunCommand("99dev compose run workbench bundle exec rspec {spec}")'
 end

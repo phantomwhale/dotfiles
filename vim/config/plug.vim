@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
 " Plugs go here
 
 " Syntax highlighting
+Plug 'aklt/plantuml-syntax'
 Plug 'evanmiller/nginx-vim-syntax'
 Plug 'evidens/vim-twig'
 Plug 'fatih/vim-go'

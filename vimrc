@@ -104,42 +104,47 @@ source $CONFIG/keybinds.vim
 
 " ============ Autocommands =============
 if has("autocmd")
-  " Four tabs for JS, HTML and ERB
-  autocmd FileType html setlocal shiftwidth=4 tabstop=4
-  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
-  autocmd FileType eruby setlocal ts=4 sts=4 sw=4 expandtab
-  autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab
+  augroup my_auto_commands
+    " clear out my autocommands first, in case we have already loaded them
+    autocmd!
 
-  " Autosave when we lose focus, just like Rubymine does
-  autocmd BufLeave,FocusLost * silent! wall
+    " Four tabs for JS, HTML and ERB
+    autocmd FileType html setlocal shiftwidth=4 tabstop=4
+    autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
+    autocmd FileType eruby setlocal ts=4 sts=4 sw=4 expandtab
+    autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab
 
-  " Highlight debugging lines
-  autocmd FileType ruby syn match error contained "\<binding.pry\>"
-  autocmd FileType lua syn match error contained "\<Debug.chat\>"
-  autocmd FileType lua syn match error contained "\<Debug.console\>"
+    " Autosave when we lose focus, just like Rubymine does
+    autocmd BufLeave,FocusLost * silent! wall
 
-  " Trailing whitespace
-  highlight ExtraWhitespace ctermbg=red guibg=red
-  match ExtraWhitespace /\s\+$/
-  autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-  autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-  autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-  autocmd BufWinLeave * call clearmatches()
+    " Highlight debugging lines
+    autocmd FileType ruby syn match error contained "\<binding.pry\>"
+    autocmd FileType lua syn match error contained "\<Debug.chat\>"
+    autocmd FileType lua syn match error contained "\<Debug.console\>"
 
-  " spellcheck on markdown and git commits
-  autocmd BufRead,BufNewFile *.md setlocal spell
-  autocmd FileType gitcommit setlocal spell
+    " Trailing whitespace
+    highlight ExtraWhitespace ctermbg=red guibg=red
+    match ExtraWhitespace /\s\+$/
+    autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+    autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+    autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+    autocmd BufWinLeave * call clearmatches()
 
-  " Remove trailing whitespace on save (Ruby only)
-  function! TrimWhiteSpace()
-    %s/\s\+$//e
-  endfunction
-  autocmd BufWritePre     *.rb,*.lua :call TrimWhiteSpace()
+    " spellcheck on markdown and git commits
+    autocmd BufRead,BufNewFile *.md setlocal spell
+    autocmd FileType gitcommit setlocal spell
 
-  " syntax highlighting for the forgotten ruby files
-  autocmd BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
+    " Remove trailing whitespace on save (Ruby only)
+    function! TrimWhiteSpace()
+      %s/\s\+$//e
+    endfunction
+    autocmd BufWritePre     *.rb,*.lua :call TrimWhiteSpace()
 
-  autocmd BufWritePost * if &filetype=='plantuml' | Make!
+    " syntax highlighting for the forgotten ruby files
+    autocmd BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
 
-  autocmd BufRead,BufNewFile */99designs/* let g:rspec_command='call VimuxRunCommand("99dev compose run workbench bundle exec rspec {spec}")'
+    autocmd BufWritePost * nested if &filetype=='plantuml' | Make!
+
+    autocmd BufRead,BufNewFile */99designs/* let g:rspec_command='call VimuxRunCommand("99dev compose run workbench bundle exec rspec {spec}")'
+  augroup END
 end

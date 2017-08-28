@@ -43,3 +43,5 @@
 	prune = true
 [url "git@github.com:"]
 	insteadof = https://github.com/
+[rebase]
+	autosquash = true

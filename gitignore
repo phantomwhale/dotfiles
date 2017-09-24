@@ -2,3 +2,5 @@
 .svn
 *~
 .*.swp
+tags
+tags.*

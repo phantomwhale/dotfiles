@@ -12,7 +12,7 @@ source ~/.bash/aliases
 
 # Set up chruby
 source /usr/local/share/chruby/chruby.sh
-chruby 2.4.1
+chruby 2.4.2
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-monokai.sh"

@@ -52,7 +52,7 @@ function! BuildYCM(info)
     !./install.py --tern-completer --gocode-completer
   endif
 endfunction
-Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+" Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/RelativeNumberCurrentWindow'

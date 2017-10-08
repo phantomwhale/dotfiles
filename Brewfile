@@ -20,6 +20,7 @@ brew "the_silver_searcher"
 brew "tmux"
 brew "todo-txt"
 brew "vim", args: ["with-override-system-vi"]
+brew "youtube-dl"
 brew "zsh"
 
 cask "1password"

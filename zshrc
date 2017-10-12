@@ -1,6 +1,9 @@
 # ensure dotfiles bin directory is loaded first
 PATH="$HOME/.bin:$PATH"
 
+# Add go bin folder to path
+PATH="$PATH:$HOME/go/bin"
+
 # bindkey for word boundries movement
 
 bindkey -e;

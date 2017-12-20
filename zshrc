@@ -34,3 +34,5 @@ export NVM_DIR="$HOME/.nvm"
 # Setup antibody shell plugin manager
 source <(antibody init)
 antibody bundle < ~/.antibody.txt
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

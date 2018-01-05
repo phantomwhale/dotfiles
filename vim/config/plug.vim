@@ -4,7 +4,6 @@ call plug#begin('~/.vim/plugged')
 
 " Syntax highlighting
 Plug 'aklt/plantuml-syntax'
-Plug 'evanmiller/nginx-vim-syntax'
 Plug 'evidens/vim-twig'
 Plug 'fatih/vim-go'
 Plug 'jelera/vim-javascript-syntax'

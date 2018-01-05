@@ -94,3 +94,6 @@ noremap <Leader>vl :VimuxRunLastCommand<CR>
 noremap <Leader>vs :call VimuxRunCommand("clear; 99cr workbench rspec " . bufname("%"))<CR>
 noremap <Leader>vi :VimuxInspectRunner<CR>
 noremap <Leader>vz :VimuxZoomRunner<CR>
+
+" shortcut for updating vim modules and vim plug all at once
+command! PU PlugUpdate | PlugUpgrade

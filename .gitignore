@@ -1,3 +1,4 @@
 vim/.netrwhist
 vim/.VimballRecord
 vim/backups
+vim/autoload/plug.vim

@@ -45,7 +45,6 @@ cask "slack"
 cask "spectacle"
 cask "steam"
 cask "virtualbox"
-#cask "virtualbox-extension-pack"
 cask "vlc"
 
 # 99dev

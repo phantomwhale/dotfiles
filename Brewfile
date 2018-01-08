@@ -48,6 +48,15 @@ cask "virtualbox"
 #cask "virtualbox-extension-pack"
 cask "vlc"
 
+# 99dev
+tap "caskroom/cask"
+cask "docker"
+cask "vagrant"
+cask "virtualbox-extension-pack"
+brew "docker-machine-nfs"
+brew "oniguruma"
+brew "jq"
+
 # Quicklook plugins from https://github.com/sindresorhus/quick-look-plugins
 cask "betterzipql"
 cask "qlcolorcode"

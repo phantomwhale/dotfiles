@@ -13,6 +13,7 @@ brew "go", args: ["cross-compile-common"]
 brew "heroku"
 brew "htop"
 brew "hub"
+brew "mas"
 brew "mono"
 brew "nvm"
 brew "plantuml"

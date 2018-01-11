@@ -3,6 +3,8 @@ Tarrasch/zsh-bd              # adds the bd command to go back directories
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
 
+djui/alias-tips              # Remind me when I'm not using my aliases
+
 # these should come last (stated at https://github.com/caarlos0/dotfiles/blob/master/antibody/bundles.txt)
 sindresorhus/pure
 zsh-users/zsh-syntax-highlighting

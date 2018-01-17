@@ -4,11 +4,13 @@ PATH="$HOME/.bin:$PATH"
 # Add go bin folder to path
 PATH="$PATH:$HOME/go/bin"
 
-# bindkey for word boundries movement
+# Lets edit with vim, because emacs is gross
+# bindkey -e;
+bindkey -v;
 
-bindkey -e;
-bindkey '^[[1;9C' forward-word;
-bindkey '^[[1;9D' backward-word;
+# bindkey for word boundries movement
+# bindkey '^[[1;9C' forward-word;
+# bindkey '^[[1;9D' backward-word;
 
 # Set up bash aliases
 source ~/.bash/aliases

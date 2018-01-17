@@ -1,11 +1,21 @@
 require 'rake'
 
 desc "install dotfiles into home directory"
-task :install => [:symlink, :base16, :brew, :vim_plug, :zsh, :ruby]
+task :install => %i[brew ssh symlink zsh base16 vim_plug ruby]
 
 desc "Init and update submodules"
 task :submodules do
   system('git submodule update --init')
+end
+
+desc "Get hold of SSH key"
+task :ssh do
+  STDOUT.puts "Input 1password vault:"
+  vault = STDIN.gets.strip
+  STDOUT.puts "Input secret key for 1password vault:"
+  secret = STDIN.gets.strip
+  system %Q{eval $(op signin #{vault} ben.turner@pobox.com #{secret}) && op get document id_rsa > ~/.ssh/my_key}
+  system %Q{chmod 600 ~/.ssh/my_key}
 end
 
 desc "Install brew bundle"

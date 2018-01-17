@@ -30,6 +30,7 @@ brew "youtube-dl"
 brew "zsh"
 
 cask "1password"
+cask "1password-cli"
 cask "aws-vault"
 cask "dash"
 cask "deluge"

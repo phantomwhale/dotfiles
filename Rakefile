@@ -14,29 +14,29 @@ task :ssh do
   vault = STDIN.gets.strip
   STDOUT.puts "Input secret key for 1password vault:"
   secret = STDIN.gets.strip
-  system %Q{eval $(op signin #{vault} ben.turner@pobox.com #{secret}) && op get document id_rsa > ~/.ssh/my_key}
-  system %Q{chmod 600 ~/.ssh/my_key}
+  system %(eval $(op signin #{vault} ben.turner@pobox.com #{secret}) && op get document id_rsa > ~/.ssh/id_rsa)
+  system %(chmod 600 ~/.ssh/id_rsa)
 end
 
 desc "Install brew bundle"
 task :brew do
-  system %Q{/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"}
-  system %Q{brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup}
-  system %Q{brew tap Homebrew/bundle}
-  system %Q{brew bundle}
-  system %q{mkdir ~/.nvm} # NVM needs this to be created
+  system %(/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)")
+  system %(brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup)
+  system %(brew tap Homebrew/bundle)
+  system %(brew bundle)
+  system %(mkdir ~/.nvm) # NVM needs this to be created
 end
 
 desc "Install base16 options"
 task :base16 do
-  system %Q{git clone git@github.com:chriskempson/base16-shell.git ~/.config/base16-shell}
+  system %(git clone git@github.com:chriskempson/base16-shell.git ~/.config/base16-shell)
 end
 
 desc "Install vim plugins"
 task :vim_plug do
-  system %Q{curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim}
-  system %Q{vim -c "PlugInstall 4" -c "qall"}
+  system %(curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim)
+  system %(vim -c "PlugInstall 4" -c "qall")
 end
 
 desc "Symlink files"
@@ -69,13 +69,13 @@ task :symlink do
 end
 
 def replace_file(file)
-  system %Q{rm "$HOME/.#{file}"}
+  system %(rm "$HOME/.#{file}")
   link_file(file)
 end
 
 def link_file(file)
   puts "linking ~/.#{file}"
-  system %Q{ln -s "$PWD/#{file}" "$HOME/.#{file}"}
+  system %(ln -s "$PWD/#{file}" "$HOME/.#{file}")
 end
 
 task :switch_to_zsh do
@@ -86,7 +86,7 @@ task :switch_to_zsh do
     case $stdin.gets.chomp
     when 'y'
       puts "switching to zsh"
-      system %Q{sudo dscl . -create /Users/$USER UserShell `which zsh`}
+      system %(sudo dscl . -create /Users/$USER UserShell `which zsh`)
     when 'q'
       exit
     else
@@ -96,9 +96,9 @@ task :switch_to_zsh do
 end
 
 task :ruby do
-  system %Q{ruby-install ruby}
-  system %Q{gem install tmuxinator} # will this always be executed for the latest ruby?
-  system %Q{gem install timetrap} # will this always be executed for the latest ruby?
+  system %(ruby-install ruby)
+  system %(gem install tmuxinator) # will this always be executed for the latest ruby?
+  system %(gem install timetrap) # will this always be executed for the latest ruby?
 end
 
 task :prezto do
@@ -109,8 +109,8 @@ task :prezto do
     case $stdin.gets.chomp
     when 'y'
       puts "installing zprezto"
-      system %Q{git clone --recursive https://github.com/phantomwhale/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"}
-      system %Q{for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do; ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"; done}
+      system %(git clone --recursive https://github.com/phantomwhale/prezto.git "${ZDOTDIR:-$HOME}/.zprezto")
+      system %(for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do; ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"; done)
     when 'q'
       exit
     else

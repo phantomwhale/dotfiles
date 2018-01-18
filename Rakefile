@@ -79,7 +79,7 @@ def link_file(file)
   system %(ln -s "$PWD/#{file}" "$HOME/.#{file}")
 end
 
-task :switch_to_zsh do
+task :zsh do
   if ENV["SHELL"] =~ /zsh/
     puts "using zsh"
   else
@@ -88,6 +88,7 @@ task :switch_to_zsh do
     when 'y'
       puts "switching to zsh"
       system %(sudo dscl . -create /Users/$USER UserShell `which zsh`)
+      system %(exec zsh)
     when 'q'
       exit
     else

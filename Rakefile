@@ -103,6 +103,11 @@ task :ruby do
   system %(gem install timetrap) # will this always be executed for the latest ruby?
 end
 
+task :keychain do
+  system %(ln -s ~/Dropbox\\ \\(Personal\\)/ ~/Dropbox)
+  system %(security list-keychains -s ~/Dropbox/.keychain/*.keychain)
+end
+
 task :prezto do
   if File.exist?(File.join(ENV['HOME'], ".zprezto"))
     puts "found ~/.zprezto"

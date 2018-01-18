@@ -16,6 +16,7 @@ task :ssh do
   secret = STDIN.gets.strip
   system %(eval $(op signin #{vault} ben.turner@pobox.com #{secret}) && op get document id_rsa > ~/.ssh/id_rsa)
   system %(chmod 600 ~/.ssh/id_rsa)
+  system %(ssh-add ~/.ssh/id_rsa)
 end
 
 desc "Install brew bundle"

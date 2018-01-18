@@ -21,6 +21,7 @@ end
 desc "Install brew bundle"
 task :brew do
   system %Q{/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"}
+  system %Q{brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup}
   system %Q{brew tap Homebrew/bundle}
   system %Q{brew bundle}
   system %q{mkdir ~/.nvm} # NVM needs this to be created

@@ -1,6 +1,6 @@
 # My Dot Files
 
-I am running Linux. These files (and this README) are based off Ryan Bates dotfiles, although they have drifted quite far away now !
+I am running MacOS. These files (and this README) were many years ago based off Ryan Bates dotfiles, although they have drifted far, far away now !
 
 ## Installation
 
@@ -10,14 +10,13 @@ Run the following commands in your terminal. It will prompt you before it does a
 git clone https://github.com/phantomwhale/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 rake install
-
-# Vim plugins need vundle
-
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-vim +BundleInstall +qall
 ```
-
-After installing, open a new terminal window to see the effects.
 
 Feel free to customize the .zshrc file to match your preference.
 
+After installing Dropbox, and syncing over the files, you may want to sync up your keychains via:
+
+```terminal
+cd ~/.dotfiles
+rake keychain
+```

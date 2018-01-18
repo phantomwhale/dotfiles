@@ -17,6 +17,7 @@ task :ssh do
   system %(eval $(op signin #{vault} ben.turner@pobox.com #{secret}) && op get document id_rsa > ~/.ssh/id_rsa)
   system %(chmod 600 ~/.ssh/id_rsa)
   system %(ssh-add ~/.ssh/id_rsa)
+  system %(ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub)
 end
 
 desc "Install brew bundle"

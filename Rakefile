@@ -100,8 +100,8 @@ end
 
 task :ruby do
   system %(ruby-install ruby)
-  system %(gem install tmuxinator) # will this always be executed for the latest ruby?
-  system %(gem install timetrap) # will this always be executed for the latest ruby?
+  #system %(gem install tmuxinator) # will this always be executed for the latest ruby?
+  #system %(gem install timetrap) # will this always be executed for the latest ruby?
 end
 
 task :keychain do

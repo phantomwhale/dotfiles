@@ -1,7 +1,7 @@
 require 'rake'
 
 desc "install dotfiles into home directory"
-task :install => %i[brew ssh symlink zsh base16 vim_plug ruby]
+task :install => %i[brew ssh symlink ruby base16 zsh vim_plug]
 
 desc "Init and update submodules"
 task :submodules do

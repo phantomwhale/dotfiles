@@ -1,7 +1,7 @@
 require 'rake'
 
 desc "install dotfiles into home directory"
-task :install => %i[brew ssh symlink ruby base16 node zsh vim_plug]
+task :install => %i[brew ssh symlink ruby base16 zsh vim_plug]
 
 desc "Init and update submodules"
 task :submodules do
@@ -110,11 +110,6 @@ task :ruby do
   system %(ruby-install ruby)
   #system %(gem install tmuxinator) # will this always be executed for the latest ruby?
   #system %(gem install timetrap) # will this always be executed for the latest ruby?
-end
-
-task :node do
-  puts "Installed latest node via nvm"
-  system %(nvm install node)
 end
 
 task :keychain do

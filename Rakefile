@@ -106,10 +106,3 @@ task :ruby do
   #system %(gem install tmuxinator) # will this always be executed for the latest ruby?
   #system %(gem install timetrap) # will this always be executed for the latest ruby?
 end
-
-task :keychain do
-  # TODO: Fail if dropbox hasn't been installed / synced
-  system %(ln -s ~/Dropbox\\ \\(Personal\\)/ ~/Dropbox)
-  system %(security list-keychains -s ~/Dropbox/.keychain/*.keychain)
-  system %(security default-keychain -s ~/Dropbox/.keychain/login.keychain)
-end

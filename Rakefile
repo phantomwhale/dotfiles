@@ -17,6 +17,7 @@ task :ssh do
   secret = STDIN.gets.strip
   # TODO: don't override file if it already exists
   system %(eval $(op signin #{vault} ben.turner@pobox.com #{secret}) && op get document id_rsa > ~/.ssh/id_rsa)
+  # TODO: retry if file doesn't now exist
   system %(chmod 600 ~/.ssh/id_rsa)
   system %(ssh-add ~/.ssh/id_rsa)
   system %(ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub)

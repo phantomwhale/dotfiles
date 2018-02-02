@@ -3,11 +3,6 @@ require 'rake'
 desc "install dotfiles into home directory"
 task :install => %i[brew ssh symlink ruby base16 zsh vim_plug]
 
-desc "Init and update submodules"
-task :submodules do
-  system('git submodule update --init')
-end
-
 desc "Get hold of SSH key"
 task :ssh do
   puts "Setting up SSH keys"
@@ -117,22 +112,4 @@ task :keychain do
   system %(ln -s ~/Dropbox\\ \\(Personal\\)/ ~/Dropbox)
   system %(security list-keychains -s ~/Dropbox/.keychain/*.keychain)
   system %(security default-keychain -s ~/Dropbox/.keychain/login.keychain)
-end
-
-task :prezto do
-  if File.exist?(File.join(ENV['HOME'], ".zprezto"))
-    puts "found ~/.zprezto"
-  else
-    print "install zprezto? [ynq] "
-    case $stdin.gets.chomp
-    when 'y'
-      puts "installing zprezto"
-      system %(git clone --recursive https://github.com/phantomwhale/prezto.git "${ZDOTDIR:-$HOME}/.zprezto")
-      system %(for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do; ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"; done)
-    when 'q'
-      exit
-    else
-      puts "skipping zpretzo, you will need to change ~/.zshrc"
-    end
-  end
 end

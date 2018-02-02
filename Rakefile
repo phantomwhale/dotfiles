@@ -14,6 +14,7 @@ task :ssh do
   vault = STDIN.gets.strip
   STDOUT.puts "Input secret key for 1password vault:"
   secret = STDIN.gets.strip
+  # TODO: don't override file if it already exists
   system %(eval $(op signin #{vault} ben.turner@pobox.com #{secret}) && op get document id_rsa > ~/.ssh/id_rsa)
   system %(chmod 600 ~/.ssh/id_rsa)
   system %(ssh-add ~/.ssh/id_rsa)
@@ -105,6 +106,7 @@ task :ruby do
 end
 
 task :keychain do
+  # TODO: Fail if dropbox hasn't been installed / synced
   system %(ln -s ~/Dropbox\\ \\(Personal\\)/ ~/Dropbox)
   system %(security list-keychains -s ~/Dropbox/.keychain/*.keychain)
   system %(security default-keychain -s ~/Dropbox/.keychain/login.keychain)

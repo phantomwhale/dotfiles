@@ -10,6 +10,7 @@ end
 
 desc "Get hold of SSH key"
 task :ssh do
+  puts "Setting up SSH keys"
   STDOUT.puts "Input 1password vault:"
   vault = STDIN.gets.strip
   STDOUT.puts "Input secret key for 1password vault:"
@@ -23,6 +24,7 @@ end
 
 desc "Install brew bundle"
 task :brew do
+  puts "Installing brew and all brewfile packages"
   system %(/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)")
   system %(brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup)
   system %(brew tap Homebrew/bundle)
@@ -32,11 +34,13 @@ end
 
 desc "Install base16 options"
 task :base16 do
+  puts "Installing base16 shell options"
   system %(git clone git@github.com:chriskempson/base16-shell.git ~/.config/base16-shell)
 end
 
 desc "Install vim plugins"
 task :vim_plug do
+  puts "Installing vim plugins"
   system %(curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim)
   system %(vim -c "PlugInstall 4" -c "qall")
@@ -44,6 +48,7 @@ end
 
 desc "Symlink files"
 task :symlink do
+  puts "Symlinking all dotfiles"
   replace_all = false
   Dir['*'].each do |file|
     next if %w[Rakefile Brewfile README.md LICENSE id_dsa.pub].include? file
@@ -100,6 +105,7 @@ task :zsh do
 end
 
 task :ruby do
+  puts "Installing latest ruby version"
   system %(ruby-install ruby)
   #system %(gem install tmuxinator) # will this always be executed for the latest ruby?
   #system %(gem install timetrap) # will this always be executed for the latest ruby?

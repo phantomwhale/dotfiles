@@ -2,6 +2,7 @@ mafredri/zsh-async           # needed by sindresorhus/pure
 Tarrasch/zsh-bd              # adds the bd command to go back directories
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
+lukechilds/zsh-nvm           # Manage nvm better within zsh
 
 djui/alias-tips              # Remind me when I'm not using my aliases
 

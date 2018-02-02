@@ -14,12 +14,7 @@ rake install
 
 Feel free to customize the .zshrc file to match your preference.
 
-After installing Dropbox, and syncing over the files, you may want to sync up your keychains via:
-
-```terminal
-cd ~/.dotfiles
-rake keychain
-```
+## Manual steps
 
 Some things are not automated when moving between machines, such as:
 

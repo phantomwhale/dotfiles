@@ -117,4 +117,6 @@ task :restore do
   puts "Restoring non-dotfile settings"
   system %(cp ~/Dropbox/.backup/Sequel\\ Pro/Favorites.plist ~/Library/Application\\ Support/Sequel\\ Pro/Data/)
   system %(cp ~/Dropbox/.backup/Keychains/*.keychain ~/Library/Keychains/)
+  system %(security list-keychains -s ~/Library/Keychains/*.keychain)
+  system %(security default-keychain -s ~/Library/Keychains/login.keychain)
 end

@@ -110,9 +110,11 @@ end
 task :backup do
   puts "backing up non-dotfile settings"
   system %(mkdir -p ~/Dropbox/.backup/Sequel\\ Pro/ && cp ~/Library/Application\\ Support/Sequel\\ Pro/Data/Favorites.plist ~/Dropbox/.backup/Sequel\\ Pro/)
+  system %(mkdir -p ~/Dropbox/.backup/Keychains/ && cp ~/Library/Keychains/*.keychain ~/Dropbox/.backup/Keychains/)
 end
 
 task :restore do
   puts "Restoring non-dotfile settings"
   system %(cp ~/Dropbox/.backup/Sequel\\ Pro/Favorites.plist ~/Library/Application\\ Support/Sequel\\ Pro/Data/)
+  system %(cp ~/Dropbox/.backup/Keychains/*.keychain ~/Library/Keychains/)
 end

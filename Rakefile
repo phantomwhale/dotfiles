@@ -106,3 +106,13 @@ task :ruby do
   #system %(gem install tmuxinator) # will this always be executed for the latest ruby?
   #system %(gem install timetrap) # will this always be executed for the latest ruby?
 end
+
+task :backup do
+  puts "backing up non-dotfile settings"
+  system %(mkdir -p ~/Dropbox/.backup/Sequel\\ Pro/ && cp ~/Library/Application\\ Support/Sequel\\ Pro/Data/Favorites.plist ~/Dropbox/.backup/Sequel\\ Pro/)
+end
+
+task :restore do
+  puts "Restoring non-dotfile settings"
+  system %(cp ~/Dropbox/.backup/Sequel\\ Pro/Favorites.plist ~/Library/Application\\ Support/Sequel\\ Pro/Data/)
+end

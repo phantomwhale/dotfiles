@@ -47,7 +47,7 @@ brew "speedtest-cli"
 brew "the_silver_searcher"
 brew "tmux"
 brew "todo-txt"
-brew "vim", args: ["with-override-system-vi"]
+brew "vim", args: ["with-override-system-vi", "with-python@2"]
 brew "youtube-dl"
 brew "zsh"
 

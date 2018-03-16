@@ -29,12 +29,12 @@ source ~/.zsh/lib/keybinds.zsh
 # history setup
 source ~/.zsh/lib/history.zsh
 
-# NVM setup
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
-
 # Setup antibody shell plugin manager
 source <(antibody init)
 antibody bundle < ~/.antibody.txt
+
+# NVM setup
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

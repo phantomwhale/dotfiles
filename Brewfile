@@ -31,6 +31,7 @@ brew "ctags"
 brew "dfu-util" # for configuring my Ergodox keyboard
 brew "dos2unix"
 brew "fzf"
+brew "git", args: ["without-completions"]
 brew "go", args: ["cross-compile-common"]
 brew "heroku"
 brew "htop"

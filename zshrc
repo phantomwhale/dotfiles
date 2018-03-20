@@ -33,6 +33,9 @@ source ~/.zsh/lib/history.zsh
 source <(antibody init)
 antibody bundle < ~/.antibody.txt
 
+# This seems to make my git completion work (https://stackoverflow.com/questions/26462667/git-completion-not-working-in-zsh-on-os-x-yosemite-with-homebrew)
+autoload -U compinit && compinit
+
 # NVM setup
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"

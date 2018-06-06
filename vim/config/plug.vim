@@ -56,5 +56,6 @@ endfunction
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/RelativeNumberCurrentWindow'
+Plug 'yssl/QFEnter'
 
 call plug#end()

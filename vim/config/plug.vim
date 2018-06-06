@@ -11,6 +11,7 @@ Plug 'mxw/vim-jsx'
 Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'benmills/vimux'

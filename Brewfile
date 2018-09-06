@@ -31,6 +31,7 @@ brew "getantibody/tap/antibody"
 brew "chruby"
 brew "cmake"
 brew "ctags"
+brew "dep"
 brew "dfu-util" # for configuring my Ergodox keyboard
 brew "dos2unix"
 brew "fzf"

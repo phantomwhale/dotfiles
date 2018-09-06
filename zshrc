@@ -1,8 +1,11 @@
 # ensure dotfiles bin directory is loaded first
 PATH="$HOME/.bin:$PATH"
 
+# set a GOPATH
+GOPATH="$HOME/go"
+
 # Add go bin folder to path
-PATH="$PATH:$HOME/go/bin"
+PATH="$PATH:$GOAPTH/bin"
 
 # Lets edit with vim, because emacs is gross
 # bindkey -e;

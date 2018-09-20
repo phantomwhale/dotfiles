@@ -32,15 +32,14 @@ source ~/.zsh/lib/keybinds.zsh
 # history setup
 source ~/.zsh/lib/history.zsh
 
+# Ensure NVM is lazily loaded; this also avoids the tmux path_helper issues https://github.com/creationix/nvm/issues/1652
+export NVM_LAZY_LOAD=true
+
 # Setup antibody shell plugin manager
 source <(antibody init)
 antibody bundle < ~/.antibody.txt
 
 # This seems to make my git completion work (https://stackoverflow.com/questions/26462667/git-completion-not-working-in-zsh-on-os-x-yosemite-with-homebrew)
 autoload -U compinit && compinit
-
-# NVM setup
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

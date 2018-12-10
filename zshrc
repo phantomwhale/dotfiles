@@ -7,6 +7,9 @@ GOPATH="$HOME/go"
 # Add go bin folder to path
 PATH="$PATH:$GOAPTH/bin"
 
+# Ensure we have enough space (100GB) for all the dockers
+export VIRTUALBOX_DISK_SIZE=100000
+
 # Lets edit with vim, because emacs is gross
 # bindkey -e;
 bindkey -v;

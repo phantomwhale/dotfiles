@@ -12,6 +12,7 @@ Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
+Plug 'rhysd/vim-clang-format'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'benmills/vimux'

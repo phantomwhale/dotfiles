@@ -145,6 +145,9 @@ if has("autocmd")
 
     "autocmd BufWritePost * nested if &filetype=='plantuml' | Make!
 
+    " Autoformat proto files
+    autocmd FileType proto ClangFormatAutoEnable
+
     autocmd BufRead,BufNewFile */99designs/* let g:rspec_command='call VimuxRunCommand("99dev compose run workbench bundle exec rspec {spec}")'
   augroup END
 end

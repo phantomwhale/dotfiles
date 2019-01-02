@@ -42,6 +42,14 @@ task :vim_plug do
   system %(vim -c "PlugInstall 4" -c "qall")
 end
 
+desc "Install neovim plugins"
+task :neovim
+  system %(npm install -g neovim)
+  system %(gem install neovim)
+  system %(pip2 install --user --upgrade pynvim)
+  system %(pip3 install --user --upgrade pynvim)
+end
+
 desc "Symlink files"
 task :symlink do
   puts "Symlinking all dotfiles"

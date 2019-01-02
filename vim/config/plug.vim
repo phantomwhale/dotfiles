@@ -2,7 +2,7 @@ call plug#begin('~/.vim/plugged')
 
 " Plugs go here
 
-" Syntax highlighting
+" Syntax highlighting and formatting
 Plug 'aklt/plantuml-syntax'
 Plug 'evidens/vim-twig'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }

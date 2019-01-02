@@ -91,7 +91,7 @@ noremap <leader>av :call rails_test#vsplit_spec()<cr>
 let g:VimuxOrientation = "h"
 noremap <Leader>vp :VimuxPromptCommand<CR>
 noremap <Leader>vl :VimuxRunLastCommand<CR>
-noremap <Leader>vs :call VimuxRunCommand("clear; 99cr workbench rspec " . bufname("%"))<CR>
+noremap <Leader>vs :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>
 noremap <Leader>vi :VimuxInspectRunner<CR>
 noremap <Leader>vz :VimuxZoomRunner<CR>
 

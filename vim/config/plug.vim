@@ -17,7 +17,7 @@ Plug 'rhysd/vim-clang-format'
 Plug 'airblade/vim-gitgutter'
 Plug 'benmills/vimux'
 Plug 'chriskempson/base16-vim'
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator', { 'branch': 'indicator' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ecomba/vim-ruby-refactoring'
 Plug 'honza/vim-snippets'

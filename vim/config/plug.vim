@@ -17,7 +17,9 @@ Plug 'rhysd/vim-clang-format'
 Plug 'airblade/vim-gitgutter'
 Plug 'benmills/vimux'
 Plug 'chriskempson/base16-vim'
-Plug 'christoomey/vim-tmux-navigator', { 'branch': 'indicator' }
+" Oh noes! The PR to fix up this for nvim was deleted. Have forked locally.
+Plug 'phantomwhale/vim-tmux-navigator', { 'branch': 'indicator' }
+"Plug 'christoomey/vim-tmux-navigator', { 'branch': 'indicator' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ecomba/vim-ruby-refactoring'
 Plug 'honza/vim-snippets'

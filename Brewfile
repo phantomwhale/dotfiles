@@ -38,6 +38,7 @@ brew "dos2unix"
 brew "fzf"
 brew "git", args: ["without-completions"]
 brew "go", args: ["cross-compile-common"]
+brew "graphviz"
 brew "heroku"
 brew "htop"
 brew "hub"

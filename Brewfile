@@ -28,6 +28,7 @@ cask "vlc"
 
 brew "awscli"
 brew "getantibody/tap/antibody"
+brew "chamber"
 brew "chruby"
 brew "clang-format"
 brew "cmake"

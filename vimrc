@@ -146,6 +146,7 @@ if has("autocmd")
     "autocmd BufWritePost * nested if &filetype=='plantuml' | Make!
 
     " Autoformat proto files
+    let g:clang_format#style_options = { "IndentWidth": 4, "ColumnLimit": 120 }
     autocmd FileType proto ClangFormatAutoEnable
 
     " Better Go

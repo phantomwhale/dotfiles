@@ -5,7 +5,7 @@ PATH="$HOME/.bin:$PATH"
 GOPATH="$HOME/go"
 
 # Add go bin folder to path
-PATH="$PATH:$GOAPTH/bin"
+PATH="$PATH:$GOPATH/bin"
 
 # Ensure we have enough space (100GB) for all the dockers
 export VIRTUALBOX_DISK_SIZE=100000

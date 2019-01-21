@@ -1,11 +1,11 @@
 # ensure dotfiles bin directory is loaded first
-PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
 
 # set a GOPATH
-GOPATH="$HOME/go"
+export GOPATH="$HOME/go"
 
 # Add go bin folder to path
-PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:$GOPATH/bin"
 
 # Ensure we have enough space (100GB) for all the dockers
 export VIRTUALBOX_DISK_SIZE=100000

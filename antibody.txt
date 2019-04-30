@@ -8,5 +8,4 @@ djui/alias-tips              # Remind me when I'm not using my aliases
 
 # these should come last (stated at https://github.com/caarlos0/dotfiles/blob/master/antibody/bundles.txt)
 sindresorhus/pure
-zsh-users/zsh-syntax-highlighting
-zsh-users/zsh-history-substring-search   # wants syntax highlighting loaded FIRST
+zdharma/fast-syntax-highlighting         # hopefully this gives us syntax highlighting without breaking pure

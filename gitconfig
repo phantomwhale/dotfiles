@@ -24,7 +24,6 @@
   branch = auto
 [core]
   excludesfile = ~/.gitignore
-  editor = vim
   autocrlf = input
 [apply]
   whitespace = nowarn
@@ -42,6 +41,6 @@
 [fetch]
 	prune = true
 [url "git@github.com:"]
-	insteadof = https://github.com/
+	insteadOf = https://github.com/
 [rebase]
 	autosquash = true

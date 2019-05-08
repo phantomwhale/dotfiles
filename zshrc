@@ -18,6 +18,10 @@ bindkey -v;
 # bindkey '^[[1;9C' forward-word;
 # bindkey '^[[1;9D' backward-word;
 
+# Establish neovim as default editor
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+
 # Set up bash aliases
 source ~/.bash/aliases
 

@@ -37,3 +37,7 @@ let g:ctrlp_max_files=0
 
 " exclude git ignored files
 let g:ctrlp_user_command='ag -Q -l --nocolor --hidden -g "" %s'
+
+" Stop gutentags getting upset in short-lived sessions
+" https://github.com/ludovicchabant/vim-gutentags/issues/178
+let g:gutentags_exclude_filetypes=['gitcommit']

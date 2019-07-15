@@ -5,6 +5,7 @@ match ErrorMsg '\s\+$'
 
 " rubocop and ruby-lint in syntastic linter
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+let g:syntastic_ruby_rubocop_exe = 'bundle exec rubocop'
 let g:syntastic_aggregate_errors = 1
 
 " ESlint for javascript checking - supports React / JSX / ES6

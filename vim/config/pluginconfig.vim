@@ -11,6 +11,12 @@ let g:syntastic_aggregate_errors = 1
 " ESlint for javascript checking - supports React / JSX / ES6
 let g:syntastic_javascript_checkers = ['eslint']
 
+" Configure ALE to use fixers
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\}
+let g:ale_fix_on_save = 1
+
 let g:ruby_debugger_create_default_mappings = 0
 
 " Format js and jsx files with jsx formatter

@@ -134,12 +134,6 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.md setlocal spell
     autocmd FileType gitcommit setlocal spell
 
-    " Remove trailing whitespace on save (Ruby only)
-    function! TrimWhiteSpace()
-      %s/\s\+$//e
-    endfunction
-    autocmd BufWritePre     *.rb,*.lua :call TrimWhiteSpace()
-
     " syntax highlighting for the forgotten ruby files
     autocmd BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
 

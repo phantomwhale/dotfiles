@@ -14,6 +14,9 @@ Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'rhysd/vim-clang-format'
 
+" Language Severs
+Plug 'w0rp/ale'
+
 Plug 'airblade/vim-gitgutter'
 Plug 'benmills/vimux'
 Plug 'chriskempson/base16-vim'

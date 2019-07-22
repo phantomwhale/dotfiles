@@ -14,6 +14,9 @@ let g:syntastic_javascript_checkers = ['eslint']
 " Configure ALE to use fixers
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'typescript': ['tslint', 'prettier'],
+\   'javascript': ['eslint', 'prettier'],
+\   'css': ['prettier'],
 \}
 let g:ale_fix_on_save = 1
 

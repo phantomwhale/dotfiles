@@ -43,7 +43,7 @@ task :vim_plug do
 end
 
 desc "Install neovim plugins"
-task :neovim
+task :neovim do
   system %(npm install -g neovim)
   system %(gem install neovim)
   system %(pip2 install --user --upgrade pynvim)

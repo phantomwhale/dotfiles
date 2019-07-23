@@ -36,16 +36,14 @@ Plug 'honza/vim-snippets'
 Plug 'jgdavey/vim-blockle'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'ludovicchabant/vim-gutentags'
-"Plug 'kana/vim-textobj-user'
 Plug 'majutsushi/tagbar'
-Plug 'mtscout6/syntastic-local-eslint.vim'
+Plug 'mattn/emmet-vim'
 Plug 'rstacruz/sparkup'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'kana/vim-textobj-user' " dependancy
 Plug 'Raimondi/delimitMate'
 Plug 'rizzatti/dash.vim'
 Plug 'rking/ag.vim'
-Plug 'scrooloose/syntastic'
 Plug 't9md/vim-ruby-xmpfilter'
 Plug 'thoughtbot/vim-rspec'
 Plug 'tomtom/tcomment_vim'
@@ -63,17 +61,5 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/RelativeNumberCurrentWindow'
 Plug 'yssl/QFEnter'
-
-" Dark powered asynchronous completion framework for neovim/Vim8
-if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'  }
-else
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
-Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
-Plug 'zchee/deoplete-go', { 'do': 'make' }
 
 call plug#end()

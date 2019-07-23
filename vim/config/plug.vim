@@ -20,6 +20,10 @@ Plug 'stephpy/vim-yaml'
 " Language Severs
 Plug 'w0rp/ale'
 
+" CoC completion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+
 Plug 'airblade/vim-gitgutter'
 Plug 'benmills/vimux'
 Plug 'chriskempson/base16-vim'

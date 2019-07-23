@@ -14,6 +14,8 @@ Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'rhysd/vim-clang-format'
+Plug 'speshak/vim-cfn'
+Plug 'stephpy/vim-yaml'
 
 " Language Severs
 Plug 'w0rp/ale'

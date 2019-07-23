@@ -7,6 +7,7 @@ Plug 'aklt/plantuml-syntax'
 Plug 'evidens/vim-twig'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'jelera/vim-javascript-syntax'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mxw/vim-jsx'
 Plug 'othree/html5.vim'
 Plug 'othree/javascript-libraries-syntax.vim'

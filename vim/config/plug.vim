@@ -5,7 +5,6 @@ call plug#begin('~/.vim/plugged')
 " Syntax highlighting and formatting
 Plug 'aklt/plantuml-syntax'
 Plug 'evidens/vim-twig'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'jelera/vim-javascript-syntax'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mxw/vim-jsx'
@@ -16,6 +15,14 @@ Plug 'leafgarland/typescript-vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'speshak/vim-cfn'
 Plug 'stephpy/vim-yaml'
+
+" git tooling
+Plug 'tpope/vim-fugitive'
+Plug 'idanarye/vim-merginal'
+Plug 'tpope/vim-rhubarb'
+
+" Go tooling
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " Language Severs
 Plug 'w0rp/ale'
@@ -50,10 +57,8 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'

@@ -37,6 +37,7 @@ brew "chruby"
 brew "clang-format"
 brew "cmake"
 brew "ctags"
+brew "ctop"
 brew "dep"
 brew "dfu-util" # for configuring my Ergodox keyboard
 brew "dos2unix"

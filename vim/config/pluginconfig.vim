@@ -27,6 +27,9 @@ let g:coc_global_extensions = [
 \  'coc-solargraph'
 \]
 
+" Turn off goto definition from vim-go - we'll use CoC instead
+let g:go_def_mapping_enabled = 0
+
 let g:ruby_debugger_create_default_mappings = 0
 
 " Format js and jsx files with jsx formatter

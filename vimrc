@@ -46,9 +46,9 @@ set softtabstop=2                 " Number of spaces to skip/insert when <BS> or
 set tabstop=2                     " <tab> uses width of two spaces
 set expandtab                     " Use spaces, not tabs
 
-" Auto indent pasted text
-noremap p p=`]<C-o>
-noremap P P=`]<C-o>
+" Better display for messages
+set cmdheight=2
+
 
 " ============ File types ============
 " Let file types decide their plugin and indent settings
@@ -102,6 +102,8 @@ set mouse=a
 source $CONFIG/pluginconfig.vim
 source $CONFIG/rails_test.vim
 source $CONFIG/keybinds.vim
+source $CONFIG/coc.vim
+
 
 " ============ Autocommands =============
 if has("autocmd")
@@ -145,28 +147,33 @@ if has("autocmd")
     autocmd FileType proto ClangFormatAutoEnable
 
     " Better Go
-     au FileType go nmap <Leader>s <Plug>(go-implements)
-     au FileType go nmap <Leader>i <Plug>(go-info)
-     au FileType go nmap <Leader>gd <Plug>(go-doc)
-     au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-     au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-     au FileType go nmap <leader>r <Plug>(go-run)
-     au FileType go nmap <leader>b <Plug>(go-build)
-     au FileType go nmap <leader>t <Plug>(go-test)
-     au FileType go nmap <leader>c <Plug>(go-coverage)
-     au FileType go nmap <Leader>ds <Plug>(go-def-split)
-     au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-     au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+     "au FileType go nmap <Leader>s <Plug>(go-implements)
+     "au FileType go nmap <Leader>i <Plug>(go-info)
+     "au FileType go nmap <Leader>gd <Plug>(go-doc)
+     "au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+     "au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+     "au FileType go nmap <leader>r <Plug>(go-run)
+     "au FileType go nmap <leader>b <Plug>(go-build)
+     "au FileType go nmap <leader>t <Plug>(go-test)
+     "au FileType go nmap <leader>c <Plug>(go-coverage)
+     "au FileType go nmap <Leader>ds <Plug>(go-def-split)
+     "au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+     "au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 
      " Enable syntax highting on everything
-     let g:go_highlight_functions = 1
-     let g:go_highlight_methods = 1
-     let g:go_highlight_structs = 1
-     let g:go_highlight_operators = 1
-     let g:go_highlight_build_constraints = 1
+     "let g:go_highlight_functions = 1
+     "let g:go_highlight_methods = 1
+     "let g:go_highlight_structs = 1
+     "let g:go_highlight_operators = 1
+     "let g:go_highlight_build_constraints = 1
+
+     " run goimports instead of gofmt on save; boom, instant imports!
+     "let g:go_fmt_command = "goimports"
 
      " Stop vim-go and GoFmt from ruining all my folds (https://github.com/fatih/vim-go/issues/502)
-     let g:go_fmt_experimental = 1
+     "let g:go_fmt_experimental = 1
+
+    autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
 
     autocmd BufRead,BufNewFile */99designs/workbench/* let g:rspec_command='call VimuxRunCommand("99dev compose run workbench bundle exec rspec {spec}")'
   augroup END

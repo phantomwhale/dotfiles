@@ -9,7 +9,7 @@ Run the following commands in your terminal. It will prompt you before it does a
 ```terminal
 git clone https://github.com/phantomwhale/dotfiles ~/.dotfiles
 cd ~/.dotfiles
-rake install
+./install-osx.sh
 ```
 
 Feel free to customize the .zshrc file to match your preference.

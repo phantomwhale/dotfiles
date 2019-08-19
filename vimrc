@@ -64,6 +64,7 @@ set background=dark
 let base16colorspace=256
 colorscheme base16-monokai
 hi MatchParen cterm=bold
+let g:airline_theme='base16'
 
 " make incomplete lines and tabs visible
 set listchars=tab:▸\ ,extends:>,precedes:<

@@ -31,6 +31,10 @@ Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 
+" superpowered status bar
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 Plug 'airblade/vim-gitgutter'
 Plug 'benmills/vimux'
 Plug 'chriskempson/base16-vim'

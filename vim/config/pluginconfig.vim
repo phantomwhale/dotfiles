@@ -23,7 +23,8 @@ let g:ale_fix_on_save = 1
 " CoC extensions
 " These can be installed with :CocInstall, but I want a record of them here
 let g:coc_global_extensions = [
-\  'coc-tsserver'
+\  'coc-tsserver',
+\  'coc-solargraph'
 \]
 
 let g:ruby_debugger_create_default_mappings = 0

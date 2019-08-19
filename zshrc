@@ -49,4 +49,7 @@ antibody bundle < ~/.antibody.txt
 # This seems to make my git completion work (https://stackoverflow.com/questions/26462667/git-completion-not-working-in-zsh-on-os-x-yosemite-with-homebrew)
 autoload -U compinit && compinit
 
+# kitty auto-completion
+kitty + complete setup zsh | source /dev/stdin
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

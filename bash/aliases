@@ -32,6 +32,7 @@ alias pg-stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.
 
 alias git-branches='for branch in `git branch -r --merged | grep -v HEAD`; do echo -e `git show --format="%ci %cr %an" $branch | head -n 1` \\t$branch; done | sort -r'
 alias git-branches-unmerged='for branch in `git branch -r --no-merged | grep -v HEAD`; do echo -e `git show --format="%ci %cr %an" $branch | head -n 1` \\t$branch; done | sort -r'
+alias git-branches-prune='gco master && git branch --merged master | grep -v " master$" | xargs git branch -d && gco -'
 
 bake() { 99dev config add ~/code/99designs/99dev/config/"$1".99dev.yml ; }
 alias baked='99dev config ls | grep 99dev\/'

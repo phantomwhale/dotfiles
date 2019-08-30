@@ -10,6 +10,9 @@ export PATH="$PATH:$GOPATH/bin"
 # Ensure we have enough space (100GB) for all the dockers
 export VIRTUALBOX_DISK_SIZE=100000
 
+# Give myself an hour when assuming AWS roles, rather than 15 minutes, preventing AWS console timeout hell
+export AWS_ASSUME_ROLE_TTL=1h
+
 # Lets edit with vim, because emacs is gross
 # bindkey -e;
 bindkey -v;

@@ -13,19 +13,17 @@ Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'rhysd/vim-clang-format'
-Plug 'speshak/vim-cfn'
+Plug 'sheerun/vim-polyglot'
 Plug 'stephpy/vim-yaml'
 
 " git tooling
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'idanarye/vim-merginal'
 Plug 'tpope/vim-rhubarb'
 
 " Go tooling
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
-" Language Severs
-Plug 'w0rp/ale'
 
 " CoC completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -35,12 +33,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-Plug 'airblade/vim-gitgutter'
-Plug 'benmills/vimux'
 Plug 'chriskempson/base16-vim'
-" Oh noes! The PR to fix up this for nvim was deleted. Have forked locally.
-Plug 'phantomwhale/vim-tmux-navigator', { 'branch': 'indicator' }
-"Plug 'christoomey/vim-tmux-navigator', { 'branch': 'indicator' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ecomba/vim-ruby-refactoring'
 Plug 'honza/vim-snippets'

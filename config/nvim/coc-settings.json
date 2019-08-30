@@ -1,0 +1,22 @@
+{
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"]
+    },
+    "dockerfile": {
+      "command": "docker-langserver",
+      "filetypes": ["dockerfile"],
+      "args": ["--stdio"]
+    }
+  },
+  "omnisharp.useDotnet": true,
+  "codeLens.enable": true,
+  "solargraph.useBundler": true,
+  "solargraph.commandPath": "/Users/ben/.gem/ruby/2.6.3/bin/solargraph",
+  "solargraph.diagnostics": true,
+  "solargraph.autoformat": true,
+  "solargraph.formatting": true,
+  "solargraph.hover": true
+}

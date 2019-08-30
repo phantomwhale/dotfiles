@@ -56,3 +56,6 @@ autoload -U compinit && compinit
 kitty + complete setup zsh | source /dev/stdin
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# autoload docker-machine environment
+eval $(docker-machine env $(99dev machine-name))

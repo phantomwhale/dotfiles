@@ -10,3 +10,5 @@ chruby ruby
 echo "Installing common tools - tmuxinator and timetrap"
 gem install tmuxinator
 gem install timetrap
+echo "Installing neovim support gem"
+gem install neovim

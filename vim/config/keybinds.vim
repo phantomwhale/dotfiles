@@ -18,19 +18,6 @@ noremap <Leader>] <C-]>
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 
-" Setup mappings for ruby-debugger.
-let g:ruby_debugger_no_maps = 1
-nmap <leader>db <plug>ruby_debugger_breakpoint
-nmap <leader>dv <plug>ruby_debugger_open_variables
-nmap <leader>dm <plug>ruby_debugger_open_breakpoints
-nmap <leader>dt <plug>ruby_debugger_open_frames
-nmap <leader>ds <plug>ruby_debugger_step
-nmap <leader>df <plug>ruby_debugger_finish
-nmap <leader>dn <plug>ruby_debugger_next
-nmap <leader>dc <plug>ruby_debugger_continue
-nmap <leader>de <plug>ruby_debugger_exit
-nmap <leader>dd <plug>ruby_debugger_remove_breakpoints
-
 "Rspec.vim mappings
 map <Leader>s :call RunCurrentSpecFile()<CR>
 map <Leader>S :call RunNearestSpec()<CR>
@@ -46,12 +33,14 @@ autocmd FileType ruby nmap <buffer> <F3> <Plug>(xmpfilter-run)
 autocmd FileType ruby xmap <buffer> <F3> <Plug>(xmpfilter-run)
 autocmd FileType ruby imap <buffer> <F3> <Plug>(xmpfilter-run)
 
-
-" Use F5 to refresh Command-T bindings
-" noremap <F5> :CommandTFlush<CR>
-
 " Tag bar toggle
 nmap <F8> :TagbarToggle<CR>
+
+" Window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 " Tab navigation
 nnoremap th  :tabfirst<CR>
@@ -71,7 +60,6 @@ nnoremap <silent> <C-W>z :wincmd z<Bar>cclose<Bar>lclose<CR>
 
 " Quick editing of config files
 nnoremap <leader>ev <C-w>s<C-w>j<C-w>L:e ~/.vimrc<cr>
-nnoremap <leader>et <C-w>s<C-w>j<C-w>L:e ~/.tmux.conf<cr>
 nnoremap <leader>ep <C-w>s<C-w>j<C-w>L:e $CONFIG/plug.vim<cr>
 nnoremap <leader>ek <C-w>s<C-w>j<C-w>L:e $CONFIG/keybinds.vim<cr>
 nnoremap <leader>ec <C-w>s<C-w>j<C-w>L:e $CONFIG/pluginconfig.vim<cr>
@@ -79,14 +67,6 @@ nnoremap <leader>ec <C-w>s<C-w>j<C-w>L:e $CONFIG/pluginconfig.vim<cr>
 " Auto-create missing rspec tests
 noremap <leader>as :call rails_test#hsplit_spec()<cr>
 noremap <leader>av :call rails_test#vsplit_spec()<cr>
-
-" Vimux bindings
-let g:VimuxOrientation = "h"
-noremap <Leader>vp :VimuxPromptCommand<CR>
-noremap <Leader>vl :VimuxRunLastCommand<CR>
-noremap <Leader>vs :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>
-noremap <Leader>vi :VimuxInspectRunner<CR>
-noremap <Leader>vz :VimuxZoomRunner<CR>
 
 " shortcut for updating vim modules and vim plug all at once
 command! PU PlugUpdate | PlugUpgrade

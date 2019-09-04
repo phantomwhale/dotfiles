@@ -11,8 +11,9 @@
       "args": ["--stdio"]
     }
   },
-  "omnisharp.useDotnet": true,
+  "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown"],
   "codeLens.enable": true,
+  "omnisharp.useDotnet": true,
   "solargraph.useBundler": true,
   "solargraph.commandPath": "/Users/ben/.gem/ruby/2.6.3/bin/solargraph",
   "solargraph.diagnostics": true,

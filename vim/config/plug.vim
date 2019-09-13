@@ -33,6 +33,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Run tests in a separate terminal
+Plug 'janko/vim-test'
+Plug 'dbakker/vim-projectroot'
+
 Plug 'chriskempson/base16-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ecomba/vim-ruby-refactoring'

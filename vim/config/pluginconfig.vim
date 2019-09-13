@@ -50,3 +50,19 @@ let g:ctrlp_user_command='ag -Q -l --nocolor --hidden -g "" %s'
 " Stop gutentags getting upset in short-lived sessions
 " https://github.com/ludovicchabant/vim-gutentags/issues/178
 let g:gutentags_exclude_filetypes=['gitcommit']
+
+" Run tests in a split terminal (default 'basic' strategy uses a new tab)
+let test#strategy = "neovim"
+
+" Run 99dev project tests inside the appropriate docker container
+" Note that this assumes the docker container is named after the project root
+" folder, which is USUALLY the rule...
+function! NNdevTransform(cmd) abort
+  let docker_project = fnamemodify(projectroot#guess(), ':t')
+  return '99dev compose run '.docker_project.' '.a:cmd
+endfunction
+let g:test#custom_transformations = {'99dev': function('NNdevTransform')}
+
+if !empty(glob("99dev.yml"))
+  let g:test#transformation = '99dev'
+endif

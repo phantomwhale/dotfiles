@@ -5,6 +5,7 @@ set backspace=indent,eol,start  " allow backspacing over everything in insert mo
 set history=1000                " number of lines of command line history to store
 set showcmd		                  " display incomplete commands
 set showmode		                " display current mode
+set autowrite                   " ensure files are written when we call :make
 set autoread                    " Reload files changed outside of vim
 set hidden                      " allow hidden buffers
 

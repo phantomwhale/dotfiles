@@ -4,7 +4,6 @@ tap "homebrew/cask-versions"
 
 cask "1password"
 cask "1password-cli"
-cask "alacritty"
 cask "aws-vault"
 cask "betterzip"
 cask "calibre"

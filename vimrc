@@ -182,3 +182,9 @@ if has("autocmd")
     augroup END
   augroup END
 end
+
+if has('nvim')
+  " ESC out of terminal mode
+  :tnoremap <Esc> <C-\><C-n>
+  :tnoremap <M-[> <Esc>
+endif

@@ -174,5 +174,11 @@ if has("autocmd")
     autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
 
     autocmd BufRead,BufNewFile */99designs/workbench/* let g:rspec_command='call VimuxRunCommand("99dev compose run workbench bundle exec rspec {spec}")'
+
+    " wrap long lines in quickfix
+    augroup quickfix
+      autocmd!
+      autocmd FileType qf setlocal wrap
+    augroup END
   augroup END
 end

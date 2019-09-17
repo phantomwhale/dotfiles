@@ -1,5 +1,3 @@
-" this is VIM country!!!
-set nocompatible
 
 " ============ General Config ============
 set relativenumber              " relative line numbers

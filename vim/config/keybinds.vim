@@ -24,6 +24,13 @@ map <Leader>S :call RunNearestSpec()<CR>
 map <Leader>L :call RunLastSpec()<CR>
 map <Leader>A :call RunAllSpecs()<CR>
 
+" Test vim mappings
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
+
 " XMP Filter keybinds
 autocmd FileType ruby nmap <buffer> <F2> <Plug>(xmpfilter-mark)
 autocmd FileType ruby xmap <buffer> <F2> <Plug>(xmpfilter-mark)

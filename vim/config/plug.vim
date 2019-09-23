@@ -19,7 +19,6 @@ Plug 'stephpy/vim-yaml'
 " git tooling
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'idanarye/vim-merginal'
 Plug 'tpope/vim-rhubarb'
 
 " Go tooling

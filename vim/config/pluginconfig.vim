@@ -1,5 +1,8 @@
 match ErrorMsg '\s\+$'
 
+" Disable endwise key mapping as it conflicts with <CR> mapping we use for
+let g:endwise_no_mappings = 1
+
 " Configure ALE to use fixers
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],

@@ -4,8 +4,14 @@ export PATH="$HOME/.bin:$PATH"
 # set a GOPATH
 export GOPATH="$HOME/go"
 
+# Required by go 1.13
+export GOPRIVATE=github.com/99designs
+
 # Add go bin folder to path
 export PATH="$PATH:$GOPATH/bin"
+
+# Add fastlane to path
+export PATH="$HOME/.fastlane/bin:$PATH"
 
 # Ensure we have enough space (100GB) for all the dockers
 export VIRTUALBOX_DISK_SIZE=100000

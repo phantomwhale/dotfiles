@@ -39,6 +39,10 @@ alias baked='99dev config ls | grep 99dev\/'
 unbake() { 99dev config add ~/code/99designs/"$1" ; }
 alias unbaked='99dev config ls | grep -v 99dev\/'
 
+note() { vim ~/Documents/"$1" ; }
+
+alias eslog='curl -XPUT '"'"'http://localhost.dockervm:49200/_all/_settings?preserve_existing=true'"'"' -H "Content-Type: application/json" -d '"'"'{ "index.search.slowlog.threshold.query.debug" : "0s" }'"'"''
+
 # Prezto git aliases (https://github.com/sorin-ionescu/prezto/blob/master/modules/git/alias.zsh)
 
 # Log

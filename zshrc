@@ -64,4 +64,6 @@ kitty + complete setup zsh | source /dev/stdin
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # autoload docker-machine environment
-eval $(docker-machine env $(99dev machine-name) 2> /dev/null)
+if [ -x "$(command -v 99dev)" ]; then
+  eval $(docker-machine env $(99dev machine-name) 2> /dev/null)
+fi

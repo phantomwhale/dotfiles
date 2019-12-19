@@ -16,7 +16,8 @@ let g:ale_fix_on_save = 1
 " These can be installed with :CocInstall, but I want a record of them here
 let g:coc_global_extensions = [
 \  'coc-tsserver',
-\  'coc-solargraph'
+\  'coc-solargraph',
+\  'coc-omnisharp'
 \]
 
 " Turn off goto definition from vim-go - we'll use CoC instead

@@ -3,6 +3,14 @@
 set -euo pipefail
 
 echo "Setting up SSH keys"
+echo "Ensure ~/.ssh exists"
+mkdir -p ~/.ssh
+
+if [ -f ~/.ssh/id_rsa ]; then
+  echo "SSH key already exists, skipping..."
+  exit 0
+fi
+
 echo "Input 1password vault:"
 read vault
 echo "Input secret key for 1password vault:"

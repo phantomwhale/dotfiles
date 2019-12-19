@@ -3,12 +3,12 @@
 set -euo pipefail
 
 echo "Installing latest ruby version"
-ruby-install ruby
+ruby-install --no-reinstall ruby
 echo "Changing to latest version"
+PREFIX="${PREFIX:-/usr/local}"  # https://github.com/postmodern/chruby/issues/417
 source /usr/local/share/chruby/chruby.sh
 chruby ruby
-echo "Installing common tools - tmuxinator and timetrap"
-gem install tmuxinator
-gem install timetrap
+echo "Installing common tools - timetrap"
+gem install --no-document  timetrap  # https://github.com/samg/timetrap/issues/176
 echo "Installing neovim support gem"
 gem install neovim

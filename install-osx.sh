@@ -7,10 +7,10 @@ set -euo pipefail
 abs_path=$(perl -MCwd -e "print Cwd::abs_path('$0')")
 DOTFILES_DIR=$(cd $(dirname "$abs_path") && pwd)
 
-exec "$DOTFILES_DIR/install/install-brew.sh"
-exec "$DOTFILES_DIR/install/install-ssh.sh"
-exec "$DOTFILES_DIR/install/install-symlinks.sh"
-exec "$DOTFILES_DIR/install/install-ruby.sh"
-exec "$DOTFILES_DIR/install/install-base16.sh"
-exec "$DOTFILES_DIR/install/install-zsh.sh"
-exec "$DOTFILES_DIR/install/install-nvim.sh"
+"$DOTFILES_DIR/install/install-brew.sh"
+"$DOTFILES_DIR/install/install-ssh.sh"
+"$DOTFILES_DIR/install/install-symlinks.sh"
+"$DOTFILES_DIR/install/install-ruby.sh"
+"$DOTFILES_DIR/install/install-base16.sh"
+"$DOTFILES_DIR/install/install-zsh.sh"
+"$DOTFILES_DIR/install/install-nvim.sh"

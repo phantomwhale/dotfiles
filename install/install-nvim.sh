@@ -5,7 +5,6 @@ set -euo pipefail
 # Add neovim language support
 npm install -g neovim
 gem install neovim
-pip2 install --user --upgrade pynvim
 pip3 install --user --upgrade pynvim
 
 # Used by coc-solargraph for ruby language server

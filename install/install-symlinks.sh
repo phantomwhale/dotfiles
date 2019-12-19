@@ -24,7 +24,7 @@ replaces() {
   local replace_all=false
   for infile in "$dir"/*; do
     local filename=$(basename $infile)
-    if ! $(grep -Fxq "$filename" "$dir/.symignore") && [ -f "$infile" ]; then
+    if ! $(grep -Fxq "$filename" "$dir/.symignore"); then
       local outfile="$HOME/.$filename"
       if [ -L "$outfile" ]; then
         if [ "$replace_all" = true ]; then

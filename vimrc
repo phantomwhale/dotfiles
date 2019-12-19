@@ -8,6 +8,7 @@ set showmode		                " display current mode
 set autowrite                   " ensure files are written when we call :make
 set autoread                    " Reload files changed outside of vim
 set hidden                      " allow hidden buffers
+set nofsync                     " fsync causes vim to hang when closing https://github.com/ludovicchabant/vim-gutentags/issues/167#issuecomment-564889922
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.

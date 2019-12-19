@@ -42,8 +42,8 @@ brew "dep"
 brew "dfu-util" # for configuring my Ergodox keyboard
 brew "dos2unix"
 brew "fzf"
-brew "git", args: ["without-completions"]
-brew "go", args: ["cross-compile-common"]
+brew "git"
+brew "go"
 brew "graphviz"
 brew "heroku"
 brew "htop"
@@ -61,7 +61,7 @@ brew "speedtest-cli"
 brew "the_silver_searcher"
 brew "tmux"
 brew "todo-txt"
-brew "vim", args: ["with-override-system-vi", "with-python@2"]
+brew "vim"
 brew "yarn"
 brew "youtube-dl"
 brew "zsh"

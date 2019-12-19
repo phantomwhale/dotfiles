@@ -1,6 +1,7 @@
 tap "getantibody/tap"
 tap "heroku/brew"
 tap "homebrew/bundle"
+tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 
 cask "1password"
@@ -68,7 +69,6 @@ brew "youtube-dl"
 brew "zsh"
 
 # 99dev
-tap "caskroom/cask"
 cask "docker"
 cask "vagrant"
 cask "virtualbox-extension-pack"

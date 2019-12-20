@@ -1,9 +1,11 @@
 #!/bin/bash
 
-set -euo pipefail
+set -eo pipefail
 
 # Add neovim language support
 npm install -g neovim
+source /usr/local/share/chruby/chruby.sh
+chruby ruby
 gem install neovim
 pip3 install --user --upgrade pynvim
 

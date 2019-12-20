@@ -18,7 +18,7 @@ Feel free to customize the .zshrc file to match your preference.
 
 Some things are not automated when moving between machines, such as:
 
-* Copying SequelPro favourites (there are two files you need to copy over for this) - passwords come over in the keychains
+* Copying TablePlus connections (`~/Library/Application\ Support/com.tinyapp.TablePlus/`) - passwords come over in the keychains
 * Little snitch doesn't seem to install automatically via MAS
 * Little-snitch rules need to be backed up and imported
 * DBPowerAmp needs manually installation

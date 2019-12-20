@@ -93,3 +93,5 @@ mas "Monodraw", id: 920404675
 mas "Numbers", id: 409203825
 mas "Logitech Camera Settings", id: 638332853
 mas "GIF Brewery by Gfycat", id: 1081413713
+mas "Amphetamine", id: 937984704
+# mas "XCode", id: 497799835

@@ -23,4 +23,4 @@ Some things are not automated when moving between machines, such as:
 * Little-snitch rules need to be backed up and imported
 * DBPowerAmp needs manually installation
 * Go to iTerm2 > Preferences > “General” tab, and in the “Selection” section, check the box which says “Applications in terminal may access clipboard” if it isn’t checked.
-* Logitech mouse software http://support.logitech.com/en_us/product/performance-mouse-mx/downloads
+* Logitech mouse software https://support.logi.com/hc/en-us/articles/360024700534--Downloads-Performance-Mouse-MX

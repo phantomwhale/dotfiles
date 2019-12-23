@@ -64,7 +64,7 @@
         "version": "13.0.1,9:cec27d702aa74d5a8630c65ae61e4305"
       },
       "kitty": {
-        "version": "0.15.0"
+        "version": "0.15.1"
       },
       "little-snitch": {
         "version": "4.4.3"
@@ -137,6 +137,15 @@
       },
       "epic-games": {
         "version": "10.7.0"
+      },
+      "font-fira-mono": {
+        "version": "3.206,4.202"
+      },
+      "font-fira-mono-for-powerline": {
+        "version": "latest"
+      },
+      "font-fira-sans": {
+        "version": "4.202"
       }
     },
     "brew": {
@@ -859,7 +868,7 @@
       "NordVPN": null,
       "Keynote": {
         "id": "409183694",
-        "version": "9.1"
+        "version": "9.2.1"
       },
       "Monodraw": {
         "id": "920404675",
@@ -867,7 +876,7 @@
       },
       "Numbers": {
         "id": "409203825",
-        "version": "6.1"
+        "version": "6.2.1"
       },
       "Logitech Camera Settings": {
         "id": "638332853",

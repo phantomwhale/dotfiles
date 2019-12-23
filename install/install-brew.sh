@@ -10,3 +10,5 @@ echo "Update and cleanup brew"
 brew update && brew cleanup
 
 mkdir -p ~/.nvim  # Neovim needs this to be created
+
+open /usr/local/Caskroom/little-snitch/*/LittleSnitch-*.dmg # Still need to manually install little snitch

@@ -14,7 +14,7 @@
   "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown"],
   "codeLens.enable": true,
   "omnisharp.useDotnet": true,
-  "solargraph.commandPath": "/Users/ben/.gem/ruby/2.6.3/bin/solargraph",
+  "solargraph.commandPath": "/Users/ben/.gem/ruby/2.6.5/bin/solargraph",
   "solargraph.diagnostics": true,
   "solargraph.autoformat": true,
   "solargraph.formatting": true,

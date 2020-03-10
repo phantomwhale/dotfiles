@@ -61,6 +61,10 @@ autoload -U compinit && compinit
 # kitty auto-completion
 kitty + complete setup zsh | source /dev/stdin
 
+# add general zsh completions
+fpath=(~/.zsh/completions $fpath)
+
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # autoload docker-machine environment

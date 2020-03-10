@@ -10,7 +10,6 @@ djui/alias-tips              # Remind me when I'm not using my aliases
 # ZSH completions
 docker/cli     path:contrib/completion/zsh kind:fpath
 docker/compose path:contrib/completion/zsh kind:fpath
-samg/timetrap  path:completions/zsh        kind:fpath
 
 # these should come last (stated at https://github.com/caarlos0/dotfiles/blob/master/antibody/bundles.txt)
 sindresorhus/pure

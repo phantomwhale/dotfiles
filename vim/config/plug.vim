@@ -67,4 +67,7 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/RelativeNumberCurrentWindow'
 Plug 'yssl/QFEnter'
 
+Plug 'junegunn/goyo.vim'  "distraction free writing
+Plug 'junegunn/limelight.vim'
+
 call plug#end()

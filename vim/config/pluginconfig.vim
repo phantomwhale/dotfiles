@@ -70,3 +70,21 @@ let g:test#custom_transformations = {'99dev': function('NNdevTransform')}
 if !empty(glob("99dev.yml"))
   let g:test#transformation = '99dev'
 endif
+
+" Goyo
+let g:goyo_width=120
+
+function! s:goyo_enter()
+  set wrap
+  set linebreak
+  Limelight
+endfunction
+
+function! s:goyo_leave()
+  set nowrap
+  set nolinebreak
+  Limelight!
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()

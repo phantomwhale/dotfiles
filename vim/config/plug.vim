@@ -42,7 +42,7 @@ Plug 'ecomba/vim-ruby-refactoring'
 Plug 'honza/vim-snippets'
 Plug 'jgdavey/vim-blockle'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'ludovicchabant/vim-gutentags'
+" Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'rstacruz/sparkup'

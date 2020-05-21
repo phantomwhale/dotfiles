@@ -48,6 +48,7 @@ brew "ctop"
 brew "dep"
 brew "dfu-util" # for configuring my Ergodox keyboard
 brew "dos2unix"
+brew "exa"
 brew "fzf"
 brew "git"
 brew "go"

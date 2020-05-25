@@ -7,7 +7,7 @@ alias c='cd ~/code'
 alias d='cd ~/.dotfiles'
 alias depgraph='dep status -dot | dot -T png | open -f -a /Applications/Preview.app'
 alias loc='git diff --shortstat `git hash-object -t tree /dev/null`'
-alias ls=exa
+alias ll='exa -alh'
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log *'
 alias rc='rails console'
 alias t='todo.sh'

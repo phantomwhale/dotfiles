@@ -32,6 +32,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Smooth scrolling
+Plug 'psliwka/vim-smoothie'
+
 " Run tests in a separate terminal
 Plug 'janko/vim-test'
 Plug 'dbakker/vim-projectroot'

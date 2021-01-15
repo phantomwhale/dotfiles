@@ -35,6 +35,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Smooth scrolling
 Plug 'psliwka/vim-smoothie'
 
+Plug 'scrooloose/vim-slumlord'
 " Run tests in a separate terminal
 Plug 'janko/vim-test'
 Plug 'dbakker/vim-projectroot'

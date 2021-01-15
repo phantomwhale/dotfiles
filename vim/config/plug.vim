@@ -35,6 +35,9 @@ Plug 'vim-airline/vim-airline-themes'
 " Smooth scrolling
 Plug 'psliwka/vim-smoothie'
 
+" ruby formatting
+Plug 'ruby-formatter/rufo-vim'
+
 Plug 'scrooloose/vim-slumlord'
 " Run tests in a separate terminal
 Plug 'janko/vim-test'

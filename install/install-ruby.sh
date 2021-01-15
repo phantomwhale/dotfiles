@@ -11,3 +11,5 @@ echo "Installing common tools - timetrap"
 gem install --no-document  timetrap  # https://github.com/samg/timetrap/issues/176
 echo "Installing neovim support gem"
 gem install neovim
+echo "Installing rufo for ruby formatting"
+gem install rufo

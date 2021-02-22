@@ -64,10 +64,15 @@ kitty + complete setup zsh | source /dev/stdin
 # add general zsh completions
 fpath=(~/.zsh/completions $fpath)
 
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # autoload docker-machine environment
 if [ -x "$(command -v 99dev)" ]; then
-  eval $(docker-machine env $(99dev machine-name) 2> /dev/null)
+  # Use the new hyperkit implementation
+  export MACHINE_DRIVER=hyperkit
+
+  # autoload docker-machine env, if running
+  if [ "$(docker-machine status $(99dev machine-name))" = "Running" ]; then
+    eval $(docker-machine env $(99dev machine-name) 2> /dev/null)
+  fi
 fi

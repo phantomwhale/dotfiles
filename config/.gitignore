@@ -1,0 +1,6 @@
+# Coc
+/coc/*
+!/coc/extensions
+/coc/extensions/*
+!/coc/extensions/package.json
+!/coc/extensions/yarn.lock

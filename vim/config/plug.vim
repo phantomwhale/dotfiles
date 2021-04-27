@@ -45,7 +45,7 @@ Plug 'dbakker/vim-projectroot'
 
 Plug 'chriskempson/base16-vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'ecomba/vim-ruby-refactoring'
+Plug 'ecomba/vim-ruby-refactoring', { 'branch': 'main' }
 Plug 'honza/vim-snippets'
 Plug 'jgdavey/vim-blockle'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

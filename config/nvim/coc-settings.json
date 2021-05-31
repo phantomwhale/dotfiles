@@ -6,7 +6,7 @@
       "args": ["--stdio"]
     }
   },
-  "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown"],
+  "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "javascript", "javascriptreact", "typescript", "typescriptreact"],
   "codeLens.enable": true,
   "omnisharp.useDotnet": true,
   "solargraph.commandPath": "/Users/ben/.gem/ruby/2.6.5/bin/solargraph",

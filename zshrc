@@ -53,8 +53,8 @@ source ~/.zsh/lib/history.zsh
 export NVM_LAZY_LOAD=true
 
 # Setup antibody shell plugin manager
-source <(antibody init)
-antibody bundle < ~/.antibody.txt
+# source <(antibody init)
+# antibody bundle < ~/.antibody.txt
 
 # Make FZF use Ag (rather than default find) to lookup files names; this means .gitignore and .agignore exclusions are applied
 export FZF_DEFAULT_COMMAND='ag -g ""'
@@ -81,3 +81,37 @@ if [ -x "$(command -v 99dev)" ]; then
     eval $(docker-machine env $(99dev machine-name) 2> /dev/null)
   fi
 fi
+
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
+
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zinit-zsh/z-a-rust \
+    zinit-zsh/z-a-as-monitor \
+    zinit-zsh/z-a-patch-dl \
+    zinit-zsh/z-a-bin-gem-node
+
+### End of Zinit's installer chunk
+
+zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
+zinit light sindresorhus/pure
+zinit light zsh-users/zsh-autosuggestions
+zinit light lukechilds/zsh-nvm           # NVM initialisation - also supports lazy loading, to stop NVM slowing down terminal loading
+zinit light agkozak/zsh-z                # Z function for moving around
+zinit light djui/alias-tips              # Remind me when I'm not using my aliases
+zinit light zdharma/fast-syntax-highlighting         # hopefully this gives us syntax highlighting without breaking pure
+
+# Completions
+zinit ice blockf; zinit light zsh-users/zsh-completions

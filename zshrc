@@ -56,6 +56,10 @@ export NVM_LAZY_LOAD=true
 source <(antibody init)
 antibody bundle < ~/.antibody.txt
 
+# Make FZF use Ag (rather than default find) to lookup files names; this means .gitignore and .agignore exclusions are applied
+export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
 # This seems to make my git completion work (https://stackoverflow.com/questions/26462667/git-completion-not-working-in-zsh-on-os-x-yosemite-with-homebrew)
 autoload -U compinit && compinit
 

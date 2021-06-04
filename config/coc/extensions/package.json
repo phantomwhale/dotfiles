@@ -1,13 +1,14 @@
 {
   "dependencies": {
+    "coc-eslint": ">=1.4.5",
     "coc-go": ">=0.9.2",
     "coc-json": ">=1.2.6",
-    "coc-phpls": ">=2.1.10",
-    "coc-sh": ">=0.6.0",
-    "coc-styled-components": ">=0.3.0",
     "coc-omnisharp": ">=0.0.28",
+    "coc-phpls": ">=2.1.10",
     "coc-prettier": ">=1.1.23",
+    "coc-sh": ">=0.6.0",
     "coc-solargraph": ">=1.2.0",
+    "coc-styled-components": ">=0.3.0",
     "coc-tsserver": ">=1.7.0"
   }
 }

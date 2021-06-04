@@ -68,6 +68,9 @@ noremap <leader>av :call rails_test#vsplit_spec()<cr>
 " shortcut for updating vim modules and vim plug all at once
 command! PU PlugUpdate | PlugUpgrade
 
+" set up Prettier
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
 " EXPERIMENTAL
 "
 

@@ -13,7 +13,9 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 
 " run ruby formatting on save
-let g:rufo_auto_formatting = 1
+" EDIT or actually don't, as it tends to add extra changes to otherwise
+" simple commits, that cause messy PRs
+let g:rufo_auto_formatting = 0
 
 " CoC extensions
 " These can be installed with :CocInstall, but I want a record of them here

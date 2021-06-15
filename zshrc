@@ -71,12 +71,8 @@ fpath=(~/.zsh/completions $fpath)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# autoload docker-machine environment
-if [ -x "$(command -v 99dev)" ]; then
-  # Use the new hyperkit implementation
-  export MACHINE_DRIVER=hyperkit
-
-  # autoload docker-machine env, if running
+if [ -x "$(command -v 99dev)" ] && [ -x "$(command -v docker-machine)" ]; then
+  # autoload docker-machine env, if currently running
   if [ "$(docker-machine status $(99dev machine-name))" = "Running" ]; then
     eval $(docker-machine env $(99dev machine-name) 2> /dev/null)
   fi

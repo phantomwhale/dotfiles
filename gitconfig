@@ -16,6 +16,7 @@
   tagh = for-each-ref --format '%(refname) %09 %(taggerdate) %(subject) %(taggeremail)' refs/tags  --sort=taggerdate
   ctags = !.git/hooks/ctags
   clean=!git branch --merged master | grep -v "\\* master" | xargs -n 1 git branch -d'
+  gone = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D"
   set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
   clean-remote = !git branch -r --merged | grep -v master | sed 's/origin\\///' | xargs -n 1 git push --delete origin
 [color]

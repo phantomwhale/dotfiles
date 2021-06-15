@@ -13,6 +13,8 @@ cask "betterzip"
 cask "calibre"
 cask "dash"
 cask "deluge"
+cask "discord"
+cask "docker"
 cask "doxie"
 cask "dropbox"
 cask "epic-games"
@@ -21,8 +23,9 @@ cask "font-fira-code"
 cask "font-fira-mono"
 cask "font-fira-mono-for-powerline"
 cask "font-fira-sans"
-cask "google-chrome"
+cask "gimp"
 cask "google-backup-and-sync"
+cask "google-chrome"
 cask "google-drive-file-stream"
 cask "java"
 cask "kitty"
@@ -32,10 +35,12 @@ cask "openoffice"
 cask "rectangle"
 cask "slack"
 cask "skype"
+cask "spectacle"
 cask "spotify"
 cask "steam"
 cask "tableplus"
-cask "virtualbox"
+cask "transmission"
+cask "vagrant"
 cask "vlc"
 
 brew "awscli"
@@ -48,11 +53,13 @@ brew "ctags"
 brew "ctop"
 brew "dep"
 brew "dfu-util" # for configuring my Ergodox keyboard
+brew "docker-machine-nfs"
 brew "dos2unix"
 brew "exa"
 brew "fzf"
 brew "gh"
 brew "git"
+brew "glow"
 brew "go"
 brew "graphviz"
 brew "heroku"
@@ -60,10 +67,14 @@ brew "htop"
 brew "httpie"
 brew "hub"
 brew "iamy"
+brew "imagemagick"
+brew "jq"
+brew "jrnl"
 brew "mas"
 brew "mono"
 brew "mysql"
 brew "neovim"
+brew "nnn"
 brew "nvm"
 brew "plantuml"
 brew "ripgrep"
@@ -79,14 +90,6 @@ brew "yarn"
 brew "youtube-dl"
 brew "zsh"
 
-# 99dev
-cask "docker"
-cask "vagrant"
-cask "virtualbox-extension-pack"
-brew "docker-machine-nfs"
-brew "oniguruma"
-brew "jq"
-
 # Quicklook plugins from https://github.com/sindresorhus/quick-look-plugins
 brew "qlcolorcode"
 brew "qlimagesize"
@@ -96,11 +99,11 @@ brew "qlvideo"
 brew "quicklook-json"
 brew "webpquicklook"
 
-mas "NordVPN", id: 1116599239
+mas "Amphetamine", id: 937984704
+mas "Logitech Camera Settings", id: 638332853
 mas "Keynote", id: 409183694
 mas "Monodraw", id: 920404675
+mas "NordVPN IKE", id: 1116599239
 mas "Numbers", id: 409203825
-mas "Logitech Camera Settings", id: 638332853
-#mas "GIF Brewery by Gfycat", id: 1081413713
-mas "Amphetamine", id: 937984704
-# mas "XCode", id: 497799835
+mas "Pages", id: 409201541
+mas "Xcode", id: 497799835

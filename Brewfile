@@ -1,4 +1,5 @@
 tap "getantibody/tap"
+tap "github/gh"
 tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
@@ -50,6 +51,7 @@ brew "dfu-util" # for configuring my Ergodox keyboard
 brew "dos2unix"
 brew "exa"
 brew "fzf"
+brew "gh"
 brew "git"
 brew "go"
 brew "graphviz"
@@ -86,21 +88,19 @@ brew "oniguruma"
 brew "jq"
 
 # Quicklook plugins from https://github.com/sindresorhus/quick-look-plugins
-cask "qlcolorcode"
-cask "qlimagesize"
-cask "qlmarkdown"
-cask "qlprettypatch"
-cask "qlstephen"
-cask "qlvideo"
-cask "quicklook-csv"
-cask "quicklook-json"
-cask "webpquicklook"
+brew "qlcolorcode"
+brew "qlimagesize"
+brew "qlmarkdown"
+brew "qlstephen"
+brew "qlvideo"
+brew "quicklook-json"
+brew "webpquicklook"
 
 mas "NordVPN", id: 1116599239
 mas "Keynote", id: 409183694
 mas "Monodraw", id: 920404675
 mas "Numbers", id: 409203825
 mas "Logitech Camera Settings", id: 638332853
-mas "GIF Brewery by Gfycat", id: 1081413713
+#mas "GIF Brewery by Gfycat", id: 1081413713
 mas "Amphetamine", id: 937984704
 # mas "XCode", id: 497799835

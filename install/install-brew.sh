@@ -2,13 +2,15 @@
 
 set -euo pipefail
 
-if [ ! -x $(command -v brew) ]; then
+if ! [ -x "$(command -v brew)" ]; then
   echo "Installing brew and all brewfile packages"
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
+
 echo "Update and cleanup brew"
 brew update && brew cleanup
 
-mkdir -p ~/.nvim  # Neovim needs this to be created
+echo "Installing from Brewfile"
+brew bundle 
 
-open /usr/local/Caskroom/little-snitch/*/LittleSnitch-*.dmg # Still need to manually install little snitch
+mkdir -p ~/.nvim  # Neovim needs this to be created

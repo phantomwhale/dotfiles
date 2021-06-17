@@ -12,6 +12,7 @@ cask "1password-cli"
 cask "google-drive"
 cask "vagrant"
 # So these should all install without needing to hang about to enter passwords
+brew "antibody"
 brew "awscli"
 brew "chamber"
 brew "chruby"

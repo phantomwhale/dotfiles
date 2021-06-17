@@ -1,0 +1,16 @@
+mafredri/zsh-async           # needed by sindresorhus/pure
+Tarrasch/zsh-bd              # adds the bd command to go back directories
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-completions
+lukechilds/zsh-nvm           # NVM initialisation - also supports lazy loading, to stop NVM slowing down terminal loading
+agkozak/zsh-z                # Z function for moving around
+
+djui/alias-tips              # Remind me when I'm not using my aliases
+
+# ZSH completions
+docker/cli     path:contrib/completion/zsh kind:fpath
+docker/compose path:contrib/completion/zsh kind:fpath
+
+# these should come last (stated at https://github.com/caarlos0/dotfiles/blob/master/antibody/bundles.txt)
+sindresorhus/pure
+zdharma/fast-syntax-highlighting         # hopefully this gives us syntax highlighting without breaking pure

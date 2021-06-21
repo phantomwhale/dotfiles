@@ -60,15 +60,14 @@ antibody bundle < ~/.antibody.txt
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-# This seems to make my git completion work (https://stackoverflow.com/questions/26462667/git-completion-not-working-in-zsh-on-os-x-yosemite-with-homebrew)
-autoload -U compinit && compinit
-
 # kitty auto-completion
+autoload -Uz compinit && compinit
 kitty + complete setup zsh | source /dev/stdin
 
 # add general zsh completions
 fpath=(~/.zsh/completions $fpath)
 
+# initialise Fuzzy Finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 if [ -x "$(command -v 99dev)" ] && [ -x "$(command -v docker-machine)" ]; then

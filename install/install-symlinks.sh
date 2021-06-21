@@ -60,6 +60,7 @@ replace_config_dirs() {
   local dir="$1"
   echo "Parsing directories in $dir"
   local replace_all=false
+  mkdir -p ~/.config
   for indir in "$dir"/*; do
     local dirname=$(basename $indir)
     if [ -d "$indir" ]; then

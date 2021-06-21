@@ -17,12 +17,15 @@ cd ~/.dotfiles
 Need to manually run `sudo xcodebuild -license` after installing XCode
 Feel free to customize the .zshrc file to match your preference.
 
-## Manual steps
+## Manual backup / restores
 
 Some things are not automated when moving between machines, such as:
 
-* Bring over any extra keychains using Keychain Access tool
-* Copying TablePlus connections (`~/Library/Application\ Support/com.tinyapp.TablePlus/`) - passwords come over in the keychains
+* Copying TablePlus connections (`~/Library/Application\ Support/com.tinyapp.TablePlus/`) - passwords come over in the keychain
 * Little-snitch rules need to be backed up and imported
+
+## Manual installs 
+
 * DBPowerAmp needs manually installation
 * Logitech mouse software https://support.logi.com/hc/en-us/articles/360024700534--Downloads-Performance-Mouse-MX
+* System Preferences -> Keyboard -> Turn off "add period for double space"

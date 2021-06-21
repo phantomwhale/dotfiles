@@ -29,3 +29,4 @@ Some things are not automated when moving between machines, such as:
 * DBPowerAmp needs manually installation
 * Logitech mouse software https://support.logi.com/hc/en-us/articles/360024700534--Downloads-Performance-Mouse-MX
 * System Preferences -> Keyboard -> Turn off "add period for double space"
+* May need to run `compaudit | xargs chmod g-w,o-w` (https://github.com/zsh-users/zsh-completions/issues/680)

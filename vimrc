@@ -1,6 +1,5 @@
 
 " ============ General Config ============
-set relativenumber              " relative line numbers
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 set history=1000                " number of lines of command line history to store
 set showcmd		                  " display incomplete commands
@@ -9,6 +8,15 @@ set autowrite                   " ensure files are written when we call :make
 set autoread                    " Reload files changed outside of vim
 set hidden                      " allow hidden buffers
 set nofsync                     " fsync causes vim to hang when closing https://github.com/ludovicchabant/vim-gutentags/issues/167#issuecomment-564889922
+
+" Use hybrid line numbers; relative numbering for all lines except the current
+" Also turn off relative nubmers whilst in insert mode
+set number relativenumber
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &number && mode() != "i" | set relativenumber   | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &number                  | set norelativenumber | endif
+augroup END
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.

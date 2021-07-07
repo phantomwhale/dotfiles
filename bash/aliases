@@ -1,3 +1,4 @@
+alias ag='ag --hidden'
 alias aliases='vim ~/.dotfiles/bash/aliases'
 alias bi='bundle install'
 alias be='bundle exec'

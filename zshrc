@@ -70,6 +70,9 @@ fpath=(~/.zsh/completions $fpath)
 # initialise Fuzzy Finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# initialise fnm
+eval "$(fnm env)"
+
 if [ -x "$(command -v 99dev)" ] && [ -x "$(command -v docker-machine)" ]; then
   # autoload docker-machine env, if currently running
   if [ "$(docker-machine status $(99dev machine-name))" = "Running" ]; then

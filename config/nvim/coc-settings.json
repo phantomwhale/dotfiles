@@ -4,20 +4,26 @@
       "command": "docker-langserver",
       "filetypes": ["dockerfile"],
       "args": ["--stdio"]
+    },
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
     }
   },
   "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "javascript", "javascriptreact", "typescript", "typescriptreact"],
   "codeLens.enable": true,
   "eslint.autoFixOnSave": true,
   "omnisharp.useDotnet": true,
-  "solargraph.commandPath": "/Users/ben/.gem/ruby/2.6.5/bin/solargraph",
   "solargraph.diagnostics": true,
   "solargraph.autoformat": true,
   "solargraph.formatting": true,
   "solargraph.hover": true,
   "suggest.timeout": 4000,
   "tsserver.log": "verbose",
-  "tsserver.npm": "/Users/ben/.nvm/versions/node/v12.7.0/bin/node",
   "tsserver.trace.server": "verbose",
   "typescript.suggest.autoImports": true
 }

@@ -181,7 +181,7 @@ if has("autocmd")
      " Stop vim-go and GoFmt from ruining all my folds (https://github.com/fatih/vim-go/issues/502)
      "let g:go_fmt_experimental = 1
 
-    autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
+    autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
     autocmd BufRead,BufNewFile */99designs/workbench/* let g:rspec_command='call VimuxRunCommand("99dev compose run workbench bundle exec rspec {spec}")'
 

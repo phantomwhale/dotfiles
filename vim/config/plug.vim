@@ -77,4 +77,7 @@ Plug 'yssl/QFEnter'
 Plug 'junegunn/goyo.vim'  "distraction free writing
 Plug 'junegunn/limelight.vim'
 
+" JS/TS import organiser
+Plug 'ruanyl/vim-sort-imports', { 'do': 'npm install -g import-sort-cli import-sort-parser-babylon import-sort-parser-typescript import-sort-style-renke' }
+
 call plug#end()

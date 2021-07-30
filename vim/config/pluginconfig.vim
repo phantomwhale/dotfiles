@@ -28,6 +28,10 @@ let g:coc_global_extensions = [
 " Turn off goto definition from vim-go - we'll use CoC instead
 let g:go_def_mapping_enabled = 0
 
+" Turn on golangci-lint by default
+let g:go_metalinter_enabled = 1
+let g:go_metalinter_autosave = 1
+
 let g:ruby_debugger_create_default_mappings = 0
 
 " Format js and jsx files with jsx formatter

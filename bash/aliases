@@ -33,6 +33,8 @@ alias 99data='aws-vault exec platform -- 99 data'
 alias eshead='99dev compose exec elasticsearch ./bin/plugin install mobz/elasticsearch-head'
 alias eskopf='99dev compose exec elasticsearch ./bin/plugin install lmenezes/elasticsearch-kopf'
 
+alias icat="kitty +kitten icat"
+
 alias pg-start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 alias pg-stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 

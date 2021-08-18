@@ -35,6 +35,9 @@ Plug 'vim-airline/vim-airline-themes'
 " Smooth scrolling
 Plug 'psliwka/vim-smoothie'
 
+" Markdown preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+
 " ruby formatting
 Plug 'ruby-formatter/rufo-vim'
 

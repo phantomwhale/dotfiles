@@ -33,6 +33,8 @@ alias 99data='aws-vault exec platform -- 99 data'
 alias eshead='99dev compose exec elasticsearch ./bin/plugin install mobz/elasticsearch-head'
 alias eskopf='99dev compose exec elasticsearch ./bin/plugin install lmenezes/elasticsearch-kopf'
 
+# Not ideal, but given almost all machines won't have any support for xterm-kitty TERM this ensures better behaviour
+alias ssh="TERM=xterm ssh"
 alias icat="kitty +kitten icat"
 
 alias pg-start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"

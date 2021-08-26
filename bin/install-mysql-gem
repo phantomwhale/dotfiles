@@ -1,0 +1,8 @@
+mysql_version=$(brew list --versions mysql | tr ' ' '\n' | tail -1)
+mysql_path=$(brew --cellar mysql)/$mysql_version
+
+gem install mysql2 -- \
+--with-mysql-lib=$mysql_path/lib \
+--with-mysql-dir=$mysql_path \
+--with-mysql-config=$mysql_path/bin/mysql_config \
+--with-mysql-include=$mysql_path/include 

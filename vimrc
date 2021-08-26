@@ -110,7 +110,7 @@ set mouse=a
 source $CONFIG/pluginconfig.vim
 source $CONFIG/rails_test.vim
 source $CONFIG/keybinds.vim
-source $CONFIG/coc.vim
+" source $CONFIG/coc.vim
 
 
 " ============ Autocommands =============

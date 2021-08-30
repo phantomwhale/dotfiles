@@ -43,7 +43,13 @@ use 'wbthomason/packer.nvim'
 use {'neovim/nvim-lspconfig'}
 -- TODO: look into https://github.com/kabouzeid/nvim-lspinstall for installing LSPs
 
--- IDE 
+-- Syntax plugins
+use {'sheerun/vim-polyglot'}
+use {'stephpy/vim-yaml'}
+-- use 'othree/javascript-libraries-syntax.vim'
+-- use 'rhysd/vim-clang-format'
+
+-- IDE plugins
 use {'airblade/vim-rooter',
     config = function() -- Automatically set pwd when opening a file
         vim.g.rooter_patterns = {'.git/'}

@@ -2,12 +2,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Plugs go here
 
-" Syntax highlighting and formatting
-Plug 'sheerun/vim-polyglot'
-"Plug 'othree/javascript-libraries-syntax.vim'
-"Plug 'rhysd/vim-clang-format'
-Plug 'stephpy/vim-yaml'
-
 " git tooling
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'

@@ -106,7 +106,7 @@ set ruler
 set mouse=a
 
 " ============ Config files  =============
-luafile $CONFIG/lua/init.lua
+lua require('init')
 source $CONFIG/pluginconfig.vim
 source $CONFIG/rails_test.vim
 source $CONFIG/keybinds.vim

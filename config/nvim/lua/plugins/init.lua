@@ -63,6 +63,15 @@ use {'chriskempson/base16-vim'} -- use base16 colorschemes
 use {'psliwka/vim-smoothie'} -- smooth scrolling
 use {'vim-airline/vim-airline'} -- superpowered status bar
 use {'vim-airline/vim-airline-themes'} -- adds base16 theme for airline
+use {'rizzatti/dash.vim'} -- add :Dash documentation lookup
+use {'rking/ag.vim'} -- add :Ag file search
+use {'junegunn/fzf', dir = '~/.fzf', run = './install --all'}
+use {'ctrlpvim/ctrlp.vim'}
+use {'janko/vim-test'}
+use {'majutsushi/tagbar'}
+use {'Raimondi/delimitMate'} -- auto-complete quotes, parens, brackets
+use {'vim-scripts/RelativeNumberCurrentWindow'} -- relative line numbers
+use {'yssl/QFEnter'} -- control where to open QuickFix links
 
 -- Go
 use {'fatih/vim-go', run = ':GoUpdateBinaries'}
@@ -76,6 +85,11 @@ use {'ecomba/vim-ruby-refactoring', branch = 'main'}
 use {'jgdavey/vim-blockle'} -- toggle block styles [do/end <-> {}]
 use {'nelstrom/vim-textobj-rubyblock', requires = {'kana/vim-textobj-user'}}
 use {'t9md/vim-ruby-xmpfilter'}
+
+-- Javascript / Typescript
+use {'ruanyl/vim-sort-imports',  -- adds :SortImports to js/ts files
+      run = 'npm install -g import-sort-cli import-sort-parser-babylon ' ..
+          'import-sort-parser-typescript import-sort-style-renke'}
 
 -- Git
 use {'airblade/vim-gitgutter'}
@@ -92,3 +106,8 @@ use {'tpope/vim-repeat'}
 use {'tpope/vim-surround'}
 use {'tpope/vim-unimpaired'}
 use {'tpope/vim-vinegar'}
+
+-- Writing
+
+use {'junegunn/goyo.vim'} -- distraction free writing
+use {'junegunn/limelight.vim'}

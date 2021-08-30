@@ -40,8 +40,12 @@ local use = packer.use
 use 'wbthomason/packer.nvim'
 
 -- LSP
-use {'neovim/nvim-lspconfig'}
+use {'neovim/nvim-lspconfig'}  -- Collection of configurations for built-in LSP client
 -- TODO: look into https://github.com/kabouzeid/nvim-lspinstall for installing LSPs
+use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+use 'L3MON4D3/LuaSnip' -- Snippets plugin
 
 -- Syntax plugins
 use {'sheerun/vim-polyglot'} -- syntax highlights for 120 languages

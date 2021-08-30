@@ -16,11 +16,6 @@ Plug 'tpope/vim-rhubarb'
 " Go tooling
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
-" CoC completion
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neovim/nvim-lspconfig'
-
 " superpowered status bar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'

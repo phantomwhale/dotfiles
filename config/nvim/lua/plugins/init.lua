@@ -39,6 +39,10 @@ local use = packer.use
 -- Packer can manage itself
 use 'wbthomason/packer.nvim'
 
+-- LSP
+use {'neovim/nvim-lspconfig'}
+-- TODO: look into https://github.com/kabouzeid/nvim-lspinstall for installing LSPs
+
 -- Tim Pope basics
 use {'tpope/vim-commentary'}
 use {'tpope/vim-endwise'}

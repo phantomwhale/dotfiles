@@ -39,6 +39,9 @@ source ~/.bash/aliases
 source /usr/local/share/chruby/chruby.sh
 chruby ruby
 
+# enable frum
+eval "$(frum init)"
+
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-monokai.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL

@@ -67,6 +67,16 @@ use {'vim-airline/vim-airline-themes'} -- adds base16 theme for airline
 -- Go
 use {'fatih/vim-go', run = ':GoUpdateBinaries'}
 
+-- Ruby
+use {'vim-ruby/vim-ruby'}
+use {'tpope/vim-rails'}
+use {'thoughtbot/vim-rspec'}
+use {'ruby-formatter/rufo-vim'} -- provides :Rufo for formatting
+use {'ecomba/vim-ruby-refactoring', branch = 'main'}
+use {'jgdavey/vim-blockle'} -- toggle block styles [do/end <-> {}]
+use {'nelstrom/vim-textobj-rubyblock', requires = {'kana/vim-textobj-user'}}
+use {'t9md/vim-ruby-xmpfilter'}
+
 -- Git
 use {'airblade/vim-gitgutter'}
 use {'tpope/vim-fugitive'}
@@ -74,6 +84,7 @@ use {'tpope/vim-rhubarb'}
 
 -- Tim Pope basics
 use {'tpope/vim-commentary'}
+use {'tpope/vim-dispatch'}
 use {'tpope/vim-endwise'}
 use {'tpope/vim-eunuch'}
 use {'tpope/vim-obsession'}

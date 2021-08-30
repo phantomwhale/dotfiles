@@ -43,6 +43,13 @@ use 'wbthomason/packer.nvim'
 use {'neovim/nvim-lspconfig'}
 -- TODO: look into https://github.com/kabouzeid/nvim-lspinstall for installing LSPs
 
+-- IDE 
+use {'airblade/vim-rooter',
+    config = function() -- Automatically set pwd when opening a file
+        vim.g.rooter_patterns = {'.git/'}
+    end
+}
+
 -- Tim Pope basics
 use {'tpope/vim-commentary'}
 use {'tpope/vim-endwise'}

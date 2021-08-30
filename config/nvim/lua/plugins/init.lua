@@ -59,7 +59,10 @@ use {'airblade/vim-rooter',
         vim.g.rooter_patterns = {'.git/'}
     end
 }
+use {'chriskempson/base16-vim'} -- use base16 colorschemes
 use {'psliwka/vim-smoothie'} -- smooth scrolling
+use {'vim-airline/vim-airline'} -- superpowered status bar
+use {'vim-airline/vim-airline-themes'} -- adds base16 theme for airline
 
 -- Go
 use {'fatih/vim-go', run = ':GoUpdateBinaries'}

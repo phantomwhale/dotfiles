@@ -2,14 +2,8 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Plugs go here
 
-" superpowered status bar
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
 " Markdown preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
-
-" Save IDE sessions
 
 " ruby formatting
 Plug 'ruby-formatter/rufo-vim'
@@ -19,7 +13,6 @@ Plug 'scrooloose/vim-slumlord'
 Plug 'janko/vim-test'
 Plug 'dbakker/vim-projectroot'
 
-Plug 'chriskempson/base16-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ecomba/vim-ruby-refactoring', { 'branch': 'main' }
 Plug 'honza/vim-snippets'

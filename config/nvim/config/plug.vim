@@ -40,7 +40,6 @@ Plug 'psliwka/vim-smoothie'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 " Save IDE sessions
-Plug 'tpope/vim-obsession'
 
 " ruby formatting
 Plug 'ruby-formatter/rufo-vim'
@@ -67,14 +66,8 @@ Plug 'rizzatti/dash.vim'
 Plug 'rking/ag.vim'
 Plug 't9md/vim-ruby-xmpfilter'
 Plug 'thoughtbot/vim-rspec'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-rails'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-vinegar'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/RelativeNumberCurrentWindow'

@@ -39,5 +39,12 @@ local use = packer.use
 -- Packer can manage itself
 use 'wbthomason/packer.nvim'
 
--- Basics
+-- Tim Pope basics
+use {'tpope/vim-commentary'}
+use {'tpope/vim-endwise'}
+use {'tpope/vim-eunuch'}
+use {'tpope/vim-obsession'}
+use {'tpope/vim-repeat'}
 use {'tpope/vim-surround'}
+use {'tpope/vim-unimpaired'}
+use {'tpope/vim-vinegar'}

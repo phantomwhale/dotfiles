@@ -53,7 +53,6 @@ Gemfile
 dir
 Symlink
 composable
-rubocop
 Typescript/!
 codebase
 codemods
@@ -123,3 +122,9 @@ e2e
 Thumbor
 godev
 Readme
+Elasticsearch
+github
+RuboCop
+Trello
+CVE
+SSO

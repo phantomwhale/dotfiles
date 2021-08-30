@@ -3,17 +3,9 @@ call plug#begin('~/.config/nvim/plugged')
 " Plugs go here
 
 " Syntax highlighting and formatting
-Plug 'aklt/plantuml-syntax'
-Plug 'evidens/vim-twig'
-Plug 'jelera/vim-javascript-syntax'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'othree/html5.vim'
-Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'rhysd/vim-clang-format'
 Plug 'sheerun/vim-polyglot'
+"Plug 'othree/javascript-libraries-syntax.vim'
+"Plug 'rhysd/vim-clang-format'
 Plug 'stephpy/vim-yaml'
 
 " git tooling

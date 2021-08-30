@@ -39,6 +39,9 @@ Plug 'psliwka/vim-smoothie'
 " Markdown preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
+" Save IDE sessions
+Plug 'tpope/vim-obsession'
+
 " ruby formatting
 Plug 'ruby-formatter/rufo-vim'
 

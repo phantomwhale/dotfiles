@@ -56,6 +56,11 @@ use {'airblade/vim-rooter',
     end
 }
 
+-- Git
+use {'airblade/vim-gitgutter'}
+use {'tpope/vim-fugitive'}
+use {'tpope/vim-rhubarb'}
+
 -- Tim Pope basics
 use {'tpope/vim-commentary'}
 use {'tpope/vim-endwise'}

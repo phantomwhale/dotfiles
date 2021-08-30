@@ -44,8 +44,8 @@ use {'neovim/nvim-lspconfig'}
 -- TODO: look into https://github.com/kabouzeid/nvim-lspinstall for installing LSPs
 
 -- Syntax plugins
-use {'sheerun/vim-polyglot'}
-use {'stephpy/vim-yaml'}
+use {'sheerun/vim-polyglot'} -- syntax highlights for 120 languages
+use {'stephpy/vim-yaml'} -- yaml syntax highlights
 -- use 'othree/javascript-libraries-syntax.vim'
 -- use 'rhysd/vim-clang-format'
 
@@ -55,6 +55,10 @@ use {'airblade/vim-rooter',
         vim.g.rooter_patterns = {'.git/'}
     end
 }
+use {'psliwka/vim-smoothie'} -- smooth scrolling
+
+-- Go
+use {'fatih/vim-go', run = ':GoUpdateBinaries'}
 
 -- Git
 use {'airblade/vim-gitgutter'}

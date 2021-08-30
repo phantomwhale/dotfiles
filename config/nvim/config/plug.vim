@@ -2,15 +2,9 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Plugs go here
 
-" Go tooling
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
 " superpowered status bar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
-" Smooth scrolling
-Plug 'psliwka/vim-smoothie'
 
 " Markdown preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }

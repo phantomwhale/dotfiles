@@ -154,35 +154,6 @@ if has("autocmd")
     let g:clang_format#style_options = { "IndentWidth": 4, "ColumnLimit": 120 }
     autocmd FileType proto ClangFormatAutoEnable
 
-    " Better Go
-     "au FileType go nmap <Leader>s <Plug>(go-implements)
-     "au FileType go nmap <Leader>i <Plug>(go-info)
-     "au FileType go nmap <Leader>gd <Plug>(go-doc)
-     "au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-     "au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-     "au FileType go nmap <leader>r <Plug>(go-run)
-     "au FileType go nmap <leader>b <Plug>(go-build)
-     "au FileType go nmap <leader>t <Plug>(go-test)
-     "au FileType go nmap <leader>c <Plug>(go-coverage)
-     "au FileType go nmap <Leader>ds <Plug>(go-def-split)
-     "au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-     "au FileType go nmap <Leader>dt <Plug>(go-def-tab)
-
-     " Enable syntax highting on everything
-     "let g:go_highlight_functions = 1
-     "let g:go_highlight_methods = 1
-     "let g:go_highlight_structs = 1
-     "let g:go_highlight_operators = 1
-     "let g:go_highlight_build_constraints = 1
-
-     " run goimports instead of gofmt on save; boom, instant imports!
-     "let g:go_fmt_command = "goimports"
-
-     " Stop vim-go and GoFmt from ruining all my folds (https://github.com/fatih/vim-go/issues/502)
-     "let g:go_fmt_experimental = 1
-
-    autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
-
     autocmd BufRead,BufNewFile */99designs/workbench/* let g:rspec_command='call VimuxRunCommand("99dev compose run workbench bundle exec rspec {spec}")'
 
     " wrap long lines in quickfix

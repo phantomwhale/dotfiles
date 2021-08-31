@@ -3,7 +3,6 @@ call plug#begin('~/.config/nvim/plugged')
 " Plugs go here
 
 " Markdown preview
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 Plug 'scrooloose/vim-slumlord'
 Plug 'dbakker/vim-projectroot'

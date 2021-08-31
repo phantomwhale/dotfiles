@@ -96,6 +96,11 @@ use {'airblade/vim-gitgutter'}
 use {'tpope/vim-fugitive'}
 use {'tpope/vim-rhubarb'}
 
+-- Markdown
+use {'iamcco/markdown-preview.nvim', -- adds :MarkdownPreview command
+     run = function() vim.fn['mkdp#util#install'](0) end,
+     cmd = 'MarkdownPreview'}
+
 -- Tim Pope basics
 use {'tpope/vim-commentary'}
 use {'tpope/vim-dispatch'}

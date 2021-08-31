@@ -27,10 +27,6 @@ endif
 " Set leader to a comma, becuase backslash is TOO far away
 let mapleader = ","
 
-" ============ Plug ============
-let $CONFIG = "$HOME/.config/nvim/config"
-source $CONFIG/plug.vim
-
 " ============ Turn off Swap Files ============
 set noswapfile
 set nobackup
@@ -106,11 +102,11 @@ set ruler
 set mouse=a
 
 " ============ Config files  =============
+let $CONFIG = "$HOME/.config/nvim/config"
 lua require('init')
 source $CONFIG/pluginconfig.vim
 source $CONFIG/rails_test.vim
 source $CONFIG/keybinds.vim
-" source $CONFIG/coc.vim
 
 
 " ============ Autocommands =============

@@ -37,7 +37,7 @@ let test#strategy = "neovim"
 " Note that this assumes the docker container is named after the project root
 " folder, which is USUALLY the rule...
 function! NNdevTransform(cmd) abort
-  let docker_project = fnamemodify(projectroot#guess(), ':t')
+  let docker_project = fnamemodify(FindRootDirectory(), ':t')
   return '99dev compose run --no-deps '.docker_project.' '.a:cmd
 endfunction
 let g:test#custom_transformations = {'99dev': function('NNdevTransform')}

@@ -76,6 +76,9 @@ fpath=(~/.zsh/completions $fpath)
 # initialise fnm
 eval "$(fnm env)"
 
+# keep using docker-machine over Docker Desktop for extra speed (for now)
+export NNDEV_DOCKER_FOR_MAC=false
+
 if [ -x "$(command -v 99dev)" ] && [ -x "$(command -v docker-machine)" ]; then
   # autoload docker-machine env, if currently running
   if [ "$(docker-machine status $(99dev machine-name))" = "Running" ]; then

@@ -1,5 +1,6 @@
 local nvim_lsp = require('lspconfig')
 
+local null_ls = require("lsp.null-ls")
 local tsserver = require("lsp.tsserver")
 
 -- Use an on_attach function to only map the following keys
@@ -69,51 +70,7 @@ for _, lsp in ipairs(servers) do
   }
 end
 tsserver.setup(on_attach)
-
-local filetypes = {
-    typescript = "eslint",
-    typescriptreact = "eslint",
-}
-
-local linters = {
-    eslint = {
-        sourceName = "eslint",
-        command = "eslint",
-        rootPatterns = {".eslintrc.js", "package.json"},
-        debounce = 100,
-        args = {"--stdin", "--stdin-filename", "%filepath", "--format", "json"},
-        parseJson = {
-            errorsRoot = "[0].messages",
-            line = "line",
-            column = "column",
-            endLine = "endLine",
-            endColumn = "endColumn",
-            message = "${message} [${ruleId}]",
-            security = "severity"
-        },
-        securities = {[2] = "error", [1] = "warning"}
-    }
-}
-
-local formatters = {
-    prettier = {command = "prettier", args = {"--stdin-filepath", "%filepath"}}
-}
-
-local formatFiletypes = {
-    typescript = "prettier",
-    typescriptreact = "prettier"
-}
-
-nvim_lsp.diagnosticls.setup {
-    on_attach = on_attach,
-    filetypes = vim.tbl_keys(filetypes),
-    init_options = {
-        filetypes = filetypes,
-        linters = linters,
-        formatters = formatters,
-        formatFiletypes = formatFiletypes
-    }
-}
+null_ls.setup(on_attach)
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'

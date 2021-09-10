@@ -42,10 +42,17 @@ use 'wbthomason/packer.nvim'
 -- LSP
 use {'neovim/nvim-lspconfig'}  -- Collection of configurations for built-in LSP client
 -- TODO: look into https://github.com/kabouzeid/nvim-lspinstall for installing LSPs
-use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
-use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-use 'L3MON4D3/LuaSnip' -- Snippets plugin
+use {'hrsh7th/nvim-cmp'} -- Autocompletion plugin
+use {'hrsh7th/cmp-nvim-lsp'} -- LSP source for nvim-cmp
+use {'saadparwaiz1/cmp_luasnip'} -- Snippets source for nvim-cmp
+use {'L3MON4D3/LuaSnip'} -- Snippets plugin
+use({ "jose-elias-alvarez/null-ls.nvim", -- use neovim as a language server
+    config = function()
+        require("null-ls").config({})
+        require("lspconfig")["null-ls"].setup({})
+    end,
+    requires = {"nvim-lua/plenary.nvim", "neovim/nvim-lspconfig"}
+})
 
 -- Syntax plugins
 use {'sheerun/vim-polyglot'} -- syntax highlights for 120 languages
@@ -90,6 +97,7 @@ use {'t9md/vim-ruby-xmpfilter'}
 use {'ruanyl/vim-sort-imports',  -- adds :SortImports to js/ts files
       run = 'npm install -g import-sort-cli import-sort-parser-babylon ' ..
           'import-sort-parser-typescript import-sort-style-renke'}
+use {'jose-elias-alvarez/nvim-lsp-ts-utils'}
 
 -- Git
 use {'airblade/vim-gitgutter'}
@@ -98,8 +106,15 @@ use {'tpope/vim-rhubarb'}
 
 -- Markdown
 use {'iamcco/markdown-preview.nvim', -- adds :MarkdownPreview command
-     run = function() vim.fn['mkdp#util#install'](0) end,
-     cmd = 'MarkdownPreview'}
+    opt = true,
+    ft = { "markdown" },
+    config = "vim.cmd[[doautocmd BufEnter]]",
+    run = "cd app && yarn install",
+    cmd = "MarkdownPreview",
+}
+
+-- PHP
+use {'phpactor/phpactor', ft = 'php', run = 'composer install --no-dev -o'}
 
 -- Tim Pope basics
 use {'tpope/vim-commentary'}
@@ -116,3 +131,6 @@ use {'tpope/vim-vinegar'}
 
 use {'junegunn/goyo.vim'} -- distraction free writing
 use {'junegunn/limelight.vim'}
+
+-- Misc
+use {"nvim-lua/plenary.nvim"} -- required for plugins

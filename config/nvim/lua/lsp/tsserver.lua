@@ -26,6 +26,7 @@ M.setup = function(on_attach)
             local ts_utils = require("nvim-lsp-ts-utils")
             ts_utils.setup(ts_utils_settings)
             ts_utils.setup_client(client)
+            vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
 
             local opts = { noremap=true, silent=true }
             buf_set_keymap("n", "gs", ":TSLspOrganize<CR>", opts)

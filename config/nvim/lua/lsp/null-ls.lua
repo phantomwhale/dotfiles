@@ -3,7 +3,10 @@ local b = null_ls.builtins
 
 local sources = {
     b.formatting.prettier.with({
-        filetypes = { "html", "json", "yaml", "markdown" },
+        condition = function(utils)
+            return utils.root_has_file("node_modules/.bin/prettier")
+        end,
+        command = "node_modules/.bin/prettier",
     }),
     b.formatting.trim_whitespace.with({ filetypes = { "tmux", "teal", "zsh" } }),
     b.formatting.shfmt,
@@ -19,7 +22,9 @@ M.setup = function(on_attach)
         debug = true,
         sources = sources,
     })
-    require("lspconfig")["null-ls"].setup({ on_attach = on_attach })
+    require("lspconfig")["null-ls"].setup({
+        on_attach = on_attach
+    })
 end
 
 return M

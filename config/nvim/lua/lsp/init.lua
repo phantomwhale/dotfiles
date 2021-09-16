@@ -63,7 +63,7 @@ for _, lsp in ipairs(servers) do
     on_attach = function(client)
       client.resolved_capabilities.document_formatting = true
       on_attach(client)
-    end;
+    end,
     flags = {
       debounce_text_changes = 150,
     }

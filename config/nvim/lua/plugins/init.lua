@@ -46,12 +46,8 @@ use {'hrsh7th/nvim-cmp'} -- Autocompletion plugin
 use {'hrsh7th/cmp-nvim-lsp'} -- LSP source for nvim-cmp
 use {'saadparwaiz1/cmp_luasnip'} -- Snippets source for nvim-cmp
 use {'L3MON4D3/LuaSnip'} -- Snippets plugin
-use({ "jose-elias-alvarez/null-ls.nvim", -- use neovim as a language server
-    config = function()
-        require("null-ls").config({})
-        require("lspconfig")["null-ls"].setup({})
-    end,
-    requires = {"nvim-lua/plenary.nvim", "neovim/nvim-lspconfig"}
+use({'jose-elias-alvarez/null-ls.nvim', -- use neovim as a custom language server for formatting
+    requires = {'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig'}
 })
 
 -- Syntax plugins

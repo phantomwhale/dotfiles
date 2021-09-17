@@ -71,15 +71,15 @@ noremap <leader>av :call rails_test#vsplit_spec()<cr>
 
 " https://www.reddit.com/r/vim/comments/21f4gm/best_workflow_when_using_fugitive/
 
-nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gs :Git status<CR>
 nnoremap <Leader>gd :Gdiff<CR>
-nnoremap <Leader>gb :Gblame<CR>
-nnoremap <Leader>gL :exe ':!cd ' . expand('%:p:h') . '; git la'<CR>
-nnoremap <Leader>gl :exe ':!cd ' . expand('%:p:h') . '; git las'<CR>
-nnoremap <Leader>gh :Silent Glog<CR>
-nnoremap <Leader>gH :Silent Glog<CR>:set nofoldenable<CR>
+nnoremap <Leader>gb :Git blame<CR>
+nnoremap <Leader>gL :exe ':!cd ' . expand('%:p:h') . '; git lgt'<CR>
+nnoremap <Leader>gl :exe ':!cd ' . expand('%:p:h') . '; git lgtt'<CR>
+nnoremap <Leader>gh :Gclog<CR>
+nnoremap <Leader>gH :Gclog<CR>:set nofoldenable<CR>
 nnoremap <Leader>gr :Gread<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 nnoremap <Leader>gp :Git push<CR>
-nnoremap <Leader>g- :Silent Git stash<CR>:e<CR>
-nnoremap <Leader>g+ :Silent Git stash pop<CR>:e<CR>
+nnoremap <Leader>g- :Git stash<CR>:e<CR>
+nnoremap <Leader>g+ :Git stash pop<CR>:e<CR>

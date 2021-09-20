@@ -1,8 +1,5 @@
 match ErrorMsg '\s\+$'
 
-" Disable endwise key mapping as it conflicts with <CR> mapping we use for
-let g:endwise_no_mappings = 1
-
 " run ruby formatting on save
 " EDIT or actually don't, as it tends to add extra changes to otherwise
 " simple commits, that cause messy PRs

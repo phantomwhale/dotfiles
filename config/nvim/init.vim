@@ -1,11 +1,6 @@
 " ============ General Config ============
-set backspace=indent,eol,start  " allow backspacing over everything in insert mode
-set history=1000                " number of lines of command line history to store
-set showcmd		                  " display incomplete commands
-set showmode		                " display current mode
+set showmode		        " display current mode
 set autowrite                   " ensure files are written when we call :make
-set autoread                    " Reload files changed outside of vim
-set hidden                      " allow hidden buffers
 set nofsync                     " fsync causes vim to hang when closing https://github.com/ludovicchabant/vim-gutentags/issues/167#issuecomment-564889922
 
 " Use hybrid line numbers; relative numbering for all lines except the current
@@ -17,13 +12,6 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &number                  | set norelativenumber | endif
 augroup END
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
-  set hlsearch
-endif
-
 " Set leader to a comma, becuase backslash is TOO far away
 let mapleader = ","
 
@@ -32,16 +20,7 @@ set noswapfile
 set nobackup
 set nowritebackup
 
-" ============ Persistant Undo ============
-
-if has('persistent_undo') && !isdirectory(expand('~').'/.vim/backups')
-  silent !mkdir ~/.vim/backups > /dev/null 2>&1
-  set undodir=~/.vim/backups
-  set undofile
-endif
-
 " ============ Indentation ============
-set autoindent
 set smartindent
 set smarttab
 set shiftwidth=2                  " Number of spaces to use in each autoindent step
@@ -51,7 +30,6 @@ set expandtab                     " Use spaces, not tabs
 
 " Better display for messages
 set cmdheight=2
-
 
 " ============ File types ============
 " Let file types decide their plugin and indent settings
@@ -63,7 +41,6 @@ set exrc
 
 " Get our colours right
 set t_Co=256
-set background=dark
 let base16colorspace=256
 colorscheme base16-monokai
 hi MatchParen cterm=bold
@@ -78,11 +55,8 @@ set nofoldenable            " dont fold by default
 
 " ============ Completion ============
 set wildmode=list:longest
-set wildmenu                " enables <C-n> and <C-p> to scroll matches
 
 " ============ Search =============
-set incsearch       " Find the next match as we type the search
-set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital"
 
@@ -94,9 +68,6 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Switch wrap off for everything
 set nowrap
-
-" show the cursor position all the time
-set ruler
 
 " Lets allow mouse scrolling, because it's the 21st centuary after all
 set mouse=a

@@ -112,6 +112,9 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.md setlocal spell
     autocmd FileType gitcommit setlocal spell
 
+    " mark the 80th column for git commits
+    autocmd FileType gitcommit set colorcolumn=81
+
     " syntax highlighting for the forgotten ruby files
     autocmd BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
 

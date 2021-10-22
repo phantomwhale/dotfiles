@@ -2,7 +2,7 @@
 local lspconfig = require("lspconfig")
 
 local ts_utils_settings = {
-    debug = true,
+    -- debug = true,
     enable_import_on_completion = true,
     eslint_enable_diagnostics = true,
 }

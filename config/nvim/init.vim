@@ -131,6 +131,9 @@ if has("autocmd")
       autocmd!
       autocmd FileType qf setlocal wrap
     augroup END
+
+    " hypens are part of a word in css 
+    au! FileType css,scss setl iskeyword+=-
   augroup END
 end
 

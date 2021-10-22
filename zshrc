@@ -32,6 +32,9 @@ bindkey -v;
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 
+# Allow [ or ] in commands without erroring out
+unsetopt nomatch
+
 # Set up bash aliases
 source ~/.bash/aliases
 

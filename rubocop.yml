@@ -1,0 +1,8 @@
+Metrics/BlockLength:
+  IgnoredMethods: ['describe', 'context']
+
+Style/StringLiterals:
+  Enabled: false
+
+Naming/MemoizedInstanceVariableName:
+  EnforcedStyleForLeadingUnderscores: optional

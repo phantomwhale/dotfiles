@@ -73,11 +73,6 @@ set nowrap
 " Lets allow mouse scrolling, because it's the 21st centuary after all
 set mouse=a
 
-" change the direction of new splits, because I always expect this, even after
-" years of using them with default up/left opening
-set splitbelow
-set splitright
-
 " ============ Config files  =============
 let $CONFIG = "$HOME/.config/nvim/config"
 lua require('init')

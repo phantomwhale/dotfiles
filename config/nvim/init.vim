@@ -80,6 +80,7 @@ source $CONFIG/pluginconfig.vim
 source $CONFIG/rails_test.vim
 source $CONFIG/keybinds.vim
 
+command! Xs :mks! | :xa "save the session, save modified files, and exit
 
 " ============ Autocommands =============
 if has("autocmd")

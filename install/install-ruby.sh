@@ -2,18 +2,16 @@
 
 set -eo pipefail
 
-
 function install_ruby {
-  local version=$1
-  echo "Installing ruby $version"
-  ruby-install --no-reinstall ruby "$version"
+	local version=$1
+	echo "Installing ruby $version"
+	ruby-install --no-reinstall ruby "$version"
 
+	echo "Changing to ruby version $version"
+	chruby ruby "$version"
 
-  echo "Changing to ruby version $version"
-  chruby ruby $version
-
-  echo "Installing common tools"
-  gem install --no-document timetrap neovim solargraph rufo
+	echo "Installing common tools"
+	gem install --no-document timetrap neovim solargraph rufo rubocop rubocop-rails rubocop-rails
 }
 
 source /usr/local/share/chruby/chruby.sh

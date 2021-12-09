@@ -1,8 +1,44 @@
-Metrics/BlockLength:
-  IgnoredMethods: ['describe', 'context']
+require: 
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-performance
 
+# I don't write these files, so I don't lint them either
+AllCops:
+  NewCops: enable
+  Exclude:
+    - bin/*
+    - config.ru
+    - db/schema.rb
+    - node_modules/**/*
+
+# Configuration and specs use long blocks as part of their DSL
+Metrics/BlockLength:
+  Exclude:
+    - Guardfile
+    - config/environments/*
+    - config/routes.rb
+    - "**/*_spec.rb"
+
+# Prefer the functional "Jim Weirich" style of braces
+Style/BlockDelimiters:
+  EnforcedStyle: braces_for_chaining
+
+# Clear naming and Rspec specifications should be enough
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# tabs vrs spaces for a new generation
 Style/StringLiterals:
   Enabled: false
+
+# Sometimes work with arrays of tuples, this avoid mixed styles for those arrays
+Style/WordArray:
+  Enabled: true
+  MinSize: 3
 
 Naming/MemoizedInstanceVariableName:
   EnforcedStyleForLeadingUnderscores: optional

@@ -5,7 +5,7 @@ set -eo pipefail
 function install_ruby {
 	local version=$1
 	echo "Installing ruby $version"
-	ruby-install --no-reinstall ruby "$version"
+	ruby-install --latest --no-reinstall ruby "$version" -- --with-openssl-dir="$(brew --prefix openssl@1.1)"
 
 	echo "Changing to ruby version $version"
 	chruby ruby "$version"

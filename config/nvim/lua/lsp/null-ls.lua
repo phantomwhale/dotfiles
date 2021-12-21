@@ -3,10 +3,7 @@ local b = null_ls.builtins
 
 local sources = {
     b.formatting.prettier.with({
-        condition = function(utils)
-            return utils.root_has_file("node_modules/.bin/prettier")
-        end,
-        command = "node_modules/.bin/prettier",
+        prefer_local = 'node_modules/.bin',
     }),
     b.formatting.trim_whitespace.with({ filetypes = { "tmux", "teal", "zsh" } }),
     b.formatting.shfmt,

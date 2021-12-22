@@ -40,6 +40,7 @@ source ~/.bash/aliases
 
 # Set up chruby and change to latest ruby version
 source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
 chruby ruby
 
 # enable frum

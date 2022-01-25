@@ -11,6 +11,7 @@ DOTFILES_DIR=$(cd $(dirname "$abs_path") && pwd)
 "$DOTFILES_DIR/install/install-ssh.sh"
 "$DOTFILES_DIR/install/install-symlinks.sh"
 "$DOTFILES_DIR/install/install-ruby.sh"
+"$DOTFILES_DIR/install/install-npm.sh"
 "$DOTFILES_DIR/install/install-base16.sh"
 "$DOTFILES_DIR/install/install-zsh.sh"
 "$DOTFILES_DIR/install/install-nvim.sh"

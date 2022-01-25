@@ -15,11 +15,8 @@ local sources = {
 
 local M = {}
 M.setup = function(on_attach)
-    null_ls.config({
-        -- debug = true,
+    null_ls.setup({
         sources = sources,
-    })
-    require("lspconfig")["null-ls"].setup({
         on_attach = on_attach,
         flags = {
             debounce_text_changes = 5000,

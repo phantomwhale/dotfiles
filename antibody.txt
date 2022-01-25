@@ -12,4 +12,4 @@ docker/compose path:contrib/completion/zsh kind:fpath
 
 # these should come last (stated at https://github.com/caarlos0/dotfiles/blob/master/antibody/bundles.txt)
 sindresorhus/pure
-zdharma/fast-syntax-highlighting         # hopefully this gives us syntax highlighting without breaking pure
+zdharma-continuum/fast-syntax-highlighting         # hopefully this gives us syntax highlighting without breaking pure

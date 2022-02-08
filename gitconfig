@@ -23,6 +23,8 @@
   diff = auto
   status = auto
   branch = auto
+[commit]
+  verbose = true
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input

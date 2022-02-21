@@ -20,11 +20,14 @@ Need to manually run `sudo xcodebuild -license` after XCode is installed
 
 Some steps are not automated when moving between machines, such as:
 
-* TablePlus connections (`~/Library/Application\ Support/com.tinyapp.TablePlus/`) - passwords come over in the Keychain
-* Little-snitch rules
+- Shell history (`/.zsh_history`)
+- Keychains
+- TablePlus connections (`~/Library/Application\ Support/com.tinyapp.TablePlus/`) - passwords come over in the Keychain
+- Little-snitch rules
+- Setup Dropbox for todo.txt synchronising
 
 ## Manual installs / preferences
 
-* DBPowerAmp needs manually installation
-* System Preferences -> Keyboard -> Turn off "add period for double space"
-* May need to run `compaudit | xargs chmod g-w,o-w` (<https://github.com/zsh-users/zsh-completions/issues/680>)
+- DBPowerAmp needs manually installation
+- System Preferences -> Keyboard -> Turn off "add period for double space"
+- May need to run `compaudit | xargs chmod g-w,o-w` (<https://github.com/zsh-users/zsh-completions/issues/680>)

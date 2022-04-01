@@ -141,6 +141,7 @@ use {'iamcco/markdown-preview.nvim', -- adds :MarkdownPreview command
 use {'phpactor/phpactor', ft = 'php', run = 'composer install --no-dev -o'}
 
 -- Tim Pope basics
+use {'tpope/vim-abolish'}
 use {'tpope/vim-commentary'}
 use {'tpope/vim-dispatch'}
 use {'tpope/vim-endwise'}

@@ -15,9 +15,9 @@ gem install solargraph
 # TODO change this to use Packer
 #echo "Installing nvim plugins"
 #curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-  #https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+#https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 #nvim -c "PlugInstall 4" -c "qall"
 
 # TODO check this works (is nvm installed at this point?)
 # Required for TS development in vim (https://jose-elias-alvarez.medium.com/configuring-neovims-lsp-client-for-typescript-development-5789d58ea9c)
-npm install -g typescript typescript-language-server diagnostic-languageserver eslint prettier
+npm install -g typescript typescript-language-server diagnostic-languageserver eslint prettier markdownlint

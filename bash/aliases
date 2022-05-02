@@ -10,7 +10,6 @@ alias depgraph='dep status -dot | dot -T png | open -f -a /Applications/Preview.
 alias loc='git diff --shortstat `git hash-object -t tree /dev/null`'
 alias ll='exa -alh'
 alias nnn='nnn -e'
-alias nx='npx nx'
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log *'
 alias rc='rails console'
 alias t='todo.sh'

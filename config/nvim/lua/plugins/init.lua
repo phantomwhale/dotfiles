@@ -122,6 +122,7 @@ use {'ruanyl/vim-sort-imports',  -- adds :SortImports to js/ts files
       run = 'npm install -g import-sort-cli import-sort-parser-babylon ' ..
           'import-sort-parser-typescript import-sort-style-renke'}
 use {'jose-elias-alvarez/nvim-lsp-ts-utils'}
+use {'pantharshit00/vim-prisma'} -- prisma formatting
 
 -- Git
 use {'airblade/vim-gitgutter'}

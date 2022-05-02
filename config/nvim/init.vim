@@ -91,6 +91,8 @@ if has("autocmd")
     " Four tabs for JS, HTML and ERB
     autocmd FileType html setlocal shiftwidth=4 tabstop=4
     autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
+    autocmd FileType typescript setlocal ts=4 sts=4 sw=4 expandtab
+    autocmd FileType typescriptreact setlocal ts=4 sts=4 sw=4 expandtab
     autocmd FileType eruby setlocal ts=4 sts=4 sw=4 expandtab
     autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab
 

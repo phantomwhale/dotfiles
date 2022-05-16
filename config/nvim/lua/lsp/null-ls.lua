@@ -4,6 +4,7 @@ local b = null_ls.builtins
 local sources = {
     b.formatting.prettier.with({
         prefer_local = 'node_modules/.bin',
+        disabled_filetypes = { "yaml" },
     }),
     b.formatting.trim_whitespace.with({ filetypes = { "tmux", "teal", "zsh" } }),
     b.formatting.shfmt,

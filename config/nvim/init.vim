@@ -88,13 +88,16 @@ if has("autocmd")
     " clear out my autocommands first, in case we have already loaded them
     autocmd!
 
-    " Four tabs for JS, HTML and ERB
+    " Four space indent for JS, HTML and ERB
     autocmd FileType html setlocal shiftwidth=4 tabstop=4
     autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
     autocmd FileType typescript setlocal ts=4 sts=4 sw=4 expandtab
     autocmd FileType typescriptreact setlocal ts=4 sts=4 sw=4 expandtab
     autocmd FileType eruby setlocal ts=4 sts=4 sw=4 expandtab
     autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab
+
+    " two space indent for YAML
+    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
     " Autosave when we lose focus, just like Rubymine does
     autocmd BufLeave,FocusLost * silent! wall

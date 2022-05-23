@@ -104,6 +104,7 @@ use {'Raimondi/delimitMate'} -- auto-complete quotes, parens, brackets
 use {'vim-scripts/RelativeNumberCurrentWindow'} -- relative line numbers
 use {'yssl/QFEnter'} -- control where to open QuickFix links
 use {'kyazdani42/nvim-web-devicons'} -- devicons; requires a Nerd Font installation
+
 -- Go
 use {'fatih/vim-go', run = ':GoUpdateBinaries'}
 

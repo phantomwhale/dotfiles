@@ -56,8 +56,8 @@ source ~/.zsh/lib/keybinds.zsh
 # history setup
 source ~/.zsh/lib/history.zsh
 
-# Ensure NVM is lazily loaded; this also avoids the tmux path_helper issues https://github.com/creationix/nvm/issues/1652
-export NVM_LAZY_LOAD=true
+# zsh functions
+source ~/.zsh/lib/functions.zsh
 
 # Setup antibody shell plugin manager
 source <(antibody init)

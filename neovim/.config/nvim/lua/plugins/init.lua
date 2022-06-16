@@ -49,6 +49,7 @@ use 'hrsh7th/cmp-buffer' -- Autocompletion from the buffer
 use 'hrsh7th/cmp-path' -- Autocompletion for file paths
 use 'hrsh7th/cmp-nvim-lua' -- Autocompletion for LUA, with nvim knowledge
 use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+use 'onsails/lspkind.nvim' -- pictograms for neovim LSP
 
 use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
 use 'L3MON4D3/LuaSnip' -- Snippets plugin

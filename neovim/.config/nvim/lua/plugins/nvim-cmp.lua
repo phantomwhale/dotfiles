@@ -1,5 +1,10 @@
 local cmp = require "cmp"
 
+local ok, lspkind = pcall(require, "lspkind")
+if not ok then
+  return
+end
+
 cmp.setup {
   snippet = {
     expand = function(args)
@@ -25,6 +30,19 @@ cmp.setup {
     { name = "path" },
     { name = "luasnip" },
   }, {
-    { name = "buffer", keyword_length = 5 }
+    { name = "buffer", keyword_length = 5 } -- only suggest buffer when no matches in previous group
   }),
+
+  formatting = {
+    format = lspkind.cmp_format {
+      with_text = true,
+      menu = {
+        buffer = "[buf]",
+        nvim_lsp = "[LSP]",
+        nvim_lua = "[api]",
+        path = "[path]",
+        luasnip = "[snip]",
+      },
+    },
+  },
 }

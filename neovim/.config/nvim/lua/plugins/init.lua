@@ -42,10 +42,17 @@ use 'wbthomason/packer.nvim'
 -- LSP
 use {'neovim/nvim-lspconfig'}  -- Collection of configurations for built-in LSP client
 -- TODO: look into https://github.com/kabouzeid/nvim-lspinstall for installing LSPs
-use {'hrsh7th/nvim-cmp'} -- Autocompletion plugin
-use {'hrsh7th/cmp-nvim-lsp'} -- LSP source for nvim-cmp
-use {'saadparwaiz1/cmp_luasnip'} -- Snippets source for nvim-cmp
-use {'L3MON4D3/LuaSnip'} -- Snippets plugin
+
+-- Autocompletion
+use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+use 'hrsh7th/cmp-buffer' -- Autocompletion from the buffer
+use 'hrsh7th/cmp-path' -- Autocompletion for file paths
+use 'hrsh7th/cmp-nvim-lua' -- Autocompletion for LUA, with nvim knowledge
+use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+
+use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+use 'L3MON4D3/LuaSnip' -- Snippets plugin
+
 use({'jose-elias-alvarez/null-ls.nvim', -- use neovim as a custom language server for formatting
     requires = {'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig'}
 })
@@ -162,3 +169,6 @@ use {'junegunn/limelight.vim'}
 
 -- Misc
 use {"nvim-lua/plenary.nvim"} -- required for plugins
+
+-- Now require the other plugin lua files
+require('plugins/nvim-cmp')

@@ -96,9 +96,6 @@ if has("autocmd")
     autocmd FileType eruby setlocal ts=4 sts=4 sw=4 expandtab
     autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab
 
-    " two space indent for YAML
-    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-
     " Autosave when we lose focus, just like Rubymine does
     autocmd BufLeave,FocusLost * silent! wall
 

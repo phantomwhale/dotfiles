@@ -97,10 +97,6 @@ if has("autocmd")
     " Autosave when we lose focus, just like Rubymine does
     autocmd BufLeave,FocusLost * silent! wall
 
-    " Highlight debugging lines
-    autocmd FileType ruby syn match error contained "\<binding.pry\>"
-    autocmd FileType lua syn match error contained "\<Debug.chat\>"
-    autocmd FileType lua syn match error contained "\<Debug.console\>"
 
     " Trailing whitespace
     highlight ExtraWhitespace ctermbg=red guibg=red

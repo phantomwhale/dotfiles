@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-STOW_FOLDERS="ag bash bin bundler git javascript kitty neovim ruby timetrap todo vim zsh"
+STOW_FOLDERS="ag bash bin bundler git javascript kitty neovim ruby timetrap todo zsh"
 
 for dir in $STOW_FOLDERS; do
 	echo "Stowing $dir"

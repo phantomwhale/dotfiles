@@ -137,6 +137,7 @@ use {'pantharshit00/vim-prisma'} -- prisma formatting
 use {'airblade/vim-gitgutter'}
 use {'tpope/vim-fugitive'}
 use {'tpope/vim-rhubarb'}
+use {'jkramer/vim-checkbox'} -- Markdown checkbox handling, for PR descriptions
 
 -- Markdown
 use {'iamcco/markdown-preview.nvim', -- adds :MarkdownPreview command

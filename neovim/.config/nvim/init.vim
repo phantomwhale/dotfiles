@@ -20,6 +20,13 @@ set noswapfile
 set nobackup
 set nowritebackup
 
+" Use persistent history.
+if !isdirectory("/tmp/.vim-undo-dir")
+    call mkdir("/tmp/.vim-undo-dir", "", 0700)
+endif
+set undodir=/tmp/.vim-undo-dir
+set undofile
+
 " ============ Indentation ============
 set smartindent
 set smarttab

@@ -8,9 +8,11 @@ nnoremap Q <nop>
 noremap <Leader>l :<C-u>nohlsearch<CR>
 noremap <Leader><space> :<C-u>nohlsearch<CR>
 
-" Keep searches centered
+" Keep searches centered (zz) and open any folds for searches (zv)
 noremap n nzzzv
 noremap N Nzzzv
+noremap [c [czzzv
+noremap ]c ]czzzv
 
 " Follow tags when using putty, which ignores Ctrl-]
 noremap <Leader>] <C-]>

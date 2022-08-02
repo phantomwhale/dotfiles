@@ -7,7 +7,9 @@ local sources = {
         disabled_filetypes = { "yaml" },
     }),
     b.formatting.trim_whitespace.with({ filetypes = { "tmux", "teal", "zsh" } }),
-    b.formatting.shfmt,
+    b.formatting.shfmt.with({
+        extra_args = { "-i", "4", "-ci" },
+    }),
     b.diagnostics.write_good,
     b.diagnostics.markdownlint.with({ args = { "--fix", "$FILENAME", "--config", os.getenv("HOME") .. "/.markdownlint.jsonc" } }),
     b.diagnostics.shellcheck.with({ diagnostics_format = "#{m} [#{c}]" }),

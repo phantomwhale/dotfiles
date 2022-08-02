@@ -125,10 +125,6 @@ if has("autocmd")
 
     "autocmd BufWritePost * nested if &filetype=='plantuml' | Make!
 
-    " Autoformat proto files
-    let g:clang_format#style_options = { "IndentWidth": 4, "ColumnLimit": 120 }
-    autocmd FileType proto ClangFormatAutoEnable
-
     autocmd BufRead,BufNewFile */99designs/workbench/* let g:rspec_command='call VimuxRunCommand("99dev compose run workbench bundle exec rspec {spec}")'
 
     " wrap long lines in quickfix

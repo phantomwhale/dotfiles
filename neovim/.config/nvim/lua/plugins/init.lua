@@ -62,6 +62,9 @@ use {
   'nvim-treesitter/nvim-treesitter',
   run = ':TSUpdate'
 }
+
+use { 'mitchellh/tree-sitter-proto' } -- tree-sitter grammer for proto3
+
 -- Search
 use {
   'nvim-telescope/telescope.nvim',
@@ -90,7 +93,6 @@ require('telescope').load_extension('fzf')
 use {'sheerun/vim-polyglot'} -- syntax highlights for 120 languages
 use {'stephpy/vim-yaml'} -- yaml syntax highlights
 -- use 'othree/javascript-libraries-syntax.vim'
--- use 'rhysd/vim-clang-format'
 
 -- IDE plugins
 use {'airblade/vim-rooter',

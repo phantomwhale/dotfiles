@@ -68,6 +68,16 @@ use {
   run = ':TSUpdate'
 }
 
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    -- doesn't seem to work?
+    disable = function(lang, bufnr) -- Disable in large Json buffers
+      return lang == "json" and api.nvim_buf_line_count(bufnr) > 1000
+    end,
+  },
+}
+
 use { 'mitchellh/tree-sitter-proto' } -- tree-sitter grammer for proto3
 
 -- Search

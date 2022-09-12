@@ -100,10 +100,11 @@ use {'airblade/vim-rooter',
         vim.g.rooter_patterns = {'.git/'}
     end
 }
-use {'chriskempson/base16-vim'} -- use base16 colorschemes
+
+-- statusline and color scheme
+use { 'nvim-lualine/lualine.nvim', requires = { 'RRethy/nvim-base16' } }
+
 use {'psliwka/vim-smoothie'} -- smooth scrolling
-use {'vim-airline/vim-airline'} -- superpowered status bar
-use {'vim-airline/vim-airline-themes'} -- adds base16 theme for airline
 use {'rizzatti/dash.vim'} -- add :Dash documentation lookup
 use {'rking/ag.vim'} -- add :Ag file search
 use {'junegunn/fzf', dir = '~/.fzf', run = './install --all'}

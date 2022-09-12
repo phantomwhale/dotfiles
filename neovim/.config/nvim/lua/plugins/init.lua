@@ -39,6 +39,9 @@ local use = packer.use
 -- Packer can manage itself
 use 'wbthomason/packer.nvim'
 
+-- Managed third-party packages
+use {"williamboman/mason.nvim" , "williamboman/mason-lspconfig.nvim"}
+
 -- LSP
 use {'neovim/nvim-lspconfig'}  -- Collection of configurations for built-in LSP client
 -- TODO: look into https://github.com/kabouzeid/nvim-lspinstall for installing LSPs
@@ -54,7 +57,7 @@ use 'onsails/lspkind.nvim' -- pictograms for neovim LSP
 use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
 use 'L3MON4D3/LuaSnip' -- Snippets plugin
 
-use({'jose-elias-alvarez/null-ls.nvim', -- use neovim as a custom language server for formatting
+use({'jose-elias-alvarez/null-ls.nvim', -- use neovim as a custom language server for diagnostics, code actions and more
     requires = {'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig'}
 })
 

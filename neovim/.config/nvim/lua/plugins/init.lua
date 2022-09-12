@@ -142,7 +142,8 @@ use {'jose-elias-alvarez/nvim-lsp-ts-utils'}
 use {'pantharshit00/vim-prisma'} -- prisma formatting
 
 -- Git
-use {'airblade/vim-gitgutter'}
+use {'lewis6991/gitsigns'}
+--use {'airblade/vim-gitgutter'}
 use {'tpope/vim-fugitive'}
 use {'tpope/vim-rhubarb'}
 use {'jkramer/vim-checkbox'} -- Markdown checkbox handling, for PR descriptions

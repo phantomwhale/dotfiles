@@ -58,7 +58,9 @@ use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
 use 'L3MON4D3/LuaSnip' -- Snippets plugin
 
 use({'jose-elias-alvarez/null-ls.nvim', -- use neovim as a custom language server for diagnostics, code actions and more
-    requires = {'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig'}
+    requires = {'nvim-lua/plenary.nvim',
+                'neovim/nvim-lspconfig',
+                'lewis6991/gitsigns.nvim'}
 })
 
 use {

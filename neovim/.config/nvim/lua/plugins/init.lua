@@ -40,7 +40,7 @@ local use = packer.use
 use 'wbthomason/packer.nvim'
 
 -- Managed third-party packages
-use {"williamboman/mason.nvim" , "williamboman/mason-lspconfig.nvim"}
+use {"williamboman/mason.nvim" , "williamboman/mason-lspconfig.nvim", "WhoIsSethDaniel/mason-tool-installer.nvim"}
 
 -- LSP
 use {'neovim/nvim-lspconfig'}  -- Collection of configurations for built-in LSP client

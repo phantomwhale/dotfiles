@@ -11,7 +11,7 @@ local sources = {
         extra_args = { "-i", "4", "-ci" },
     }),
     b.diagnostics.write_good,
-    b.diagnostics.markdownlint.with({ args = { "--fix", "$FILENAME", "--config", os.getenv("HOME") .. "/.markdownlint.jsonc" } }),
+    b.diagnostics.markdownlint.with({ args = { "--stdin", "--config", os.getenv("HOME") .. "/.markdownlint.jsonc" } }),
     b.diagnostics.shellcheck.with({ diagnostics_format = "#{m} [#{c}]" }),
     b.code_actions.gitsigns,
 }

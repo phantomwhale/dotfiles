@@ -107,7 +107,7 @@ use {'rizzatti/dash.vim'} -- add :Dash documentation lookup
 use {'rking/ag.vim'} -- add :Ag file search
 use {'junegunn/fzf', dir = '~/.fzf', run = './install --all'}
 use {'ctrlpvim/ctrlp.vim'}
-use {'phantomwhale/vim-test'}
+use {'excalios/vim-test'}
 use {'majutsushi/tagbar'}
 use {'Raimondi/delimitMate'} -- auto-complete quotes, parens, brackets
 use {'vim-scripts/RelativeNumberCurrentWindow'} -- relative line numbers

@@ -19,6 +19,7 @@ lspconfig.setup {
 
 toolinstaller.setup {
   ensure_installed = {
+    "eslint_d",
     "markdownlint",
     "write-good"
   }

@@ -10,6 +10,7 @@ local sources = {
     b.formatting.shfmt.with({
         extra_args = { "-i", "4", "-ci" },
     }),
+    b.diagnostics.eslint_d,
     b.diagnostics.write_good,
     b.diagnostics.markdownlint.with({ args = { "--stdin", "--config", os.getenv("HOME") .. "/.markdownlint.jsonc" } }),
     b.diagnostics.shellcheck.with({ diagnostics_format = "#{m} [#{c}]" }),

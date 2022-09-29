@@ -78,4 +78,4 @@ fpath=(~/.zsh/completions $fpath)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # initialise fnm
-eval "$(fnm env --use-on-cd)"
+eval "$(fnm env --use-on-cd --version-file-strategy recursive)"

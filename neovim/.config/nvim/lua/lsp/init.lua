@@ -46,7 +46,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
   buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
 
-  if client.resolved_capabilities.document_formatting then
+  if client.server_capabilities.document_formatting then
     vim.api.nvim_exec([[
       augroup LspAutocommands
            autocmd! * <buffer>
@@ -62,7 +62,7 @@ local servers = {'solargraph', 'gopls', 'phpactor'}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = function(client)
-      client.resolved_capabilities.document_formatting = true
+      client.server_capabilities.document_formatting = true
       on_attach(client)
     end,
     flags = {

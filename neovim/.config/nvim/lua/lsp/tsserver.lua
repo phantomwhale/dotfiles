@@ -13,8 +13,8 @@ M.setup = function(on_attach)
         on_attach = function(client, bufnr)
             local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 
-            client.resolved_capabilities.document_formatting = false
-            client.resolved_capabilities.document_range_formatting = false
+            client.server_capabilities.document_formatting = false
+            client.server_capabilities.document_range_formatting = false
 
             on_attach(client, bufnr)
 

@@ -136,7 +136,7 @@ use {'jose-elias-alvarez/nvim-lsp-ts-utils'}
 use {'pantharshit00/vim-prisma'} -- prisma formatting
 
 -- Git
-use {'lewis6991/gitsigns'}
+use {'lewis6991/gitsigns.nvim'}
 --use {'airblade/vim-gitgutter'}
 use {'tpope/vim-fugitive'}
 use {'tpope/vim-rhubarb'}

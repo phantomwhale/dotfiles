@@ -126,6 +126,7 @@ use {'ecomba/vim-ruby-refactoring', branch = 'main'}
 use {'jgdavey/vim-blockle'} -- toggle block styles [do/end <-> {}]
 use {'nelstrom/vim-textobj-rubyblock', requires = {'kana/vim-textobj-user'}}
 use {'t9md/vim-ruby-xmpfilter'}
+use {'tpope/vim-bundler'} -- bundle open, but inside a vim session
 
 -- Javascript / Typescript
 use {'ruanyl/vim-sort-imports',  -- adds :SortImports to js/ts files

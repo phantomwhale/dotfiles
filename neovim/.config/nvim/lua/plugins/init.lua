@@ -174,6 +174,7 @@ use {'junegunn/limelight.vim'}
 
 -- Misc
 use {"nvim-lua/plenary.nvim"} -- required for plugins
+use {"micarmst/vim-spellsync"} -- keep binary spelling file in sync with text file, and out of source control
 
 -- Now require the other plugin lua files
 require('plugins/nvim-cmp')

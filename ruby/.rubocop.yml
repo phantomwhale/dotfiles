@@ -1,4 +1,4 @@
-require: 
+require:
   - rubocop-rails
   - rubocop-rspec
   - rubocop-performance
@@ -11,6 +11,9 @@ AllCops:
     - config.ru
     - db/schema.rb
     - node_modules/**/*
+
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_fixed_indentation
 
 # Configuration and specs use long blocks as part of their DSL
 Metrics/BlockLength:
@@ -42,3 +45,11 @@ Style/WordArray:
 
 Naming/MemoizedInstanceVariableName:
   EnforcedStyleForLeadingUnderscores: optional
+
+### Rspec
+
+RSpec/DescribedClass:
+  Enabled: false
+
+RSpec/FactoryBot/SyntaxMethods:
+  Enabled: false

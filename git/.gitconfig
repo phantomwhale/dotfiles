@@ -45,3 +45,5 @@
 	insteadOf = https://github.com/
 [rebase]
 	autosquash = true
+[includeIf "gitdir:~/code/99designs/"]
+  path = ~/code/99designs/.gitconfig

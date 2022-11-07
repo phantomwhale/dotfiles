@@ -1,11 +1,8 @@
 " ============ General Config ============
-set showmode		        " display current mode
 set autowrite                   " ensure files are written when we call :make
-set nofsync                     " fsync causes vim to hang when closing https://github.com/ludovicchabant/vim-gutentags/issues/167#issuecomment-564889922
 
 " Use hybrid line numbers; relative numbering for all lines except the current
 " Also turn off relative nubmers whilst in insert mode
-set number relativenumber
 augroup numbertoggle
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &number && mode() != "i" | set relativenumber   | endif
@@ -19,13 +16,6 @@ let mapleader = ","
 set noswapfile
 set nobackup
 set nowritebackup
-
-" Use persistent history.
-if !isdirectory("/tmp/.vim-undo-dir")
-    call mkdir("/tmp/.vim-undo-dir", "", 0700)
-endif
-set undodir=/tmp/.vim-undo-dir
-set undofile
 
 " ============ Indentation ============
 set smartindent
@@ -43,9 +33,6 @@ set cmdheight=2
 filetype plugin on
 filetype indent on
 
-" Allow local .vimrc overrides
-set exrc
-
 " Get our colours right
 set t_Co=256
 let base16colorspace=256
@@ -57,10 +44,6 @@ set termguicolors " makes devicons appear in colour
 " make incomplete lines and tabs visible
 set listchars=tab:▸\ ,extends:>,precedes:<
 
-" ============ Folds ============
-set foldmethod=indent       " fold based on indentation
-set nofoldenable            " dont fold by default
-
 " ============ Completion ============
 set wildmode=list:longest
 
@@ -69,16 +52,11 @@ set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital"
 
 " ============ Status Bar  =============
-" Always show the status bar
-set laststatus=2
 " Put git branch in the status bar
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Switch wrap off for everything
 set nowrap
-
-" Lets allow mouse scrolling, because it's the 21st centuary after all
-set mouse=a
 
 " ============ Config files  =============
 let $CONFIG = "$HOME/.config/nvim/config"

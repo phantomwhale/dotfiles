@@ -6,6 +6,7 @@ agkozak/zsh-z                # Z function for moving around
 
 djui/alias-tips              # Remind me when I'm not using my aliases
 
+romkatv/powerlevel10k
+
 # these should come last (stated at https://github.com/caarlos0/dotfiles/blob/master/antibody/bundles.txt)
-sindresorhus/pure
 zdharma-continuum/fast-syntax-highlighting         # hopefully this gives us syntax highlighting without breaking pure

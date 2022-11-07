@@ -1,3 +1,4 @@
+vim.cmd( [[
 match ErrorMsg '\s\+$'
 
 " run ruby formatting on save
@@ -93,3 +94,4 @@ let g:rails_projections = {
     \      ]
     \    },
     \ }
+]] )

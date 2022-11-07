@@ -1,3 +1,4 @@
+vim.cmd( [[
 " Wish vim-rails already provided these as AV! and AS!
 function! s:path_to_current_file()
   return expand("%")
@@ -17,12 +18,15 @@ function! s:spec_file_path(filename)
   return substitute(folder_name, ".rb", "_spec.rb", "")
 endfunction
 
-function! rails_test#vsplit_spec()
-  let path = s:spec_file_path(s:path_to_current_file())
-  call s:splitv(path)
-endfunction
+" TODO: this has broken after moving this file - do we still need/want this?
 
-function! rails_test#hsplit_spec()
-  let path = s:spec_file_path(s:path_to_current_file())
-  call s:splith(path)
-endfunction
+"function! rails_test#vsplit_spec()
+  "let path = s:spec_file_path(s:path_to_current_file())
+  "call s:splitv(path)
+"endfunction
+
+"function! rails_test#hsplit_spec()
+  "let path = s:spec_file_path(s:path_to_current_file())
+  "call s:splith(path)
+"endfunction
+]] )

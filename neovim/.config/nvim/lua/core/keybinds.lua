@@ -59,12 +59,12 @@ map <C-l> <C-w>l
 nnoremap <silent> <C-W>z :wincmd z<Bar>cclose<Bar>lclose<CR>
 
 " Quick editing of config files
-nnoremap <leader>ev <C-w>s<C-w>j<C-w>L:e $CONFIG/../init.lua<cr>
-nnoremap <leader>el <C-w>s<C-w>j<C-w>L:e $CONFIG/../lua/<cr>
-nnoremap <leader>ep <C-w>s<C-w>j<C-w>L:e $CONFIG/../lua/packer_init.lua<cr>
-nnoremap <leader>ek <C-w>s<C-w>j<C-w>L:e $CONFIG/../lua/core/keybinds.lua<cr>
-nnoremap <leader>eo <C-w>s<C-w>j<C-w>L:e $CONFIG/../lua/core/options.lua<cr>
-nnoremap <leader>ec <C-w>s<C-w>j<C-w>L:e $CONFIG/pluginconfig.vim<cr>
+nnoremap <leader>ev <C-w>s<C-w>j<C-w>L:e ~/.config/nvim/init.lua<cr>
+nnoremap <leader>el <C-w>s<C-w>j<C-w>L:e ~/.config/nvim/lua/<cr>
+nnoremap <leader>ep <C-w>s<C-w>j<C-w>L:e ~/.config/nvim/lua/packer_init.lua<cr>
+nnoremap <leader>ek <C-w>s<C-w>j<C-w>L:e ~/.config/nvim/lua/core/keybinds.lua<cr>
+nnoremap <leader>eo <C-w>s<C-w>j<C-w>L:e ~/.config/nvim/lua/core/options.lua<cr>
+nnoremap <leader>ec <C-w>s<C-w>j<C-w>L:e ~/.config/nvim/lua/plugins/pluginconfig.lua<cr>
 
 " Auto-create missing rspec tests
 noremap <leader>as :call rails_test#hsplit_spec()<cr>

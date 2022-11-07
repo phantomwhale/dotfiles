@@ -3,9 +3,11 @@ vim.g.mapleader = ","   -- map ',' to leader; set this first to ensure other map
 _G.global = {}
 require('packer_init')
 require('plugins/nvim-cmp')
+require('plugins/pluginconfig')
 require('lsp')
 require('core/options')
 require('core/keybinds')
+require('core/rails_test') -- TODO: is this still needed? Currently broken
 
 vim.cmd( [[
 "                        _____________________________________________________
@@ -23,11 +25,6 @@ vim.cmd( [[
 "      \__/                   \__/     \__/                    \__/      \__/
 "
 " Moving this file into lua/init.lua until it can take over as the main init file
-
-" ============ Config files  =============
-let $CONFIG = "$HOME/.config/nvim/config"
-source $CONFIG/pluginconfig.vim
-source $CONFIG/rails_test.vim
 
 " ============ General Config ============
 

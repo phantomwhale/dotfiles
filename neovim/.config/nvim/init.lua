@@ -1,3 +1,4 @@
+vim.cmd( [[
 "                        _____________________________________________________
 "                        |                                                     |
 "               _______  |                                                     |
@@ -118,3 +119,4 @@ function! s:get_diff_files(rev)
 endfunction
 
 command! -nargs=1 DiffRev call s:get_diff_files(<q-args>)
+]] )

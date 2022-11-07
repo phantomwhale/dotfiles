@@ -1,3 +1,4 @@
+vim.cmd( [[
 " Leader took away our comma - remap to \
 noremap \ ,
 
@@ -58,10 +59,11 @@ map <C-l> <C-w>l
 nnoremap <silent> <C-W>z :wincmd z<Bar>cclose<Bar>lclose<CR>
 
 " Quick editing of config files
-nnoremap <leader>ev <C-w>s<C-w>j<C-w>L:e $CONFIG/../init.vim<cr>
-nnoremap <leader>el <C-w>s<C-w>j<C-w>L:e $CONFIG/../lua/init.lua<cr>
-nnoremap <leader>ep <C-w>s<C-w>j<C-w>L:e $CONFIG/../lua/plugins/init.lua<cr>
-nnoremap <leader>ek <C-w>s<C-w>j<C-w>L:e $CONFIG/keybinds.vim<cr>
+nnoremap <leader>ev <C-w>s<C-w>j<C-w>L:e $CONFIG/../init.lua<cr>
+nnoremap <leader>el <C-w>s<C-w>j<C-w>L:e $CONFIG/../lua/<cr>
+nnoremap <leader>ep <C-w>s<C-w>j<C-w>L:e $CONFIG/../lua/packer_init.lua<cr>
+nnoremap <leader>ek <C-w>s<C-w>j<C-w>L:e $CONFIG/../lua/core/keybinds.lua<cr>
+nnoremap <leader>eo <C-w>s<C-w>j<C-w>L:e $CONFIG/../lua/core/options.lua<cr>
 nnoremap <leader>ec <C-w>s<C-w>j<C-w>L:e $CONFIG/pluginconfig.vim<cr>
 
 " Auto-create missing rspec tests
@@ -93,3 +95,4 @@ nnoremap <Leader>gw :Gwrite<CR>
 nnoremap <Leader>gp :Git push<CR>
 nnoremap <Leader>g- :Git stash<CR>:e<CR>
 nnoremap <Leader>g+ :Git stash pop<CR>:e<CR>
+]] )

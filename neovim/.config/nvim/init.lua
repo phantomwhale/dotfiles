@@ -32,7 +32,7 @@ let $CONFIG = "$HOME/.config/nvim/config"
 lua require('init')
 source $CONFIG/pluginconfig.vim
 source $CONFIG/rails_test.vim
-source $CONFIG/keybinds.vim
+lua require('core/keybinds')
 
 " ============ Autocommands =============
 if has("autocmd")

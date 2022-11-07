@@ -1,3 +1,5 @@
+vim.g.mapleader = ","   -- map ',' to leader; set this first to ensure other mappings use it
+
 vim.cmd( [[
 "                        _____________________________________________________
 "                        |                                                     |

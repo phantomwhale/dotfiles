@@ -90,13 +90,18 @@ use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 -- Syntax plugins
 use {'sheerun/vim-polyglot'} -- syntax highlights for 120 languages
 use {'stephpy/vim-yaml'} -- yaml syntax highlights
--- use 'othree/javascript-libraries-syntax.vim'
 
 -- IDE plugins
 use {'airblade/vim-rooter',
     config = function() -- Automatically set pwd when opening a file
         vim.g.rooter_patterns = {'.git/'}
     end
+}
+use {
+  "folke/which-key.nvim",
+  config = function()
+    require("which-key").setup {}
+  end
 }
 
 -- statusline and color scheme
@@ -168,7 +173,6 @@ use {'tpope/vim-unimpaired'}
 use {'tpope/vim-vinegar'}
 
 -- Writing
-
 use {'junegunn/goyo.vim'} -- distraction free writing
 use {'junegunn/limelight.vim'}
 

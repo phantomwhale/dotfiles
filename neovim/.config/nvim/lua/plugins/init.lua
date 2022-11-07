@@ -6,12 +6,12 @@ local compile_path = install_path .. "/plugin/packer_compiled.lua"
 local is_installed = vim.fn.empty(vim.fn.glob(install_path)) == 0
 
 if not is_installed then
-    if vim.fn.input("Install packer.nvim? (y for yes) ") == "y" then
-        execute("!git clone https://github.com/wbthomason/packer.nvim " .. install_path)
-        execute("packadd packer.nvim")
-        print("Installed packer.nvim.")
-        is_installed = 1
-    end
+  if vim.fn.input("Install packer.nvim? (y for yes) ") == "y" then
+    execute("!git clone https://github.com/wbthomason/packer.nvim " .. install_path)
+    execute("packadd packer.nvim")
+    print("Installed packer.nvim.")
+    is_installed = 1
+  end
 end
 
 -- Packer commands
@@ -27,10 +27,10 @@ vim.cmd [[command! PU PackerSync]]
 local packer = nil
 if not is_installed then return end
 if packer == nil then
-    packer = require('packer')
-    packer.init({
-        -- we don't want the compilation file in '~/.config/nvim'
-        compile_path = compile_path
+  packer = require('packer')
+  packer.init({
+      -- we don't want the compilation file in '~/.config/nvim'
+      compile_path = compile_path
     })
 end
 
@@ -59,9 +59,9 @@ use 'L3MON4D3/LuaSnip' -- Snippets plugin
 
 use({'jose-elias-alvarez/null-ls.nvim', -- use neovim as a custom language server for diagnostics, code actions and more
     requires = {'nvim-lua/plenary.nvim',
-                'neovim/nvim-lspconfig',
-                'lewis6991/gitsigns.nvim'}
-})
+      'neovim/nvim-lspconfig',
+    'lewis6991/gitsigns.nvim'}
+  })
 
 use {
   'nvim-treesitter/nvim-treesitter',
@@ -93,9 +93,9 @@ use {'stephpy/vim-yaml'} -- yaml syntax highlights
 
 -- IDE plugins
 use {'airblade/vim-rooter',
-    config = function() -- Automatically set pwd when opening a file
-        vim.g.rooter_patterns = {'.git/'}
-    end
+  config = function() -- Automatically set pwd when opening a file
+    vim.g.rooter_patterns = {'.git/'}
+  end
 }
 use {
   "folke/which-key.nvim",
@@ -135,8 +135,8 @@ use {'tpope/vim-bundler'} -- bundle open, but inside a vim session
 
 -- Javascript / Typescript
 use {'ruanyl/vim-sort-imports',  -- adds :SortImports to js/ts files
-      run = 'npm install -g import-sort-cli import-sort-parser-babylon ' ..
-          'import-sort-parser-typescript import-sort-style-renke'}
+  run = 'npm install -g import-sort-cli import-sort-parser-babylon ' ..
+'import-sort-parser-typescript import-sort-style-renke'}
 use {'jose-elias-alvarez/nvim-lsp-ts-utils'}
 use {'pantharshit00/vim-prisma'} -- prisma formatting
 
@@ -149,11 +149,11 @@ use {'jkramer/vim-checkbox'} -- Markdown checkbox handling, for PR descriptions
 
 -- Markdown
 use {'iamcco/markdown-preview.nvim', -- adds :MarkdownPreview command
-    opt = true,
-    ft = { "markdown" },
-    config = "vim.cmd[[doautocmd BufEnter]]",
-    run = "cd app && yarn install",
-    cmd = "MarkdownPreview",
+  opt = true,
+  ft = { "markdown" },
+  config = "vim.cmd[[doautocmd BufEnter]]",
+  run = "cd app && yarn install",
+  cmd = "MarkdownPreview",
 }
 
 -- PHP
@@ -182,4 +182,3 @@ use {"micarmst/vim-spellsync"} -- keep binary spelling file in sync with text fi
 
 -- Now require the other plugin lua files
 require('plugins/nvim-cmp')
-

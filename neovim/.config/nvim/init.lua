@@ -17,14 +17,6 @@ vim.cmd( [[
 
 " ============ General Config ============
 
-" Use hybrid line numbers; relative numbering for all lines except the current
-" Also turn off relative nubmers whilst in insert mode
-augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &number && mode() != "i" | set relativenumber   | endif
-  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &number                  | set norelativenumber | endif
-augroup END
-
 " Get our colours right
 set t_Co=256
 let base16colorspace=256

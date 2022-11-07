@@ -17,6 +17,25 @@ opt.expandtab = true                  -- Use spaces, not tabs
 -- line numbers
 opt.number = true                     -- show the actual line number
 opt.relativenumber = true             -- show other lines with relative line numbers
+local numbertogglegroup = vim.api.nvim_create_augroup("numbertoggle", {})
+vim.api.nvim_create_autocmd( { "BufEnter", "FocusGained", "InsertLeave", "WinEnter" },
+  {
+    pattern = "*",
+    callback = function()
+       if vim.api.nvim_get_mode() ~= "i" then
+         opt.relativenumber = true
+       end
+    end,
+    group = numbertogglegroup
+  }
+)
+vim.api.nvim_create_autocmd( { "BufLeave", "FocusLost", "InsertEnter", "WinLeave" },
+  {
+    pattern = "*",
+    command = 'if &number | set norelativenumber | endif',
+    group = numbertogglegroup
+  }
+)
 
 -- No swap files
 opt.swapfile = false                  -- no swap files

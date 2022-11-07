@@ -182,3 +182,4 @@ use {"micarmst/vim-spellsync"} -- keep binary spelling file in sync with text fi
 
 -- Now require the other plugin lua files
 require('plugins/nvim-cmp')
+

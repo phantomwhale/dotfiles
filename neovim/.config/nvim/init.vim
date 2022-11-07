@@ -1,5 +1,20 @@
+"                        _____________________________________________________
+"                        |                                                     |
+"               _______  |                                                     |
+"              / _____ | |                       MOVING TO LUA                 |
+"             / /(__) || |                                                     |
+"    ________/ / |OO| || |                                                     |
+"   |         |-------|| |                                                     |
+"  (|         |     -.|| |_______________________                              |
+"   |  ____   \       ||_________||____________  |             ____      ____  |
+"  /| / __ \   |______||     / __ \   / __ \   | |            / __ \    / __ \ |\
+"  \|| /  \ |_______________| /  \ |_| /  \ |__| |___________| /  \ |__| /  \|_|/
+"     | () |                 | () |   | () |                  | () |    | () |
+"      \__/                   \__/     \__/                    \__/      \__/
+"
+" Moving this file into lua/init.lua until it can take over as the main init file
+
 " ============ General Config ============
-set autowrite                   " ensure files are written when we call :make
 
 " Use hybrid line numbers; relative numbering for all lines except the current
 " Also turn off relative nubmers whilst in insert mode
@@ -9,30 +24,6 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &number                  | set norelativenumber | endif
 augroup END
 
-" Set leader to a comma, becuase backslash is TOO far away
-let mapleader = ","
-
-" ============ Turn off Swap Files ============
-set noswapfile
-set nobackup
-set nowritebackup
-
-" ============ Indentation ============
-set smartindent
-set smarttab
-set shiftwidth=2                  " Number of spaces to use in each autoindent step
-set softtabstop=2                 " Number of spaces to skip/insert when <BS> or <tab>ing
-set tabstop=2                     " <tab> uses width of two spaces
-set expandtab                     " Use spaces, not tabs
-
-" Better display for messages
-set cmdheight=2
-
-" ============ File types ============
-" Let file types decide their plugin and indent settings
-filetype plugin on
-filetype indent on
-
 " Get our colours right
 set t_Co=256
 let base16colorspace=256
@@ -41,31 +32,12 @@ hi MatchParen cterm=bold
 let g:airline_theme='base16'
 set termguicolors " makes devicons appear in colour
 
-" make incomplete lines and tabs visible
-set listchars=tab:▸\ ,extends:>,precedes:<
-
-" ============ Completion ============
-set wildmode=list:longest
-
-" ============ Search =============
-set ignorecase      " Ignore case when searching...
-set smartcase       " ...unless we type a capital"
-
-" ============ Status Bar  =============
-" Put git branch in the status bar
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-
-" Switch wrap off for everything
-set nowrap
-
 " ============ Config files  =============
 let $CONFIG = "$HOME/.config/nvim/config"
 lua require('init')
 source $CONFIG/pluginconfig.vim
 source $CONFIG/rails_test.vim
 source $CONFIG/keybinds.vim
-
-command! Xs :mks! | :xa "save the session, save modified files, and exit
 
 " ============ Autocommands =============
 if has("autocmd")

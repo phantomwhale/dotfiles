@@ -1,5 +1,12 @@
 vim.g.mapleader = ","   -- map ',' to leader; set this first to ensure other mappings use it
 
+_G.global = {}
+require('packer_init')
+require('plugins/nvim-cmp')
+require('lsp')
+require('core/options')
+require('core/keybinds')
+
 vim.cmd( [[
 "                        _____________________________________________________
 "                        |                                                     |
@@ -17,6 +24,11 @@ vim.cmd( [[
 "
 " Moving this file into lua/init.lua until it can take over as the main init file
 
+" ============ Config files  =============
+let $CONFIG = "$HOME/.config/nvim/config"
+source $CONFIG/pluginconfig.vim
+source $CONFIG/rails_test.vim
+
 " ============ General Config ============
 
 " Get our colours right
@@ -27,12 +39,6 @@ hi MatchParen cterm=bold
 let g:airline_theme='base16'
 set termguicolors " makes devicons appear in colour
 
-" ============ Config files  =============
-let $CONFIG = "$HOME/.config/nvim/config"
-lua require('init')
-source $CONFIG/pluginconfig.vim
-source $CONFIG/rails_test.vim
-lua require('core/keybinds')
 
 " ============ Autocommands =============
 if has("autocmd")

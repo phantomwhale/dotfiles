@@ -22,6 +22,7 @@ toolinstaller.setup {
     "erb-lint",
     "eslint_d",
     "markdownlint",
-    "write-good"
+    "write-good",
+    "prettier"
   }
 }

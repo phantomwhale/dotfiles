@@ -9,7 +9,11 @@ require('core/options')
 require('core/keybinds')
 require('core/rails_test') -- TODO: is this still needed? Currently broken
 
+-- things that are staying as vimscript:
 vim.cmd( [[
+colorscheme base16-monokai
+
+
 "                        _____________________________________________________
 "                        |                                                     |
 "               _______  |                                                     |
@@ -26,18 +30,6 @@ vim.cmd( [[
 "
 " Moving this file into lua/init.lua until it can take over as the main init file
 
-" ============ General Config ============
-
-" Get our colours right
-set t_Co=256
-let base16colorspace=256
-colorscheme base16-monokai
-hi MatchParen cterm=bold
-let g:airline_theme='base16'
-set termguicolors " makes devicons appear in colour
-
-
-" ============ Autocommands =============
 if has("autocmd")
   augroup my_auto_commands
     " clear out my autocommands first, in case we have already loaded them

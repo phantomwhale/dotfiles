@@ -9,6 +9,10 @@ require('core/options')
 require('core/keybinds')
 require('core/rails_test') -- TODO: is this still needed? Currently broken
 
+-- terminal remaps
+vim.keymap.set('t', '<ESC>', [[<C-\><C-n>]], {})
+vim.keymap.set('t', '<M-[>', '<ESC>', {})
+
 -- things that are staying as vimscript:
 vim.cmd( [[
 colorscheme base16-monokai
@@ -77,12 +81,6 @@ if has("autocmd")
     au! FileType css,scss setl iskeyword+=-
   augroup END
 end
-
-if has('nvim')
-  " ESC out of terminal mode
-  :tnoremap <Esc> <C-\><C-n>
-  :tnoremap <M-[> <Esc>
-endif
 
 " ----------------------------------------------------------------------------
 " DiffRev

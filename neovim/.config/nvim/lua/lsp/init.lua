@@ -13,7 +13,7 @@ local on_attach = function(client, bufnr)
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- commands
-  vim.cmd("command! LspFormatting     lua vim.lsp.buf.formatting()")
+  vim.cmd("command! LspFormat         lua vim.lsp.buf.format( { bufnr = " .. bufnr .. ", timeout_ms = 5000 } )")
   vim.cmd("command! LspHover          lua vim.lsp.buf.hover()")
   vim.cmd("command! LspRename         lua vim.lsp.buf.rename()")
   vim.cmd("command! LspDiagPrev       lua vim.diagnostic.goto_prev()")
@@ -38,7 +38,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>e',  ':LspDiagLine<CR>', opts)
   buf_set_keymap('n', '[d',        ':LspDiagPrev<CR>', opts)
   buf_set_keymap('n', ']d',        ':LspDiagNext<CR>', opts)
-  buf_set_keymap('n', '<space>f',  ':LspFormatting<CR>', opts)
+  buf_set_keymap('n', '<space>f',  ':LspFormat<CR>', opts)
 
   buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
@@ -46,12 +46,15 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
 
   if client.server_capabilities.documentFormattingProvider then
-    vim.api.nvim_exec([[
-      augroup LspAutocommands
-           autocmd! * <buffer>
-           autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
-      augroup END
-    ]], true)
+    local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+    vim.api.nvim_create_autocmd("BufWritePre", {
+        group = augroup,
+        buffer = bufnr,
+        callback = function()
+          vim.lsp.buf.format({ bufnr = bufnr, timeout_ms = 5000 })
+        end,
+      })
   end
 end
 

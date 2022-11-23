@@ -13,7 +13,7 @@ local on_attach = function(client, bufnr)
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- commands
-  vim.cmd("command! LspFormat         lua vim.lsp.buf.format( { bufnr = " .. bufnr .. ", timeout_ms = 5000 } )")
+  vim.cmd("command! LspFormat         lua vim.lsp.buf.format( { timeout_ms = 5000 } )")
   vim.cmd("command! LspHover          lua vim.lsp.buf.hover()")
   vim.cmd("command! LspRename         lua vim.lsp.buf.rename()")
   vim.cmd("command! LspDiagPrev       lua vim.diagnostic.goto_prev()")
@@ -52,7 +52,7 @@ local on_attach = function(client, bufnr)
         group = augroup,
         buffer = bufnr,
         callback = function()
-          vim.lsp.buf.format({ bufnr = bufnr, timeout_ms = 5000 })
+          vim.lsp.buf.format({ timeout_ms = 5000 })
         end,
       })
   end

@@ -24,7 +24,7 @@ M.setup = function(on_attach)
                     local opts = { noremap=true, silent=true }
                     buf_set_keymap("n", "gs", ":TSLspOrganize<CR>", opts)
                     buf_set_keymap("n", "gI", ":TSLspRenameFile<CR>", opts)
-                    buf_set_keymap("n", "go", ":TSLspImportAll<CR>", opts)
+                    buf_set_keymap("n", "go", ":TypescriptAddMissingImports<CR>", opts)
                     buf_set_keymap("n", "qq", ":TSLspFixCurrent<CR>", opts)
                 end,
                 flags = {

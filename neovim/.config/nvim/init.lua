@@ -45,10 +45,6 @@ if has("autocmd")
     autocmd FileType typescriptreact setlocal ts=4 sts=4 sw=4 expandtab
     autocmd FileType eruby setlocal ts=4 sts=4 sw=4 expandtab
 
-    " Autosave when we lose focus, just like Rubymine does
-    autocmd BufLeave,FocusLost * silent! wall
-
-
     " Trailing whitespace
     highlight ExtraWhitespace ctermbg=red guibg=red
     match ExtraWhitespace /\s\+$/

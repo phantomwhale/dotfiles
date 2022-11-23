@@ -65,8 +65,6 @@ if has("autocmd")
 
     "autocmd BufWritePost * nested if &filetype=='plantuml' | Make!
 
-    autocmd BufRead,BufNewFile */99designs/workbench/* let g:rspec_command='call VimuxRunCommand("99dev compose run workbench bundle exec rspec {spec}")'
-
     " wrap long lines in quickfix
     augroup quickfix
       autocmd!

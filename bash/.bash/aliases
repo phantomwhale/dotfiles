@@ -22,6 +22,7 @@ alias dclean='docker ps -a | grep "weeks ago" | awk '"'"'{print $1}'"'"' | xargs
 alias dc='docker-compose'
 alias dcr='docker-compose run'
 alias dcu='docker-compose up -d'
+
 alias 99='99dev '
 alias co='checkout'
 alias 99c='99 compose'
@@ -29,6 +30,9 @@ alias 99cl='99c logs --tail 100 -f'
 alias 99cr='99c run --rm'
 alias 99cu='99c up -d'
 alias 99data='aws-vault exec platform -- 99 data'
+alias 99-login='99dev-login'
+alias 99-enable='99dev-set-experiment'
+
 alias eshead='99dev compose exec elasticsearch ./bin/plugin install mobz/elasticsearch-head'
 alias eskopf='99dev compose exec elasticsearch ./bin/plugin install lmenezes/elasticsearch-kopf'
 

@@ -43,6 +43,7 @@ export EDITOR="$VISUAL"
 unsetopt nomatch
 
 # Set up bash aliases
+source ~/.bash/functions
 source ~/.bash/aliases
 
 # Set up chruby and change to latest ruby version

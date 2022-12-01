@@ -1,4 +1,12 @@
-restart_docker_app() {
-  docker stop $1
-  99dev start $1
+function 99dev-login() {
+  local domain="${1:-99designs.com}"
+  open "https://$domain/accounts/saml/99d?noredirect=once"
+}
+
+function 99dev-set-experiment() {
+  local experiment="$1"
+  local variant="${2:-enabled}"
+  local domain="${3:-99designs.com}"
+  local result="https://$domain/bastion/experiments/$experiment/masquerade/$variant"
+  open "$result"
 }

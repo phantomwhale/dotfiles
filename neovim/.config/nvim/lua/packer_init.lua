@@ -97,12 +97,12 @@ use {'airblade/vim-rooter',
     vim.g.rooter_patterns = {'.git/'}
   end
 }
-use {
-  "folke/which-key.nvim",
-  config = function()
-    require("which-key").setup {}
-  end
-}
+--use {
+  --"folke/which-key.nvim",
+  --config = function()
+    --require("which-key").setup {}
+  --end
+--}
 
 -- statusline and color scheme
 use { 'nvim-lualine/lualine.nvim', requires = { 'RRethy/nvim-base16' } }

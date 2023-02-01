@@ -8,6 +8,7 @@
   di = diff
   dc = diff --cached
   dh1 = diff HEAD~1
+  fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
   amend = commit --amend
   lt = describe --tags
   lol = log --graph --decorate --pretty=oneline --abbrev-commit

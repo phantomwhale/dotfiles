@@ -7,10 +7,10 @@ require:
 AllCops:
   NewCops: enable
   Exclude:
-    - **/bin/*
-    - **/config.ru
-    - **/db/schema.rb
-    - **/node_modules/**/*
+    - '**/bin/*'
+    - '**/config.ru'
+    - '**/db/schema.rb'
+    - '**/node_modules/**/*'
 
 Layout/ArgumentAlignment:
   EnforcedStyle: with_fixed_indentation

@@ -22,8 +22,7 @@ Some steps are not automated when moving between machines, such as:
 
 - Shell history (`/.zsh_history`)
 - Keychains
-- TablePlus connections (`~/Library/Application\ Support/com.tinyapp.TablePlus/`) - passwords come over in the Keychain
-- Little-snitch rules
+- TablePlus connections (Settings -> Locations -> select folder in iCloud Drive)
 - Setup Dropbox for todo.txt synchronising
 
 ## Manual installs / preferences

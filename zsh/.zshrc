@@ -8,6 +8,9 @@ fi
 # ensure dotfiles bin directory is loaded first
 export PATH="$HOME/.bin:$PATH"
 
+# Add homebrew into PATH
+export PATH="$PATH:/opt/homebrew/bin"
+
 # set a GOPATH
 export GOPATH="$HOME/go"
 
@@ -16,6 +19,9 @@ export GOPRIVATE=github.com/99designs
 
 # Add go bin folder to path
 export PATH="$PATH:$GOPATH/bin"
+
+# Add python bin dir to path (for ansible)
+export PATH="$PATH:$HOME/Library/Python/3.9/bin/"
 
 # Add fastlane to path
 export PATH="$HOME/.fastlane/bin:$PATH"
@@ -47,8 +53,8 @@ source ~/.bash/functions
 source ~/.bash/aliases
 
 # Set up chruby and change to latest ruby version
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
+source $(brew --prefix)/share/chruby/chruby.sh
+source $(brew --prefix)/share/chruby/auto.sh
 chruby ruby
 
 # enable frum

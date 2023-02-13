@@ -12,7 +12,6 @@ mason.setup({
 lspconfig.setup {
   ensure_installed = {
     "solargraph",
-    "sumneko_lua",
     "tsserver"
   }
 }

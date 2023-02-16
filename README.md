@@ -27,6 +27,7 @@ Some steps are not automated when moving between machines, such as:
 
 ## Manual installs / preferences
 
+- Dash license: Download and installed from 1Password vault
 - DBPowerAmp needs manually installation
 - System Preferences -> Keyboard -> Turn off "add period for double space"
 - May need to run `compaudit | xargs chmod g-w,o-w` (<https://github.com/zsh-users/zsh-completions/issues/680>)

@@ -73,9 +73,11 @@ source ~/.zsh/lib/history.zsh
 # zsh functions
 source ~/.zsh/lib/functions.zsh
 
-# Setup antibody shell plugin manager
-source <(antibody init)
-antibody bundle < ~/.antibody.txt
+# source antidote
+source $(brew --prefix)/share/antidote/antidote.zsh
+
+# initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
+antidote load
 
 # Make FZF use Ag (rather than default find) to lookup files names; this means .gitignore and .agignore exclusions are applied
 export FZF_DEFAULT_COMMAND='ag -g ""'

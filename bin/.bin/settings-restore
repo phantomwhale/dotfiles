@@ -2,8 +2,6 @@
 
 set -euo pipefail
 
-echo "Restoring non-dotfile settings"
-cp "~/Dropbox/.backup/Sequel Pro/Favorites.plist" "~/Library/Application Support/Sequel Pro/Data/"
-cp "~/Dropbox/.backup/Keychains/*.keychain" "~/Library/Keychains/"
+cp ~/Dropbox/.backup/Keychains/*.keychain ~/Library/Keychains/
 security list-keychains -s ~/Library/Keychains/*.keychain
 security default-keychain -s ~/Library/Keychains/login.keychain

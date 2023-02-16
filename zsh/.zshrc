@@ -82,11 +82,11 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # kitty auto-completion
-autoload -Uz compinit && compinit
 kitty + complete setup zsh | source /dev/stdin
 
 # add general zsh completions
-fpath=(~/.zsh/completions $fpath)
+fpath=(~/.zsh/completions $(brew --prefix)/share/zsh/site-functions $fpath)
+autoload -Uz compinit && compinit
 
 # initialise Fuzzy Finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -38,11 +38,21 @@ opt.swapfile = false                  -- no swap files
 opt.backup = false                    -- no backup files
 opt.writebackup = false               -- no write backup files
 
+-- keep undo files instead
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undofile = true
+
 -- Vim commands
 opt.cmdheight = 2                     -- better display for command messages
 opt.wildmode = "list:longest,full"    -- show all command matches on tab, select on second tab
 
+opt.termguicolors = true
+
+opt.scrolloff = 8                     -- always keep 8 lines above/below cursor
+
 -- Text search
+opt.hlsearch = false                  -- Turn off highlight search after searching
+opt.incsearch = true                  -- Show incremental search highlight
 opt.ignorecase = true                 -- Ignore case when searching...
 opt.smartcase = true                  -- ...unless we type a capital"
 

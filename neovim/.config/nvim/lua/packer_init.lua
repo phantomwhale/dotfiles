@@ -46,10 +46,20 @@ use({'jose-elias-alvarez/null-ls.nvim', -- use neovim as a custom language serve
     'lewis6991/gitsigns.nvim'}
   })
 
+-- Highlight, edit and navigate code
 use {
   'nvim-treesitter/nvim-treesitter',
   run = ':TSUpdate'
 }
+
+use { "nvim-treesitter/nvim-treesitter-textobjects",
+  after = "nvim-treesitter",
+  requires = "nvim-treesitter/nvim-treesitter",
+}
+
+use { "RRethy/nvim-treesitter-endwise" }
+
+use { 'mitchellh/tree-sitter-proto' } -- tree-sitter grammer for proto3
 
 require'nvim-treesitter.configs'.setup {
   ensure_installed = { "ruby", "javascript", "typescript", "go" },
@@ -60,9 +70,10 @@ require'nvim-treesitter.configs'.setup {
       return lang == "json" and api.nvim_buf_line_count(bufnr) > 1000
     end,
   },
+  endwise = {
+    enable = true,
+  },
 }
-
-use { 'mitchellh/tree-sitter-proto' } -- tree-sitter grammer for proto3
 
 -- Search
 use {
@@ -87,6 +98,7 @@ use {'airblade/vim-rooter',
 --require("which-key").setup {}
 --end
 --}
+
 
 -- statusline and color scheme
 use { 'nvim-lualine/lualine.nvim', requires = { 'RRethy/nvim-base16' } }
@@ -148,7 +160,6 @@ use {'tpope/vim-abolish'}
 use {'tpope/vim-characterize'}
 use {'tpope/vim-commentary'}
 use {'tpope/vim-dispatch'}
-use {'tpope/vim-endwise'}
 use {'tpope/vim-eunuch'}
 use {'tpope/vim-obsession'}
 use {'tpope/vim-ragtag'}

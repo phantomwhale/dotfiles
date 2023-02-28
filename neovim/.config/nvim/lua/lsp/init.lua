@@ -1,7 +1,9 @@
 local nvim_lsp = require('lspconfig')
 
-local null_ls = require("lsp.null-ls")
 local tsserver = require("lsp.tsserver")
+
+vim.cmd("command! LspFormat lua vim.lsp.buf.format( { timeout_ms = 5000 } )")
+vim.keymap.set('n', '<space>f', ':LspFormat<CR>', { noremap=true, silent=true })
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -13,7 +15,6 @@ local on_attach = function(client, bufnr)
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- commands
-  vim.cmd("command! LspFormat         lua vim.lsp.buf.format( { timeout_ms = 5000 } )")
   vim.cmd("command! LspHover          lua vim.lsp.buf.hover()")
   vim.cmd("command! LspRename         lua vim.lsp.buf.rename()")
   vim.cmd("command! LspDiagPrev       lua vim.diagnostic.goto_prev()")
@@ -38,7 +39,6 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>e',  ':LspDiagLine<CR>', opts)
   buf_set_keymap('n', '[d',        ':LspDiagPrev<CR>', opts)
   buf_set_keymap('n', ']d',        ':LspDiagNext<CR>', opts)
-  buf_set_keymap('n', '<space>f',  ':LspFormat<CR>', opts)
 
   buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
@@ -72,7 +72,6 @@ for _, lsp in ipairs(servers) do
   }
 end
 tsserver.setup(on_attach)
-null_ls.setup(on_attach)
 
 -- luasnip setup
 local luasnip = require 'luasnip'

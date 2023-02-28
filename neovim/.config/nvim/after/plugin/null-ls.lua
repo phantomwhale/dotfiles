@@ -18,15 +18,9 @@ local sources = {
     }),
 }
 
-local M = {}
-M.setup = function(on_attach)
-    null_ls.setup({
-        sources = sources,
-        on_attach = on_attach,
-        flags = {
-            debounce_text_changes = 5000,
-        }
-    })
-end
-
-return M
+null_ls.setup({
+    sources = sources,
+    flags = {
+        debounce_text_changes = 5000,
+    }
+})

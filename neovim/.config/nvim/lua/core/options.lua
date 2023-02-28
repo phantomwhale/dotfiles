@@ -51,10 +51,10 @@ opt.termguicolors = true
 opt.scrolloff = 8                     -- always keep 8 lines above/below cursor
 
 -- Text search
-opt.hlsearch = false                  -- Turn off highlight search after searching
+opt.hlsearch = true                   -- Highlight search after searching
 opt.incsearch = true                  -- Show incremental search highlight
 opt.ignorecase = true                 -- Ignore case when searching...
-opt.smartcase = true                  -- ...unless we type a capital"
+opt.smartcase = true                  -- ...unless we type a capital
 
 opt.listchars = "tab:▸ ,extends:>,precedes:<"
 opt.wrap = false                      -- no text wrapping by default

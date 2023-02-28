@@ -21,6 +21,9 @@ vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 
+-- Remove search highlighting
+vim.keymap.set("n", "<leader>l", "<cmd>nohlsearch<CR>")
+
 -- Apparently, this changed @tpope's life
 vim.keymap.set("n", "<C-w>z", "<cmd>wincmd z<Bar>cclose<Bar>lclose<CR>", { silent = true })
 

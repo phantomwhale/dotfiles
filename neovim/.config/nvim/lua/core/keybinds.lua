@@ -1,38 +1,38 @@
+vim.keymap.set("n", "Q", "<nop>")
+
+-- Keep searches centered (zz) and open any folds for searches (zv)
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set("n", "[c", "[czzzv")
+vim.keymap.set("n", "]c", "]czzzv")
+
+-- Test vim mappings
+vim.keymap.set("n", "t<C-n>", "<cmd>TestNearest<CR>", { silent = true })
+vim.keymap.set("n", "t<C-f>", "<cmd>TestFile<CR>", { silent = true })
+vim.keymap.set("n", "t<C-s>", "<cmd>TestSuite<CR>", { silent = true })
+vim.keymap.set("n", "t<C-l>", "<cmd>TestLast<CR>", { silent = true })
+vim.keymap.set("n", "t<C-g>", "<cmd>TestVisit<CR>", { silent = true })
+
+-- Window navigation
+vim.keymap.set("n", "<C-h>", "<C-w>h")
+vim.keymap.set("n", "<C-j>", "<C-w>j")
+vim.keymap.set("n", "<C-k>", "<C-w>k")
+vim.keymap.set("n", "<C-l>", "<C-w>l")
+
+-- Apparently, this changed @tpope's life
+vim.keymap.set("n", "<C-w>z", "<cmd>wincmd z<Bar>cclose<Bar>lclose<CR>", { silent = true })
+
 vim.cmd( [[
 " Leader took away our comma - remap to \
 noremap \ ,
-
-" disable ex-mode mapping in normal mode. Because it's werid
-nnoremap Q <nop>
-
-" Remove search highlighting
-noremap <Leader>l :<C-u>nohlsearch<CR>
-noremap <Leader><space> :<C-u>nohlsearch<CR>
-
-" Keep searches centered (zz) and open any folds for searches (zv)
-noremap n nzzzv
-noremap N Nzzzv
-noremap [c [czzzv
-noremap ]c ]czzzv
 
 " Follow tags when using putty, which ignores Ctrl-]
 noremap <Leader>] <C-]>
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
-
-"Rspec.vim mappings
-map <Leader>s :call RunCurrentSpecFile()<CR>
-map <Leader>S :call RunNearestSpec()<CR>
-map <Leader>L :call RunLastSpec()<CR>
-map <Leader>A :call RunAllSpecs()<CR>
-
-" Test vim mappings
-nmap <silent> t<C-n> :TestNearest<CR>
-nmap <silent> t<C-f> :TestFile<CR>
-nmap <silent> t<C-s> :TestSuite<CR>
-nmap <silent> t<C-l> :TestLast<CR>
-nmap <silent> t<C-g> :TestVisit<CR>
 
 " XMP Filter keybinds
 autocmd FileType ruby nmap <buffer> <F2> <Plug>(xmpfilter-mark)
@@ -43,20 +43,8 @@ autocmd FileType ruby nmap <buffer> <F3> <Plug>(xmpfilter-run)
 autocmd FileType ruby xmap <buffer> <F3> <Plug>(xmpfilter-run)
 autocmd FileType ruby imap <buffer> <F3> <Plug>(xmpfilter-run)
 
-" Tag bar toggle
-nmap <F8> :TagbarToggle<CR>
-
-" Window navigation
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-
 " Remove trailing whitespace
 :nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
-
-" Apparently, this changed @tpope's life
-nnoremap <silent> <C-W>z :wincmd z<Bar>cclose<Bar>lclose<CR>
 
 " Quick editing of config files
 nnoremap <leader>ev <C-w>s<C-w>j<C-w>L:e ~/.config/nvim/init.lua<cr>

@@ -59,6 +59,9 @@ opt.smartcase = true                  -- ...unless we type a capital
 opt.listchars = "tab:▸ ,extends:>,precedes:<"
 opt.wrap = false                      -- no text wrapping by default
 
+-- Set completeopt to have a better completion experience
+opt.completeopt = 'menuone,noselect'
+
 -- folding
 opt.foldmethod = "indent"
 opt.foldenable = false

@@ -74,8 +74,5 @@ end
 tsserver.setup(on_attach)
 null_ls.setup(on_attach)
 
--- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
-
 -- luasnip setup
 local luasnip = require 'luasnip'

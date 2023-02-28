@@ -2,7 +2,6 @@ vim.g.mapleader = ","   -- map ',' to leader; set this first to ensure other map
 
 _G.global = {}
 require('packer_init')
-require('plugins/nvim-cmp')
 require('plugins/pluginconfig')
 require('lsp')
 require('core/options')

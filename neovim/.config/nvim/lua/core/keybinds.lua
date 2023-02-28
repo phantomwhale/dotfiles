@@ -61,14 +61,6 @@ nnoremap <leader>ec <C-w>s<C-w>j<C-w>L:e ~/.config/nvim/lua/plugins/pluginconfig
 noremap <leader>as :call rails_test#hsplit_spec()<cr>
 noremap <leader>av :call rails_test#vsplit_spec()<cr>
 
-" Telescope (I swear I'll put this into Lua one day)
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fo <cmd>Telescope oldfiles<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>rw <cmd>Telescope grep_string<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
 " EXPERIMENTAL
 "
 

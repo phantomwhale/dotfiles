@@ -31,6 +31,20 @@ vim.cmd( [[
 " Leader took away our comma - remap to \
 noremap \ ,
 
+" Force C-l to work in Netrw
+function! NetrwMappings()
+	nnoremap <buffer> <C-h> :wincmd h<cr>
+	nnoremap <buffer> <C-j> :wincmd j<cr>
+	nnoremap <buffer> <C-k> :wincmd k<cr>
+	nnoremap <buffer> <C-l> :wincmd l<cr>
+endfunction
+
+augroup netrw_mappings
+  autocmd!
+  autocmd filetype netrw call NetrwMappings()
+augroup
+" think this does some odd output on load, but I'll keep it for now
+
 " Follow tags when using putty, which ignores Ctrl-]
 noremap <Leader>] <C-]>
 

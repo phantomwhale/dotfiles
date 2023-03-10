@@ -42,7 +42,7 @@ endfunction
 augroup netrw_mappings
   autocmd!
   autocmd filetype netrw call NetrwMappings()
-augroup
+augroup END
 " think this does some odd output on load, but I'll keep it for now
 
 " Follow tags when using putty, which ignores Ctrl-]

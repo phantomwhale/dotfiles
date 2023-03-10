@@ -61,8 +61,8 @@ chruby ruby
 eval "$(frum init)"
 
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-monokai.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+BASE16_SCHEME=$(cat $HOME/.base16_theme) 2> /dev/null
+kitty @ set-colors -c $HOME/.config/base16-kitty/colors/$BASE16_SCHEME.conf
 
 # key binding setup
 source ~/.zsh/lib/keybinds.zsh

@@ -6,6 +6,7 @@ require('plugins/pluginconfig')
 require('lsp')
 require('core/options')
 require('core/keybinds')
+require('core/colors')
 require('core/rails_test') -- TODO: is this still needed? Currently broken
 
 -- terminal remaps
@@ -14,9 +15,6 @@ vim.keymap.set('t', '<M-[>', '<ESC>', {})
 
 -- things that are staying as vimscript:
 vim.cmd( [[
-colorscheme base16-monokai
-
-
 "                        _____________________________________________________
 "                        |                                                     |
 "               _______  |                                                     |

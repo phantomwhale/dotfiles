@@ -101,6 +101,7 @@ use {'airblade/vim-rooter',
 
 
 -- statusline and color scheme
+use { 'RRethy/nvim-base16' }
 use { 'nvim-lualine/lualine.nvim', requires = { 'RRethy/nvim-base16' } }
 
 use {'psliwka/vim-smoothie'} -- smooth scrolling

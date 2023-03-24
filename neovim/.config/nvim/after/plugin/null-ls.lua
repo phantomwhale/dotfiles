@@ -14,7 +14,7 @@ local sources = {
     }),
     b.formatting.trim_whitespace.with({ filetypes = { "tmux", "teal", "zsh" } }),
     b.formatting.shfmt.with({
-        extra_args = { "-i", "4", "-ci" },
+        extra_args = { "-i", "2", "-ci" },
     }),
 }
 

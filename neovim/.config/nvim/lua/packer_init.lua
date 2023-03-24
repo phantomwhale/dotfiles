@@ -85,6 +85,7 @@ use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 -- Syntax plugins
 use {'sheerun/vim-polyglot'} -- syntax highlights for 120 languages
 use {'stephpy/vim-yaml'} -- yaml syntax highlights
+use {'ntpeters/vim-better-whitespace'} -- show trailing whitespace
 
 -- IDE plugins
 use {'airblade/vim-rooter',

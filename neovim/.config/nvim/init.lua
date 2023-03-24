@@ -42,14 +42,6 @@ if has("autocmd")
     autocmd FileType typescriptreact setlocal ts=4 sts=4 sw=4 expandtab
     autocmd FileType eruby setlocal ts=4 sts=4 sw=4 expandtab
 
-    " Trailing whitespace
-    highlight ExtraWhitespace ctermbg=red guibg=red
-    match ExtraWhitespace /\s\+$/
-    autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-    autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-    autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-    autocmd BufWinLeave * call clearmatches()
-
     " spellcheck on markdown and git commits
     autocmd BufRead,BufNewFile *.md setlocal spell
     autocmd FileType gitcommit setlocal spell
@@ -68,7 +60,7 @@ if has("autocmd")
       autocmd FileType qf setlocal wrap
     augroup END
 
-    " hypens are part of a word in css 
+    " hypens are part of a word in css
     au! FileType css,scss setl iskeyword+=-
   augroup END
 end

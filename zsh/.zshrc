@@ -60,9 +60,11 @@ chruby ruby
 # enable frum
 eval "$(frum init)"
 
-# Base16 Shell
-BASE16_SCHEME=$(cat $HOME/.base16_theme) 2> /dev/null
-kitty @ set-colors -c $HOME/.config/base16-kitty/colors/$BASE16_SCHEME.conf
+# Base16 Shell (don't run inside neovim terminal, as this causes an long wait and then IO error
+if [[ -z "${NVIM}" ]]; then
+  BASE16_SCHEME=$(cat $HOME/.base16_theme) 2> /dev/null
+  kitty @ set-colors -c $HOME/.config/base16-kitty/colors/$BASE16_SCHEME.conf
+fi
 
 # key binding setup
 source ~/.zsh/lib/keybinds.zsh

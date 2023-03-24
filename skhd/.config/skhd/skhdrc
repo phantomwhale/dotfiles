@@ -77,6 +77,9 @@ ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 ## Close active application
 hyper - backspace : $(yabai -m window $(yabai -m query --windows --window | jq -re ".id") --close)
 
+# Workaround for dialog windows getting lost behind other windows
+hyper - q : yabai -m window --toggle topmost; yabai -m window --toggle topmost
+
 # Rotate / flip layout
 hyper - r : yabai -m space --rotate 90
 hyper - y : yabai -m space --mirror y-axis

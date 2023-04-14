@@ -81,6 +81,7 @@ use {
   requires = { 'nvim-lua/plenary.nvim' }
 }
 use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+use {'jvgrootveld/telescope-zoxide'}
 
 -- Syntax plugins
 use {'sheerun/vim-polyglot'} -- syntax highlights for 120 languages

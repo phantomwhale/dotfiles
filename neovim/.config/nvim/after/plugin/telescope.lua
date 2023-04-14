@@ -31,6 +31,7 @@ vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
+vim.keymap.set('n', '<leader>sz', require("telescope").extensions.zoxide.list, { desc = '[S]earch [Z]oxide' })
 
 vim.keymap.set('n', '<leader>sc', function()
     local colors = vim.fn.getcompletion('base16', 'color')
@@ -61,3 +62,6 @@ end)
 -- To get fzf loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
 telescope.load_extension('fzf')
+
+-- Load the zoxide plugin
+require("telescope").load_extension('zoxide')

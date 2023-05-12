@@ -11,7 +11,6 @@ mason.setup({
 
 lspconfig.setup {
   ensure_installed = {
-    "solargraph",
     "tsserver"
   }
 }

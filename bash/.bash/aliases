@@ -62,7 +62,7 @@ note() { vim ~/Documents/"$1" ; }
 alias eslog='curl -XPUT '"'"'http://localhost.dockervm:49200/_all/_settings?preserve_existing=true'"'"' -H "Content-Type: application/json" -d '"'"'{ "index.search.slowlog.threshold.query.debug" : "0s" }'"'"''
 
 alias with_pg=DATABASE_URL=postgresql://postgres@postgresql115.dockervm:49151
-alias with_mysql=DATABASE_URL=mysql://root@mysql57.dockervm/workbench:49926
+alias with_mysql=DATABASE_URL=mysql://root@mysql57.dockervm:49926/workbench
 
 # Prezto git aliases (https://github.com/sorin-ionescu/prezto/blob/master/modules/git/alias.zsh)
 

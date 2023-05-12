@@ -1,3 +1,4 @@
 .git
 *.pdf
 *.svg
+db/seeds

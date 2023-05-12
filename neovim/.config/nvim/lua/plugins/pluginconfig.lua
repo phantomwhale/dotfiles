@@ -52,7 +52,7 @@ let test#strategy = "neovim"
 " folder, which is USUALLY the rule...
 function! NNdevTransform(cmd) abort
   let docker_project = fnamemodify(FindRootDirectory(), ':t')
-  return '99dev compose run --no-deps '.docker_project.' '.a:cmd
+  return '99dev compose run --no-deps --rm '.docker_project.' '.a:cmd
 endfunction
 let g:test#custom_transformations = {'99dev': function('NNdevTransform')}
 

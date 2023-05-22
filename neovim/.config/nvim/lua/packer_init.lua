@@ -16,7 +16,10 @@ local packer_bootstrap = ensure_packer()
 local compile_path = install_path .. "/plugin/packer_compiled.lua"
 
 local packer = require('packer')
-packer.init({ compile_path = compile_path })
+packer.init({
+  compile_path = compile_path,
+  max_jobs = 70 -- unlimited jobs seems to hit a MacOS file limit (ref: https://github.com/wbthomason/packer.nvim/issues/1199)
+})
 local use = packer.use
 
 -- Packer can manage itself

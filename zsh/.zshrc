@@ -15,7 +15,7 @@ export PATH="$PATH:/opt/homebrew/bin"
 export GOPATH="$HOME/go"
 
 # Required by go 1.13
-export GOPRIVATE=github.com/99designs
+export GOPRIVATE=go.99designs.dev
 
 # Add go bin folder to path
 export PATH="$PATH:$GOPATH/bin"

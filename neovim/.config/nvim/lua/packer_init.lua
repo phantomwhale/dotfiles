@@ -146,6 +146,7 @@ use {'pantharshit00/vim-prisma'} -- prisma formatting
 use {'lewis6991/gitsigns.nvim'}
 --use {'airblade/vim-gitgutter'}
 use {'tpope/vim-fugitive'}
+use {'shumphrey/fugitive-gitlab.vim'}
 use {'tpope/vim-rhubarb'}
 use {'jkramer/vim-checkbox'} -- Markdown checkbox handling, for PR descriptions
 

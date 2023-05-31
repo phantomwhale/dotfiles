@@ -5,11 +5,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Add homebrew to the start of PATH, to override `/usr/bin` and `/usr/sbin`
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+
 # ensure dotfiles bin directory is loaded first
 export PATH="$HOME/.bin:$PATH"
-
-# Add homebrew into PATH
-export PATH="$PATH:/opt/homebrew/bin"
 
 # set a GOPATH
 export GOPATH="$HOME/go"

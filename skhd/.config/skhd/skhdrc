@@ -134,7 +134,19 @@ shift + cmd - a : yabai -m window --resize left:20:0; yabai -m window --resize r
 shift + cmd - w : yabai -m window --resize top:0:20; yabai -m window --resize bottom:0:-20
 
 # toggle sticky(+float), topmost, picture-in-picture
-hyper - p : yabai -m window --toggle sticky --toggle topmost --toggle pip
+# hyper - p : yabai -m window --toggle sticky --toggle topmost --toggle pip
+
+# Hyper and arrow keys to create stacks
+hyper - up : yabai -m window --stack north
+hyper - right : yabai -m window --stack east
+hyper - down : yabai -m window --stack south
+hyper - left : yabai -m window --stack west
+
+# focus stacked window
+hyper - n : yabai -m window --focus stack.next || yabai -m window --focus next || yabai -m window --focus first
+hyper - p : yabai -m window --focus stack.prev || yabai -m window --focus prev || yabai -m window --focus last
+
+hyper - z : yabai -m space --layout $(yabai -m query --spaces --space | jq -r 'if .type == "bsp" then "stack" else "bsp" end')
 
 # move managed window
 # shift + cmd - h : yabai -m window --warp east

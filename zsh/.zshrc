@@ -104,5 +104,8 @@ eval "$(fnm env --use-on-cd --version-file-strategy recursive)"
 # initialise zoxide
 eval "$(zoxide init zsh)"
 
+# Load 1password CLI plugins
+source /Users/ben/.config/op/plugins.sh
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

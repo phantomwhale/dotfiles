@@ -33,6 +33,9 @@ export PATH="$(brew --prefix)/opt/libpq/bin:$PATH"
 export HYPERKIT_DISK_SIZE=100000
 export VIRTUALBOX_DISK_SIZE=100000
 
+# Lets use OrbStack over Docker Desktop
+export NNDEV_ORBSTACK=true
+
 # Give myself an hour when assuming AWS roles, rather than 15 minutes, preventing AWS console timeout hell
 export AWS_ASSUME_ROLE_TTL=1h
 

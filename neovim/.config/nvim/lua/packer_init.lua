@@ -158,6 +158,7 @@ use {'iamcco/markdown-preview.nvim', -- adds :MarkdownPreview command
   run = "cd app && yarn install",
   cmd = "MarkdownPreview",
 }
+use {"ellisonleao/glow.nvim"}
 
 -- PHP
 use {'phpactor/phpactor', ft = 'php', run = 'composer install --no-dev -o'}

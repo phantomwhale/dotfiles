@@ -17,7 +17,7 @@ case $HIST_STAMPS in
   *) alias history='fc -l 1' ;;
 esac
 
-setopt append_history
+setopt appendhistory
 setopt extended_history
 setopt hist_expire_dups_first
 setopt hist_ignore_dups # ignore duplication command history list

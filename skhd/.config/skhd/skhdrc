@@ -146,6 +146,7 @@ hyper - left : yabai -m window --stack west
 hyper - n : yabai -m window --focus stack.next || yabai -m window --focus next || yabai -m window --focus first
 hyper - p : yabai -m window --focus stack.prev || yabai -m window --focus prev || yabai -m window --focus last
 
+# Break stacked windows apart (I think)
 hyper - z : yabai -m space --layout $(yabai -m query --spaces --space | jq -r 'if .type == "bsp" then "stack" else "bsp" end')
 
 # move managed window

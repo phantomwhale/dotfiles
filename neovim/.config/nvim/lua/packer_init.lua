@@ -178,6 +178,9 @@ use {'tpope/vim-surround'}
 use {'tpope/vim-unimpaired'}
 use {'tpope/vim-vinegar'}
 
+-- Aligning things
+use {'junegunn/vim-easy-align'}
+
 -- Writing
 use {'junegunn/goyo.vim'} -- distraction free writing
 use {'junegunn/limelight.vim'}

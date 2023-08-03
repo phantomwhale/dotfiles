@@ -122,7 +122,9 @@ use {'yssl/QFEnter'} -- control where to open QuickFix links
 use {'kyazdani42/nvim-web-devicons'} -- devicons; requires a Nerd Font installation
 
 -- Go
-use {'fatih/vim-go', run = ':GoUpdateBinaries'}
+-- use {'fatih/vim-go', run = ':GoUpdateBinaries'}
+use 'ray-x/go.nvim'
+use 'ray-x/guihua.lua' -- recommended if need floating window support
 
 -- Ruby
 use {'vim-ruby/vim-ruby'}

@@ -27,6 +27,16 @@ vim.keymap.set("n", "<leader>l", "<cmd>nohlsearch<CR>")
 -- Apparently, this changed @tpope's life
 vim.keymap.set("n", "<C-w>z", "<cmd>wincmd z<Bar>cclose<Bar>lclose<CR>", { silent = true })
 
+-- Go formating
+local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  callback = function()
+   require('go.format').goimport()
+  end,
+  group = format_sync_grp,
+})
+
 vim.cmd( [[
 " Leader took away our comma - remap to \
 noremap \ ,

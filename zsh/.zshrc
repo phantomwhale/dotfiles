@@ -11,11 +11,8 @@ export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 # ensure dotfiles bin directory is loaded first
 export PATH="$HOME/.bin:$PATH"
 
-# set a GOPATH
-export GOPATH="$HOME/go"
-
 # Required by go 1.13
-export GOPRIVATE=go.99designs.dev
+export GOPRIVATE=github.com/99designs,gitlab.com/vistaprint-org,go.99designs.dev
 
 # Add go bin folder to path
 export PATH="$PATH:$GOPATH/bin"

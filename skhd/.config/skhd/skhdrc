@@ -137,10 +137,16 @@ shift + cmd - w : yabai -m window --resize top:0:20; yabai -m window --resize bo
 # hyper - p : yabai -m window --toggle sticky --toggle topmost --toggle pip
 
 # Hyper and arrow keys to create stacks
-hyper - up : yabai -m window --stack north
-hyper - right : yabai -m window --stack east
-hyper - down : yabai -m window --stack south
-hyper - left : yabai -m window --stack west
+# hyper - up : yabai -m window --stack north
+# hyper - right : yabai -m window --stack east
+# hyper - down : yabai -m window --stack south
+# hyper - left : yabai -m window --stack west
+
+# Hyper and arrow keys to move displays
+hyper - left: yabai -m window --display west
+hyper - right: yabai -m window --display east
+hyper - up: yabai -m window --display north
+hyper - down: yabai -m window --display south
 
 # focus stacked window
 hyper - n : yabai -m window --focus stack.next || yabai -m window --focus next || yabai -m window --focus first

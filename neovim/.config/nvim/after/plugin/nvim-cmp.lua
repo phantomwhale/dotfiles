@@ -5,6 +5,8 @@ if not ok then
   return
 end
 
+require("luasnip.loaders.from_vscode").lazy_load()
+
 cmp.setup {
   snippet = {
     expand = function(args)
@@ -15,8 +17,8 @@ cmp.setup {
   window = {},
 
   mapping = cmp.mapping.preset.insert({
-    --["<C-n>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
-    --["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+    ["<C-k>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+    ["<C-j>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
     ["<C-Space>"] = cmp.mapping.complete(),
@@ -27,8 +29,8 @@ cmp.setup {
   sources = cmp.config.sources({
     { name = "nvim_lua" }, -- only enables itself inside of lua
     { name = "nvim_lsp" },
-    { name = "path" },
     { name = "luasnip" },
+    { name = "path" },
   }, {
     { name = "buffer", keyword_length = 5 } -- only suggest buffer when no matches in previous group
   }),

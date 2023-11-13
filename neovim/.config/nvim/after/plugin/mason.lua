@@ -5,13 +5,17 @@ if (not status2) then return end
 local status3, toolinstaller = pcall(require, "mason-tool-installer")
 if (not status3) then return end
 
-mason.setup({
-
-})
+mason.setup({})
 
 lspconfig.setup {
   ensure_installed = {
-    "tsserver"
+    "tsserver",
+    "html",
+    "cssls",
+    "tailwindcss",
+    "lua_ls",
+    "graphql",
+    "ruby_ls"
   }
 }
 

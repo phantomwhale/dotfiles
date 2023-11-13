@@ -46,6 +46,7 @@ Style/WordArray:
   Enabled: true
   MinSize: 3
 
+# Allow leading underscores on memoized variables
 Naming/MemoizedInstanceVariableName:
   EnforcedStyleForLeadingUnderscores: optional
 

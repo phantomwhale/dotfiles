@@ -26,27 +26,28 @@ local use = packer.use
 use 'wbthomason/packer.nvim'
 
 -- Managed third-party packages
-use {"williamboman/mason.nvim" , "williamboman/mason-lspconfig.nvim", "WhoIsSethDaniel/mason-tool-installer.nvim"}
+use { "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim", "WhoIsSethDaniel/mason-tool-installer.nvim" }
 
 -- Autocompletion
-use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-use 'hrsh7th/cmp-buffer' -- Autocompletion from the buffer
-use 'hrsh7th/cmp-path' -- Autocompletion for file paths
-use 'L3MON4D3/LuaSnip' -- Snippets plugin
-use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-use 'rafamadriz/friendly-snippets' -- Useful snippets
-use 'hrsh7th/cmp-nvim-lua' -- Autocompletion for LUA, with nvim knowledge
-use 'onsails/lspkind.nvim' -- pictograms for neovim LSP
+use 'hrsh7th/nvim-cmp'                  -- Autocompletion plugin
+use 'hrsh7th/cmp-buffer'                -- Autocompletion from the buffer
+use 'hrsh7th/cmp-path'                  -- Autocompletion for file paths
+use 'L3MON4D3/LuaSnip'                  -- Snippets plugin
+use 'saadparwaiz1/cmp_luasnip'          -- Snippets source for nvim-cmp
+use 'rafamadriz/friendly-snippets'      -- Useful snippets
+use 'hrsh7th/cmp-nvim-lua'              -- Autocompletion for LUA, with nvim knowledge
+use 'onsails/lspkind.nvim'              -- pictograms for neovim LSP
 
-use({'jose-elias-alvarez/null-ls.nvim', -- use neovim as a custom language server for diagnostics, code actions and more
-    requires = {'nvim-lua/plenary.nvim',
-      'neovim/nvim-lspconfig',
-    'lewis6991/gitsigns.nvim'}
-  }) -- TODO: now deprecated, seek alternative
+use({
+  'jose-elias-alvarez/null-ls.nvim',    -- use neovim as a custom language server for diagnostics, code actions and more
+  requires = { 'nvim-lua/plenary.nvim',
+    'neovim/nvim-lspconfig',
+    'lewis6991/gitsigns.nvim' }
+})   -- TODO: now deprecated, seek alternative
 
 -- LSP
-use {'neovim/nvim-lspconfig'}  -- Collection of configurations for built-in LSP client
-use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+use { 'neovim/nvim-lspconfig' } -- Collection of configurations for built-in LSP client
+use 'hrsh7th/cmp-nvim-lsp'    -- LSP source for nvim-cmp
 
 -- Highlight, edit and navigate code
 use {
@@ -63,7 +64,7 @@ use { "RRethy/nvim-treesitter-endwise" }
 
 use { 'mitchellh/tree-sitter-proto' } -- tree-sitter grammer for proto3
 
-require'nvim-treesitter.configs'.setup {
+require 'nvim-treesitter.configs'.setup {
   ensure_installed = { "ruby", "javascript", "typescript", "go" },
   highlight = {
     enable = true,
@@ -81,22 +82,22 @@ require'nvim-treesitter.configs'.setup {
 use {
   'nvim-telescope/telescope.nvim',
   branch = '0.1.x',
-  requires = { {'nvim-lua/plenary.nvim'} }
+  requires = { { 'nvim-lua/plenary.nvim' } }
 }
-use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-use {'nvim-tree/nvim-web-devicons'} -- devicons; requires a Nerd Font installation
-use {'jvgrootveld/telescope-zoxide'}
+use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+use { 'nvim-tree/nvim-web-devicons' } -- devicons; requires a Nerd Font installation
+use { 'jvgrootveld/telescope-zoxide' }
 
 -- Syntax plugins
-use {'sheerun/vim-polyglot'} -- syntax highlights for 120 languages
-use {'stephpy/vim-yaml'} -- yaml syntax highlights
-use {'ntpeters/vim-better-whitespace'} -- show trailing whitespace
+use { 'sheerun/vim-polyglot' }         -- syntax highlights for 120 languages
+use { 'stephpy/vim-yaml' }             -- yaml syntax highlights
+use { 'ntpeters/vim-better-whitespace' } -- show trailing whitespace
 
 -- IDE plugins
-use {'stevearc/dressing.nvim'}
-use {'airblade/vim-rooter',
+use { 'stevearc/dressing.nvim' }
+use { 'airblade/vim-rooter',
   config = function() -- Automatically set pwd when opening a file
-    vim.g.rooter_patterns = {'.git/'}
+    vim.g.rooter_patterns = { '.git/' }
   end
 }
 --use {
@@ -111,16 +112,16 @@ use {'airblade/vim-rooter',
 use { 'RRethy/nvim-base16' }
 use { 'nvim-lualine/lualine.nvim', requires = { 'RRethy/nvim-base16' } }
 
-use {'psliwka/vim-smoothie'} -- smooth scrolling
-use {'rizzatti/dash.vim'} -- add :Dash documentation lookup
-use {'rking/ag.vim'} -- add :Ag file search
-use {'junegunn/fzf', dir = '~/.fzf', run = './install --all'}
-use {'ctrlpvim/ctrlp.vim'}
-use {'excalios/vim-test'}
-use {'majutsushi/tagbar'}
-use {'Raimondi/delimitMate'} -- auto-complete quotes, parens, brackets
-use {'vim-scripts/RelativeNumberCurrentWindow'} -- relative line numbers
-use {'yssl/QFEnter'} -- control where to open QuickFix links
+use { 'psliwka/vim-smoothie' } -- smooth scrolling
+use { 'rizzatti/dash.vim' }  -- add :Dash documentation lookup
+use { 'rking/ag.vim' }       -- add :Ag file search
+use { 'junegunn/fzf', dir = '~/.fzf', run = './install --all' }
+use { 'ctrlpvim/ctrlp.vim' }
+use { 'excalios/vim-test' }
+use { 'majutsushi/tagbar' }
+use { 'Raimondi/delimitMate' }                  -- auto-complete quotes, parens, brackets
+use { 'vim-scripts/RelativeNumberCurrentWindow' } -- relative line numbers
+use { 'yssl/QFEnter' }                          -- control where to open QuickFix links
 
 -- Go
 -- use {'fatih/vim-go', run = ':GoUpdateBinaries'}
@@ -128,70 +129,70 @@ use 'ray-x/go.nvim'
 use 'ray-x/guihua.lua' -- recommended if need floating window support
 
 -- Ruby
-use {'vim-ruby/vim-ruby'}
-use {'tpope/vim-rails'}
-use {'thoughtbot/vim-rspec'}
-use {'ruby-formatter/rufo-vim'} -- provides :Rufo for formatting
-use {'ecomba/vim-ruby-refactoring', branch = 'main'}
-use {'jgdavey/vim-blockle'} -- toggle block styles [do/end <-> {}]
-use {'nelstrom/vim-textobj-rubyblock', requires = {'kana/vim-textobj-user'}}
-use {'t9md/vim-ruby-xmpfilter'}
-use {'tpope/vim-bundler'} -- bundle open, but inside a vim session
+use { 'vim-ruby/vim-ruby' }
+use { 'tpope/vim-rails' }
+use { 'thoughtbot/vim-rspec' }
+use { 'ruby-formatter/rufo-vim' } -- provides :Rufo for formatting
+use { 'ecomba/vim-ruby-refactoring', branch = 'main' }
+use { 'jgdavey/vim-blockle' }   -- toggle block styles [do/end <-> {}]
+use { 'nelstrom/vim-textobj-rubyblock', requires = { 'kana/vim-textobj-user' } }
+use { 't9md/vim-ruby-xmpfilter' }
+use { 'tpope/vim-bundler' } -- bundle open, but inside a vim session
 
 -- Javascript / Typescript
-use {'ruanyl/vim-sort-imports',  -- adds :SortImports to js/ts files
+use { 'ruanyl/vim-sort-imports',                         -- adds :SortImports to js/ts files
   run = 'npm install -g import-sort-cli import-sort-parser-babylon ' ..
-'import-sort-parser-typescript import-sort-style-renke'} -- TODO: move these into Mason
-use {'jose-elias-alvarez/typescript.nvim'}
-use {'pantharshit00/vim-prisma'} -- prisma formatting
+      'import-sort-parser-typescript import-sort-style-renke' } -- TODO: move these into Mason
+use { 'jose-elias-alvarez/typescript.nvim' }
+use { 'pantharshit00/vim-prisma' }                       -- prisma formatting
 
 -- Git
-use {'lewis6991/gitsigns.nvim'}
+use { 'lewis6991/gitsigns.nvim' }
 --use {'airblade/vim-gitgutter'}
-use {'tpope/vim-fugitive'}
-use {'shumphrey/fugitive-gitlab.vim'}
-use {'tpope/vim-rhubarb'}
-use {'jkramer/vim-checkbox'} -- Markdown checkbox handling, for PR descriptions
+use { 'tpope/vim-fugitive' }
+use { 'shumphrey/fugitive-gitlab.vim' }
+use { 'tpope/vim-rhubarb' }
+use { 'jkramer/vim-checkbox' } -- Markdown checkbox handling, for PR descriptions
 
 -- Markdown
-use {'iamcco/markdown-preview.nvim', -- adds :MarkdownPreview command
+use { 'iamcco/markdown-preview.nvim', -- adds :MarkdownPreview command
   opt = true,
   ft = { "markdown" },
   config = "vim.cmd[[doautocmd BufEnter]]",
   run = "cd app && yarn install",
   cmd = "MarkdownPreview",
 }
-use {"ellisonleao/glow.nvim"}
+use { "ellisonleao/glow.nvim" }
 
 -- PHP
-use {'phpactor/phpactor', ft = 'php', run = 'composer install --no-dev -o'}
+use { 'phpactor/phpactor', ft = 'php', run = 'composer install --no-dev -o' }
 
 -- Tim Pope basics
-use {'tpope/vim-abolish'}
-use {'tpope/vim-characterize'}
-use {'tpope/vim-commentary'}
-use {'tpope/vim-dispatch'}
-use {'tpope/vim-eunuch'}
-use {'tpope/vim-obsession'}
-use {'tpope/vim-ragtag'}
-use {'tpope/vim-repeat'}
-use {'tpope/vim-surround'}
-use {'tpope/vim-unimpaired'}
-use {'tpope/vim-vinegar'}
+use { 'tpope/vim-abolish' }
+use { 'tpope/vim-characterize' }
+use { 'tpope/vim-commentary' }
+use { 'tpope/vim-dispatch' }
+use { 'tpope/vim-eunuch' }
+use { 'tpope/vim-obsession' }
+use { 'tpope/vim-ragtag' }
+use { 'tpope/vim-repeat' }
+use { 'tpope/vim-surround' }
+use { 'tpope/vim-unimpaired' }
+use { 'tpope/vim-vinegar' }
 
 -- Aligning things
-use {'junegunn/vim-easy-align'}
+use { 'junegunn/vim-easy-align' }
 
 -- Writing
-use {'junegunn/goyo.vim'} -- distraction free writing
-use {'junegunn/limelight.vim'}
+use { 'junegunn/goyo.vim' } -- distraction free writing
+use { 'junegunn/limelight.vim' }
 
 -- Misc
-use {"nvim-lua/plenary.nvim"} -- required for plugins
-use {"micarmst/vim-spellsync"} -- keep binary spelling file in sync with text file, and out of source control
+use { "nvim-lua/plenary.nvim" } -- required for plugins
+use { "micarmst/vim-spellsync" } -- keep binary spelling file in sync with text file, and out of source control
 
 -- View images in vim
-use {'edluffy/hologram.nvim'}
+use { 'edluffy/hologram.nvim' }
 
 if packer_bootstrap then
   print "Syncing packer..."

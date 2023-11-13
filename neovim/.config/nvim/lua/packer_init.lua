@@ -94,6 +94,7 @@ use {'stephpy/vim-yaml'} -- yaml syntax highlights
 use {'ntpeters/vim-better-whitespace'} -- show trailing whitespace
 
 -- IDE plugins
+use {'stevearc/dressing.nvim'}
 use {'airblade/vim-rooter',
   config = function() -- Automatically set pwd when opening a file
     vim.g.rooter_patterns = {'.git/'}

@@ -81,9 +81,11 @@ require'nvim-treesitter.configs'.setup {
 -- Search
 use {
   'nvim-telescope/telescope.nvim',
-  requires = { 'nvim-lua/plenary.nvim' }
+  branch = '0.1.x',
+  requires = { {'nvim-lua/plenary.nvim'} }
 }
 use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+use {'nvim-tree/nvim-web-devicons'} -- devicons; requires a Nerd Font installation
 use {'jvgrootveld/telescope-zoxide'}
 
 -- Syntax plugins
@@ -119,7 +121,6 @@ use {'majutsushi/tagbar'}
 use {'Raimondi/delimitMate'} -- auto-complete quotes, parens, brackets
 use {'vim-scripts/RelativeNumberCurrentWindow'} -- relative line numbers
 use {'yssl/QFEnter'} -- control where to open QuickFix links
-use {'kyazdani42/nvim-web-devicons'} -- devicons; requires a Nerd Font installation
 
 -- Go
 -- use {'fatih/vim-go', run = ':GoUpdateBinaries'}

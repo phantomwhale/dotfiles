@@ -61,7 +61,7 @@ if has("autocmd")
     augroup END
 
     " hypens are part of a word in css
-    au! FileType css,scss setl iskeyword+=-
+    au! FileType css,scss,jsx,html setl iskeyword+=-
   augroup END
 end
 

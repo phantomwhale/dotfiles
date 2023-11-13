@@ -1,5 +1,7 @@
 local nvim_lsp = require('lspconfig')
 
+local cmp_nvim_lsp = require('cmp_nvim_lsp')
+
 local tsserver = require("lsp.tsserver")
 
 vim.cmd("command! LspFormat lua vim.lsp.buf.format( { timeout_ms = 5000 } )")
@@ -58,19 +60,23 @@ local on_attach = function(client, bufnr)
   end
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = {'solargraph', 'gopls', 'phpactor'}
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = function(client)
-      on_attach(client)
-    end,
-    flags = {
-      debounce_text_changes = 150,
-    }
-  }
-end
+local capabilities = cmp_nvim_lsp.default_capabilities()
+
+nvim_lsp["ruby_ls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach
+})
+
+nvim_lsp["lua_ls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach
+})
+
+nvim_lsp["gopls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach
+})
+
 tsserver.setup(on_attach)
 
 -- luasnip setup

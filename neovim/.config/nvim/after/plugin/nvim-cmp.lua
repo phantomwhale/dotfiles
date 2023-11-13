@@ -27,8 +27,8 @@ cmp.setup {
   }),
 
   sources = cmp.config.sources({
-    { name = "nvim_lua" }, -- only enables itself inside of lua
     { name = "nvim_lsp" },
+    { name = "nvim_lua" }, -- only enables itself inside of lua
     { name = "luasnip" },
     { name = "path" },
   }, {

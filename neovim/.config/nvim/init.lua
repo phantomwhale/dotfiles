@@ -40,7 +40,6 @@ if has("autocmd")
     autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
     autocmd FileType typescript setlocal ts=4 sts=4 sw=4 expandtab
     autocmd FileType typescriptreact setlocal ts=4 sts=4 sw=4 expandtab
-    autocmd FileType eruby setlocal ts=4 sts=4 sw=4 expandtab
 
     " spellcheck on markdown and git commits
     autocmd BufRead,BufNewFile *.md setlocal spell

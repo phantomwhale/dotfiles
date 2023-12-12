@@ -29,25 +29,25 @@ use 'wbthomason/packer.nvim'
 use { "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim", "WhoIsSethDaniel/mason-tool-installer.nvim" }
 
 -- Autocompletion
-use 'hrsh7th/nvim-cmp'                  -- Autocompletion plugin
-use 'hrsh7th/cmp-buffer'                -- Autocompletion from the buffer
-use 'hrsh7th/cmp-path'                  -- Autocompletion for file paths
-use 'L3MON4D3/LuaSnip'                  -- Snippets plugin
-use 'saadparwaiz1/cmp_luasnip'          -- Snippets source for nvim-cmp
-use 'rafamadriz/friendly-snippets'      -- Useful snippets
-use 'hrsh7th/cmp-nvim-lua'              -- Autocompletion for LUA, with nvim knowledge
-use 'onsails/lspkind.nvim'              -- pictograms for neovim LSP
+use 'hrsh7th/nvim-cmp'             -- Autocompletion plugin
+use 'hrsh7th/cmp-buffer'           -- Autocompletion from the buffer
+use 'hrsh7th/cmp-path'             -- Autocompletion for file paths
+use 'L3MON4D3/LuaSnip'             -- Snippets plugin
+use 'saadparwaiz1/cmp_luasnip'     -- Snippets source for nvim-cmp
+use 'rafamadriz/friendly-snippets' -- Useful snippets
+use 'hrsh7th/cmp-nvim-lua'         -- Autocompletion for LUA, with nvim knowledge
+use 'onsails/lspkind.nvim'         -- pictograms for neovim LSP
 
 use({
-  'jose-elias-alvarez/null-ls.nvim',    -- use neovim as a custom language server for diagnostics, code actions and more
+  'jose-elias-alvarez/null-ls.nvim', -- use neovim as a custom language server for diagnostics, code actions and more
   requires = { 'nvim-lua/plenary.nvim',
     'neovim/nvim-lspconfig',
     'lewis6991/gitsigns.nvim' }
-})   -- TODO: now deprecated, seek alternative
+}) -- TODO: now deprecated, seek alternative
 
 -- LSP
 use { 'neovim/nvim-lspconfig' } -- Collection of configurations for built-in LSP client
-use 'hrsh7th/cmp-nvim-lsp'    -- LSP source for nvim-cmp
+use 'hrsh7th/cmp-nvim-lsp'      -- LSP source for nvim-cmp
 
 -- Highlight, edit and navigate code
 use {
@@ -89,8 +89,8 @@ use { 'nvim-tree/nvim-web-devicons' } -- devicons; requires a Nerd Font installa
 use { 'jvgrootveld/telescope-zoxide' }
 
 -- Syntax plugins
-use { 'sheerun/vim-polyglot' }         -- syntax highlights for 120 languages
-use { 'stephpy/vim-yaml' }             -- yaml syntax highlights
+use { 'sheerun/vim-polyglot' }           -- syntax highlights for 120 languages
+use { 'stephpy/vim-yaml' }               -- yaml syntax highlights
 use { 'ntpeters/vim-better-whitespace' } -- show trailing whitespace
 
 -- IDE plugins
@@ -113,15 +113,15 @@ use { 'RRethy/nvim-base16' }
 use { 'nvim-lualine/lualine.nvim', requires = { 'RRethy/nvim-base16' } }
 
 use { 'psliwka/vim-smoothie' } -- smooth scrolling
-use { 'rizzatti/dash.vim' }  -- add :Dash documentation lookup
-use { 'rking/ag.vim' }       -- add :Ag file search
+use { 'rizzatti/dash.vim' }    -- add :Dash documentation lookup
+use { 'rking/ag.vim' }         -- add :Ag file search
 use { 'junegunn/fzf', dir = '~/.fzf', run = './install --all' }
 use { 'ctrlpvim/ctrlp.vim' }
 use { 'excalios/vim-test' }
 use { 'majutsushi/tagbar' }
-use { 'Raimondi/delimitMate' }                  -- auto-complete quotes, parens, brackets
+use { 'Raimondi/delimitMate' }                    -- auto-complete quotes, parens, brackets
 use { 'vim-scripts/RelativeNumberCurrentWindow' } -- relative line numbers
-use { 'yssl/QFEnter' }                          -- control where to open QuickFix links
+use { 'yssl/QFEnter' }                            -- control where to open QuickFix links
 
 -- Go
 -- use {'fatih/vim-go', run = ':GoUpdateBinaries'}
@@ -134,17 +134,17 @@ use { 'tpope/vim-rails' }
 use { 'thoughtbot/vim-rspec' }
 use { 'ruby-formatter/rufo-vim' } -- provides :Rufo for formatting
 use { 'ecomba/vim-ruby-refactoring', branch = 'main' }
-use { 'jgdavey/vim-blockle' }   -- toggle block styles [do/end <-> {}]
+use { 'jgdavey/vim-blockle' }     -- toggle block styles [do/end <-> {}]
 use { 'nelstrom/vim-textobj-rubyblock', requires = { 'kana/vim-textobj-user' } }
 use { 't9md/vim-ruby-xmpfilter' }
 use { 'tpope/vim-bundler' } -- bundle open, but inside a vim session
 
 -- Javascript / Typescript
-use { 'ruanyl/vim-sort-imports',                         -- adds :SortImports to js/ts files
+use { 'ruanyl/vim-sort-imports',                                -- adds :SortImports to js/ts files
   run = 'npm install -g import-sort-cli import-sort-parser-babylon ' ..
       'import-sort-parser-typescript import-sort-style-renke' } -- TODO: move these into Mason
 use { 'jose-elias-alvarez/typescript.nvim' }
-use { 'pantharshit00/vim-prisma' }                       -- prisma formatting
+use { 'pantharshit00/vim-prisma' }                              -- prisma formatting
 
 -- Git
 use { 'lewis6991/gitsigns.nvim' }
@@ -152,7 +152,9 @@ use { 'lewis6991/gitsigns.nvim' }
 use { 'tpope/vim-fugitive' }
 use { 'shumphrey/fugitive-gitlab.vim' }
 use { 'tpope/vim-rhubarb' }
-use { 'jkramer/vim-checkbox' } -- Markdown checkbox handling, for PR descriptions
+use { 'jkramer/vim-checkbox' }            -- Markdown checkbox handling, for PR descriptions
+use { 'knsh14/vim-github-link' }          -- Quickly copy URL for commits and branches
+use { 'cwebster2/github-coauthors.nvim' } -- Telescope plug-in for git co-authors
 
 -- Markdown
 use { 'iamcco/markdown-preview.nvim', -- adds :MarkdownPreview command
@@ -188,7 +190,7 @@ use { 'junegunn/goyo.vim' } -- distraction free writing
 use { 'junegunn/limelight.vim' }
 
 -- Misc
-use { "nvim-lua/plenary.nvim" } -- required for plugins
+use { "nvim-lua/plenary.nvim" }  -- required for plugins
 use { "micarmst/vim-spellsync" } -- keep binary spelling file in sync with text file, and out of source control
 
 -- View images in vim

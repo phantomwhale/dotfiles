@@ -1,3 +1,4 @@
 ---
 BUNDLE_BUILD__PG: "--with-pg-config=/opt/homebrew/opt/libpq/bin/pg_config"
 BUNDLE_BUILD__PUMA: "--with-openssl-dir=opt/homebrew/opt/openssl@3"
+BUNDLE_BUILD__MYSQL2: "--with-opt-dir=/opt/homebrew/opt/openssl@3 --with-ldflags=-L/opt/homebrew/opt/zstd/lib"

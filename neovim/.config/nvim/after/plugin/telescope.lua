@@ -7,11 +7,15 @@ local telescope_actions = require('telescope.actions')
 telescope.setup({
   extensions = {
     fzf = {
-      fuzzy = true,                    -- false will only do exact matching
-      override_generic_sorter = true,  -- override the generic sorter
-      override_file_sorter = true,     -- override the file sorter
-      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
-                                       -- the default case_mode is "smart_case"
+      fuzzy = true,                   -- false will only do exact matching
+      override_generic_sorter = true, -- override the generic sorter
+      override_file_sorter = true,    -- override the file sorter
+      case_mode = "smart_case",       -- or "ignore_case" or "respect_case". The default case_mode is "smart_case"
+    }
+  },
+  pickers = {
+    oldfiles = {
+      cwd_only = true,
     }
   }
 })
@@ -34,29 +38,29 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 vim.keymap.set('n', '<leader>sz', require("telescope").extensions.zoxide.list, { desc = '[S]earch [Z]oxide' })
 
 vim.keymap.set('n', '<leader>sc', function()
-    local colors = vim.fn.getcompletion('base16', 'color')
-    local theme = require('telescope.themes').get_dropdown()
-    local telescope_action_set = require('telescope.actions.set')
-    local telescope_action_state = require('telescope.actions.state')
-    require('telescope.pickers').new(theme, {
-        prompt_title = 'Base16 Colorschemes',
-        finder = require('telescope.finders').new_table({ results = colors }),
-        sorter = require('telescope.config').values.generic_sorter(theme),
-        attach_mappings = function(bufnr)
-            telescope_actions.select_default:replace(function()
-                local name = telescope_action_state.get_selected_entry().value
-                notify_colorscheme_changes(name)
-                telescope_actions.close(bufnr)
-            end)
-            telescope_action_set.shift_selection:enhance({
-                post = function()
-                    local name = telescope_action_state.get_selected_entry().value
-                    vim.cmd('colorscheme '..name)
-                end
-            })
-            return true
+  local colors = vim.fn.getcompletion('base16', 'color')
+  local theme = require('telescope.themes').get_dropdown()
+  local telescope_action_set = require('telescope.actions.set')
+  local telescope_action_state = require('telescope.actions.state')
+  require('telescope.pickers').new(theme, {
+    prompt_title = 'Base16 Colorschemes',
+    finder = require('telescope.finders').new_table({ results = colors }),
+    sorter = require('telescope.config').values.generic_sorter(theme),
+    attach_mappings = function(bufnr)
+      telescope_actions.select_default:replace(function()
+        local name = telescope_action_state.get_selected_entry().value
+        notify_colorscheme_changes(name)
+        telescope_actions.close(bufnr)
+      end)
+      telescope_action_set.shift_selection:enhance({
+        post = function()
+          local name = telescope_action_state.get_selected_entry().value
+          vim.cmd('colorscheme ' .. name)
         end
-    }):find()
+      })
+      return true
+    end
+  }):find()
 end)
 
 -- To get fzf loaded and working with telescope, you need to call

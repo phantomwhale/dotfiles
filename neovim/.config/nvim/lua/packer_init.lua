@@ -39,11 +39,11 @@ use 'hrsh7th/cmp-nvim-lua'         -- Autocompletion for LUA, with nvim knowledg
 use 'onsails/lspkind.nvim'         -- pictograms for neovim LSP
 
 use({
-  'jose-elias-alvarez/null-ls.nvim', -- use neovim as a custom language server for diagnostics, code actions and more
+  'nvimtools/none-ls.nvim', -- use neovim as a custom language server for diagnostics, code actions and more
   requires = { 'nvim-lua/plenary.nvim',
     'neovim/nvim-lspconfig',
     'lewis6991/gitsigns.nvim' }
-}) -- TODO: now deprecated, seek alternative
+})
 
 -- LSP
 use { 'neovim/nvim-lspconfig' } -- Collection of configurations for built-in LSP client

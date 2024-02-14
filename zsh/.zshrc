@@ -95,6 +95,10 @@ kitty + complete setup zsh | source /dev/stdin
 fpath=(~/.zsh/completions $(brew --prefix)/share/zsh/site-functions $fpath)
 autoload -Uz compinit && compinit
 
+# add terraform zsh completion
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C $(brew --prefix)/bin/terraform terraform
+
 # initialise Fuzzy Finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -106,6 +110,3 @@ eval "$(zoxide init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /opt/homebrew/bin/terraform terraform

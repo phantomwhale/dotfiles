@@ -150,5 +150,7 @@ lspconfig.gopls.setup({
 
 tsserver.setup(on_attach)
 
+lspconfig.terraformls.setup({})
+
 -- luasnip setup
 local luasnip = require 'luasnip'

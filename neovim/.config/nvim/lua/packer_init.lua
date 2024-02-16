@@ -193,6 +193,19 @@ use { 'junegunn/limelight.vim' }
 use { "nvim-lua/plenary.nvim" }  -- required for plugins
 use { "micarmst/vim-spellsync" } -- keep binary spelling file in sync with text file, and out of source control
 
+use {
+  'mikesmithgh/kitty-scrollback.nvim',
+  disable = false,
+  opt = true,
+  cmd = { 'KittyScrollbackGenerateKittens', 'KittyScrollbackCheckHealth' },
+  event = { 'User KittyScrollbackLaunch' },
+  -- tag = '*', -- latest stable version, may have breaking changes if major version changed
+  -- tag = 'v4.0.0', -- pin specific tag
+  config = function()
+    require('kitty-scrollback').setup()
+  end,
+}
+
 -- View images in vim
 use { 'edluffy/hologram.nvim' }
 

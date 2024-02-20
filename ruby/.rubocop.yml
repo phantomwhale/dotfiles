@@ -7,7 +7,6 @@ require:
 AllCops:
   NewCops: enable
   Exclude:
-    - '**/bin/*'
     - '**/config.ru'
     - '**/db/schema.rb'
     - '**/node_modules/**/*'

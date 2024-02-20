@@ -16,7 +16,8 @@ lspconfig.setup {
     "lua_ls",
     "graphql",
     "ruby_ls",
-    "terraformls"
+    "terraformls",
+    "tflint"
   }
 }
 

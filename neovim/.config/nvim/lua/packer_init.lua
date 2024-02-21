@@ -192,9 +192,6 @@ use {
   end,
 }
 
--- View images in vim
-use { 'edluffy/hologram.nvim' }
-
 if packer_bootstrap then
   print "Syncing packer..."
   packer.sync()

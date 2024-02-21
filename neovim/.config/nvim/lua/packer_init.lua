@@ -151,6 +151,7 @@ use { 'iamcco/markdown-preview.nvim', -- adds :MarkdownPreview command
   cmd = "MarkdownPreview",
 }
 use { "ellisonleao/glow.nvim" }
+use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
 
 -- PHP
 use { 'phpactor/phpactor', ft = 'php', run = 'composer install --no-dev -o' }

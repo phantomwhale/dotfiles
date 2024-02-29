@@ -49,5 +49,6 @@
   insteadOf = https://gitlab.com/
 [rebase]
 	autosquash = true
+	autostash = true
 [includeIf "gitdir:~/code/99designs/"]
   path = ~/code/99designs/.gitconfig

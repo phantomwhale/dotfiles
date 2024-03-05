@@ -1,6 +1,8 @@
-vim.g.mapleader = ","   -- map ',' to leader; set this first to ensure other mappings use it
+-- Set , as the leader key
+-- This must come first to ensure other plugins use it
+vim.g.mapleader = ","
+vim.g.maplocalleader = ","
 
-_G.global = {}
 require('packer_init')
 require('plugins/pluginconfig')
 require('lsp')

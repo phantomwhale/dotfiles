@@ -1,13 +1,11 @@
-# i18n testing functions for 99designs
+# Git checkout branches with fuzzy finder
 #
-function i18n-open() {
-  for site in 99designs.com.au 99designs.de 99designs.es 99designs.fr 99designs.jp 99designs.nl 99designs.pt; do
-    open "https://$site$1?noredirect=1";
-  done
-}
-
-function i18n-experiment() {
-  for site in 99designs.com.au 99designs.de 99designs.es 99designs.fr 99designs.jp 99designs.nl 99designs.pt; do
-    open "https://$site/bastion/experiments/$1/masquerade/${2:-enabled}"
-  done
+# Lovingly stolen from https://gist.github.com/plasticine/0953b7114060c34b5d122cdb48a151dd
+#
+function gcob() {
+  local format branch branches
+  format="%(committerdate:relative)\\%(color:green)%(refname:short)%(color:reset)\\%(HEAD)\\%(color:yellow)%(objectname:short)%(color:reset) %(upstream:trackshort)\\%(contents:subject)"
+  branches=$(git for-each-ref --format="$format" --sort=-committerdate refs/heads/ | column -t -s "\\") &&
+  branch=$(echo "$branches" | fzf --ansi --height=15 --border) &&
+  git checkout $(echo "$branch" | awk '{print $4}')
 }

@@ -23,17 +23,6 @@ alias dc='docker-compose'
 alias dcr='docker-compose run'
 alias dcu='docker-compose up -d'
 
-alias 99='99dev '
-alias co='checkout'
-alias 99c='99 compose'
-alias 99cl='99c logs --tail 100 -f'
-alias 99cr='99c run --rm'
-alias 99cR='99cr --no-deps'
-alias 99cu='99c up -d'
-alias 99data='aws-vault exec platform -- 99 data'
-alias 99-login='99dev-login'
-alias 99-enable='99dev-set-experiment'
-
 alias eshead='99dev compose exec elasticsearch ./bin/plugin install mobz/elasticsearch-head'
 alias eskopf='99dev compose exec elasticsearch ./bin/plugin install lmenezes/elasticsearch-kopf'
 
@@ -51,17 +40,7 @@ function vgit() {
   vim $(git diff-tree --no-commit-id --name-only -r $1)
 }
 
-bake() { 99dev config add ~/code/99designs/99dev/config/"$1".99dev.yml ; }
-alias baked='99dev config ls | grep 99dev\/'
-unbake() { 99dev config add ~/code/99designs/"$1" ; }
-alias unbaked='99dev config ls | grep -v 99dev\/'
-
 note() { vim ~/Documents/"$1" ; }
-
-alias eslog='curl -XPUT '"'"'http://localhost.dockervm:49200/_all/_settings?preserve_existing=true'"'"' -H "Content-Type: application/json" -d '"'"'{ "index.search.slowlog.threshold.query.debug" : "0s" }'"'"''
-
-alias with_pg=DATABASE_URL=postgresql://postgres@postgresql115.dockervm:49151
-alias with_mysql=DATABASE_URL=mysql://root@mysql57.dockervm:49926/workbench
 
 # Prezto git aliases (https://github.com/sorin-ionescu/prezto/blob/master/modules/git/alias.zsh)
 

@@ -84,7 +84,3 @@ opt.signcolumn = 'yes'
 -- Decrease update time
 opt.updatetime = 250
 opt.timeoutlen = 300
-
--- Configure how new splits should be opened
-opt.splitright = true
-opt.splitbelow = true

@@ -16,7 +16,7 @@ vim.keymap.set('t', '<ESC>', [[<C-\><C-n>]], {})
 vim.keymap.set('t', '<M-[>', '<ESC>', {})
 
 -- things that are staying as vimscript:
-vim.cmd( [[
+vim.cmd([[
 "                        _____________________________________________________
 "                        |                                                     |
 "               _______  |                                                     |
@@ -32,6 +32,9 @@ vim.cmd( [[
 "      \__/                   \__/     \__/                    \__/      \__/
 "
 " Moving this file into lua/init.lua until it can take over as the main init file
+
+set title
+set titlestring=\ vim:\ %{substitute(getcwd(),\ $HOME,\ '',\ '')}
 
 if has("autocmd")
   augroup my_auto_commands
@@ -90,4 +93,4 @@ function! s:get_diff_files(rev)
 endfunction
 
 command! -nargs=1 DiffRev call s:get_diff_files(<q-args>)
-]] )
+]])

@@ -1,4 +1,4 @@
 ---
-BUNDLE_BUILD__PG: "--with-pg-config=/opt/homebrew/opt/libpq/bin/pg_config"
+#BUNDLE_BUILD__PG: "--with-pg-config=/opt/homebrew/opt/libpq/bin/pg_config"
 BUNDLE_BUILD__PUMA: "--with-openssl-dir=opt/homebrew/opt/openssl@3"
 BUNDLE_BUILD__MYSQL2: "--with-mysql-config=/opt/homebrew/opt/mysql/bin/mysql_config --with-ldflags=-L/opt/homebrew/opt/zstd/lib -L/opt/homebrew/opt/openssl@3/lib --with-cppflags=-I/opt/homebrew/opt/openssl@3/include --with-cflags=-Wno-error=implicit-function-declaration"

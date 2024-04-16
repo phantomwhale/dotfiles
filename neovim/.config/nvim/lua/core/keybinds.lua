@@ -9,17 +9,17 @@ vim.keymap.set("n", "[c", "[czzzv")
 vim.keymap.set("n", "]c", "]czzzv")
 
 -- Test vim mappings
-vim.keymap.set("n", "t<C-n>", "<cmd>TestNearest<CR>", { silent = true })
+vim.keymap.set("n", "t<C-n>", "<cmd>TestNearest<CR>", { desc = "Run nearest test to cursor", silent = true })
 vim.keymap.set("n", "t<C-f>", "<cmd>TestFile<CR>", { silent = true })
 vim.keymap.set("n", "t<C-s>", "<cmd>TestSuite<CR>", { silent = true })
 vim.keymap.set("n", "t<C-l>", "<cmd>TestLast<CR>", { silent = true })
 vim.keymap.set("n", "t<C-g>", "<cmd>TestVisit<CR>", { silent = true })
 
 -- Window navigation
-vim.keymap.set("n", "<C-h>", "<C-w>h")
-vim.keymap.set("n", "<C-j>", "<C-w>j")
-vim.keymap.set("n", "<C-k>", "<C-w>k")
-vim.keymap.set("n", "<C-l>", "<C-w>l")
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = 'Move focus to the left window' })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = 'Move focus to the lower window' })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = 'Move focus to the upper window' })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = 'Move focus to the right window' })
 
 -- Remove search highlighting
 vim.keymap.set("n", "<leader>l", "<cmd>nohlsearch<CR>")
@@ -32,12 +32,12 @@ local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
   callback = function()
-   require('go.format').goimport()
+    require('go.format').goimport()
   end,
   group = format_sync_grp,
 })
 
-vim.cmd( [[
+vim.cmd([[
 " Leader took away our comma - remap to \
 noremap \ ,
 
@@ -108,4 +108,4 @@ nnoremap <Leader>gw :Gwrite<CR>
 nnoremap <Leader>gp :Git push<CR>
 nnoremap <Leader>g- :Git stash<CR>:e<CR>
 nnoremap <Leader>g+ :Git stash pop<CR>:e<CR>
-]] )
+]])

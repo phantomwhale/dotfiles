@@ -76,6 +76,7 @@ local capabilities = cmp_nvim_lsp.default_capabilities()
 
 _timers = {}
 
+--[[
 lspconfig.ruby_ls.setup({
   capabilities = capabilities,
   on_attach = function(client, buffer)
@@ -121,6 +122,14 @@ lspconfig.ruby_ls.setup({
         })
     end
 })
+]]--
+
+lspconfig.solargraph.setup{
+  capabilities = capabilities,
+  on_attach = function(client, buffer)
+    on_attach(client, buffer)
+  end
+}
 
 lspconfig.lua_ls.setup({
     capabilities = capabilities,

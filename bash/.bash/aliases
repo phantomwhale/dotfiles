@@ -13,6 +13,7 @@ alias nnn='nnn -e'
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log *'
 alias rc='rails console'
 alias t='todo.sh'
+alias td='t ls | head -25'
 alias tt="timetrap"
 alias tmux='tmux -2'
 alias vi=vim

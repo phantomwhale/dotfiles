@@ -83,4 +83,4 @@ opt.signcolumn = 'yes'
 
 -- Decrease update time
 opt.updatetime = 250
-opt.timeoutlen = 300
+opt.timeoutlen = 1000

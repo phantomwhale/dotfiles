@@ -93,6 +93,7 @@ hyper - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
 # balance size of windows
 hyper - 0 : yabai -m space --balance
+hyper - 0x18 : yabai -m space --balance
 
 # focus window
 alt - h : yabai -m window --focus west

@@ -165,6 +165,7 @@ use { 'tpope/vim-eunuch' }
 use { 'tpope/vim-obsession' }
 use { 'tpope/vim-ragtag' }
 use { 'tpope/vim-repeat' }
+use { 'tpope/vim-rsi' }
 use { 'tpope/vim-surround' }
 use { 'tpope/vim-unimpaired' }
 use { 'tpope/vim-vinegar' }

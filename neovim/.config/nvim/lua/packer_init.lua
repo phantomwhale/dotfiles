@@ -109,6 +109,26 @@ use { 'Raimondi/delimitMate' }                    -- auto-complete quotes, paren
 use { 'vim-scripts/RelativeNumberCurrentWindow' } -- relative line numbers
 use { 'yssl/QFEnter' }                            -- control where to open QuickFix links
 
+-- testing
+-- current set up for rspec only
+use {
+  "nvim-neotest/neotest",
+  requires = {
+    "nvim-neotest/nvim-nio",
+    "nvim-lua/plenary.nvim",
+    "antoinemadec/FixCursorHold.nvim",
+    "nvim-treesitter/nvim-treesitter",
+    "olimorris/neotest-rspec"
+  },
+  config = function()
+    require("neotest").setup({
+      adapters = {
+        require("neotest-rspec"),
+      }
+    })
+  end
+}
+
 -- Go
 -- use {'fatih/vim-go', run = ':GoUpdateBinaries'}
 use 'ray-x/go.nvim'

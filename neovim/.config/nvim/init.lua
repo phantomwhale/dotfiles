@@ -9,7 +9,6 @@ require('lsp')
 require('core/options')
 require('core/keybinds')
 require('core/colors')
-require('core/rails_test') -- TODO: is this still needed? Currently broken
 
 -- terminal remaps
 vim.keymap.set('t', '<ESC>', [[<C-\><C-n>]], {})

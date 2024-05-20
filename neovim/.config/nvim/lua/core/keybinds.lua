@@ -87,10 +87,6 @@ nnoremap <leader>ek <C-w>s<C-w>j<C-w>L:e ~/.config/nvim/lua/core/keybinds.lua<cr
 nnoremap <leader>eo <C-w>s<C-w>j<C-w>L:e ~/.config/nvim/lua/core/options.lua<cr>
 nnoremap <leader>ec <C-w>s<C-w>j<C-w>L:e ~/.config/nvim/lua/plugins/pluginconfig.lua<cr>
 
-" Auto-create missing rspec tests
-noremap <leader>as :call rails_test#hsplit_spec()<cr>
-noremap <leader>av :call rails_test#vsplit_spec()<cr>
-
 " EXPERIMENTAL
 "
 

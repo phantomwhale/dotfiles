@@ -15,7 +15,6 @@ lspconfig.setup {
     "tailwindcss",
     "lua_ls",
     "graphql",
-    "ruby_ls",
     "solargraph",
     "terraformls",
     "tflint"

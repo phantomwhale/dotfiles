@@ -96,10 +96,10 @@ hyper - 0 : yabai -m space --balance
 hyper - 0x18 : yabai -m space --balance
 
 # focus window
-alt - h : yabai -m window --focus west
-alt - j : yabai -m window --focus south
-alt - k : yabai -m window --focus north
-alt - l : yabai -m window --focus east
+alt - h : yabai -m window --focus west || yabai -m display --focus west
+alt - j : yabai -m window --focus south || yabai -m display --focus south
+alt - k : yabai -m window --focus north || yabai -m display --focus north
+alt - l : yabai -m window --focus east || yabai -m display --focus east
 
 # swap managed window
 hyper - h : yabai -m window --swap west
@@ -156,8 +156,8 @@ hyper - up: yabai -m window --display north
 hyper - down: yabai -m window --display south
 
 # focus stacked window
-hyper - n : yabai -m window --focus stack.next || yabai -m window --focus next || yabai -m window --focus first
-hyper - p : yabai -m window --focus stack.prev || yabai -m window --focus prev || yabai -m window --focus last
+hyper - n : yabai -m window --focus stack.next || yabai -m window --focus stack.first || yabai -m window --focus next || yabai -m window --focus first
+hyper - p : yabai -m window --focus stack.prev || yabai -m window --focus stack.last || yabai -m window --focus prev || yabai -m window --focus last
 
 # Break stacked windows apart (I think)
 hyper - z : yabai -m space --layout $(yabai -m query --spaces --space | jq -r 'if .type == "bsp" then "stack" else "bsp" end')

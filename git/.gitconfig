@@ -17,6 +17,11 @@
   dc = diff --cached
   dh1 = diff HEAD~1
   di = diff
+
+  f = fetch
+  fa = fetch --all
+  fm = pull
+  fr = pull --rebase
   fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
   gone = "!git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D"
 

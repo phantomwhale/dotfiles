@@ -7,6 +7,7 @@
   branches-prune = bp
   co = checkout
   st = status
+  sw = switch
   di = diff
   dc = diff --cached
   dh1 = diff HEAD~1

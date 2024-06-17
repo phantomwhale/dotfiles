@@ -36,6 +36,9 @@ export NNDEV_ORBSTACK=true
 # Give myself an hour when assuming AWS roles, rather than 15 minutes, preventing AWS console timeout hell
 export AWS_ASSUME_ROLE_TTL=1h
 
+# No more guessing git; narrows down options for tab complete on git switch to a sane number
+export GIT_COMPLETION_CHECKOUT_NO_GUESS=1
+
 # Lets edit with vim, because emacs is gross
 # bindkey -e;
 bindkey -v;

@@ -29,7 +29,7 @@ Datadog
 elb
 amazonaws
 EC2
-buildkite
+Buildkite
 dev
 yml
 timestamp
@@ -152,3 +152,5 @@ Procfile
 nginx
 Packagecloud
 DevOps
+UUID
+GPG

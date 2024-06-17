@@ -2,21 +2,32 @@
   name = Ben Turner
   email = ben.turner@pobox.com
 [alias]
+  a = add
+  ap = add --patch
+  au = add --update
+  # Fuzzy add modified files, optionally via patch
+  af = "!git ls-files --deleted --modified --other --exclude-standard | fzf -0 -m --preview 'git diff --color=always {-1}' | xargs -r git add"
+  apf = "!git ls-files --deleted --modified --exclude-standard | fzf -0 -m --preview 'git diff --color=always {-1}' | xargs -r -o git add -p"
+
   b = branch
-  bp = "!git branch --merged | grep -Ev '(\\*|master$|main$)' | xargs git branch -d"
-  branches-prune = bp
+  branches-prune = "!git branch --merged | grep -Ev '(\\*|master$|main$)' | xargs git branch -d"
+  bp = branches-prune
+
   co = checkout
   dc = diff --cached
   dh1 = diff HEAD~1
   di = diff
   fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
-  gone = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D"
+  gone = "!git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D"
+
   lgt = log --graph --pretty=format:'%Cred%h%Creset%C(yellow bold)%d%Creset %s %Cgreen(%cr) %C(blue bold)<%an>%Creset' --abbrev-commit
   lgtt = lgt --first-parent --topo-order --all
   lt = describe --tags
   set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
   st = status
+
   sw = switch
+  swf = "!git branch | fzf | xargs git switch"
 [color]
   diff = auto
   status = auto

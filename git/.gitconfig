@@ -1,5 +1,5 @@
 [user]
-  name =  Ben Turner
+  name = Ben Turner
   email = ben.turner@pobox.com
 [alias]
   b = branch
@@ -38,17 +38,17 @@
 [push]
   default = current
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f
 [fetch]
-	prune = true
+  prune = true
 [url "git@github.com:"]
-	insteadOf = https://github.com/
+  insteadOf = https://github.com/
 # [url "ssh://git@gitlab.com/"]
 [url "git@gitlab.com:"]
   insteadOf = https://gitlab.com/
 [rebase]
-	autosquash = true
-	autostash = true
+  autosquash = true
+  autostash = true
 [includeIf "gitdir:~/code/99designs/"]
   path = ~/code/99designs/.gitconfig

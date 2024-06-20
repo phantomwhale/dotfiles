@@ -93,9 +93,8 @@ endfunction
 
 command! -nargs=1 DiffRev call s:get_diff_files(<q-args>)
 
-" esc in insert & visual mode
+" esc in insert mode
 inoremap jk <esc>
-vnoremap jk <esc>
 
 " esc in command mode
 cnoremap jk <C-C>

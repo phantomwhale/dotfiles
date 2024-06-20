@@ -42,7 +42,7 @@ yabai -m config                                 \
 
 while read app; do
     echo $app
-    yabai -m rule --add app="^$app$" manage=off
+    yabai -m rule --add app="^$app$" manage=off mouse_follows_focus=off
 done < ~/.config/yabai/nomanage
 
 echo "yabai configuration loaded.."

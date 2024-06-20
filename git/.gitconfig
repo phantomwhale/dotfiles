@@ -19,6 +19,7 @@
   di = diff
 
   f = fetch
+  ff = fetch --recurse-submodules=no
   fa = fetch --all
   fm = pull
   fr = pull --rebase

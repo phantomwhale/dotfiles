@@ -15,18 +15,18 @@ vim.g.delimitMate_expand_cr = 1
 vim.g.delimitMate_expand_space = 1
 
 -- let ag search hidden files
-vim.g.ag_prg="ag --vimgrep --hidden"
+vim.g.ag_prg = "ag --vimgrep --hidden"
 
 -- unlimited file in CTRL-P
-vim.g.ctrlp_max_files=0
+vim.g.ctrlp_max_files = 0
 
 -- exclude git ignored files
-vim.g.ctrlp_user_command='ag -Q -l --nocolor --hidden -g "" %s'
+vim.g.ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
 
 -- Goyo
-vim.g.goyo_width=120
+vim.g.goyo_width = 120
 
-vim.cmd( [[
+vim.cmd([[
 match ErrorMsg '\s\+$'
 
 function! s:goyo_enter()
@@ -63,6 +63,7 @@ endif
 let g:rails_projections = {
     \    "app/controllers/*_controller.rb": {
     \      "alternate": [
+    \          "spec/api/{}_spec.rb",
     \          "spec/requests/{}_spec.rb",
     \          "spec/requests/{}_request_spec.rb",
     \          "spec/requests/{}_controller_spec.rb",
@@ -71,6 +72,12 @@ let g:rails_projections = {
     \    },
     \    "spec/requests/*_request_spec.rb": {
     \      "alternate": [
+    \          "app/controllers/{}_controller.rb",
+    \      ]
+    \    },
+    \    "spec/api/*_spec.rb": {
+    \      "alternate": [
+    \          "app/controllers/{}.rb",
     \          "app/controllers/{}_controller.rb",
     \      ]
     \    },
@@ -93,4 +100,4 @@ let g:rails_projections = {
     \    },
     \ }
 
-]] )
+]])

@@ -74,88 +74,45 @@ end
 
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
-_timers = {}
-
---[[
-lspconfig.ruby_ls.setup({
+lspconfig.ruby_lsp.setup({
+  init_options = {
+    formatter = 'standard',
+    linters = { 'standard' }
+  },
   capabilities = capabilities,
-  on_attach = function(client, buffer)
-    on_attach(client, buffer)
-    -- textDocument/diagnostic support until 0.10.0 is released
-    if require("vim.lsp.diagnostic")._enable then
-      return
-    end
-
-    local diagnostic_handler = function()
-      local params = vim.lsp.util.make_text_document_params(buffer)
-      client.request("textDocument/diagnostic", { textDocument = params }, function(err, result)
-        if err then
-          local err_msg = string.format("diagnostics error - %s", vim.inspect(err))
-          vim.lsp.log.error(err_msg)
-        end
-        local diagnostic_items = {}
-        if result then
-          diagnostic_items = result.items
-        end
-        vim.lsp.diagnostic.on_publish_diagnostics(
-          nil,
-          vim.tbl_extend("keep", params, { diagnostics = diagnostic_items }),
-          { client_id = client.id }
-          )
-        end)
-      end
-
-      diagnostic_handler() -- to request diagnostics on buffer when first attaching
-
-      vim.api.nvim_buf_attach(buffer, false, {
-          on_lines = function()
-            if _timers[buffer] then
-              vim.fn.timer_stop(_timers[buffer])
-            end
-            _timers[buffer] = vim.fn.timer_start(200, diagnostic_handler)
-          end,
-          on_detach = function()
-            if _timers[buffer] then
-              vim.fn.timer_stop(_timers[buffer])
-            end
-          end,
-        })
-    end
+  on_attach = on_attach,
 })
-]]--
 
-lspconfig.solargraph.setup{
+lspconfig.solargraph.setup {
   capabilities = capabilities,
-  on_attach = function(client, buffer)
-    on_attach(client, buffer)
-  end
+  on_attach = on_attach,
 }
 
 lspconfig.lua_ls.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
+  capabilities = capabilities,
+  on_attach = on_attach,
 
-    settings = { -- custom settings for lua
-      Lua = {
-        -- make the language server recognize "vim" global
-        diagnostics = {
-          globals = { "vim" },
-        },
-        workspace = {
-          -- make language server aware of runtime files
-          library = {
-            [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-            [vim.fn.stdpath("config") .. "/lua"] = true,
-          },
+  settings = { -- custom settings for lua
+    Lua = {
+      -- make the language server recognize "vim" global
+      diagnostics = {
+        globals = { "vim" },
+      },
+      workspace = {
+        -- make language server aware of runtime files
+        library = {
+          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+          [vim.fn.stdpath("config") .. "/lua"] = true,
         },
       },
-    }
-  })
+    },
+  }
+})
 
 lspconfig.gopls.setup({
-    capabilities = capabilities,
-    on_attach = on_attach
-  })
+  capabilities = capabilities,
+  on_attach = on_attach
+})
 
 tsserver.setup(on_attach)
 

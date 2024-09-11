@@ -1,6 +1,6 @@
 local lspconfig = require('lspconfig')
 local cmp_nvim_lsp = require('cmp_nvim_lsp')
-local tsserver = require("lsp.tsserver")
+local ts_ls = require("lsp.ts_ls")
 
 vim.cmd("command! LspFormat lua vim.lsp.buf.format( { timeout_ms = 5000 } )")
 vim.keymap.set('n', '<space>f', ':LspFormat<CR>', { noremap = true, silent = true })
@@ -114,7 +114,7 @@ lspconfig.gopls.setup({
   on_attach = on_attach
 })
 
-tsserver.setup(on_attach)
+ts_ls.setup(on_attach)
 
 lspconfig.terraformls.setup({})
 lspconfig.tflint.setup({})

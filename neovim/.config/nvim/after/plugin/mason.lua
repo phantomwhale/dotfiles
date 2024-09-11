@@ -9,7 +9,7 @@ mason.setup({})
 
 lspconfig.setup {
   ensure_installed = {
-    "tsserver",
+    "ts_ls",
     "html",
     "cssls",
     "tailwindcss",

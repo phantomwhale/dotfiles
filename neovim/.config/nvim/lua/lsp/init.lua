@@ -1,6 +1,10 @@
-local lspconfig = require('lspconfig')
-local cmp_nvim_lsp = require('cmp_nvim_lsp')
-local ts_ls = require("lsp.ts_ls")
+local lsp_ok, lspconfig = pcall(require, 'lspconfig')
+if (not lsp_ok) then return end
+
+local cmp_ok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
+if (not cmp_ok) then return end
+
+local capabilities = cmp_nvim_lsp.default_capabilities()
 
 vim.cmd("command! LspFormat lua vim.lsp.buf.format( { timeout_ms = 5000 } )")
 vim.keymap.set('n', '<space>f', ':LspFormat<CR>', { noremap = true, silent = true })
@@ -8,12 +12,11 @@ vim.keymap.set('n', '<space>f', ':LspFormat<CR>', { noremap = true, silent = tru
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr or 0, ...) end
-
+  -- Mappings
   local keymap = vim.keymap
 
   -- Enable completion triggered by <c-x><c-o>
-  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+  vim.api.nvim_set_option_value('omnifunc', 'v:lua.vim.lsp.omnifunc', {buf = bufnr})
 
   -- set keybinds
   local opts = { noremap = true, silent = true }
@@ -72,8 +75,6 @@ local on_attach = function(client, bufnr)
   end
 end
 
-local capabilities = cmp_nvim_lsp.default_capabilities()
-
 lspconfig.ruby_lsp.setup({
   init_options = {
     formatter = 'standard',
@@ -114,7 +115,7 @@ lspconfig.gopls.setup({
   on_attach = on_attach
 })
 
-ts_ls.setup(on_attach)
+-- ts_ls.setup(on_attach)
 
 lspconfig.terraformls.setup({})
 lspconfig.tflint.setup({})

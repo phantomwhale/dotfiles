@@ -6,16 +6,13 @@ alias bu='bundle update'
 alias b='brew'
 alias c='cd ~/code'
 alias d='cd ~/.dotfiles'
-alias depgraph='dep status -dot | dot -T png | open -f -a /Applications/Preview.app'
 alias loc='git diff --shortstat `git hash-object -t tree /dev/null`'
 alias ll='exa -alh'
-alias nnn='nnn -e'
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log *'
 alias rc='rails console'
 alias t='todo.sh'
 alias td='t ls | head -25'
 alias tt="timetrap"
-alias tmux='tmux -2'
 alias vi=vim
 alias vim=nvim
 alias topcom='history | awk '"'"'{a[$2]++}END{for(i in a){print a[i] " " i}}'"'"' | sort -rn | head -20'
@@ -24,15 +21,9 @@ alias dc='docker-compose'
 alias dcr='docker-compose run'
 alias dcu='docker-compose up -d'
 
-alias eshead='99dev compose exec elasticsearch ./bin/plugin install mobz/elasticsearch-head'
-alias eskopf='99dev compose exec elasticsearch ./bin/plugin install lmenezes/elasticsearch-kopf'
-
 # Not ideal, but given almost all machines won't have any support for xterm-kitty TERM this ensures better behaviour
 alias ssh="TERM=xterm ssh"
 alias icat="kitty +kitten icat"
-
-alias pg-start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
-alias pg-stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 
 alias git-branches='for branch in `git branch -r --merged | grep -v HEAD`; do echo -e `git show --format="%ci %cr %an" $branch | head -n 1` \\t$branch; done | sort -r'
 alias git-branches-unmerged='for branch in `git branch -r --no-merged | grep -v HEAD`; do echo -e `git show --format="%ci %cr %an" $branch | head -n 1` \\t$branch; done | sort -r'

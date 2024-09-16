@@ -197,6 +197,24 @@ use { 'junegunn/vim-easy-align' }
 use { 'junegunn/goyo.vim' } -- distraction free writing
 use { 'junegunn/limelight.vim' }
 
+use({
+  "epwalsh/obsidian.nvim",
+  tag = "*", -- recommended, use latest release instead of latest commit
+  requires = {
+    "nvim-lua/plenary.nvim"
+  },
+  config = function()
+    require("obsidian").setup({
+      workspaces = {
+        {
+          name = "personal",
+          path = "~/GoogleDrive/Obsidian",
+        },
+      }
+    })
+  end
+})
+
 -- Misc
 use { "nvim-lua/plenary.nvim" }  -- required for plugins
 use { "micarmst/vim-spellsync" } -- keep binary spelling file in sync with text file, and out of source control

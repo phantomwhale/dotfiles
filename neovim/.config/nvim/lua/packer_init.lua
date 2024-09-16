@@ -188,7 +188,13 @@ use { 'tpope/vim-repeat' }
 use { 'tpope/vim-rsi' }
 use { 'tpope/vim-surround' }
 use { 'tpope/vim-unimpaired' }
-use { 'tpope/vim-vinegar' }
+
+-- Directory exploration
+use { "stevearc/oil.nvim",
+  config = function()
+    require("oil").setup()
+  end
+}
 
 -- Aligning things
 use { 'junegunn/vim-easy-align' }

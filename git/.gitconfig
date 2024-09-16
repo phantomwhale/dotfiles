@@ -15,7 +15,12 @@
   branches-show = "for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
   bs = branches-show
 
+  c = commit
+  ca = commit --amend
+  cf = fixup
+
   co = checkout
+
   dc = diff --cached
   dh1 = diff HEAD~1
   di = diff

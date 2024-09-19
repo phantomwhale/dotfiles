@@ -190,11 +190,7 @@ use { 'tpope/vim-surround' }
 use { 'tpope/vim-unimpaired' }
 
 -- Directory exploration
-use { "stevearc/oil.nvim",
-  config = function()
-    require("oil").setup()
-  end
-}
+use { "stevearc/oil.nvim" }
 
 -- Aligning things
 use { 'junegunn/vim-easy-align' }

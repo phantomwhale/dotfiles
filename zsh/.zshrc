@@ -54,9 +54,8 @@ export EDITOR="$VISUAL"
 # Allow [ or ] in commands without erroring out
 unsetopt nomatch
 
-# Set up bash aliases
-source ~/.bash/functions
-source ~/.bash/aliases
+# Set up aliases
+source ~/.aliases
 
 # Set up chruby and change to latest ruby version
 source $(brew --prefix)/share/chruby/chruby.sh

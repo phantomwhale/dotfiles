@@ -1,5 +1,5 @@
 alias ag='ag --hidden'
-alias aliases='vim ~/.dotfiles/bash/aliases'
+alias aliases='vim ~/.dotfiles/zsh/.aliases'
 alias bi='bundle install'
 alias be='bundle exec'
 alias bu='bundle update'

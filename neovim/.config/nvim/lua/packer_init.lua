@@ -218,8 +218,11 @@ use({
 })
 
 -- Misc
-use { "nvim-lua/plenary.nvim" }  -- required for plugins
-use { "micarmst/vim-spellsync" } -- keep binary spelling file in sync with text file, and out of source control
+use { "nvim-lua/plenary.nvim" }     -- required for plugins
+use { "micarmst/vim-spellsync" }    -- keep binary spelling file in sync with text file, and out of source control
+use { 'aymericbeaumet/vim-symlink', -- follow symlinks, to help fugitive work on symlinked dotfiles
+  requires = { 'moll/vim-bbye' }
+}
 
 use {
   'mikesmithgh/kitty-scrollback.nvim',

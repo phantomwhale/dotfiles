@@ -86,9 +86,15 @@ source $(brew --prefix)/share/antidote/antidote.zsh
 # initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
 antidote load
 
+### FZF config
 # Make FZF use Ag (rather than default find) to lookup files names; this means .gitignore and .agignore exclusions are applied
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# Use bat to preview files when using the CTRL-T shell integration
+export FZF_CTRL_T_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 
 # kitty auto-completion
 kitty + complete setup zsh | source /dev/stdin

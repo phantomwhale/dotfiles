@@ -5,6 +5,7 @@ alias be='bundle exec'
 alias bu='bundle update'
 alias b='brew'
 alias c='cd ~/code'
+alias cat=bat
 alias d='cd ~/.dotfiles'
 alias loc='git diff --shortstat `git hash-object -t tree /dev/null`'
 alias ll='exa -alh'

@@ -1,3 +1,10 @@
+# Set the XDG_* variables; some *nix tools expect to find them, and not all
+# of then fallback to these preferred, dotfiles-friendly defaults
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_STATE_HOME=$HOME/.local/state
+export XDG_CACHE_HOME=$HOME/.cache
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -115,6 +122,14 @@ eval "$(fnm env --use-on-cd --version-file-strategy recursive)"
 
 # initialise zoxide
 eval "$(zoxide init zsh)"
+
+export XDG_CONFIG_HOME=$HOME/.config
+
+# Workaround for https://github.com/tinted-theming/tinty/issues/62
+config_path="$XDG_CONFIG_HOME/tinted-theming/tinty/config.toml"
+data_path="$XDG_DATA_HOME/tinted-theming/tinty"
+alias tinty="tinty --config=\"$config_path\" --data-dir=\"$data_path\""
+unset config_path data_path
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

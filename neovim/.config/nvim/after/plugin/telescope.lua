@@ -50,7 +50,10 @@ vim.keymap.set('n', '<leader>sc', function()
     attach_mappings = function(bufnr)
       telescope_actions.select_default:replace(function()
         local name = telescope_action_state.get_selected_entry().value
-        notify_colorscheme_changes(name)
+        os.execute('tinty apply ' .. name)
+        vim.cmd('colorscheme ' ..
+          vim.fn.readfile(vim.fn.expand(vim.env.HOME .. '.local/share/tinted-theming/tinty/current_scheme/.base16_theme'))
+          [1])
         telescope_actions.close(bufnr)
       end)
       telescope_action_set.shift_selection:enhance({

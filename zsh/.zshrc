@@ -123,8 +123,6 @@ eval "$(fnm env --use-on-cd --version-file-strategy recursive)"
 # initialise zoxide
 eval "$(zoxide init zsh)"
 
-export XDG_CONFIG_HOME=$HOME/.config
-
 # Workaround for https://github.com/tinted-theming/tinty/issues/62
 config_path="$XDG_CONFIG_HOME/tinted-theming/tinty/config.toml"
 data_path="$XDG_DATA_HOME/tinted-theming/tinty"

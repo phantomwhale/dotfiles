@@ -8,6 +8,11 @@
 #
 # Browser
 #
+# Workaround for https://github.com/tinted-theming/tinty/issues/62
+config_path="$XDG_CONFIG_HOME/tinted-theming/tinty/config.toml"
+data_path="$XDG_DATA_HOME/tinted-theming/tinty"
+alias tinty="tinty --config=\"$config_path\" --data-dir=\"$data_path\""
+unset config_path data_path
 
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'

@@ -15,7 +15,9 @@ local function handle_focus_gained()
   local current_theme_name = vim.g.colors_name
 
   if current_theme_name ~= new_theme_name then
+    print("Color scheme updated from " .. current_theme_name .. " to " .. new_theme_name)
     vim.cmd("colorscheme " .. new_theme_name)
+    require('lualine').setup()
   end
 end
 

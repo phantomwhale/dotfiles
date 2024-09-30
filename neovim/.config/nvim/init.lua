@@ -8,7 +8,6 @@ require('plugins/pluginconfig')
 require('lsp')
 require('core/options')
 require('core/keybinds')
-require('core/colors')
 
 -- terminal remaps
 vim.keymap.set('t', '<ESC>', [[<C-\><C-n>]], {})

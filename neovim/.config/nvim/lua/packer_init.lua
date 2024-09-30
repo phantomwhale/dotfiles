@@ -93,8 +93,10 @@ use { 'airblade/vim-rooter',
 --end
 --}
 
+-- colorscheme
+use { 'tinted-theming/base16-vim' }
 -- statusline
-use { 'nvim-lualine/lualine.nvim' }
+use { 'nvim-lualine/lualine.nvim', requires = { 'tinted-theming/base16-vim' } }
 
 use { 'psliwka/vim-smoothie' } -- smooth scrolling
 use { 'rizzatti/dash.vim' }    -- add :Dash documentation lookup

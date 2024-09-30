@@ -6,10 +6,9 @@ local function get_tinty_theme()
   if vim.v.shell_error ~= 0 then
     return default_theme
   else
-    return theme_name
+    return vim.trim(theme_name)
   end
 end
-
 
 local function handle_focus_gained()
   local new_theme_name = get_tinty_theme()

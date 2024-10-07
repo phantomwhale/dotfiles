@@ -1,11 +1,17 @@
 vim.g["rails_projections"] = {
   ["app/controllers/*_controller.rb"] = {
     ["alternate"] = {
-      "spec/api/{}_spec.rb",
       "spec/requests/{}_spec.rb",
       "spec/requests/{}_request_spec.rb",
       "spec/requests/{}_controller_spec.rb",
+      "spec/api/{}_spec.rb",
       "spec/controllers/{}_controller_spec.rb",
+    }
+  },
+  ["spec/requests/*_spec.rb"] = {
+    ["alternate"] = {
+      "app/controllers/{}.rb",
+      "app/controllers/{}_controller.rb"
     }
   },
   ["spec/requests/*_request_spec.rb"] = {
@@ -13,13 +19,12 @@ vim.g["rails_projections"] = {
       "app/controllers/{}_controller.rb"
     }
   },
-  ["spec/api/*_spec.rb"] = {
+  ["spec/requests/*_controller_spec.rb"] = {
     ["alternate"] = {
-      "app/controllers/{}.rb",
       "app/controllers/{}_controller.rb"
     }
   },
-  ["spec/requests/*_spec.rb"] = {
+  ["spec/api/*_spec.rb"] = {
     ["alternate"] = {
       "app/controllers/{}.rb",
       "app/controllers/{}_controller.rb"

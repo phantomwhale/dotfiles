@@ -1,4 +1,8 @@
-vim.g["rails_projections"] = {
+-- Experimental option, allows creation of a related spec file (via projections) when one not found
+vim.api.nvim_set_option_value("confirm", true, {})
+
+-- provide more comprehensive mappings for controller to request specs
+vim.g.rails_projections = {
   ["app/controllers/*_controller.rb"] = {
     ["alternate"] = {
       "spec/requests/{}_spec.rb",

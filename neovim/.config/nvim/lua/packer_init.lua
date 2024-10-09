@@ -75,7 +75,6 @@ use { 'nvim-tree/nvim-web-devicons' } -- devicons; requires a Nerd Font installa
 use { 'jvgrootveld/telescope-zoxide' }
 
 -- Syntax plugins
-use { 'sheerun/vim-polyglot' }           -- syntax highlights for 120 languages
 use { 'stephpy/vim-yaml' }               -- yaml syntax highlights
 use { 'ntpeters/vim-better-whitespace' } -- show trailing whitespace
 
@@ -140,7 +139,6 @@ use 'ray-x/go.nvim'
 use 'ray-x/guihua.lua' -- recommended if need floating window support
 
 -- Ruby
-use { 'vim-ruby/vim-ruby' }
 use { 'tpope/vim-rails' }
 use { 'thoughtbot/vim-rspec' }
 use { 'ruby-formatter/rufo-vim' } -- provides :Rufo for formatting

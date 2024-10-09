@@ -1,5 +1,6 @@
 alias ag='ag --hidden'
 alias aliases='vim ~/.dotfiles/zsh/.aliases'
+alias bat="bat --theme='base16-256'"
 alias bi='bundle install'
 alias be='bundle exec'
 alias bu='bundle update'

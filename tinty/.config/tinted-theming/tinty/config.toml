@@ -20,3 +20,8 @@ path = "https://github.com/tinted-theming/tinted-kitty"
 themes-dir = "colors"
 hook = "kitty @ set-colors -a -c %f"
 supported-systems = ["base16", "base24"]
+
+[[items]]
+path = "https://github.com/tinted-theming/tinted-fzf"
+name = "tinted-fzf"
+themes-dir = "sh"

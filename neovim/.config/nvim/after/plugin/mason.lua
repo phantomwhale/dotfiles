@@ -24,6 +24,7 @@ lspconfig.setup {
 
 toolinstaller.setup {
   ensure_installed = {
+    "erb-formatter",
     "erb-lint",
     "eslint_d",
     "markdownlint",

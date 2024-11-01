@@ -46,3 +46,11 @@ vim.g.rails_projections = {
     }
   }
 }
+
+-- The experimental confirm flag only works for user defined projections (see above)
+-- For everything else, this quick and dirty command should suffice
+-- ref: https://github.com/tpope/vim-rails/issues/503
+
+vim.api.nvim_create_user_command('AC', function()
+  vim.cmd([[:execute "e " . eval('rails#buffer().alternate()')]])
+end, {})

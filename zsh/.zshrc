@@ -18,27 +18,14 @@ export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 # ensure dotfiles bin directory is loaded first
 export PATH="$HOME/.bin:$PATH"
 
-# Required by go 1.13
-export GOPRIVATE=github.com/99designs,gitlab.com/vistaprint-org,go.99designs.dev
-
 # Add go bin folder to path
 export PATH="$PATH:$GOPATH/bin"
 
 # Add python bin dir to path (for ansible)
 export PATH="$PATH:$HOME/Library/Python/3.9/bin/"
 
-# Add fastlane to path
-export PATH="$HOME/.fastlane/bin:$PATH"
-
 # Add postgres tools to path
 export PATH="$PATH:$(brew --prefix)/opt/libpq/bin"
-
-# Ensure we have enough space (100GB) for all the dockers
-export HYPERKIT_DISK_SIZE=100000
-export VIRTUALBOX_DISK_SIZE=100000
-
-# Lets use OrbStack over Docker Desktop
-export NNDEV_ORBSTACK=true
 
 # Give myself an hour when assuming AWS roles, rather than 15 minutes, preventing AWS console timeout hell
 export AWS_ASSUME_ROLE_TTL=1h
@@ -49,10 +36,6 @@ export GIT_COMPLETION_CHECKOUT_NO_GUESS=1
 # Lets edit with vim, because emacs is gross
 # bindkey -e;
 bindkey -v;
-
-# bindkey for word boundries movement
-# bindkey '^[[1;9C' forward-word;
-# bindkey '^[[1;9D' backward-word;
 
 # Establish neovim as default editor
 export VISUAL=nvim

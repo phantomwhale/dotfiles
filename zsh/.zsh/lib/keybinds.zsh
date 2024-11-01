@@ -13,7 +13,6 @@ bindkey '^[[1;9C' forward-word # iterm
 bindkey '^[^[[C' forward-word # tmux os x
 bindkey '^[[1;3C' forward-word # tmux ubuntu
 
-
 bindkey '^[[H' beginning-of-line # iterm
 bindkey '^[[1~' beginning-of-line # tmux
 

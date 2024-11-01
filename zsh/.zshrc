@@ -31,7 +31,7 @@ export PATH="$PATH:$HOME/Library/Python/3.9/bin/"
 export PATH="$HOME/.fastlane/bin:$PATH"
 
 # Add postgres tools to path
-export PATH="$(brew --prefix)/opt/libpq/bin:$PATH"
+export PATH="$PATH:$(brew --prefix)/opt/libpq/bin"
 
 # Ensure we have enough space (100GB) for all the dockers
 export HYPERKIT_DISK_SIZE=100000

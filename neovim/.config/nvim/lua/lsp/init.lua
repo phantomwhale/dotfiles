@@ -76,18 +76,13 @@ local on_attach = function(client, bufnr)
 end
 
 lspconfig.ruby_lsp.setup({
-  init_options = {
-    formatter = 'standard',
-    linters = { 'standard' }
-  },
-  capabilities = capabilities,
   on_attach = on_attach,
 })
 
-lspconfig.solargraph.setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
-}
+-- lspconfig.solargraph.setup {
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+-- }
 
 lspconfig.lua_ls.setup({
   capabilities = capabilities,

@@ -14,6 +14,9 @@ telescope.setup({
     }
   },
   pickers = {
+    find_files = {
+      find_command = { 'rg', '--files', '--iglob', '!.git', '--hidden' },
+    },
     oldfiles = {
       cwd_only = true,
     }

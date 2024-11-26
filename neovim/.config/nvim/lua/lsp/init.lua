@@ -78,12 +78,10 @@ end
 
 lspconfig.ruby_lsp.setup({
   on_attach = on_attach,
+  formatter = 'none'
 })
 
--- lspconfig.solargraph.setup {
---   capabilities = capabilities,
---   on_attach = on_attach,
--- }
+lspconfig.rubocop.setup({})
 
 lspconfig.lua_ls.setup({
   capabilities = capabilities,

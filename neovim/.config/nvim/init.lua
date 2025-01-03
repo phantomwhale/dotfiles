@@ -3,7 +3,7 @@
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 
-require('packer_init')
+require('lazy_init')
 require('plugins/pluginconfig')
 require('lsp')
 require('core/options')

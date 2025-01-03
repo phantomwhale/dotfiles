@@ -1,3 +1,9 @@
+require("neotest").setup({
+  adapters = {
+    require("neotest-rspec")
+  }
+})
+
 -- set up some keymaps for neotest
 vim.keymap.set('n', '<leader>t', "", { desc = "+test"})
 vim.keymap.set('n', '<leader>tt', function() require("neotest").run.run(vim.fn.expand("%")) end, { desc = "Run File" })

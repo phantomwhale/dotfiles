@@ -17,6 +17,12 @@ telescope.setup({
     find_files = {
       find_command = { 'rg', '--files', '--iglob', '!.git', '--hidden' },
     },
+    grep_string = {
+      additional_args = { "--hidden" }
+    },
+    live_grep = {
+      additional_args = { "--hidden" }
+    },
     oldfiles = {
       cwd_only = true,
     }

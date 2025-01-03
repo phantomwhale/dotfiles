@@ -71,6 +71,11 @@ use {
   requires = { { 'nvim-lua/plenary.nvim' } }
 }
 use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+use {
+  'princejoogie/dir-telescope.nvim',
+  requires = { "nvim-telescope/telescope.nvim" },
+  config = function() require("dir-telescope").setup() end
+}
 use { 'nvim-tree/nvim-web-devicons' } -- devicons; requires a Nerd Font installation
 use { 'jvgrootveld/telescope-zoxide' }
 

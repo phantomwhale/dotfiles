@@ -77,10 +77,14 @@ vim.keymap.set('n', '<leader>/', function()
   })
 end, { desc = '[/] Fuzzily search in current buffer' })
 vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
+vim.keymap.set('n', '<leader>sF',
+  require('telescope').extensions.dir.find_files, { desc = '[S]earch [F]iles in directory' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sb', telescope_live_grep_open_files, { desc = '[S]earch open [B]uffers' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
+vim.keymap.set('n', '<leader>sG',
+  require('telescope').extensions.dir.live_grep, { desc = '[S]earch by [G]rep in directory' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').git_branches, { desc = '[S]earch git b[R]anches' })
 vim.keymap.set('n', '<leader>sz', require("telescope").extensions.zoxide.list, { desc = '[S]earch [Z]oxide' })
@@ -89,6 +93,9 @@ vim.keymap.set('n', '<leader>sc', telescope_pick_base16_color, { desc = '[S]earc
 -- To get fzf loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
 telescope.load_extension('fzf')
+
+-- Load the dir extension
+require("telescope").load_extension("dir")
 
 -- Load the zoxide plugin
 require("telescope").load_extension('zoxide')

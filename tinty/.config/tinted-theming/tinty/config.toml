@@ -9,12 +9,6 @@ hook = ". %f"
 supported-systems = ["base16", "base24"]
 
 [[items]]
-name = "base16-vim"
-path = "https://github.com/tinted-theming/base16-vim"
-themes-dir = "colors"
-supported-systems = ["base16"]
-
-[[items]]
 name = "tinted-kitty"
 path = "https://github.com/tinted-theming/tinted-kitty"
 themes-dir = "colors"

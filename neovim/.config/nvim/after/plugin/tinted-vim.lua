@@ -1,4 +1,4 @@
-local default_theme = "base16-oceanicnext"
+local default_theme = "base16-bright"
 
 local function get_tinty_theme()
   local theme_name = vim.fn.system("tinty current &> /dev/null && tinty current")

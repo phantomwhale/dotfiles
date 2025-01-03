@@ -94,12 +94,13 @@ use { 'airblade/vim-rooter',
 --}
 
 -- colorscheme
-use { 'tinted-theming/base16-vim' }
+use { 'tinted-theming/tinted-vim' }
 -- statusline
-use { 'nvim-lualine/lualine.nvim',
+-- use { 'nvim-lualine/lualine.nvim',   <-- restore once tinted-vim supported on master
+use { 'ducklin5/lualine.nvim', branch = 'fix/tintedBase16',
   requires = {
     { 'nvim-tree/nvim-web-devicons', opt = true },
-    { 'tinted-theming/base16-vim' }
+    { 'tinted-theming/tinted-vim' }
   }
 }
 

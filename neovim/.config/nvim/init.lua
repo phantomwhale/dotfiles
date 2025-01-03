@@ -13,6 +13,15 @@ require('core/keymaps')
 vim.keymap.set('t', '<ESC>', [[<C-\><C-n>]], {})
 vim.keymap.set('t', '<M-[>', '<ESC>', {})
 
+-- Highlight when yanking text
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
+
 -- things that are staying as vimscript:
 vim.cmd([[
 "                        _____________________________________________________

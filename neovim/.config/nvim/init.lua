@@ -7,7 +7,7 @@ require('packer_init')
 require('plugins/pluginconfig')
 require('lsp')
 require('core/options')
-require('core/keybinds')
+require('core/keymaps')
 
 -- terminal remaps
 vim.keymap.set('t', '<ESC>', [[<C-\><C-n>]], {})

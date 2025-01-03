@@ -9,3 +9,10 @@ function gcob() {
   branch=$(echo "$branches" | fzf --ansi --height=15 --border) &&
   git checkout $(echo "$branch" | awk '{print $4}')
 }
+
+#
+# Grep all bundled gems - thanks to @sj26 for this one
+#
+brg() {
+  rg "$@" "${(@f)$(bundle list --paths)}"
+}

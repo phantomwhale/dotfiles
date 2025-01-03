@@ -81,7 +81,9 @@ lspconfig.ruby_lsp.setup({
   formatter = 'none'
 })
 
-lspconfig.rubocop.setup({})
+lspconfig.rubocop.setup({
+  cmd = { "rubocop", "--lsp", "--ignore-unrecognized-cops", "--config", vim.fn.expand('$HOME/.rubocop.yml') }
+})
 
 lspconfig.lua_ls.setup({
   capabilities = capabilities,

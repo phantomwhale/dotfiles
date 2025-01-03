@@ -34,7 +34,7 @@ Style/FrozenStringLiteralComment:
   Enabled: false
 
 Style/HashSyntax:
-  EnforcedShorthandSyntax: consistent
+  EnforcedShorthandSyntax: either
 
 # tabs vrs spaces for a new generation
 Style/StringLiterals:
@@ -56,3 +56,24 @@ RSpec/DescribedClass:
 
 FactoryBot/SyntaxMethods:
   Enabled: false
+
+### BK specific
+
+Layout/LineLength:
+  Max: 160
+
+Style/TrailingCommaInArrayLiteral:
+  Enabled: false
+
+Style/TrailingCommaInHashLiteral:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Max: 20
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Enbaled: false
+  Max: 10

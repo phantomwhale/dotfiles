@@ -39,11 +39,11 @@ require('lazy').setup({
   },
 
   -- LSP
-  'neovim/nvim-lspconfig',        -- Collection of configurations for built-in LSP client
-  'hrsh7th/cmp-nvim-lsp',         -- LSP source for nvim-cmp
+  'neovim/nvim-lspconfig', -- Collection of configurations for built-in LSP client
+  'hrsh7th/cmp-nvim-lsp',  -- LSP source for nvim-cmp
 
   -- Highlight, edit and navigate code
-  { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+  { 'nvim-treesitter/nvim-treesitter',             build = ':TSUpdate' },
   { "nvim-treesitter/nvim-treesitter-textobjects", dependencies = "nvim-treesitter/nvim-treesitter", },
   { "RRethy/nvim-treesitter-endwise" },
   { 'mitchellh/tree-sitter-proto' }, -- tree-sitter grammer for proto3
@@ -84,11 +84,10 @@ require('lazy').setup({
 
   -- colorscheme
   'tinted-theming/tinted-vim',
+
   -- statusline
-  -- 'nvim-lualine/lualine.nvim',   <-- restore once tinted-vim supported on master
   {
-    'ducklin5/lualine.nvim',
-    branch = 'fix/tintedBase16',
+    'nvim-lualine/lualine.nvim',
     dependencies = {
       { 'nvim-tree/nvim-web-devicons', lazy = true },
       { 'tinted-theming/tinted-vim' }
@@ -135,9 +134,10 @@ require('lazy').setup({
   'tpope/vim-rails',
   'thoughtbot/vim-rspec',
   'ruby-formatter/rufo-vim', -- provides :Rufo for formatting
-  'ecomba/vim-ruby-refactoring',    branch = 'main',
-  'jgdavey/vim-blockle',     -- toggle block styles [do/end <-> {}]
-  { 'nelstrom/vim-textobj-rubyblock', dependencies = { 'kana/vim-textobj-user' } },
+  'ecomba/vim-ruby-refactoring',
+  branch = 'main',
+  'jgdavey/vim-blockle', -- toggle block styles [do/end <-> {}]
+  { 'nelstrom/vim-textobj-rubyblock',           dependencies = { 'kana/vim-textobj-user' } },
   't9md/vim-ruby-xmpfilter',
   'tpope/vim-bundler', -- bundle open, but inside a vim session
 
@@ -146,7 +146,7 @@ require('lazy').setup({
     'ruanyl/vim-sort-imports', -- adds :SortImports to js/ts files
     build = 'npm install -g import-sort-cli import-sort-parser-babylon ' ..
         'import-sort-parser-typescript import-sort-style-renke'
-  },                              -- TODO: move these into Mason
+  },                          -- TODO: move these into Mason
   'jose-elias-alvarez/typescript.nvim',
   'pantharshit00/vim-prisma', -- prisma formatting
 
@@ -162,18 +162,16 @@ require('lazy').setup({
 
   -- Markdown
   {
-    'iamcco/markdown-preview.nvim', -- adds :MarkdownPreview command
-    lazy = true,
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
-    config = "vim.cmd[[doautocmd BufEnter]]",
-    build = "cd app && yarn install",
-    cmd = "MarkdownPreview",
+    build = function() vim.fn["mkdp#util#install"]() end,
   },
   "ellisonleao/glow.nvim",
-  { 'toppair/peek.nvim',      build = 'deno task --quiet build:fast' },
+  { 'toppair/peek.nvim', build = 'deno task --quiet build:fast' },
 
   -- PHP
-  { 'phpactor/phpactor',      ft = 'php',                            build = 'composer install --no-dev -o' },
+  { 'phpactor/phpactor', ft = 'php',                            build = 'composer install --no-dev -o' },
 
   -- Tim Pope basics
   'tpope/vim-abolish',
@@ -200,8 +198,8 @@ require('lazy').setup({
 
   {
     "epwalsh/obsidian.nvim",
-    version = "*",  -- recommended, use latest release instead of latest commit
-    lazy = true,
+    version = "*", -- recommended, use latest release instead of latest commit
+    lazy = false,
     event = {
       "BufReadPre " .. vim.fn.expand "~" .. "/GoogleDrive/Obsidian/*.md",
       "BufNewFile " .. vim.fn.expand "~" .. "/GoogleDrive/Obsidian/*.md",
@@ -220,8 +218,8 @@ require('lazy').setup({
   },
 
   -- Misc
-  "nvim-lua/plenary.nvim",    -- required for plugins
-  "micarmst/vim-spellsync",   -- keep binary spelling file in sync with text file, and out of source control
+  "nvim-lua/plenary.nvim",        -- required for plugins
+  "micarmst/vim-spellsync",       -- keep binary spelling file in sync with text file, and out of source control
   {
     'aymericbeaumet/vim-symlink', -- follow symlinks, to help fugitive work on symlinked dotfiles
     dependencies = { 'moll/vim-bbye' }

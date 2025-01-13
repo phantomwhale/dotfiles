@@ -33,3 +33,4 @@ Some steps are not automated when moving between machines, such as:
 - May need to run `compaudit | xargs chmod g-w,o-w` (<https://github.com/zsh-users/zsh-completions/issues/680>)
 - Enable iCloud for Documents / Desktop backup
 - Restore AWS config file and aws-vault (https://github.com/99designs/aws-users#migrating-to-a-new-machine)
+- Link espanso: `ln -s ~/.config/espanso/default.yml ~/Library/Application\ Support/espanso/config/default.yml`

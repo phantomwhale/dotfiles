@@ -75,5 +75,5 @@ RSpec/ExampleLength:
   Enabled: false
 
 RSpec/MultipleMemoizedHelpers:
-  Enbaled: false
+  Enabled: false
   Max: 10

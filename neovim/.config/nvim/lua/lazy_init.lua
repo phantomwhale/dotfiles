@@ -43,8 +43,11 @@ require('lazy').setup({
   'hrsh7th/cmp-nvim-lsp',  -- LSP source for nvim-cmp
 
   -- Highlight, edit and navigate code
-  { 'nvim-treesitter/nvim-treesitter',             build = ':TSUpdate' },
-  { "nvim-treesitter/nvim-treesitter-textobjects", dependencies = "nvim-treesitter/nvim-treesitter", },
+  { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+  },
   { "RRethy/nvim-treesitter-endwise" },
   { 'mitchellh/tree-sitter-proto' }, -- tree-sitter grammer for proto3
 
@@ -134,9 +137,11 @@ require('lazy').setup({
   'thoughtbot/vim-rspec',
   'ruby-formatter/rufo-vim', -- provides :Rufo for formatting
   'ecomba/vim-ruby-refactoring',
-  branch = 'main',
-  'jgdavey/vim-blockle', -- toggle block styles [do/end <-> {}]
-  { 'nelstrom/vim-textobj-rubyblock',           dependencies = { 'kana/vim-textobj-user' } },
+  'jgdavey/vim-blockle',     -- toggle block styles [do/end <-> {}]
+  {
+    'nelstrom/vim-textobj-rubyblock',
+    dependencies = { 'kana/vim-textobj-user' }
+  },
   't9md/vim-ruby-xmpfilter',
   'tpope/vim-bundler', -- bundle open, but inside a vim session
 
@@ -167,10 +172,10 @@ require('lazy').setup({
     build = function() vim.fn["mkdp#util#install"]() end,
   },
   "ellisonleao/glow.nvim",
-  { 'toppair/peek.nvim', build = 'deno task --quiet build:fast' },
+  { 'toppair/peek.nvim',                        build = 'deno task --quiet build:fast' },
 
   -- PHP
-  { 'phpactor/phpactor', ft = 'php',                            build = 'composer install --no-dev -o' },
+  { 'phpactor/phpactor',                        ft = 'php',                            build = 'composer install --no-dev -o' },
 
   -- Tim Pope basics
   'tpope/vim-abolish',

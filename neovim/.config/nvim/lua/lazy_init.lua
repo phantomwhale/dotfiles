@@ -106,9 +106,8 @@ require('lazy').setup({
   'ctrlpvim/ctrlp.vim',
   'excalios/vim-test',
   'majutsushi/tagbar',
-  'Raimondi/delimitMate',                    -- auto-complete quotes, parens, brackets
-  'vim-scripts/RelativeNumberCurrentWindow', -- relative line numbers
-  'yssl/QFEnter',                            -- control where to open QuickFix links
+  'Raimondi/delimitMate', -- auto-complete quotes, parens, brackets
+  'yssl/QFEnter',         -- control where to open QuickFix links
 
   -- testing
   -- current set up for rspec only

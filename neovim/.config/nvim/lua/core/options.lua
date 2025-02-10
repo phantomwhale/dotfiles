@@ -28,7 +28,11 @@ vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave", "WinEnte
 vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "InsertEnter", "WinLeave" },
   {
     pattern = "*",
-    command = 'if &number | set norelativenumber | endif',
+    callback = function()
+      if opt.number then
+        opt.relativenumber = false
+      end
+    end,
     group = numbertogglegroup
   }
 )

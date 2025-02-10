@@ -228,11 +228,12 @@ require('lazy').setup({
   -- Use Neovim for scrollback buffer in Kitty
   {
     'mikesmithgh/kitty-scrollback.nvim',
+    enabled = true,
     lazy = true,
-    cmd = { 'KittyScrollbackGenerateKittens', 'KittyScrollbackCheckHealth' },
+    cmd = { 'KittyScrollbackGenerateKittens', 'KittyScrollbackCheckHealth', 'KittyScrollbackGenerateCommandLineEditing' },
     event = { 'User KittyScrollbackLaunch' },
     config = function()
-      require('kitty-scrollback').init()
+      require('kitty-scrollback').setup()
     end,
   }
 })

@@ -36,9 +36,8 @@ local on_attach = function(client, bufnr)
   opts.desc = "Show method signautre (?)"
   keymap.set('n', 'gh', vim.lsp.buf.signature_help, opts)
 
-  -- This overrides go to next tab; maybe change this?
   opts.desc = "Show LSP type definitions"
-  keymap.set('n', 'gt', vim.lsp.buf.type_definition, opts)
+  keymap.set('n', 'gp', vim.lsp.buf.type_definition, opts)
 
   opts.desc = "Smart rename"
   keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)

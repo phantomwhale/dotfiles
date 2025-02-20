@@ -1,6 +1,0 @@
-#!/bin/bash
-
-set -euo pipefail
-
-echo "backing up keychains"
-mkdir -p ~/Dropbox/.backup/Keychains/ && cp ~/Library/Keychains/*.keychain ~/Dropbox/.backup/Keychains/

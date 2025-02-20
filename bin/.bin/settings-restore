@@ -1,7 +1,0 @@
-#!/bin/bash
-
-set -euo pipefail
-
-cp ~/Dropbox/.backup/Keychains/*.keychain ~/Library/Keychains/
-security list-keychains -s ~/Library/Keychains/*.keychain
-security default-keychain -s ~/Library/Keychains/login.keychain

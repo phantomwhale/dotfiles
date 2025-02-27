@@ -59,13 +59,31 @@
   autosetuprebase = always
 [push]
   default = current
+  autoSetupRemote = true
+  followTags = true
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
 [fetch]
   prune = true
+  pruneTags = true
+  all = true
 [url "git@github.com:"]
   insteadOf = https://github.com/
 [rebase]
   autosquash = true
   autostash = true
+[init]
+  defaultBranch = main
+[diff]
+  algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
+  renames = true
+[help]
+  autocorrect = prompt
+[rerere]
+  enabled = true
+  autoupdate = true
+[merge]
+  conflictStyle = zdiff3

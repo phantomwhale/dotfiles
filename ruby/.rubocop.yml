@@ -22,6 +22,10 @@ Metrics/BlockLength:
     - config/routes.rb
     - "**/*_spec.rb"
 
+# I could honestly live without alias
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
+
 # Prefer the functional "Jim Weirich" style of braces
 Style/BlockDelimiters:
   EnforcedStyle: braces_for_chaining
@@ -39,6 +43,10 @@ Style/HashSyntax:
 # tabs vrs spaces for a new generation
 Style/StringLiterals:
   Enabled: false
+
+# These feel overkill for arrays of just two elements
+Style/SymbolArray:
+  MinSize: 3
 
 # Sometimes work with arrays of tuples, this avoid mixed styles for those arrays
 Style/WordArray:

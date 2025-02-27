@@ -87,3 +87,5 @@
   autoupdate = true
 [merge]
   conflictStyle = zdiff3
+[include]
+  path = ~/.local/share/tinted-theming/tinty/tinted-delta-configs-file.gitconfig

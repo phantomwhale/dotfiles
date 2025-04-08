@@ -9,6 +9,7 @@ alias c='cd ~/code'
 alias cat=bat
 alias d='cd ~/.dotfiles'
 alias loc='git diff --shortstat `git hash-object -t tree /dev/null`'
+alias lg='lazygit'
 alias ll='ls'
 alias ls='eza --all --long --group --group-directories-first --icons --header --time-style long-iso'
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log *'

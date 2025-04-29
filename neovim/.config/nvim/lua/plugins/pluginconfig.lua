@@ -46,18 +46,4 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " Run tests in a split terminal (default 'basic' strategy uses a new tab)
 let test#strategy = "neovim"
-
-" Run 99dev project tests inside the appropriate docker container
-" Note that this assumes the docker container is named after the project root
-" folder, which is USUALLY the rule...
-function! NNdevTransform(cmd) abort
-  let docker_project = fnamemodify(FindRootDirectory(), ':t')
-  return '99dev compose run --no-deps --rm '.docker_project.' '.a:cmd
-endfunction
-let g:test#custom_transformations = {'99dev': function('NNdevTransform')}
-
-if !empty(glob("99dev.yml"))
-  let g:test#transformation = '99dev'
-endif
-
 ]])

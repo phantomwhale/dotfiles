@@ -89,3 +89,5 @@
   conflictStyle = zdiff3
 [include]
   path = ~/.local/share/tinted-theming/tinty/tinted-delta-configs-file.gitconfig
+[url "https://github.com/"]
+  insteadOf = git@github.com:

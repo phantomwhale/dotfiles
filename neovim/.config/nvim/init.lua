@@ -4,7 +4,7 @@ vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 
 require('lazy_init')
-require('plugins/pluginconfig')
+require('pluginconfig')
 require('lsp')
 require('core/options')
 require('core/keymaps')

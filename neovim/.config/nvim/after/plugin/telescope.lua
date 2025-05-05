@@ -1,33 +1,4 @@
-local status, telescope = pcall(require, "telescope")
-if (not status) then return end
 local telescope_actions = require('telescope.actions')
-
--- You dont need to set any of these options. These are the default ones. Only
--- the loading is important
-telescope.setup({
-  extensions = {
-    fzf = {
-      fuzzy = true,                   -- false will only do exact matching
-      override_generic_sorter = true, -- override the generic sorter
-      override_file_sorter = true,    -- override the file sorter
-      case_mode = "smart_case",       -- or "ignore_case" or "respect_case". The default case_mode is "smart_case"
-    }
-  },
-  pickers = {
-    find_files = {
-      find_command = { 'rg', '--files', '--iglob', '!.git', '--hidden' },
-    },
-    grep_string = {
-      additional_args = { "--hidden" }
-    },
-    live_grep = {
-      additional_args = { "--hidden" }
-    },
-    oldfiles = {
-      cwd_only = true,
-    }
-  }
-})
 
 -- Custom telescope finder functions
 local function telescope_live_grep_open_files()
@@ -89,13 +60,3 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').git_branches, { desc = '[S]earch git b[R]anches' })
 vim.keymap.set('n', '<leader>sz', require("telescope").extensions.zoxide.list, { desc = '[S]earch [Z]oxide' })
 vim.keymap.set('n', '<leader>sc', telescope_pick_base16_color, { desc = '[S]earch [C]olour themes' })
-
--- To get fzf loaded and working with telescope, you need to call
--- load_extension, somewhere after setup function:
-telescope.load_extension('fzf')
-
--- Load the dir extension
-require("telescope").load_extension("dir")
-
--- Load the zoxide plugin
-require("telescope").load_extension('zoxide')

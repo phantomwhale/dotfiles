@@ -26,7 +26,7 @@ return {
   'hrsh7th/cmp-nvim-lsp',  -- LSP source for nvim-cmp
 
   -- Highlight, edit and navigate code
-  { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+  { 'nvim-treesitter/nvim-treesitter',          build = ':TSUpdate' },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
     dependencies = "nvim-treesitter/nvim-treesitter",
@@ -35,11 +35,6 @@ return {
   { 'mitchellh/tree-sitter-proto' }, -- tree-sitter grammer for proto3
 
   -- Search
-  {
-    'nvim-telescope/telescope.nvim',
-    branch = '0.1.x',
-    dependencies = { { 'nvim-lua/plenary.nvim' } }
-  },
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   {
     'princejoogie/dir-telescope.nvim',
@@ -155,7 +150,7 @@ return {
     build = function() vim.fn["mkdp#util#install"]() end,
   },
   "ellisonleao/glow.nvim",
-  { 'toppair/peek.nvim',                        build = 'deno task --quiet build:fast' },
+  { 'toppair/peek.nvim', build = 'deno task --quiet build:fast' },
 
   -- PHP
   {

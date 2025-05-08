@@ -1,7 +1,7 @@
 return {
-  -- Managed third-party packages
-  'nulty/mason.nvim', -- fixes ruby verison issue; maybe
-  'williamboman/mason-lspconfig.nvim',
+  -- Mason - Manage third-party packages
+  'phantomwhale/mason.nvim', -- fixes an issue with multiple ruby versions
+  'mason-org/mason-lspconfig.nvim',
   'WhoIsSethDaniel/mason-tool-installer.nvim',
 
   -- Autocompletion

@@ -9,16 +9,19 @@ mason.setup({})
 
 lspconfig.setup {
   ensure_installed = {
-    "ts_ls",
-    "html",
     "cssls",
-    "tailwindcss",
-    "lua_ls",
+    "html",
+    "gopls",
     "graphql",
+    "lua_ls",
+    "phpactor",
+    "rubocop",
     "ruby_lsp",
     "solargraph",
+    "tailwindcss",
     "terraformls",
-    "tflint"
+    "tflint",
+    "ts_ls",
   }
 }
 
@@ -29,6 +32,5 @@ toolinstaller.setup {
     "eslint_d",
     "markdownlint",
     "write-good",
-    "prettier"
   }
 }

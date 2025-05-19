@@ -17,7 +17,6 @@ lspconfig.setup {
     "phpactor",
     "rubocop",
     "ruby_lsp",
-    "solargraph",
     "tailwindcss",
     "terraformls",
     "tflint",

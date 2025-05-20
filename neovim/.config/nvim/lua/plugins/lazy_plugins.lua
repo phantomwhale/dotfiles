@@ -159,12 +159,6 @@ return {
     build = 'composer install --no-dev -o'
   },
 
-  -- AI, dear god help us all
-  {
-    'Exafunction/windsurf.vim',
-    event = 'BufEnter'
-  },
-
   -- Tim Pope basics
   'tpope/vim-abolish',
   'tpope/vim-characterize',

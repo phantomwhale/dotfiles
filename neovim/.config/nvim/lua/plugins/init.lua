@@ -14,13 +14,6 @@ return {
   'hrsh7th/cmp-nvim-lua',         -- Autocompletion for LUA, with nvim knowledge
   'onsails/lspkind.nvim',         -- pictograms for neovim LSP
 
-  {
-    'nvimtools/none-ls.nvim', -- use neovim as a custom language server for diagnostics, code actions and more
-    dependencies = { 'nvim-lua/plenary.nvim',
-      'neovim/nvim-lspconfig',
-      'lewis6991/gitsigns.nvim' }
-  },
-
   -- LSP
   'neovim/nvim-lspconfig', -- Collection of configurations for built-in LSP client
   'hrsh7th/cmp-nvim-lsp',  -- LSP source for nvim-cmp

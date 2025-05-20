@@ -182,27 +182,6 @@ return {
   'junegunn/goyo.vim', -- distraction free writing
   'junegunn/limelight.vim',
 
-  {
-    "epwalsh/obsidian.nvim",
-    version = "*", -- recommended, use latest release instead of latest commit
-    lazy = false,
-    event = {
-      "BufReadPre " .. vim.fn.expand "~" .. "/GoogleDrive/Obsidian/*.md",
-      "BufNewFile " .. vim.fn.expand "~" .. "/GoogleDrive/Obsidian/*.md",
-    },
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-    opts = {
-      workspaces = {
-        {
-          name = "personal",
-          path = "~/GoogleDrive/Obsidian",
-        },
-      },
-    },
-  },
-
   -- Misc
   "nvim-lua/plenary.nvim",        -- required for plugins
   "micarmst/vim-spellsync",       -- keep binary spelling file in sync with text file, and out of source control

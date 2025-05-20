@@ -210,16 +210,4 @@ return {
     'aymericbeaumet/vim-symlink', -- follow symlinks, to help fugitive work on symlinked dotfiles
     dependencies = { 'moll/vim-bbye' }
   },
-
-  -- Use Neovim for scrollback buffer in Kitty
-  {
-    'mikesmithgh/kitty-scrollback.nvim',
-    enabled = true,
-    lazy = true,
-    cmd = { 'KittyScrollbackGenerateKittens', 'KittyScrollbackCheckHealth', 'KittyScrollbackGenerateCommandLineEditing' },
-    event = { 'User KittyScrollbackLaunch' },
-    config = function()
-      require('kitty-scrollback').setup()
-    end,
-  }
 }

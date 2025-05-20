@@ -7,7 +7,4 @@ require 'nvim-treesitter.configs'.setup {
       return lang == "json" and vim.api.nvim_buf_line_count(bufnr) > 1000
     end,
   },
-  endwise = {
-    enable = true,
-  },
 }

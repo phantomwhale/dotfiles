@@ -1,4 +1,13 @@
-vim.lsp.enable({ 'ruby_lsp', 'rubocop', 'gopls', 'lua_ls', 'phpactor', 'terraformls', 'tflint' })
+vim.lsp.enable({
+  'ruby_lsp',
+  'rubocop',
+  'gopls',
+  'lua_ls',
+  'phpactor',
+  'terraformls',
+  'tflint',
+  'yamlls'
+})
 
 vim.lsp.config('rubocop', {
   cmd = { "rubocop", "--lsp", "--ignore-unrecognized-cops", "--config", vim.fn.expand('$HOME/.rubocop.yml') }

@@ -8,9 +8,9 @@ return {
 
       configs.setup({
         ensure_installed = { "ruby", "javascript", "typescript", "go", "hcl", "html", "vim", "vimdoc" },
-        -- sync_install = false, (from the docs; try it?)
+        sync_install = false,
         highlight = { enable = true },
-        -- indent = { enable = true }, (from the docs; try it?)
+        indent = { enable = true },
         endwise = { enable = true },
       })
     end

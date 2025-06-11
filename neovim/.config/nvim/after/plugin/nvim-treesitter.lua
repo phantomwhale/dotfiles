@@ -1,5 +1,12 @@
 require 'nvim-treesitter.configs'.setup {
-  ensure_installed = { "ruby", "javascript", "typescript", "go", "hcl" },
+  ensure_installed = {
+    "ruby",
+    "javascript",
+    "typescript",
+    "go",
+    "hcl",
+    "yaml",
+  },
   highlight = {
     enable = true,
     -- doesn't seem to work?

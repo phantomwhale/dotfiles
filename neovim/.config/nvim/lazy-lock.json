@@ -50,6 +50,7 @@
   "peek.nvim": { "branch": "master", "commit": "5820d937d5414baea5f586dc2a3d912a74636e5b" },
   "phpactor": { "branch": "master", "commit": "53741d8eb3d878d5b22e39f9255efa08c88d5dfc" },
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
+  "render-markdown.nvim": { "branch": "main", "commit": "6d03af10063d5a2fadec3559de5dfa68da7d00ef" },
   "rufo-vim": { "branch": "master", "commit": "ba7d1dd3c062a91c67717101fbda8e3564b0d013" },
   "splitjoin.vim": { "branch": "main", "commit": "451c70158aaccf806d29be69a0d4482734a4f9ee" },
   "tagbar": { "branch": "master", "commit": "b72250e9d77b7a5cf9be067875dc5270652b005e" },

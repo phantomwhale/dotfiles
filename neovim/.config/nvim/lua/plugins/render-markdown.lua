@@ -1,4 +1,4 @@
 return {
   "MeanderingProgrammer/render-markdown.nvim",
-  ft = { "markdown", "codecompanion" } -- only use for CodeCompanion rendering
+  ft = { "codecompanion" } -- only use for CodeCompanion rendering
 }

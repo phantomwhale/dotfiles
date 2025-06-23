@@ -1,4 +1,7 @@
 return {
   "MeanderingProgrammer/render-markdown.nvim",
-  ft = { "codecompanion" } -- only use for CodeCompanion rendering
+  filetype = { "codecompanion" }, -- only use for CodeCompanion rendering
+  opts = {
+    file_types = { 'codecompanion' }
+  }
 }

@@ -64,9 +64,6 @@ augroup END
 " Follow tags when using putty, which ignores Ctrl-]
 noremap <Leader>] <C-]>
 
-" Allow saving of files as sudo when I forgot to start vim using sudo.
-cmap w!! w !sudo tee > /dev/null %
-
 " XMP Filter keybinds
 autocmd FileType ruby nmap <buffer> <F2> <Plug>(xmpfilter-mark)
 autocmd FileType ruby xmap <buffer> <F2> <Plug>(xmpfilter-mark)

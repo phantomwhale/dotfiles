@@ -23,10 +23,10 @@ return {
           find_command = { 'rg', '--files', '--iglob', '!.git', '--hidden' },
         },
         grep_string = {
-          additional_args = { "--hidden" }
+          additional_args = { '--hidden', '--iglob', '!.git' }
         },
         live_grep = {
-          additional_args = { "--hidden" }
+          additional_args = { '--hidden' }
         },
         oldfiles = {
           cwd_only = true,

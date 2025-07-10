@@ -3,7 +3,6 @@ return {
   'nvimtools/none-ls.nvim',
   dependencies = {
     'nvim-lua/plenary.nvim',
-    'neovim/nvim-lspconfig',
     'lewis6991/gitsigns.nvim'
   }
 }

@@ -15,7 +15,6 @@ return {
   'onsails/lspkind.nvim',         -- pictograms for neovim LSP
 
   -- LSP
-  'neovim/nvim-lspconfig', -- Collection of configurations for built-in LSP client
   'hrsh7th/cmp-nvim-lsp',  -- LSP source for nvim-cmp
 
   -- Search

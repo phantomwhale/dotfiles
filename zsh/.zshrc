@@ -52,7 +52,7 @@ source ~/.aliases
 
 # Set up chruby and change to latest ruby version
 source $(brew --prefix)/share/chruby/chruby.sh
-source $(brew --prefix)/share/chruby/auto.sh
+source ~/.bin/chruby_auto.sh
 chruby ruby
 
 # enable frum

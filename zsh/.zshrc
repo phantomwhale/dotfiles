@@ -103,6 +103,9 @@ eval "$(fnm env --use-on-cd --version-file-strategy recursive)"
 # initialise zoxide
 eval "$(zoxide init zsh)"
 
+# initialise mise
+eval "$(mise activate zsh)"
+
 # carapace for auto-complete
 export CARAPACE_BRIDGES='zsh,bash' #,inshellisense' # optional
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'

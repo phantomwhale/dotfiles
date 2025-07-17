@@ -37,6 +37,10 @@ Style/BlockDelimiters:
 Style/Documentation:
   Enabled: false
 
+# Not sure I have a strong preference here
+Style/FormatString:
+  Enabled: false
+
 Style/FrozenStringLiteralComment:
   Enabled: false
 
@@ -75,6 +79,9 @@ Layout/LineLength:
 
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented_relative_to_receiver
+
+Style/ClassAndModuleChildren:
+  Enabled: false
 
 Style/TrailingCommaInArrayLiteral:
   Enabled: false

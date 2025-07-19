@@ -50,14 +50,6 @@ unsetopt nomatch
 # Set up aliases
 source ~/.aliases
 
-# Set up chruby and change to latest ruby version
-source $(brew --prefix)/share/chruby/chruby.sh
-source ~/.bin/chruby_auto.sh
-chruby ruby
-
-# enable frum
-eval "$(frum init)"
-
 # key binding setup
 source ~/.zsh/lib/keybinds.zsh
 

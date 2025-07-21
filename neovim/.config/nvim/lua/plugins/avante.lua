@@ -39,6 +39,7 @@ return {
     "zbirenbaum/copilot.lua",        -- for providers='copilot'
     {
       -- support for image pasting
+      -- TODO: check about removing this, it slows down regular URL pasting
       "HakonHarnes/img-clip.nvim",
       event = "VeryLazy",
       opts = {
@@ -51,6 +52,7 @@ return {
           },
           -- required for Windows users
           use_absolute_path = true,
+          verbose = false,
         },
       },
     },

@@ -89,9 +89,6 @@ complete -o nospace -C $(brew --prefix)/bin/terraform terraform
 # initialise Fuzzy Finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# initialise fnm
-eval "$(fnm env --use-on-cd --version-file-strategy recursive)"
-
 # initialise zoxide
 eval "$(zoxide init zsh)"
 

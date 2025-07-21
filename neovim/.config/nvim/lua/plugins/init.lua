@@ -1,9 +1,4 @@
 return {
-  -- Mason - Manage third-party packages
-  'mason-org/mason.nvim',
-  'mason-org/mason-lspconfig.nvim',
-  'WhoIsSethDaniel/mason-tool-installer.nvim',
-
   -- Autocompletion
   'hrsh7th/nvim-cmp',             -- Autocompletion plugin
   'hrsh7th/cmp-buffer',           -- Autocompletion from the buffer

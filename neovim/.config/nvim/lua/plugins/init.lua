@@ -1,6 +1,6 @@
 return {
   -- Mason - Manage third-party packages
-  'phantomwhale/mason.nvim', -- fixes an issue with multiple ruby versions
+  'mason-org/mason.nvim',
   'mason-org/mason-lspconfig.nvim',
   'WhoIsSethDaniel/mason-tool-installer.nvim',
 

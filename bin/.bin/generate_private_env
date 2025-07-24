@@ -1,10 +1,15 @@
-env-op() {
-  local search="$@"
-  keys_string=$(op item get --fields label=username  "$search")
+#!/bin/zsh
+
+for search (
+  anthropic
+  github
+  amp
+) do
+  keys_string=$(op item get --fields label=username "$search")
   if [[ $? != 0 ]] ; then
     return
   fi
-  values_string=$(op item get --fields label=credential "$search")
+  values_string=$(op item get --fields label=credential --reveal "$search")
   read -A keys <<< "$keys_string"
   read -A values <<< "$values_string"
   # If we store "AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY" in the username field
@@ -17,9 +22,7 @@ env-op() {
     if [[ "$values[$i]" != "" ]] ; then
       last_value=$values[$i]
     fi
-    export $keys[$i]=$last_value
-    >&2 echo "Loaded $keys[$i]"
+    echo "export $keys[$i]=$last_value" >> "${ZDOTDIR:-$HOME}/.private_env"
+    >&2 echo "written $keys[$i]"
   done
-}
-
-env-op "$@"
+done

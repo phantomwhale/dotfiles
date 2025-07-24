@@ -7,7 +7,10 @@
     "curl",
     "sleep",
     "pkill",
-    "find"
+    "find",
+    "git",
+    "gem",
+    "cut"
   ],
   "amp.cacheDirectory": "/Users/ben/.cache/amp"
 }

@@ -12,24 +12,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Add homebrew to the start of PATH, to override `/usr/bin` and `/usr/sbin`
-export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
-
-# ensure dotfiles bin directory is loaded first
-export PATH="$HOME/.bin:$PATH"
-
-# Add go bin folder to path
-export PATH="$PATH:$GOPATH/bin"
-
-# Add python bin dir to path (for ansible)
-export PATH="$PATH:$HOME/Library/Python/3.9/bin/"
-
-# Add postgres tools to path
-export PATH="$PATH:$(brew --prefix)/opt/libpq/bin"
-
-# Add imagemagick scripts to bin
-export PATH="$PATH:$HOME/.bin/imagemagick"
-
 # Give myself an hour when assuming AWS roles, rather than 15 minutes, preventing AWS console timeout hell
 export AWS_ASSUME_ROLE_TTL=1h
 

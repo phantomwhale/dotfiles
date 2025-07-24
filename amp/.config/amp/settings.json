@@ -1,0 +1,13 @@
+{
+  "amp.commands.allowlist": [
+    "ruby",
+    "bin/rails",
+    "bundle",
+    "timeout",
+    "curl",
+    "sleep",
+    "pkill",
+    "find"
+  ],
+  "amp.cacheDirectory": "/Users/ben/.cache/amp"
+}

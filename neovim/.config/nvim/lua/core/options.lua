@@ -73,7 +73,7 @@ opt.wrap = false -- no text wrapping by default
 opt.cursorline = true
 
 -- Set completeopt to have a better completion experience
-opt.completeopt = 'menuone,noselect'
+opt.completeopt = 'menuone,noselect,popup'
 
 -- Preview substitutions live, as you type - shows changes off-screen in a buffer
 opt.inccommand = 'split'

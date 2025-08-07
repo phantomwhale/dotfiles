@@ -37,8 +37,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
     opts.desc = "Show LSP type definitions"
     vim.keymap.set('n', 'gp', vim.lsp.buf.type_definition, opts)
 
-    opts.desc = "Smart rename"
-    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+    if client:supports_method('textDocument/rename') then
+      opts.desc = "Smart rename"
+      vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+    end
 
     opts.desc = "Show LSP references"
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
@@ -73,13 +75,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     end
 
-    -- Enable auto-completion. Note: Use CTRL-Y to select an item. |complete_CTRL-Y|
+    -- Auto-complete whilst typing
     if client:supports_method('textDocument/completion') then
-      -- Optional: trigger autocompletion on EVERY keypress. May be slow!
-      -- local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
-      -- client.server_capabilities.completionProvider.triggerCharacters = chars
       vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
     end
+
     -- Auto-format ("lint") on save.
     -- Usually not needed if server supports "textDocument/willSaveWaitUntil".
     if not client:supports_method('textDocument/willSaveWaitUntil')

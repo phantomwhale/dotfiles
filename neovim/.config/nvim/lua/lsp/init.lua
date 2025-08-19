@@ -7,6 +7,7 @@ vim.lsp.enable({
   'phpactor',
   'terraformls',
   'tflint',
+  'vale_ls',
   'yamlls'
 })
 

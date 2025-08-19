@@ -25,6 +25,7 @@ return {
         "terraformls",
         "tflint",
         "ts_ls",
+        "vale_ls",
       }
     }
   },
@@ -41,6 +42,7 @@ return {
         "erb-lint",
         "eslint_d",
         "markdownlint",
+        "vale",
         "write-good",
       }
     }

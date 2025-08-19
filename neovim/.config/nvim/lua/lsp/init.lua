@@ -3,6 +3,7 @@ vim.lsp.enable({
   'rubocop',
   'gopls',
   'lua_ls',
+  'herb_ls',
   'phpactor',
   'terraformls',
   'tflint',

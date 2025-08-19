@@ -51,6 +51,10 @@ Style/HashSyntax:
 Style/StringLiterals:
   Enabled: false
 
+# no strong feelings on this one either
+Style/QuotedSymbols:
+  Enabled: false
+
 # These feel overkill for arrays of just two elements
 Style/SymbolArray:
   MinSize: 3

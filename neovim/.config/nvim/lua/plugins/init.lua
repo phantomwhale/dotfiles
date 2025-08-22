@@ -53,9 +53,9 @@ return {
     }
   },
 
-  'psliwka/vim-smoothie', -- smooth scrolling
-  'rizzatti/dash.vim',    -- add :Dash documentation lookup
-  'rking/ag.vim',         -- add :Ag file search
+  -- 'psliwka/vim-smoothie', -- smooth scrolling
+  'rizzatti/dash.vim', -- add :Dash documentation lookup
+  'rking/ag.vim',      -- add :Ag file search
   {
     "ibhagwan/fzf-lua",
     -- optional for icon support

@@ -71,9 +71,6 @@
 # A REFERENCE ONLY, WHEN MAKING YOUR OWN CONFIGURATION..          #
 # ############################################################### #
 
-## Quickly restart the yabai launch agent
-ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
-
 ## Close active application
 hyper - backspace : $(yabai -m window $(yabai -m query --windows --window | jq -re ".id") --close)
 
@@ -116,16 +113,6 @@ shift + alt - l : yabai -m window --warp east
 # fast focus desktop
 hyper - o : yabai -m space --focus recent
 
-# send window to space and follow focus
-hyper - 1 : yabai -m window --space  1; yabai -m space --focus 1
-hyper - 2 : yabai -m window --space  2; yabai -m space --focus 2
-hyper - 3 : yabai -m window --space  3; yabai -m space --focus 3
-hyper - 4 : yabai -m window --space  4; yabai -m space --focus 4
-hyper - 5 : yabai -m window --space  5; yabai -m space --focus 5
-hyper - 6 : yabai -m window --space  6; yabai -m space --focus 6
-hyper - 7 : yabai -m window --space  7; yabai -m space --focus 7
-hyper - 8 : yabai -m window --space  8; yabai -m space --focus 8
-
 # increase window size
 hyper - a : yabai -m window --resize left:-20:0; yabai -m window --resize right:20:0
 hyper - w : yabai -m window --resize top:0:-20; yabai -m window --resize bottom:0:20
@@ -136,12 +123,6 @@ shift + cmd - w : yabai -m window --resize top:0:20; yabai -m window --resize bo
 
 # toggle sticky(+float), topmost, picture-in-picture
 # hyper - p : yabai -m window --toggle sticky --toggle topmost --toggle pip
-
-ctrl - 1 : yabai -m space --focus 1
-ctrl - 2 : yabai -m space --focus 2
-ctrl - 3 : yabai -m space --focus 3
-ctrl - 4 : yabai -m space --focus 4
-ctrl - 5 : yabai -m space --focus 5
 
 # Hyper and arrow keys to create stacks
 # hyper - up : yabai -m window --stack north
@@ -194,3 +175,26 @@ hyper - z : yabai -m space --layout $(yabai -m query --spaces --space | jq -r 'i
 
 # toggle window split type
 # alt - e : yabai -m window --toggle split
+
+###
+### NEEDS SIPS DISABLED - COMMENTING OUT FOR NOW
+###
+
+# Move to space
+#
+# ctrl - 1 : yabai -m space --focus 1
+# ctrl - 2 : yabai -m space --focus 2
+# ctrl - 3 : yabai -m space --focus 3
+# ctrl - 4 : yabai -m space --focus 4
+# ctrl - 5 : yabai -m space --focus 5
+
+# send window to space and follow focus
+# hyper - 1 : yabai -m window --space  1; yabai -m space --focus 1
+# hyper - 2 : yabai -m window --space  2; yabai -m space --focus 2
+# hyper - 3 : yabai -m window --space  3; yabai -m space --focus 3
+# hyper - 4 : yabai -m window --space  4; yabai -m space --focus 4
+# hyper - 5 : yabai -m window --space  5; yabai -m space --focus 5
+# hyper - 6 : yabai -m window --space  6; yabai -m space --focus 6
+# hyper - 7 : yabai -m window --space  7; yabai -m space --focus 7
+# hyper - 8 : yabai -m window --space  8; yabai -m space --focus 8
+

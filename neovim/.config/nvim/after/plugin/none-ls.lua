@@ -3,8 +3,6 @@ local b = none_ls.builtins
 
 local sources = {
   b.code_actions.gitsigns,
-  b.diagnostics.erb_lint,
-  -- b.diagnostics.eslint_d,
   b.diagnostics.write_good,
   b.diagnostics.markdownlint,
   -- b.diagnostics.shellcheck.with({ diagnostics_format = "#{m} [#{c}]" }),

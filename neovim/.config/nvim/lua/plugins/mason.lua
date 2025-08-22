@@ -39,8 +39,6 @@ return {
     opts = {
       ensure_installed = {
         "erb-formatter",
-        "erb-lint",
-        "eslint_d",
         "markdownlint",
         "vale",
         "write-good",

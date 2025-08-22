@@ -10,7 +10,7 @@ return {
   'onsails/lspkind.nvim',         -- pictograms for neovim LSP
 
   -- LSP
-  'hrsh7th/cmp-nvim-lsp',  -- LSP source for nvim-cmp
+  'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
 
   -- Search
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },

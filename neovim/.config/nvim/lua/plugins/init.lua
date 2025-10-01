@@ -136,9 +136,6 @@ return {
   'tpope/vim-surround',
   'tpope/vim-unimpaired',
 
-  -- Directory exploration
-  "stevearc/oil.nvim",
-
   -- Aligning things
   'junegunn/vim-easy-align',
 

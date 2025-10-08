@@ -10,9 +10,9 @@ plugins:
 AllCops:
   NewCops: enable
   Exclude:
-    - '**/config.ru'
-    - '**/db/schema.rb'
-    - '**/node_modules/**/*'
+    - "**/config.ru"
+    - "**/db/schema.rb"
+    - "**/node_modules/**/*"
 
 Layout/ArgumentAlignment:
   EnforcedStyle: with_fixed_indentation
@@ -91,6 +91,9 @@ Style/TrailingCommaInArrayLiteral:
   Enabled: false
 
 Style/TrailingCommaInHashLiteral:
+  Enabled: false
+
+Rails/I18nLocaleTexts:
   Enabled: false
 
 RSpec/MultipleExpectations:

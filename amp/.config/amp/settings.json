@@ -33,5 +33,7 @@
     "#",
     "chmod"
   ],
-  "amp.cacheDirectory": "/Users/ben/.cache/amp"
+  "amp.cacheDirectory": "/Users/ben/.cache/amp",
+  "amp.dangerouslyAllowAll": true,
+  "amp.permissions": []
 }

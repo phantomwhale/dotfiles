@@ -18,6 +18,9 @@ export AWS_ASSUME_ROLE_TTL=1h
 # No more guessing git; narrows down options for tab complete on git switch to a sane number
 export GIT_COMPLETION_CHECKOUT_NO_GUESS=1
 
+# Preferred LLM model for the llm cli
+export LLM_MODEL=claude-4-opus
+
 # Lets edit with vim, because emacs is gross
 # bindkey -e;
 bindkey -v;

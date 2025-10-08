@@ -26,7 +26,6 @@ return {
   'ntpeters/vim-better-whitespace', -- show trailing whitespace
 
   -- IDE plugins
-  'stevearc/dressing.nvim',
   {
     'airblade/vim-rooter',
     config = function() -- Automatically set pwd when opening a file

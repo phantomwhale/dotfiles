@@ -33,12 +33,6 @@ return {
       vim.g.rooter_targets = { '!^phantom-press' }
     end
   },
-  --{
-  --"folke/which-key.nvim",
-  --config = function()
-  --require("which-key").init {}
-  --end
-  --},
 
   -- colorscheme
   'tinted-theming/tinted-vim',
@@ -65,32 +59,25 @@ return {
   'excalios/vim-test',
   'majutsushi/tagbar',
   'Raimondi/delimitMate', -- auto-complete quotes, parens, brackets
-  'yssl/QFEnter',         -- control where to open QuickFix links
-
 
   -- Go
-  -- {'fatih/vim-go', build = ':GoUpdateBinaries'},
   'ray-x/go.nvim',
   'ray-x/guihua.lua', -- recommended if need floating window support
 
   -- Ruby
   'tpope/vim-rails',
   'thoughtbot/vim-rspec',
-  'ruby-formatter/rufo-vim', -- provides :Rufo for formatting
   'ecomba/vim-ruby-refactoring',
-  'jgdavey/vim-blockle',     -- toggle block styles [do/end <-> {}]
+  'jgdavey/vim-blockle', -- toggle block styles [do/end <-> {}]
   {
     'nelstrom/vim-textobj-rubyblock',
     dependencies = { 'kana/vim-textobj-user' }
   },
-  't9md/vim-ruby-xmpfilter',
   'tpope/vim-bundler', -- bundle open, but inside a vim session
 
   -- Git
   'lewis6991/gitsigns.nvim',
-  --'airblade/vim-gitgutter',
   'tpope/vim-fugitive',
-  'shumphrey/fugitive-gitlab.vim',
   'tpope/vim-rhubarb',
   'jkramer/vim-checkbox',            -- Markdown checkbox handling, for PR descriptions
   'knsh14/vim-github-link',          -- Quickly copy URL for commits and branches
@@ -104,7 +91,6 @@ return {
     build = function() vim.fn["mkdp#util#install"]() end,
   },
   "ellisonleao/glow.nvim",
-  { 'toppair/peek.nvim',                        build = 'deno task --quiet build:fast' },
 
   -- PHP
   {

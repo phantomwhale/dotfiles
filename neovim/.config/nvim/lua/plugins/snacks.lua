@@ -3,6 +3,7 @@ return {
   ---@type snacks.Config
   opts = {
     image = {},
-    input = {}
+    input = {},
+    notify = {}
   }
 }

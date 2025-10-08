@@ -1,15 +1,10 @@
 return {
-  'nvim-telescope/telescope.nvim',
-  branch = '0.1.x',
-  dependencies = { 'nvim-lua/plenary.nvim' },
+  {
+    'nvim-telescope/telescope.nvim',
+    branch = '0.1.x',
+    dependencies = { 'nvim-lua/plenary.nvim' },
 
-  config = function()
-    local telescope = require("telescope")
-    telescope.load_extension('fzf')
-    telescope.load_extension("dir")
-    telescope.load_extension('zoxide')
-
-    telescope.setup({
+    opts = {
       extensions = {
         fzf = {
           fuzzy = true,                   -- false will only do exact matching
@@ -32,6 +27,20 @@ return {
           cwd_only = true,
         }
       }
-    })
-  end
+    }
+  },
+  {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    build = 'make'
+  },
+  {
+    'princejoogie/dir-telescope.nvim',
+    dependencies = { "nvim-telescope/telescope.nvim" },
+  },
+  {
+    'jvgrootveld/telescope-zoxide',
+    keys = {
+      { "<leader>sz", desc = "Search Zoxide" },
+    }
+  }
 }

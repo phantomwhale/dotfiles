@@ -13,13 +13,7 @@ return {
   'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
 
   -- Search
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-  {
-    'princejoogie/dir-telescope.nvim',
-    dependencies = { "nvim-telescope/telescope.nvim" },
-  },
   'nvim-tree/nvim-web-devicons', -- devicons; requires a Nerd Font installation
-  'jvgrootveld/telescope-zoxide',
 
   -- Syntax plugins
   'stephpy/vim-yaml',               -- yaml syntax highlights

@@ -82,15 +82,6 @@ return {
   'knsh14/vim-github-link',          -- Quickly copy URL for commits and branches
   'cwebster2/github-coauthors.nvim', -- Telescope plug-in for git co-authors
 
-  -- Markdown
-  {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    ft = { "markdown" },
-    build = function() vim.fn["mkdp#util#install"]() end,
-  },
-  "ellisonleao/glow.nvim",
-
   -- PHP
   {
     'phpactor/phpactor',

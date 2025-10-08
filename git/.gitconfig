@@ -93,3 +93,7 @@
   path = ~/.local/share/tinted-theming/tinty/tinted-delta-configs-file.gitconfig
 [url "https://github.com/"]
   insteadOf = git@github.com:
+[credential "https://github.com"]
+  helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+  helper = !/opt/homebrew/bin/gh auth git-credential

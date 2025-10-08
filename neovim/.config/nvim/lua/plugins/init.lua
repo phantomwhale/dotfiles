@@ -76,7 +76,6 @@ return {
   'tpope/vim-bundler', -- bundle open, but inside a vim session
 
   -- Git
-  'lewis6991/gitsigns.nvim',
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
   'jkramer/vim-checkbox',            -- Markdown checkbox handling, for PR descriptions

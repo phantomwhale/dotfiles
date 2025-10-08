@@ -87,15 +87,6 @@ return {
   't9md/vim-ruby-xmpfilter',
   'tpope/vim-bundler', -- bundle open, but inside a vim session
 
-  -- Javascript / Typescript
-  {
-    'ruanyl/vim-sort-imports', -- adds :SortImports to js/ts files
-    build = 'npm install -g import-sort-cli import-sort-parser-babylon ' ..
-        'import-sort-parser-typescript import-sort-style-renke'
-  },                          -- TODO: move these into Mason
-  'jose-elias-alvarez/typescript.nvim',
-  'pantharshit00/vim-prisma', -- prisma formatting
-
   -- Git
   'lewis6991/gitsigns.nvim',
   --'airblade/vim-gitgutter',

@@ -4,5 +4,6 @@ return {
   root_markers = { "vale/.vale.ini" },
   init_options = {
     configPath = vim.fn.getcwd() .. "/vale/.vale.ini"
-  }
+  },
+  workspace_required = true
 }

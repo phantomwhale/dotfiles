@@ -100,7 +100,7 @@ return {
   'junegunn/vim-easy-align',
 
   -- Writing
-  { 'junegunn/goyo.vim',                        cmd = "Goyo" }, -- distraction free writing
+  { 'junegunn/goyo.vim', cmd = "Goyo" },                        -- distraction free writing
   'junegunn/limelight.vim',
 
   -- Misc

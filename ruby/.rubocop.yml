@@ -2,9 +2,11 @@
 %YAML 1.1
 ---
 plugins:
+  - rubocop-graphql
+  - rubocop-performance
   - rubocop-rails
   - rubocop-rspec
-  - rubocop-performance
+  - rubocop-thread_safety
 
 # I don't write these files, so I don't lint them either
 AllCops:

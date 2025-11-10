@@ -16,7 +16,6 @@ return {
   'nvim-tree/nvim-web-devicons', -- devicons; requires a Nerd Font installation
 
   -- Syntax plugins
-  'stephpy/vim-yaml',               -- yaml syntax highlights
   'ntpeters/vim-better-whitespace', -- show trailing whitespace
 
   -- IDE plugins
@@ -100,7 +99,7 @@ return {
   'junegunn/vim-easy-align',
 
   -- Writing
-  { 'junegunn/goyo.vim', cmd = "Goyo" },                        -- distraction free writing
+  { 'junegunn/goyo.vim', cmd = "Goyo" }, -- distraction free writing
   'junegunn/limelight.vim',
 
   -- Misc

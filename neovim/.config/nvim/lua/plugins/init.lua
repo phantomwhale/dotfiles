@@ -12,9 +12,6 @@ return {
   -- LSP
   'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
 
-  -- Search
-  'nvim-tree/nvim-web-devicons', -- devicons; requires a Nerd Font installation
-
   -- Syntax plugins
   'ntpeters/vim-better-whitespace', -- show trailing whitespace
 

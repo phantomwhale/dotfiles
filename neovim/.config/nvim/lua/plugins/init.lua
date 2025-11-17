@@ -62,7 +62,6 @@ return {
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
   'jkramer/vim-checkbox',            -- Markdown checkbox handling, for PR descriptions
-  'knsh14/vim-github-link',          -- Quickly copy URL for commits and branches
   'cwebster2/github-coauthors.nvim', -- Telescope plug-in for git co-authors
 
   -- PHP

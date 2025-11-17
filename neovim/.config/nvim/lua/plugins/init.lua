@@ -94,7 +94,6 @@ return {
   'junegunn/limelight.vim',
 
   -- Misc
-  "nvim-lua/plenary.nvim",        -- required for plugins
   "micarmst/vim-spellsync",       -- keep binary spelling file in sync with text file, and out of source control
   {
     'aymericbeaumet/vim-symlink', -- follow symlinks, to help fugitive work on symlinked dotfiles

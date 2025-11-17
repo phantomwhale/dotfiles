@@ -18,7 +18,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave", "WinEnte
   {
     pattern = "*",
     callback = function()
-      if vim.api.nvim_get_mode() ~= "i" then
+      if vim.wo.number and vim.api.nvim_get_mode() ~= "i" then
         opt.relativenumber = true
       end
     end,

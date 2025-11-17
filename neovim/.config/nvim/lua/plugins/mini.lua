@@ -26,6 +26,7 @@ return {
     require('mini.pairs').setup()
     require('mini.splitjoin').setup()
     require('mini.surround').setup()
+    require('mini.tabline').setup()
   end,
   keys = {
     { "<leader>o", open_current_window, desc = '[O]pen current window' }

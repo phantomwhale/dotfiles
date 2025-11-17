@@ -45,7 +45,6 @@ return {
     opts = {}
   },
   'excalios/vim-test',
-  'majutsushi/tagbar',
   'Raimondi/delimitMate', -- auto-complete quotes, parens, brackets
 
   -- Ruby

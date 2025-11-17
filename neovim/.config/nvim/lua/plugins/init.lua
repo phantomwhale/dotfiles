@@ -64,13 +64,6 @@ return {
   'jkramer/vim-checkbox',            -- Markdown checkbox handling, for PR descriptions
   'cwebster2/github-coauthors.nvim', -- Telescope plug-in for git co-authors
 
-  -- PHP
-  {
-    'phpactor/phpactor',
-    ft = 'php',
-    build = 'composer install --no-dev -o'
-  },
-
   -- Tim Pope basics
   'tpope/vim-abolish',
   'tpope/vim-characterize',

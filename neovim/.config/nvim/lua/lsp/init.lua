@@ -33,9 +33,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     opts.desc = "Show LSP implementation"
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
 
-    opts.desc = "Show method signautre (?)"
-    vim.keymap.set('n', 'gh', vim.lsp.buf.signature_help, opts)
-
     opts.desc = "Show LSP type definitions"
     vim.keymap.set('n', 'gp', vim.lsp.buf.type_definition, opts)
 

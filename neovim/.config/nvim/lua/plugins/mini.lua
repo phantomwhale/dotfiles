@@ -19,6 +19,7 @@ return {
   version = false,
   config = function()
     require('mini.ai').setup()
+    require('mini.bracketed').setup()
     require('mini.diff').setup()
     require('mini.files').setup()
     require('mini.operators').setup()

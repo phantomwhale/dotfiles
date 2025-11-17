@@ -44,12 +44,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     opts.desc = "Show LSP references"
     vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, opts)
 
-    opts.desc = "Go to previous diagnostic"
-    vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-
-    opts.desc = "Go to next diagnostic"
-    vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-
     opts.desc = "Show diagnostics in floating window"
     vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
 

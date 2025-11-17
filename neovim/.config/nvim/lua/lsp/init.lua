@@ -42,7 +42,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 
     opts.desc = "Show LSP references"
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+    vim.keymap.set('n', 'gR', vim.lsp.buf.references, opts)
 
     opts.desc = "Go to previous diagnostic"
     vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)

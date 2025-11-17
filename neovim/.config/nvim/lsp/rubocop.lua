@@ -55,7 +55,6 @@ end
 
 vim.api.nvim_set_keymap('n', '<leader>rd', '<cmd>lua RD.rubocop_disable()<CR>', {})
 
-
 return {
   cmd = rubocop_exec,
   filetypes = { "ruby" },

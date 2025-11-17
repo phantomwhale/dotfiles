@@ -44,7 +44,6 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {}
   },
-  'ctrlpvim/ctrlp.vim',
   'excalios/vim-test',
   'majutsushi/tagbar',
   'Raimondi/delimitMate', -- auto-complete quotes, parens, brackets

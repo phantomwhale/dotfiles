@@ -90,25 +90,32 @@ return {
       }
     },
     keys = {
-      { '<leader>?',       "<cmd>Telescope oldfiles<cr>",       desc = '[?] Find recently opened files' },
-      { '<leader><space>', "<cmd>Telescope buffers<cr>",        desc = '[ ] Find existing buffers' },
-      { '<leader>/',       current_buffer_fuzzy_find,           desc = '[/] Fuzzily search in current buffer' },
-      { '<leader>sb',      telescope_live_grep_open_files,      desc = '[S]earch open [B]uffers' },
-      { '<leader>sc',      telescope_pick_base16_color,         desc = '[S]earch [C]olour themes' },
-      { '<leader>sd',      "<cmd>Telescope diagnostics<cr>",    desc = '[S]earch [D]iagnostics' },
-      { '<leader>sf',      "<cmd>Telescope find_files<cr>",     desc = '[S]earch [F]iles' },
-      { '<leader>sF',      "<cmd>Telescope dir find_files<cr>", desc = '[S]earch [F]iles in directory' },
-      { '<leader>sg',      "<cmd>Telescope live_grep<cr>",      desc = '[S]earch by [G]rep' },
-      { '<leader>sG',      "<cmd>Telescope dir live_grep<cr>",  desc = '[S]earch by [G]rep in directory' },
-      { '<leader>sh',      "<cmd>Telescope help_tags<cr>",      desc = '[S]earch [H]elp' },
-      { '<leader>sr',      "<cmd>Telescope git_branches<cr>",   desc = '[S]earch git b[R]anches' },
-      { '<leader>sw',      "<cmd>Telescope grep_string<cr>",    desc = '[S]earch current [W]ord' },
-      { '<leader>sz',      "<cmd>Telescope zoxide list<cr>",    desc = '[S]earch [Z]oxide' },
+      { '<leader>?',       "<cmd>Telescope oldfiles<cr>",          desc = '[?] Find recently opened files' },
+      { '<leader><space>', "<cmd>Telescope buffers<cr>",           desc = '[ ] Find existing buffers' },
+      { '<leader>/',       current_buffer_fuzzy_find,              desc = '[/] Fuzzily search in current buffer' },
+      { '<leader>sb',      telescope_live_grep_open_files,         desc = '[S]earch open [B]uffers' },
+      { '<leader>sc',      telescope_pick_base16_color,            desc = '[S]earch [C]olour themes' },
+      { '<leader>sd',      "<cmd>Telescope diagnostics<cr>",       desc = '[S]earch [D]iagnostics' },
+      { '<leader>sf',      "<cmd>Telescope find_files<cr>",        desc = '[S]earch [F]iles' },
+      { '<leader>sF',      "<cmd>Telescope dir find_files<cr>",    desc = '[S]earch [F]iles in directory' },
+      { '<leader>sg',      "<cmd>Telescope live_grep<cr>",         desc = '[S]earch by [G]rep' },
+      { '<leader>sG',      "<cmd>Telescope dir live_grep<cr>",     desc = '[S]earch by [G]rep in directory' },
+      { '<leader>sh',      "<cmd>Telescope help_tags<cr>",         desc = '[S]earch [H]elp' },
+      { '<leader>sr',      "<cmd>Telescope git_branches<cr>",      desc = '[S]earch git b[R]anches' },
+      { '<leader>sw',      "<cmd>Telescope grep_string<cr>",       desc = '[S]earch current [W]ord' },
+      { '<leader>sz',      "<cmd>Telescope zoxide list<cr>",       desc = '[S]earch [Z]oxide' },
+      { '<leader>rs',      "<cmd>Telescope rails specs<cr>",       desc = '[R]ails [S]pecs' },
+      { '<leader>rc',      "<cmd>Telescope rails controllers<cr>", desc = '[R]ails [C]ontrollers' },
+      { '<leader>rm',      "<cmd>Telescope rails models<cr>",      desc = '[R]ails [M]odels' },
+      { '<leader>rv',      "<cmd>Telescope rails views<cr>",       desc = '[R]ails [V]iews' },
+      { '<leader>ri',      "<cmd>Telescope rails migrations<cr>",  desc = '[R]ails m[I]grations' },
+      { '<leader>rl',      "<cmd>Telescope rails libs<cr>",        desc = '[R]ails [L]ibs' },
     },
     config = function(_, opts)
       local tele = require("telescope")
       tele.setup(opts)
       tele.load_extension("zoxide")
+      tele.load_extension("rails")
     end,
   },
 

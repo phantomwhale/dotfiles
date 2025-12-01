@@ -79,7 +79,7 @@ autocmd FileType ruby imap <buffer> <F3> <Plug>(xmpfilter-run)
 " Quick editing of config files
 nnoremap <leader>ev <C-w>s<C-w>j<C-w>L:e ~/.config/nvim/init.lua<cr>
 nnoremap <leader>el <C-w>s<C-w>j<C-w>L:e ~/.config/nvim/lua/<cr>
-nnoremap <leader>ep <C-w>s<C-w>j<C-w>L:e ~/.config/nvim/lua/packer_init.lua<cr>
+
 nnoremap <leader>ek <C-w>s<C-w>j<C-w>L:e ~/.config/nvim/lua/core/keymaps.lua<cr>
 nnoremap <leader>eo <C-w>s<C-w>j<C-w>L:e ~/.config/nvim/lua/core/options.lua<cr>
 nnoremap <leader>ec <C-w>s<C-w>j<C-w>L:e ~/.config/nvim/lua/plugins/pluginconfig.lua<cr>

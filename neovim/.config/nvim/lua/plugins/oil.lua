@@ -1,7 +1,9 @@
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-
 return {
   "stevearc/oil.nvim",
+  lazy = false,
+  keys = {
+    { "-", "<CMD>Oil<CR>", desc = "Open parent directory" },
+  },
   opts = {
     use_default_keymaps = false,
     keymaps = {
@@ -11,16 +13,16 @@ return {
       ["<C-s>"] = { "actions.select", opts = { horizontal = true }, desc = "Open the entry in a horizontal split" },
       ["<C-t>"] = { "actions.select", opts = { tab = true }, desc = "Open the entry in new tab" },
       ["<C-p>"] = "actions.preview",
-      ["<C-c>"] = "actions.close",
+      ["<C-c>"] = { "actions.close", mode = "n" },
       ["<C-r>"] = "actions.refresh",
-      ["-"] = "actions.parent",
-      ["_"] = "actions.open_cwd",
-      ["`"] = "actions.cd",
+      ["-"] = { "actions.parent", mode = "n" },
+      ["_"] = { "actions.open_cwd", mode = "n" },
+      ["`"] = { "actions.cd", mode = "n" },
       ["~"] = { "actions.cd", opts = { scope = "tab" }, desc = ":tcd to the current oil directory", mode = "n" },
-      ["gs"] = "actions.change_sort",
+      ["gs"] = { "actions.change_sort", mode = "n" },
       ["gx"] = "actions.open_external",
-      ["g."] = "actions.toggle_hidden",
-      ["g\\"] = "actions.toggle_trash",
+      ["g."] = { "actions.toggle_hidden", mode = "n" },
+      ["g\\"] = { "actions.toggle_trash", mode = "n" },
       ["<C-h>"] = { "<C-w>h", desc = 'Move focus to the left window' },
       ["<C-j>"] = { "<C-w>j", desc = 'Move focus to the lower window' },
       ["<C-k>"] = { "<C-w>k", desc = 'Move focus to the upper window' },

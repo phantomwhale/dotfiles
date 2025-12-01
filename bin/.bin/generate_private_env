@@ -4,6 +4,7 @@ for search (
   anthropic
   github
   amp
+  exa
 ) do
   keys_string=$(op item get --fields label=username "$search")
   if [[ $? != 0 ]] ; then

@@ -51,3 +51,10 @@ env-op() {
     done
   done
 }
+
+# Used by ai functions below
+_has() {
+  return $( whence $1 &>/dev/null )
+}
+
+source ~/.zsh/lib/ai_functions.zsh

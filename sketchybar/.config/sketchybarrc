@@ -1,0 +1,155 @@
+source "$HOME/.config/sketchybar/icons.sh"
+
+# This is a demo config to showcase some of the most important commands.
+# It is meant to be changed and configured, as it is intentionally kept sparse.
+# For a (much) more advanced configuration example see my dotfiles:
+# https://github.com/FelixKratz/dotfiles
+
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+
+##### Bar Appearance #####
+# Configuring the general appearance of the bar.
+# These are only some of the options available. For all options see:
+# https://felixkratz.github.io/SketchyBar/config/bar
+# If you are looking for other colors, see the color picker:
+# https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
+
+sketchybar --bar position=top height=40 blur_radius=30 color=0x40000000
+
+##### Changing Defaults #####
+# We now change some default values, which are applied to all further items.
+# For a full list of all available item properties see:
+# https://felixkratz.github.io/SketchyBar/config/items
+
+default=(
+  padding_left=5
+  padding_right=5
+  icon.font="Hack Nerd Font:Bold:17.0"
+  # icon.font="Fira Code:Bold:12.0"
+  label.font="Hack Nerd Font:Bold:14.0"
+  # label.font="Fira Code:Bold:14.0"
+  icon.color=0xffffffff
+  label.color=0xffffffff
+  icon.padding_left=4
+  icon.padding_right=4
+  label.padding_left=4
+  label.padding_right=4
+)
+sketchybar --default "${default[@]}"
+
+##### Adding Mission Control Space Indicators #####
+# Let's add some mission control spaces:
+# https://felixkratz.github.io/SketchyBar/config/components#space----associate-mission-control-spaces-with-an-item
+# to indicate active and available mission control spaces.
+#
+
+ifont="Hack Nerd Font:Bold:12.0"
+idfont="FontAwesome:Regular:11.0"
+lfont="Tamzen:Medium:13.0"
+bcolor="0x883a3a3a"
+bdcolor="0xff606060"
+lcolor="0xffa8a8a8"
+hcolor="0xfff0f0f0"
+
+bar=(
+  height=24
+  position=top
+  padding_left=2
+  padding_right=2
+  margin=2
+  y_offset=2
+  border_width=1
+  color="$bcolor"
+  border_color="$bdcolor"
+)
+
+default=(
+  drawing=on
+  icon.font="$ifont"
+  icon.color="$lcolor"
+  icon.highlight_color="$hcolor"
+  icon.padding_left=6
+  icon.padding_right=2
+  label.font="$lfont"
+  label.color="$lcolor"
+  label.highlight_color="$hcolor"
+  label.padding_left=2
+  label.padding_right=6
+  background.drawing=on
+  background.color=0xff3a3a3a
+  background.corner_radius=3
+  background.padding_left=2
+  background.padding_right=2
+)
+
+sketchybar --bar "${bar[@]}"
+sketchybar --default "${default[@]}"
+
+for i in {1..5}; do
+  sketchybar --add space space.$i left --set space.$i associated_display=1 associated_space=$i
+  sketchybar --set space.$i script="~/.config/sketchybar/plugins/space.sh" \
+             --subscribe space.$i space_change
+done
+
+sketchybar --set space.1 icon=${ICONS_SPACE[0]} label="$ICON_MAIL  work"
+sketchybar --set space.2 icon=${ICONS_SPACE[1]} label="$ICON_TERM  term"
+sketchybar --set space.3 icon=${ICONS_SPACE[2]} label="$ICON_WEB  web"
+sketchybar --set space.4 icon=${ICONS_SPACE[3]} label="$ICON_CHAT  slack"
+sketchybar --set space.5 icon=${ICONS_SPACE[4]} label="$ICON_LIST  misc"
+
+sketchybar --add bracket spaces '/space\..*/' \
+		   --set spaces background.color=0xff686868 \
+		   background.corner_radius=0 \
+		   background.border_width=1 \
+		   background.border_color="$bdcolor" \
+		   background.height=24
+
+
+##### Adding Left Items #####
+# We add some regular items to the left side of the bar, where
+# only the properties deviating from the current defaults need to be set
+
+sketchybar --add item chevron left \
+           --set chevron icon= label.drawing=off \
+           --add item front_app left \
+           --set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
+           --subscribe front_app front_app_switched
+
+sketchybar --add item title center \
+           --set title script="~/.config/sketchybar/plugins/window_title.sh" \
+           --subscribe title front_app_switched space_change
+
+##### Adding Right Items #####
+# In the same way as the left items we can add items to the right side.
+# Additional position (e.g. center) are available, see:
+# https://felixkratz.github.io/SketchyBar/config/items#adding-items-to-sketchybar
+
+sketchybar --add item time right \
+           --set time update_freq=10 \
+                 icon=$ICON_CLOCK  \
+                 script="~/.config/sketchybar/plugins/time.sh"
+
+sketchybar --add item date right \
+           --set date update_freq=10 \
+                 icon=$ICON_CALENDAR  \
+                 script="~/.config/sketchybar/plugins/date.sh"
+
+sketchybar --add item battery right \
+           --set battery update_freq=30 \
+                 script="~/.config/sketchybar/plugins/batt.sh"
+
+sketchybar --add bracket r time date battery \
+           --set r background.color=0xff686868 \
+                   background.corner_radius=3 \
+                   background.border_width=1 \
+                   background.border_color="$bdcolor" \
+                   background.height=24
+
+# Some items refresh on a fixed cycle, e.g. the clock runs its script once
+# every 10s. Other items respond to events they subscribe to, e.g. the
+# volume.sh script is only executed once an actual change in system audio
+# volume is registered. More info about the event system can be found here:
+# https://felixkratz.github.io/SketchyBar/config/events
+
+##### Force all scripts to run the first time (never do this in a script) #####
+sketchybar --update

@@ -39,7 +39,8 @@ yabai -m config                                 \
     mouse_modifier               fn             \
     mouse_action1                move           \
     mouse_action2                resize         \
-    mouse_drop_action            stack
+    mouse_drop_action            stack          \
+    external_bar                 all:$(sketchybar --query bar | jq .height):0
 
 while read app; do
     echo $app

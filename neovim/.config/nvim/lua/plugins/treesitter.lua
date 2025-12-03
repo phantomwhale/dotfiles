@@ -30,5 +30,5 @@ return {
   { "RRethy/nvim-treesitter-endwise" },
 
   -- tree-sitter grammer for proto3
-  { 'mitchellh/tree-sitter-proto' },
+  { 'mitchellh/tree-sitter-proto', ft = "proto" },
 }

@@ -8,6 +8,9 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
+  keys = {
+    { "<leader>so", ":ObsidianSearch<CR>", desc = "Search obsidian files" },
+  },
   opts = {
     workspaces = {
       {

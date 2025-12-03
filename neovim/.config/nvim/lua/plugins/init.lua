@@ -29,10 +29,6 @@ return {
 
   -- 'psliwka/vim-smoothie', -- smooth scrolling
   {
-    'rizzatti/dash.vim', -- add :Dash documentation lookup
-    cmd = { "Dash", "DashSearch" },
-  },
-  {
     "ibhagwan/fzf-lua",
     -- optional for icon support
     dependencies = { "nvim-tree/nvim-web-devicons" },

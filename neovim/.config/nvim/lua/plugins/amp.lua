@@ -1,7 +1,7 @@
 return {
   "sourcegraph/amp.nvim",
   branch = "main",
-  lazy = false,
+  cmd = { "AmpSend", "AmpSendBuffer", "AmpPromptSelection", "AmpPromptRef" },
   opts = { auto_start = true, log_level = "info" },
   init = function()
     -- Send a quick message to the agent

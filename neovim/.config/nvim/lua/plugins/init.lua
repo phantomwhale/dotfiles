@@ -37,30 +37,61 @@ return {
   },
 
   -- 'psliwka/vim-smoothie', -- smooth scrolling
-  'rizzatti/dash.vim', -- add :Dash documentation lookup
+  {
+    'rizzatti/dash.vim', -- add :Dash documentation lookup
+    cmd = { "Dash", "DashSearch" },
+  },
   {
     "ibhagwan/fzf-lua",
     -- optional for icon support
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {}
   },
-  'excalios/vim-test',
+  {
+    'excalios/vim-test',
+    cmd = { "TestNearest", "TestFile", "TestSuite", "TestLast", "TestVisit" },
+  },
 
   -- Ruby
-  'tpope/vim-rails',
-  'thoughtbot/vim-rspec',
-  'ecomba/vim-ruby-refactoring',
-  'jgdavey/vim-blockle', -- toggle block styles [do/end <-> {}]
+  {
+    'tpope/vim-rails',
+    ft = { "ruby", "eruby" },
+  },
+  {
+    'thoughtbot/vim-rspec',
+    ft = "ruby",
+  },
+  {
+    'ecomba/vim-ruby-refactoring',
+    ft = "ruby",
+  },
+  {
+    'jgdavey/vim-blockle', -- toggle block styles [do/end <-> {}]
+    ft = "ruby",
+  },
   {
     'nelstrom/vim-textobj-rubyblock',
+    ft = "ruby",
     dependencies = { 'kana/vim-textobj-user' }
   },
-  'tpope/vim-bundler', -- bundle open, but inside a vim session
+  {
+    'tpope/vim-bundler', -- bundle open, but inside a vim session
+    cmd = { "Bundle", "Bopen" },
+  },
 
   -- Git
-  'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
-  'jkramer/vim-checkbox',            -- Markdown checkbox handling, for PR descriptions
+  {
+    'tpope/vim-fugitive',
+    cmd = { "Git", "G", "Gdiff", "Gvdiffsplit", "Gblame", "Gread", "Gwrite", "Gclog" },
+  },
+  {
+    'tpope/vim-rhubarb',
+    dependencies = { 'tpope/vim-fugitive' },
+  },
+  {
+    'jkramer/vim-checkbox', -- Markdown checkbox handling, for PR descriptions
+    ft = "markdown",
+  },
   'cwebster2/github-coauthors.nvim', -- Telescope plug-in for git co-authors
 
   -- Tim Pope basics
@@ -77,10 +108,18 @@ return {
   'tpope/vim-unimpaired',
 
   -- Aligning things
-  'junegunn/vim-easy-align',
+  {
+    'junegunn/vim-easy-align',
+    keys = {
+      { "ga", "<Plug>(EasyAlign)", mode = { "n", "x" }, desc = "Easy Align" },
+    },
+  },
 
   -- Writing
-  'junegunn/limelight.vim',
+  {
+    'junegunn/limelight.vim',
+    cmd = "Limelight",
+  },
 
   -- Misc
   "micarmst/vim-spellsync",       -- keep binary spelling file in sync with text file, and out of source control

@@ -63,6 +63,7 @@ return {
         'princejoogie/dir-telescope.nvim',
         dependencies = { "nvim-telescope/telescope.nvim" }
       },
+      'cwebster2/github-coauthors.nvim',
     },
     opts = {
       extensions = {
@@ -111,12 +112,14 @@ return {
       { '<leader>rv',      "<cmd>Telescope rails views<cr>",       desc = '[R]ails [V]iews' },
       { '<leader>ri',      "<cmd>Telescope rails migrations<cr>",  desc = '[R]ails m[I]grations' },
       { '<leader>rl',      "<cmd>Telescope rails libs<cr>",        desc = '[R]ails [L]ibs' },
+      { '<leader>sA',      "<cmd>Telescope githubcoauthors coauthors<cr>", desc = '[S]earch co-[A]uthors' },
     },
     config = function(_, opts)
       local tele = require("telescope")
       tele.setup(opts)
       tele.load_extension("zoxide")
       tele.load_extension("rails")
+      tele.load_extension("githubcoauthors")
     end,
   },
 

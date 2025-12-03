@@ -27,15 +27,6 @@ return {
   -- colorscheme
   'tinted-theming/tinted-vim',
 
-  -- statusline
-  {
-    'nvim-lualine/lualine.nvim',
-    dependencies = {
-      { 'nvim-tree/nvim-web-devicons', lazy = true },
-      { 'tinted-theming/tinted-vim' }
-    }
-  },
-
   -- 'psliwka/vim-smoothie', -- smooth scrolling
   {
     'rizzatti/dash.vim', -- add :Dash documentation lookup

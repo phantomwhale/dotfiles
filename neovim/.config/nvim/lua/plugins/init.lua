@@ -93,7 +93,7 @@ return {
     cmd = "Obsession",
   },
   'tpope/vim-repeat',
-  'tpope/vim-rsi',
+  'tpope/vim-rsi', -- readline style editing
   'tpope/vim-surround',
   'tpope/vim-unimpaired',
 

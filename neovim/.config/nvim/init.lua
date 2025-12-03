@@ -21,6 +21,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Put virtual text back; there are diagnostic handlers now, but I just want this
+-- working until I can investigate that
+--
+-- Ref: https://neovim.io/doc/user/news-0.11.html#_diagnostics
+vim.diagnostic.config({ virtual_text = true })
+
 -- things that are staying as vimscript:
 vim.cmd([[
 "                        _____________________________________________________

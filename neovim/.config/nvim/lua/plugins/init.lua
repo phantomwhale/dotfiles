@@ -93,7 +93,6 @@ return {
   'tpope/vim-dispatch',
   'tpope/vim-eunuch',
   'tpope/vim-obsession',
-  'tpope/vim-ragtag',
   'tpope/vim-repeat',
   'tpope/vim-rsi',
   'tpope/vim-surround',

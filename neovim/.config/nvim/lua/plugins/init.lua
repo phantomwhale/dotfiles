@@ -76,7 +76,8 @@ return {
   },
   {
     'tpope/vim-bundler', -- bundle open, but inside a vim session
-    cmd = { "Bundle", "Bopen" },
+    lazy = false,
+    dependencies = { 'tpope/vim-rails' },
   },
 
   -- Git (fugitive is in its own file)

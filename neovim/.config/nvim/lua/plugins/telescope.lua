@@ -91,7 +91,7 @@ return {
       }
     },
     keys = {
-      { '<leader>?',       "<cmd>Telescope oldfiles<cr>",          desc = '[?] Find recently opened files' },
+      { '<leader>fr',      "<cmd>Telescope oldfiles<cr>",          desc = '[F]ind [R]ecent files' },
       { '<leader><space>', "<cmd>Telescope buffers<cr>",           desc = '[ ] Find existing buffers' },
       { '<leader>/',       current_buffer_fuzzy_find,              desc = '[/] Fuzzily search in current buffer' },
       { '<leader>sb',      telescope_live_grep_open_files,         desc = '[S]earch open [B]uffers' },

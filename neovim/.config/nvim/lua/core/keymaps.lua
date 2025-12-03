@@ -96,7 +96,7 @@ nnoremap <Leader>gL :exe ':!cd ' . expand('%:p:h') . '; git lgt'<CR>
 nnoremap <Leader>gl :exe ':!cd ' . expand('%:p:h') . '; git lgtt'<CR>
 nnoremap <Leader>gh :Gclog<CR>
 nnoremap <Leader>gH :Gclog<CR>:set nofoldenable<CR>
-nnoremap <Leader>gr :Gread<CR>
+nnoremap <Leader>gR :Gread<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 nnoremap <Leader>gp :Git push<CR>
 nnoremap <Leader>g- :Git stash<CR>:e<CR>

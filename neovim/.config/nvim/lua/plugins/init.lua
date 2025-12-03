@@ -45,6 +45,7 @@ return {
     "ibhagwan/fzf-lua",
     -- optional for icon support
     dependencies = { "nvim-tree/nvim-web-devicons" },
+    cmd = "FzfLua",
     opts = {}
   },
   {
@@ -87,11 +88,23 @@ return {
   },
   -- Tim Pope basics
   'tpope/vim-abolish',
-  'tpope/vim-characterize',
+  {
+    'tpope/vim-characterize',
+    keys = { { "gA", "<Plug>(characterize)", desc = "Characterize" } },
+  },
   'tpope/vim-commentary',
-  'tpope/vim-dispatch',
-  'tpope/vim-eunuch',
-  'tpope/vim-obsession',
+  {
+    'tpope/vim-dispatch',
+    cmd = { "Dispatch", "Make", "Focus", "Start", "Spawn" },
+  },
+  {
+    'tpope/vim-eunuch',
+    cmd = { "Delete", "Move", "Rename", "Chmod", "Mkdir", "SudoWrite", "SudoEdit" },
+  },
+  {
+    'tpope/vim-obsession',
+    cmd = "Obsession",
+  },
   'tpope/vim-repeat',
   'tpope/vim-rsi',
   'tpope/vim-surround',

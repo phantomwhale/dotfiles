@@ -79,15 +79,7 @@ return {
     cmd = { "Bundle", "Bopen" },
   },
 
-  -- Git
-  {
-    'tpope/vim-fugitive',
-    cmd = { "Git", "G", "Gdiff", "Gvdiffsplit", "Gblame", "Gread", "Gwrite", "Gclog" },
-  },
-  {
-    'tpope/vim-rhubarb',
-    dependencies = { 'tpope/vim-fugitive' },
-  },
+  -- Git (fugitive is in its own file)
   {
     'jkramer/vim-checkbox', -- Markdown checkbox handling, for PR descriptions
     ft = "markdown",

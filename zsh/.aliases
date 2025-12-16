@@ -15,6 +15,7 @@ alias ls='eza --all --long --group --group-directories-first --icons --header --
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log *'
 alias rc='rails console'
 alias t='todo.sh'
+alias ta='TODOTXT_FINAL_FILTER=cat todo.sh' # turn off threshold date filtering
 alias td='t ls | head -25'
 alias tt="timetrap"
 alias vi=vim

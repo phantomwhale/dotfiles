@@ -69,12 +69,20 @@ export TODO_ACTIONS_DIR="$HOME/.todo/actions"
 # inserted, but before colorization, and before hiding of
 # priority, context, and project.
 #
-# export TODOTXT_SORT_COMMAND='env LC_COLLATE=C sort -f -k2'
+# Custom filter that:
+# 1. Strips creation dates after priority
+# 2. Filters out tasks with future t:YYYY-MM-DD threshold dates
+# Bypass future filtering with: TODOTXT_SHOW_FUTURE=1 todo.sh list
+export TODOTXT_SORT_COMMAND="$HOME/.todo/filter-sort.sh"
 
 # TODOTXT_FINAL_FILTER will filter list output after colorization,
 # priority hiding, context hiding, and project hiding. That is,
 # just before the list output is displayed.
 #
-# Filter out tasks with future t:YYYY-MM-DD threshold dates
-# Bypass with: TODOTXT_SHOW_FUTURE=1 todo.sh list
-export TODOTXT_FINAL_FILTER="$HOME/.todo/filter-future.sh"
+# export TODOTXT_FINAL_FILTER='cat'
+#
+
+## default actions
+# Set a default action for calling todo.sh without arguments.
+# Also allows for parameters for the action.
+export TODOTXT_DEFAULT_ACTION='ls'

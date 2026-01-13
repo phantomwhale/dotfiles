@@ -19,6 +19,9 @@ AllCops:
 Layout/ArgumentAlignment:
   EnforcedStyle: with_fixed_indentation
 
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
 # Configuration and specs use long blocks as part of their DSL
 Metrics/BlockLength:
   Exclude:

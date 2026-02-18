@@ -35,6 +35,8 @@ alias git-branches-unmerged='for branch in `git branch -r --no-merged | grep -v 
 
 alias buildkite-console='aws-vault exec prod-console -- bik console rails c'
 
+alias arc-debug='/Applications/Arc.app/Contents/MacOS/Arc --remote-debugging-port=9222'
+
 # opencode does not always shutdown properly
 # Ref: https://github.com/anomalyco/opencode/issues/13001
 alias closecode='pgrep -fl opencode | grep opt/homebrew/bin/opencode | grep -v grep | cut -f1 -d " " | xargs kill -9'

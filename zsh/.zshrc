@@ -21,10 +21,6 @@ export GIT_COMPLETION_CHECKOUT_NO_GUESS=1
 # Preferred LLM model for the llm cli
 export LLM_MODEL=claude-4-opus
 
-# Lets edit with vim, because emacs is gross
-# bindkey -e;
-bindkey -v;
-
 # Establish neovim as default editor
 export VISUAL=nvim
 export EDITOR="$VISUAL"

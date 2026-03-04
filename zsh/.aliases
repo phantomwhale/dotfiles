@@ -23,6 +23,9 @@ alias vim=nvim
 alias topcom='history | awk '"'"'{a[$2]++}END{for(i in a){print a[i] " " i}}'"'"' | sort -rn | head -20'
 alias dclean='docker ps -a | grep "weeks ago" | awk '"'"'{print $1}'"'"' | xargs docker rm'
 
+# Worktree alias
+alias wsc='wt switch --create --execute=opencode'
+
 # Not ideal, but given almost all machines won't have any support for xterm-kitty TERM this ensures better behaviour
 alias ssh="TERM=xterm ssh"
 alias icat="kitty +kitten icat"

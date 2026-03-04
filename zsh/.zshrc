@@ -119,3 +119,5 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source /Users/ben/.config/broot/launcher/bash/br
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi

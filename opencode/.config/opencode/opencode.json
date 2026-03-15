@@ -1,0 +1,91 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "agent": {
+    "vision": {
+      "description": "Analyzes images and visual content using Qwen3-VL",
+      "mode": "subagent",
+      "model": "lmstudio/qwen/qwen3-vl-8b",
+      "prompt": "You are a vision-capable assistant. Analyze images and visual content."
+    },
+    "explore": {
+      "disable": true
+    },
+    "general": {
+      "disable": true
+    }
+  },
+  "tools": {
+    "bash": true,
+    "edit": true,
+    "glob": true,
+    "grep": true,
+    "list": true,
+    "patch": true,
+    "read": true,
+    "todoread": true,
+    "todowrite": true,
+    "webfetch": true
+  },
+  "mcp": {
+    "buildkite": {
+      "type": "remote",
+      "url": "https://mcp.buildkite.com/mcp",
+      "enabled": false
+    },
+    "linear": {
+      "type": "remote",
+      "url": "https://mcp.linear.app/mcp",
+      "enabled": false
+    },
+    "notion": {
+      "type": "remote",
+      "url": "https://mcp.notion.com/mcp",
+      "oauth": {},
+      "enabled": false
+    },
+    "datadog": {
+      "type": "remote",
+      "url": "https://mcp.datadoghq.com/api/unstable/mcp-server/mcp",
+      "enabled": false
+    },
+    "datadog-packagecloud": {
+      "type": "remote",
+      "url": "https://mcp.datadoghq.com/api/unstable/mcp-server/mcp",
+      "enabled": false
+    },
+    "chrome-devtools": {
+      "type": "local",
+      "command": ["npx", "-y", "chrome-devtools-mcp"],
+      "enabled": false
+    },
+    "github": {
+      "type": "remote",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "enabled": false
+    },
+    "slack": {
+      "type": "remote",
+      "url": "https://mcp.slack.com/mcp",
+      "enabled": false
+    }
+  },
+  "provider": {
+    "lmstudio": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "LM Studio",
+      "options": {
+        "baseURL": "http://127.0.0.1:1234/v1"
+      },
+      "models": {
+        "qwen/qwen3-vl-8b": {
+          "name": "Qwen3-VL 8B (LM Studio)",
+          "limit": {
+            "context": 64000,
+            "output": 32000
+          }
+        }
+      }
+    }
+  },
+  "plugin": ["oh-my-opencode@latest"]
+}

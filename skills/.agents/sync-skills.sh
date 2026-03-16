@@ -2,46 +2,21 @@
 #
 # ~/.agents/sync-skills.sh
 #
-# Syncs skills from multiple git repositories into ~/.agents/skills/
-# using GNU stow for clean symlink management.
+# Syncs skills from skills-manifest.json using `npx skills` (vercel-labs/skills).
 #
 # Usage:
-#   ~/.agents/sync-skills.sh          # Clone/pull repos, rebuild symlinks
-#   ~/.agents/sync-skills.sh --dry-run  # Show what would happen
+#   ~/.agents/sync-skills.sh              # Install/update all skills
+#   ~/.agents/sync-skills.sh --dry-run    # Show what would happen
 #
-# Structure:
-#   ~/.agents/
-#   ├── sync-skills.sh     (this script)
-#   ├── repos/             (git clones, managed by this script)
-#   ├── packages/          (stow packages — symlinks into repos)
-#   └── skills/            (final skills directory, managed by stow)
+# The manifest (skills-manifest.json) is the source of truth for which
+# skills are installed. Commit it to your dotfiles repo.
 #
-# To add a new repository, add an entry to the REPOS array below.
+# To add a new repository, edit skills-manifest.json.
 
 set -euo pipefail
 
-AGENTS_DIR="${HOME}/.agents"
-REPOS_DIR="${AGENTS_DIR}/repos"
-PACKAGES_DIR="${AGENTS_DIR}/packages"
-SKILLS_DIR="${AGENTS_DIR}/skills"
-
-# ─── Repository Configuration ───────────────────────────────────────────────
-#
-# Format: "name|git_url|skills_path_in_repo|excludes|branch"
-#
-#   name         — directory name under repos/ and packages/
-#   git_url      — any git-clone-able URL
-#   skills_path  — path within the repo where skill directories live
-#   excludes     — skill directory names to skip (comma-separated, or empty)
-#   branch       — git branch to track (empty = default branch)
-#
-REPOS=(
-  "amp-toolkit|https://github.com/buildkite/amp-toolkit.git|skills||refactor-for-skills"
-  "data-analyst-agent|git@github.com:buildkite/data-analyst-agent.git|.claude/skills|setup|"
-  "peon-ping|git@github.com:PeonPing/peon-ping.git|skills||"
-  "rails-ai-agents|git@github.com:ThibautBaissac/rails_ai_agents.git|skills||"
-)
-# ────────────────────────────────────────────────────────────────────────────
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+MANIFEST="${SCRIPT_DIR}/skills-manifest.json"
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -59,179 +34,140 @@ header() { echo -e "\n${BOLD}$*${RESET}"; }
 
 DRY_RUN=false
 
-# Compute relative path from $2 to $1 (portable, no coreutils needed)
-relpath() {
-  python3 -c "import os.path; print(os.path.relpath('$1', '$2'))"
+# ─── Dependency checks ──────────────────────────────────────────────────────
+
+check_deps() {
+	local missing=()
+	command -v npx >/dev/null 2>&1 || missing+=("npx (Node.js)")
+	command -v jq >/dev/null 2>&1 || missing+=("jq")
+
+	if [[ ${#missing[@]} -gt 0 ]]; then
+		error "Missing dependencies: ${missing[*]}"
+		echo "  Install with: brew install node jq"
+		exit 1
+	fi
+
+	if [[ ! -f "$MANIFEST" ]]; then
+		error "Manifest not found: ${MANIFEST}"
+		echo "  Create skills-manifest.json alongside this script."
+		exit 1
+	fi
 }
 
-is_excluded() {
-  local skill="$1" excludes="$2"
-  [[ -z "$excludes" ]] && return 1
-  IFS=',' read -ra list <<<"$excludes"
-  for e in "${list[@]}"; do
-    [[ "$skill" == "$e" ]] && return 0
-  done
-  return 1
-}
-
-sync_repo() {
-  local name="$1" url="$2" branch="$3"
-  local repo_dir="${REPOS_DIR}/${name}"
-
-  if [[ -d "${repo_dir}/.git" ]]; then
-    if $DRY_RUN; then
-      info "Would pull ${name}"
-    else
-      info "Pulling ${name}..."
-      git -C "$repo_dir" pull --ff-only --quiet 2>/dev/null || {
-        warn "Fast-forward pull failed for ${name}, trying rebase..."
-        git -C "$repo_dir" pull --rebase --quiet 2>/dev/null || {
-          error "Pull failed for ${name} — resolve manually in ${repo_dir}"
-          return 1
-        }
-      }
-      success "Updated ${name}"
-    fi
-  else
-    if $DRY_RUN; then
-      info "Would clone ${url} → repos/${name}"
-    else
-      local branch_args=()
-      if [[ -n "$branch" ]]; then
-        branch_args=(--branch "$branch")
-      fi
-      info "Cloning ${name}${branch:+ (branch: ${branch})}..."
-      git clone --quiet "${branch_args[@]}" "$url" "$repo_dir"
-      success "Cloned ${name}"
-    fi
-  fi
-}
-
-build_package() {
-  local name="$1" skills_path="$2" excludes="$3"
-  local source_dir="${REPOS_DIR}/${name}/${skills_path}"
-  local package_dir="${PACKAGES_DIR}/${name}"
-
-  if [[ ! -d "$source_dir" ]]; then
-    if $DRY_RUN; then
-      info "Skills path ${skills_path}/ (will exist after clone)"
-      return 0
-    fi
-    error "Skills path not found: ${source_dir}"
-    return 1
-  fi
-
-  if $DRY_RUN; then
-    info "Would build package for ${name}:"
-  else
-    # Rebuild the package from scratch each time
-    rm -rf "$package_dir"
-    mkdir -p "$package_dir"
-  fi
-
-  local count=0
-  for skill_dir in "$source_dir"/*/; do
-    [[ ! -d "$skill_dir" ]] && continue
-    local skill_name
-    skill_name="$(basename "$skill_dir")"
-
-    if is_excluded "$skill_name" "$excludes"; then
-      info "${DIM}Skipped ${skill_name} (excluded)${RESET}"
-      continue
-    fi
-
-    if $DRY_RUN; then
-      info "  ${skill_name}"
-    else
-      local rel
-      rel="$(relpath "$source_dir/$skill_name" "$package_dir")"
-      ln -s "$rel" "${package_dir}/${skill_name}"
-    fi
-    count=$((count + 1))
-  done
-
-  if $DRY_RUN; then
-    info "  → ${count} skills"
-  else
-    success "Packaged ${count} skills from ${name}"
-  fi
-}
-
-stow_package() {
-  local name="$1"
-
-  if $DRY_RUN; then
-    info "Would stow ${name} → skills/"
-  else
-    # --restow: clean unstow then stow (handles additions + removals)
-    stow -d "$PACKAGES_DIR" -t "$SKILLS_DIR" --restow "$name" 2>&1
-    success "Stowed ${name}"
-  fi
-}
+# ─── Main ────────────────────────────────────────────────────────────────────
 
 main() {
-  header "~/.agents skill sync"
+	header "~/.agents skill sync (npx skills)"
 
-  if $DRY_RUN; then
-    warn "Dry run — no changes will be made"
-  fi
+	check_deps
 
-  mkdir -p "$REPOS_DIR" "$PACKAGES_DIR" "$SKILLS_DIR"
+	if $DRY_RUN; then
+		warn "Dry run — showing what would be installed"
+		echo ""
+	fi
 
-  for repo_def in "${REPOS[@]}"; do
-    IFS='|' read -r name url skills_path excludes branch <<<"$repo_def"
+	# Read agent list from manifest
+	local agents=()
+	while IFS= read -r agent; do
+		agents+=(-a "$agent")
+	done < <(jq -r '.agents[]' "$MANIFEST")
 
-    header "${name}"
-    sync_repo "$name" "$url" "${branch:-}"
-    build_package "$name" "$skills_path" "${excludes:-}"
-    stow_package "$name"
-  done
+	local repo_count
+	repo_count=$(jq '.repos | length' "$MANIFEST")
 
-  echo ""
-  header "Summary"
+	local failed=0
 
-  local count
-  count=$(find "$SKILLS_DIR" -maxdepth 1 -mindepth 1 -type l 2>/dev/null | wc -l | tr -d ' ')
-  success "${count} skills linked in ${SKILLS_DIR}"
-  echo ""
+	for i in $(seq 0 $((repo_count - 1))); do
+		local source has_skills name
+		source=$(jq -r ".repos[$i].source" "$MANIFEST")
+		name=$(jq -r ".repos[$i].name // .repos[$i].source" "$MANIFEST")
+		has_skills=$(jq ".repos[$i] | has(\"skills\")" "$MANIFEST")
 
-  # List skills grouped by source
-  for repo_def in "${REPOS[@]}"; do
-    IFS='|' read -r name _ _ _ _ <<<"$repo_def"
-    local package_dir="${PACKAGES_DIR}/${name}"
-    [[ ! -d "$package_dir" ]] && continue
+		# Build the npx skills add command
+		local args=("$source" -g -y "${agents[@]}")
 
-    echo -e "  ${DIM}from ${name}:${RESET}"
-    for skill in "$package_dir"/*/; do
-      [[ -d "$skill" ]] && echo "    $(basename "$skill")"
-    done
-    echo ""
-  done
+		if [[ "$has_skills" == "true" ]]; then
+			# Specific skills listed in manifest
+			while IFS= read -r skill; do
+				args+=(--skill "$skill")
+			done < <(jq -r ".repos[$i].skills[]" "$MANIFEST")
+
+			local skill_count
+			skill_count=$(jq ".repos[$i].skills | length" "$MANIFEST")
+			header "${name} (${skill_count} skills)"
+		else
+			# All skills from this repo
+			args+=(--skill '*')
+			header "${name}"
+		fi
+
+		if $DRY_RUN; then
+			info "npx skills add ${args[*]}"
+		else
+			info "Installing from ${DIM}${source}${RESET}"
+			if npx skills add "${args[@]}" 2>&1; then
+				success "Done"
+			else
+				error "Failed to install from ${source}"
+				failed=$((failed + 1))
+			fi
+		fi
+	done
+
+	# ─── Summary ─────────────────────────────────────────────────────────────
+
+	echo ""
+	header "Summary"
+
+	if $DRY_RUN; then
+		info "Dry run complete — no changes made"
+	else
+		# List installed skills per agent
+		for agent in $(jq -r '.agents[]' "$MANIFEST"); do
+			local count
+			count=$(npx skills list -g -a "$agent" --json 2>/dev/null | jq 'length' 2>/dev/null || echo "0")
+			success "${count} skills installed for ${agent}"
+
+			npx skills list -g -a "$agent" --json 2>/dev/null \
+				| jq -r '.[].name' 2>/dev/null \
+				| sort \
+				| while IFS= read -r name; do
+				echo -e "    ${DIM}${name}${RESET}"
+			done || true
+		done
+
+		if [[ $failed -gt 0 ]]; then
+			echo ""
+			error "${failed} repo(s) failed — check output above"
+		fi
+	fi
+	echo ""
 }
 
-# Parse arguments
+# ─── Parse arguments ─────────────────────────────────────────────────────────
+
 while [[ $# -gt 0 ]]; do
-  case "$1" in
-    --dry-run | -n)
-      DRY_RUN=true
-      shift
-      ;;
-    --help | -h)
-      echo "Usage: $0 [--dry-run]"
-      echo ""
-      echo "Syncs skills from git repositories into ~/.agents/skills/ via stow."
-      echo ""
-      echo "Options:"
-      echo "  --dry-run, -n   Show what would happen without making changes"
-      echo "  --help, -h      Show this help"
-      exit 0
-      ;;
-    *)
-      error "Unknown option: $1"
-      echo "Usage: $0 [--dry-run]"
-      exit 1
-      ;;
-  esac
+	case "$1" in
+	--dry-run | -n)
+		DRY_RUN=true
+		shift
+		;;
+	--help | -h)
+		echo "Usage: $0 [--dry-run]"
+		echo ""
+		echo "Syncs skills from skills-manifest.json using npx skills."
+		echo ""
+		echo "Options:"
+		echo "  --dry-run, -n   Show what would happen without making changes"
+		echo "  --help, -h      Show this help"
+		exit 0
+		;;
+	*)
+		error "Unknown option: $1"
+		echo "Usage: $0 [--dry-run]"
+		exit 1
+		;;
+	esac
 done
 
 main

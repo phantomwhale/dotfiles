@@ -1,0 +1,29 @@
+{
+  "agents": ["opencode"],
+  "repos": [
+    {
+      "name": "amp-toolkit",
+      "source": "https://github.com/buildkite/amp-toolkit/tree/refactor-for-skills"
+    },
+    {
+      "name": "data-analyst-agent",
+      "source": "git@github.com:buildkite/data-analyst-agent.git",
+      "skills": [
+        "Athena Query",
+        "Customer Journey Deep Dive",
+        "Customer Usage Research",
+        "Data Analysis",
+        "Executive Debrief",
+        "Google Drive Sync"
+      ]
+    },
+    {
+      "name": "peon-ping",
+      "source": "git@github.com:PeonPing/peon-ping.git"
+    },
+    {
+      "name": "rails-ai-agents",
+      "source": "git@github.com:ThibautBaissac/rails_ai_agents.git"
+    }
+  ]
+}

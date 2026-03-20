@@ -115,6 +115,9 @@ if [ -n "$(command -v 'tinty')" ]; then
   alias tinty=tinty_source_shell_theme
 fi
 
+# Go paths
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
 
 source /Users/ben/.config/broot/launcher/bash/br
 

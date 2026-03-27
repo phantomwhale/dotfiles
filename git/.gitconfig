@@ -31,11 +31,12 @@
   fm = pull
   fr = pull --rebase
   frf = pull --rebase --recurse-submodules=no
-  fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
+  fixup = "!git log1 -n 50 --no-merges | fzf --ansi | cut -c -7 | xargs -o git commit --fixup"
   gone = "!git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D"
 
   ia = add
 
+  log1 = log --color=always --decorate --oneline
   lgt = log --graph --pretty=format:'%Cred%h%Creset%C(yellow bold)%d%Creset %s %Cgreen(%cr) %C(blue bold)<%an>%Creset' --abbrev-commit
   lgtt = lgt --first-parent --topo-order --all
   lt = describe --tags

@@ -1,30 +1,18 @@
 -- Utility functions for LSP
 local M = {}
 
----Finds the first executable command from a list of commands
----@param commands table[] List of command objects, each with 'cmd' and 'check' properties
----@return table First working command or fallback command
----
----Example:
----```lua
----local cmd = M.first_executable({
----  { cmd = "prettier", check = "command -v prettier" },
----  { cmd = "prettierd", check = "command -v prettierd" }
----})
----```
+---Finds the first executable command from a list of commands.
+---Uses vim.fn.executable() for instant PATH lookup instead of running each command.
+---@param commands table[] List of command objects with 'cmd' (string[]) property
+---@return string[] First command whose binary is in PATH, or the last entry as fallback
 function M.check_executable(commands)
-  local cmd = { 'exit', '1' }
-
   for _, item in ipairs(commands or {}) do
-    cmd = item["cmd"]
-    local check = item["check"]
-
-    if os.execute(check .. ' &> /dev/null') == 0 then
-      return cmd
+    if vim.fn.executable(item.cmd[1]) == 1 then
+      return item.cmd
     end
   end
 
-  return cmd -- fallback to last command
+  return commands[#commands].cmd
 end
 
 return M

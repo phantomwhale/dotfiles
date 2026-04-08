@@ -1,17 +1,18 @@
--- Mason - Manage third-party packages
 return {
   {
     'mason-org/mason.nvim',
+    cmd = { "Mason", "MasonInstall", "MasonUpdate" },
     opts = {},
   },
 
-  -- Still need too install the LSP servers
   {
     'mason-org/mason-lspconfig.nvim',
+    cmd = { "LspInstall", "LspUninstall" },
     dependencies = {
       'mason-org/mason.nvim',
     },
     opts = {
+      automatic_enable = false,
       ensure_installed = {
         "cssls",
         "html",
@@ -30,9 +31,9 @@ return {
     }
   },
 
-  -- Installs non-LSP tools
   {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
+    cmd = { "MasonToolsInstall", "MasonToolsUpdate" },
     dependencies = {
       'mason-org/mason.nvim',
     },

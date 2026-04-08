@@ -1,17 +1,4 @@
 return {
-  -- Autocompletion
-  'hrsh7th/nvim-cmp',             -- Autocompletion plugin
-  'hrsh7th/cmp-buffer',           -- Autocompletion from the buffer
-  'hrsh7th/cmp-path',             -- Autocompletion for file paths
-  'L3MON4D3/LuaSnip',             -- Snippets plugin
-  'saadparwaiz1/cmp_luasnip',     -- Snippets source for nvim-cmp
-  'rafamadriz/friendly-snippets', -- Useful snippets
-  'hrsh7th/cmp-nvim-lua',         -- Autocompletion for LUA, with nvim knowledge
-  'onsails/lspkind.nvim',         -- pictograms for neovim LSP
-
-  -- LSP
-  'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
-
   -- Syntax plugins
   'ntpeters/vim-better-whitespace', -- show trailing whitespace
 

@@ -66,7 +66,7 @@ return {
     'tpope/vim-characterize',
     keys = { { "gA", "<Plug>(characterize)", desc = "Characterize" } },
   },
-  'tpope/vim-commentary',
+
   {
     'tpope/vim-dispatch',
     cmd = { "Dispatch", "Make", "Focus", "Start", "Spawn" },

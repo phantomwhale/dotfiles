@@ -10,7 +10,7 @@
   apf = "!git ls-files --deleted --modified --exclude-standard | fzf -0 -m --preview 'git diff --color=always {-1}' | xargs -r -o git add -p"
 
   b = branch
-  branches-prune = "!git branch --merged | grep -Ev '(\\*|master$|main$)' | xargs git branch -d"
+  branches-prune = !git branch --merged | grep -Ev \"(^\\+|\\*|master$|main$)\" | xargs git branch -d
   bp = branches-prune
   branches-show = "for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
   bs = branches-show

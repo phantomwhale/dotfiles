@@ -22,10 +22,6 @@
       ]
     },
     {
-      "name": "peon-ping",
-      "source": "git@github.com:PeonPing/peon-ping.git"
-    },
-    {
       "name": "rails-ai-agents",
       "source": "git@github.com:ThibautBaissac/rails_ai_agents.git"
     }

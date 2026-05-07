@@ -6,6 +6,10 @@
       "source": "https://github.com/buildkite/amp-toolkit/tree/refactor-for-skills"
     },
     {
+      "name": "buildkite/skills",
+      "source": "https://github.com/buildkite/skills"
+    },
+    {
       "name": "data-analyst-agent",
       "source": "git@github.com:buildkite/data-analyst-agent.git",
       "skills": [

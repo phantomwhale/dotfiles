@@ -73,6 +73,15 @@
       "url": "https://mcp.pocketsmith.com/mcp",
       "oauth": {},
       "enabled": false
+    },
+    "smartbear": {
+      "type": "local",
+      "command": ["npx", "-y", "@smartbear/mcp@latest"],
+      "environment": {
+        "BUGSNAG_AUTH_TOKEN": "{env:BUGSNAG_AUTH_TOKEN}",
+        "BUGSNAG_PROJECT_API_KEY": "{env:BUGSNAG_PROJECT_API_KEY}"
+      },
+      "enabled": true
     }
   },
   "provider": {

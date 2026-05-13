@@ -3,6 +3,6 @@
 #
 
 # Load private API keys, if defined
-if [[ -s "${ZDOTDIR:-$HOME}/.private_env" ]]; then
-  source "${ZDOTDIR:-$HOME}/.private_env"
+if [[ -s "${ZDOTDIR:-$HOME}/.zshenv.local" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zshenv.local"
 fi

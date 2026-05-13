@@ -76,7 +76,11 @@
     },
     "smartbear": {
       "type": "local",
-      "command": ["npx", "-y", "@smartbear/mcp@latest"],
+      "command": [
+        "sh",
+        "-c",
+        "BUGSNAG_PROJECT_API_KEY=\"${BUGSNAG_PROJECT_API_KEY:-f9c1564ce470b3fe0e64d08844a781f8}\" exec npx -y @smartbear/mcp@latest"
+      ],
       "environment": {
         "BUGSNAG_AUTH_TOKEN": "{env:BUGSNAG_AUTH_TOKEN}",
         "BUGSNAG_PROJECT_API_KEY": "{env:BUGSNAG_PROJECT_API_KEY}"

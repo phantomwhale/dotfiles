@@ -24,6 +24,10 @@
     {
       "name": "rails-ai-agents",
       "source": "git@github.com:ThibautBaissac/rails_ai_agents.git"
+    },
+    {
+      "name": "pocketsmith-skill",
+      "source": "https://github.com/lextoumbourou/pocketsmith-skill"
     }
   ]
 }

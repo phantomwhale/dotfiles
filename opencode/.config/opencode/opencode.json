@@ -104,6 +104,12 @@
           }
         }
       }
+    },
+    "anthropic": {
+      "options": {
+        "timeout": 300000,
+        "chunkTimeout": 30000
+      }
     }
   },
   "plugin": [

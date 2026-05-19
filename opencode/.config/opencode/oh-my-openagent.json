@@ -3,9 +3,7 @@
   "agents": {
     "sisyphus": {
       "model": "anthropic/claude-opus-4-7",
-      "variant": "max",
-      "steps": 25
-    }
+      "variant": "max"
     },
     "hephaestus": {
       "model": "openai/gpt-5.4",

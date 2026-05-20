@@ -28,6 +28,10 @@
     {
       "name": "pocketsmith-skill",
       "source": "https://github.com/lextoumbourou/pocketsmith-skill"
+    },
+    {
+      "name": "Matt Pocock",
+      "source": "https://github.com/mattpocock/skills"
     }
   ]
 }

@@ -53,6 +53,12 @@
       "url": "https://mcp.datadoghq.com/api/unstable/mcp-server/mcp",
       "enabled": false
     },
+    "pganalyze": {
+      "type": "remote",
+      "url": "https://app.pganalyze.com/mcp",
+      "oauth": {},
+      "enabled": false
+    },
     "chrome-devtools": {
       "type": "local",
       "command": ["npx", "-y", "chrome-devtools-mcp"],

@@ -1,0 +1,5 @@
+{
+    "opus": "anthropic/claude-opus-4-7",
+    "haiku": "anthropic/claude-haiku-4-5-20251001",
+    "sonnet": "anthropic/claude-sonnet-4-6"
+}

@@ -19,7 +19,8 @@ export AWS_ASSUME_ROLE_TTL=1h
 export GIT_COMPLETION_CHECKOUT_NO_GUESS=1
 
 # Preferred LLM model for the llm cli
-export LLM_MODEL=claude-4-opus
+export LLM_USER_PATH=/Users/ben/.config/llm
+export LLM_MODEL=opus
 
 # Establish neovim as default editor
 export VISUAL=nvim

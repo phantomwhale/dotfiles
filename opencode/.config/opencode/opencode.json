@@ -107,8 +107,8 @@
     },
     "anthropic": {
       "options": {
-        "timeout": 300000,
-        "chunkTimeout": 30000
+        "timeout": 1200000,
+        "chunkTimeout": 600000
       }
     }
   },

@@ -25,6 +25,7 @@ items=(
   amp
   exa
   bugsnag
+  OpenAI
 )
 
 # Build a title -> id map of API Credentials in 1Password. One `op item list`
@@ -49,8 +50,13 @@ done < <(
       >&2 echo "skip: no API Credential item titled '$search' found in 1Password"
       continue
     fi
-    keys_string=$(op item get "$item_id" --fields label=username)
-    values_string=$(op item get "$item_id" --fields label=credential --reveal)
+    keys_string=$(op item get "$item_id" --fields label=username 2>/dev/null) || keys_string=""
+    values_string=$(op item get "$item_id" --fields label=credential --reveal 2>/dev/null) || values_string=""
+
+    if [[ -z "$keys_string" || -z "$values_string" ]]; then
+      >&2 echo "skip: '$search' is missing username or credential value in 1Password"
+      continue
+    fi
 
     read -A keys   <<< "$keys_string"
     read -A values <<< "$values_string"

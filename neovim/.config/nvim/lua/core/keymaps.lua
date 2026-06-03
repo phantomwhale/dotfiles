@@ -85,7 +85,7 @@ nnoremap <leader>el <C-w>s<C-w>j<C-w>L:e ~/.config/nvim/lua/<cr>
 
 nnoremap <leader>ek <C-w>s<C-w>j<C-w>L:e ~/.config/nvim/lua/core/keymaps.lua<cr>
 nnoremap <leader>eo <C-w>s<C-w>j<C-w>L:e ~/.config/nvim/lua/core/options.lua<cr>
-nnoremap <leader>ec <C-w>s<C-w>j<C-w>L:e ~/.config/nvim/lua/plugins/pluginconfig.lua<cr>
+nnoremap <leader>ec <C-w>s<C-w>j<C-w>L:e ~/.config/nvim/lua/plugins/<cr>
 
 " Git log commands (not fugitive)
 nnoremap <Leader>gL :exe ':!cd ' . expand('%:p:h') . '; git lgt'<CR>

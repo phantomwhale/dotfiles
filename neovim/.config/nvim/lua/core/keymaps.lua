@@ -67,15 +67,6 @@ augroup END
 " Follow tags when using putty, which ignores Ctrl-]
 noremap <Leader>] <C-]>
 
-" XMP Filter keybinds
-autocmd FileType ruby nmap <buffer> <F2> <Plug>(xmpfilter-mark)
-autocmd FileType ruby xmap <buffer> <F2> <Plug>(xmpfilter-mark)
-autocmd FileType ruby imap <buffer> <F2> <Plug>(xmpfilter-mark)
-
-autocmd FileType ruby nmap <buffer> <F3> <Plug>(xmpfilter-run)
-autocmd FileType ruby xmap <buffer> <F3> <Plug>(xmpfilter-run)
-autocmd FileType ruby imap <buffer> <F3> <Plug>(xmpfilter-run)
-
 " Remove trailing whitespace
 :nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 

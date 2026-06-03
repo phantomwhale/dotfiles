@@ -10,6 +10,7 @@ end
 local function telescope_pick_base16_color()
   local colors = vim.fn.getcompletion('base16', 'color')
   local theme = require('telescope.themes').get_dropdown()
+  local telescope_actions = require('telescope.actions')
   local telescope_action_set = require('telescope.actions.set')
   local telescope_action_state = require('telescope.actions.state')
   require('telescope.pickers').new(theme, {

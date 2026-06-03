@@ -16,13 +16,6 @@ return {
 
   -- 'psliwka/vim-smoothie', -- smooth scrolling
   {
-    "ibhagwan/fzf-lua",
-    -- optional for icon support
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    cmd = "FzfLua",
-    opts = {}
-  },
-  {
     'excalios/vim-test',
     cmd = { "TestNearest", "TestFile", "TestSuite", "TestLast", "TestVisit" },
   },

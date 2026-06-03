@@ -9,7 +9,7 @@ table.insert(rubocop_exec, "--ignore-unrecognized-cops")
 table.insert(rubocop_exec, "--config")
 table.insert(rubocop_exec, vim.fn.expand('$HOME/.rubocop.yml'))
 
-RD = RD or {}
+local RD = {}
 
 function RD.join(tbl, sep)
   local ret = ''
@@ -53,7 +53,7 @@ function RD.rubocop_disable()
   end
 end
 
-vim.api.nvim_set_keymap('n', '<leader>rd', '<cmd>lua RD.rubocop_disable()<CR>', {})
+vim.keymap.set('n', '<leader>rd', function() RD.rubocop_disable() end, {})
 
 return {
   cmd = rubocop_exec,

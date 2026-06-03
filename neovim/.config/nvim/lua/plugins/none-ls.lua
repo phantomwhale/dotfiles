@@ -25,11 +25,6 @@ return {
         b.formatting.shfmt.with({
           extra_args = { "-i", "2", "-ci" },
         }),
-        b.formatting.phpcsfixer.with({
-          env = {
-            PHP_CS_FIXER_IGNORE_ENV = "1"
-          },
-        }),
       },
       flags = {
         debounce_text_changes = 5000,

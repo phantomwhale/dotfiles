@@ -22,7 +22,7 @@ local function telescope_pick_base16_color()
         local name = telescope_action_state.get_selected_entry().value
         os.execute('tinty apply ' .. name)
         vim.cmd('colorscheme ' ..
-          vim.fn.readfile(vim.fn.expand(vim.env.HOME .. '.local/share/tinted-theming/tinty/current_scheme'))
+          vim.fn.readfile(vim.fn.expand(vim.env.HOME .. '/.local/share/tinted-theming/tinty/current_scheme'))
           [1])
         telescope_actions.close(bufnr)
       end)

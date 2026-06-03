@@ -4,6 +4,8 @@ return {
   opts = {
     image = {},
     input = {},
-    notify = {}
+    notify = {},
+    picker = {},
+    terminal = {},
   }
 }

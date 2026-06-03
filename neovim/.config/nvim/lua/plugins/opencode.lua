@@ -1,10 +1,9 @@
 return {
   "NickvanDyke/opencode.nvim",
   dependencies = {
-    -- Recommended for `ask()` and `select()`.
-    -- Required for `snacks` provider.
-    ---@module 'snacks' <- Loads `snacks.nvim` types for configuration intellisense.
-    { "folke/snacks.nvim", opts = { input = {}, picker = {}, terminal = {} } },
+    -- snacks.nvim is configured centrally in plugins/snacks.lua;
+    -- opencode requires its `input`, `picker`, and `terminal` modules.
+    "folke/snacks.nvim",
   },
   keys = {
     { "<leader>oa", function() require("opencode").ask("@this: ", { submit = true }) end, mode = { "n", "x" },             desc = "Ask opencode" },

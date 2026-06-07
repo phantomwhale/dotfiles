@@ -4,7 +4,8 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     'nvim-lua/plenary.nvim',
-    'lewis6991/gitsigns.nvim'
+    'lewis6991/gitsigns.nvim',
+    'mason-org/mason.nvim',
   },
   config = function()
     local none_ls = require("null-ls")

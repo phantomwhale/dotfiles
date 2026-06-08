@@ -1,13 +1,4 @@
 local lsp_utils = require("modules.lsp-utils")
-local rubocop_exec = lsp_utils.check_executable({
-  -- { cmd = { "bundle", "exec", "rubocop", "--lsp" } },
-  -- { cmd = { "mise", "exec", "--", "rubocop", "--lsp" } },
-  { cmd = { "rubocop", "--lsp" } },
-})
-
-table.insert(rubocop_exec, "--ignore-unrecognized-cops")
-table.insert(rubocop_exec, "--config")
-table.insert(rubocop_exec, vim.fn.expand('$HOME/.rubocop.yml'))
 
 local RD = {}
 
@@ -56,7 +47,29 @@ end
 vim.keymap.set('n', '<leader>rd', function() RD.rubocop_disable() end, {})
 
 return {
-  cmd = rubocop_exec,
+  -- Resolve `cmd` lazily so we can layer a project-local personal overlay
+  -- (`.rubocop_personal.yml` at the workspace root) on top of the project's
+  -- rubocop config when present. The overlay file is expected to be gitignored
+  -- locally (e.g. via `.git/info/exclude`) so it never leaks into the repo.
+  -- When the file is absent we fall back to plain `rubocop --lsp` and the
+  -- project's own `.rubocop.yml` is picked up normally.
+  cmd = function(dispatchers, config)
+    local rubocop_exec = lsp_utils.check_executable({
+      -- { cmd = { "bundle", "exec", "rubocop", "--lsp" } },
+      -- { cmd = { "mise", "exec", "--", "rubocop", "--lsp" } },
+      { cmd = { "rubocop", "--lsp" } },
+    })
+
+    table.insert(rubocop_exec, "--ignore-unrecognized-cops")
+
+    local root = config.root_dir or vim.fn.getcwd()
+    local personal = vim.fs.joinpath(root, '.rubocop_personal.yml')
+    if vim.fn.filereadable(personal) == 1 then
+      table.insert(rubocop_exec, '--config')
+      table.insert(rubocop_exec, personal)
+    end
+    return vim.lsp.rpc.start(rubocop_exec, dispatchers)
+  end,
   filetypes = { "ruby" },
   root_markers = { "Gemfile", ".git" }
 }

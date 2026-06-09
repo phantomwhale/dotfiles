@@ -54,9 +54,11 @@ return {
   -- When the file is absent we fall back to plain `rubocop --lsp` and the
   -- project's own `.rubocop.yml` is picked up normally.
   cmd = function(dispatchers, config)
+    -- `bundle exec` under mise keeps rubocop on the project's pinned
+    -- version (Gemfile.lock), not mise's global gem.
     local rubocop_exec = lsp_utils.check_executable({
-      -- { cmd = { "bundle", "exec", "rubocop", "--lsp" } },
-      -- { cmd = { "mise", "exec", "--", "rubocop", "--lsp" } },
+      { cmd = { "mise", "x", "--", "bundle", "exec", "rubocop", "--lsp" } },
+      { cmd = { "bundle", "exec", "rubocop", "--lsp" } },
       { cmd = { "rubocop", "--lsp" } },
     })
 
@@ -68,7 +70,7 @@ return {
       table.insert(rubocop_exec, '--config')
       table.insert(rubocop_exec, personal)
     end
-    return vim.lsp.rpc.start(rubocop_exec, dispatchers)
+    return vim.lsp.rpc.start(rubocop_exec, dispatchers, { cwd = root })
   end,
   filetypes = { "ruby" },
   root_markers = { "Gemfile", ".git" }

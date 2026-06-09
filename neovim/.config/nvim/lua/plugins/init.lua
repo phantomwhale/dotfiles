@@ -64,6 +64,7 @@ return {
     'tpope/vim-dispatch',
     cmd = { "Dispatch", "Make", "Focus", "Start", "Spawn" },
   },
+  'tpope/vim-endwise',
   {
     'tpope/vim-eunuch',
     cmd = { "Delete", "Move", "Rename", "Chmod", "Mkdir", "SudoWrite", "SudoEdit" },

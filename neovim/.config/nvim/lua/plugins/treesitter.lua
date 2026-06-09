@@ -40,9 +40,6 @@ return {
     end,
   },
 
-  -- NOTE: nvim-treesitter-endwise is incompatible with the main branch rewrite.
-  -- Consider tpope/vim-endwise as a drop-in replacement when ready.
-
   -- tree-sitter grammar for proto3
   { 'mitchellh/tree-sitter-proto', ft = "proto" },
 }

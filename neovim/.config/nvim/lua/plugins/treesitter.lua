@@ -22,7 +22,11 @@ return {
       })
     end,
     config = function()
-      local ensure_installed = { "ruby", "javascript", "typescript", "go", "hcl", "html", "vim", "vimdoc", "yaml" }
+      local ensure_installed = {
+        "bash", "css", "go", "gomod", "hcl", "html", "javascript", "json",
+        "lua", "markdown", "markdown_inline", "php", "ruby", "scss",
+        "terraform", "tsx", "typescript", "vim", "vimdoc", "yaml",
+      }
       local installed = require('nvim-treesitter.config').get_installed()
       local to_install = vim.iter(ensure_installed)
         :filter(function(parser)

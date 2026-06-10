@@ -86,8 +86,8 @@
 [help]
   autocorrect = prompt
 [rerere]
-  enabled = true
-  autoupdate = true
+	enabled = false
+	autoupdate = false
 [merge]
   conflictStyle = zdiff3
 [include]
@@ -98,3 +98,5 @@
   helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
   helper = !/opt/homebrew/bin/gh auth git-credential
+[submodule]
+	recurse = true

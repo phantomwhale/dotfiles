@@ -3,6 +3,13 @@ name: git-master
 description: "MUST USE whenever a task needs a commit or git-history investigation. Covers atomic commits, staging, commit-message style, rebase, squash, fixup/autosquash, blame, bisect, reflog, git log -S/-G, and questions like who wrote this or when was this added. Do not use for ordinary code edits unless the user asks for git work."
 ---
 
+<!--
+Local shadow of the built-in oh-my-opencode `git-master` skill.
+Diverges from upstream ONLY in "Commit Mode": adds the "Subject line rules"
+block that forbids work-tracker IDs in the commit subject line.
+Re-sync the rest of this file with upstream on plugin updates.
+-->
+
 # Git Master
 
 Use this skill when the user asks you to operate on Git history or answer a Git-history question. Be exact, conservative, and evidence-led. Read the repository state before you infer anything.
@@ -40,13 +47,19 @@ Missing upstream or missing `main`/`master` is normal. Fall back to the best ava
 
 Commit only the user's requested changes. Preserve unrelated dirty work.
 
-1. Detect message style from recent history. Use the dominant local pattern, language, and casing. Do not default to Conventional Commits unless the repo uses them.
+1. Detect message style from recent history. Use the dominant local pattern, language, and casing. Do not default to Conventional Commits unless the repo uses them. Apply the Subject line rules below to the first line regardless of what local history shows.
 2. Inspect the full diff, not only filenames. Separate unrelated user edits from the requested commit.
 3. Build atomic groups by behavior, module, and revertability. Keep implementation and its direct tests together.
 4. Prefer multiple commits for unrelated concerns. A single commit is acceptable only when the changed files form one indivisible behavior or the user explicitly asks for one commit.
 5. Stage by path or hunk so each commit contains only its atomic group.
 6. Before each commit, verify `git diff --staged --stat` and enough staged diff to prove the group is right.
 7. Commit with the detected style. After each commit, verify `git log -1 --oneline`.
+
+Subject line rules (these override the detected pattern from step 1):
+
+- The subject line (first line) is a concise, imperative summary of what the change does — nothing else.
+- Never put work-tracker IDs or names (Linear, Jira, GitHub issue numbers, etc.) in the subject line, even when recent history does. Do not prefix or suffix the subject with an identifier such as `ENG-123`.
+- Ticket links and IDs belong in the commit body only — e.g. a trailer such as `Ref: https://linear.app/...`. Include them when the work maps to a tracked item; never place them in the title.
 
 Grouping rules:
 

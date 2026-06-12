@@ -1,1 +1,10 @@
-skills
+# Vendored skills are pulled from third-party repos by ./sync-skills.sh and are
+# disposable (always re-pullable). They stay untracked so the repo isn't noisy.
+/skills/*
+
+# Owned skills: versions you've edited or authored. These ARE tracked in git so
+# they survive a re-sync. To adopt a skill, add a "!" line below and `git add` it.
+# sync-skills.sh auto-detects owned skills as "whatever is tracked here" and
+# refuses to overwrite them.
+!/skills/code-comments/
+!/skills/submitting-pull-requests/

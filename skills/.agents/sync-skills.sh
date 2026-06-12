@@ -21,6 +21,40 @@ command -v npx >/dev/null || {
   exit 1
 }
 
+# Owned skills = those tracked in git (negated in .gitignore). Snapshot them and
+# restore on EXIT so `npx skills add` can't clobber edits (trap covers Ctrl-C).
+SKILLS_DIR="$(cd "$(dirname "$MANIFEST")" && pwd)/skills"
+owned=()
+if command -v git >/dev/null && git -C "$SKILLS_DIR" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+  while IFS= read -r name; do
+    [[ -n "$name" && -d "$SKILLS_DIR/$name" ]] && owned+=("$name")
+  done < <(git -C "$SKILLS_DIR" ls-files -- . | cut -d/ -f1 | sort -u)
+fi
+
+owned_backup=""
+restore_owned() {
+  [[ -n "$owned_backup" && -d "$owned_backup" ]] || return 0
+  local dir name
+  for dir in "$owned_backup"/*/; do
+    [[ -d "$dir" ]] || continue
+    name="$(basename "$dir")"
+    rm -rf "${SKILLS_DIR:?}/$name"
+    cp -R "$owned_backup/$name" "$SKILLS_DIR/$name"
+  done
+}
+
+if [[ ${#owned[@]} -gt 0 ]]; then
+  if $DRY_RUN; then
+    printf '· would protect %d owned skill(s): %s\n' "${#owned[@]}" "${owned[*]}"
+  else
+    owned_backup="$(mktemp -d)"
+    trap 'trap "" INT TERM; restore_owned; rm -rf "$owned_backup"' EXIT
+    trap 'exit 130' INT TERM
+    for name in "${owned[@]}"; do cp -R "$SKILLS_DIR/$name" "$owned_backup/$name"; done
+    printf '· protecting %d owned skill(s): %s\n' "${#owned[@]}" "${owned[*]}"
+  fi
+fi
+
 agent_flags=()
 while IFS= read -r a; do agent_flags+=(-a "$a"); done < <(jq -r '.agents[]' "$MANIFEST")
 

@@ -61,6 +61,32 @@ Subject line rules (these override the detected pattern from step 1):
 - Never put work-tracker IDs or names (Linear, Jira, GitHub issue numbers, etc.) in the subject line, even when recent history does. Do not prefix or suffix the subject with an identifier such as `ENG-123`.
 - Ticket links and IDs belong in the commit body only — e.g. a trailer such as `Ref: https://linear.app/...`. Include them when the work maps to a tracked item; never place them in the title.
 
+Here’s a model Git commit message:
+
+```
+Capitalized, short (50 chars or less) summary
+
+More detailed explanatory text, if necessary.  Wrap it to about 72
+characters or so.  In some contexts, the first line is treated as the
+subject of an email and the rest of the text as the body.  The blank
+line separating the summary from the body is critical (unless you omit
+the body entirely); tools like rebase can get confused if you run the
+two together.
+
+Write your commit message in the imperative: "Fix bug" and not "Fixed bug"
+or "Fixes bug."  This convention matches up with commit messages generated
+by commands like git merge and git revert.
+
+Further paragraphs come after blank lines.
+
+- Bullet points are okay, too
+
+- Typically a hyphen or asterisk is used for the bullet, followed by a
+  single space, with blank lines in between, but conventions vary here
+
+- Use a hanging indent
+```
+
 Grouping rules:
 
 - Split different features, modules, generated artifacts, config, docs, and test-only changes unless they are inseparable.

@@ -9,9 +9,9 @@ Creates pull requests using the GitHub CLI with descriptions that follow project
 
 ## Prerequisites
 
-- GitHub CLI (`gh`) must be installed and authenticated
+- GitHub CLI (`gh`) installed and authenticated
 - Run `gh auth status` to verify authentication
-- Changes must be committed and pushed to a remote branch
+- Changes all committed and pushed to a remote branch
 
 ## Workflow
 
@@ -42,7 +42,7 @@ git diff main...HEAD --stat
 
 ### Linear Issue from Branch Name
 
-If a Linear issue hasn't already been loaded in the current context, extract the issue ID from the branch name and fetch it:
+If a Linear issue wasn't loaded in current context, extract the issue ID from the branch name and fetch it:
 
 ```bash
 # Branch names often contain issue IDs like "abc-123-feature-name"
@@ -62,49 +62,57 @@ If a template exists, structure the PR body to match its sections.
 ## Drafting the Description
 
 Use all available context to draft the PR:
+
 - Linear issue details (title, description, acceptance criteria)
 - Slack conversations referenced during the thread
-- Notion documents that were read
+- Notion documents read
 - Commit messages and code changes
 - Any other context from the current conversation
 
 ### Common PR Sections
 
-**Description**
-- What problem is being solved and how
+Description
+
+- What problem does this solve and how
 - Alternatives considered (if applicable)
 
-**Context**
+Context
+
 - Links to Linear tickets, Notion docs, Slack threads, or other references
 
-**Changes**
+Changes
+
 - Summary of what changed:
   - An opportunity to highlight code design choices made that are too low level for the description section
   - Less is more; highlighting the most important / interesting changes rather than listing every single choice
 - It should NOT be:
-  - A file-by-file description of every change; reviewers are expected to look at code changes to get that level of detail
+  - A file-by-file description of every change; reviewers can look at code changes to get that level of detail
 - Screenshots for UI changes
 
-**Verification**
+Verification
+
 - Acceptance testing steps: how a human can verify the feature works
 - Expected user-facing behavior
-- Do NOT list common code hygiene elements; e.g. things that would fail the CI build if they weren't done anyway:
+- Do NOT mention activities that would have failed the CI build if they weren't done, such as:
   - Automated tests pass
   - A linting tool is green
   - Pre-commit hooks have passed
 
-**Deployment**
+Deployment
+
 - Risk level and deployment considerations
 - Migration notes if applicable
 
-**Rollback**
+Rollback
+
 - **Never leave blank**
-- How to safely revert if something breaks
+- How to revert if something breaks
 - Feature flag toggles, revert safety, migration concerns
 
 ## Presenting the Draft
 
 Show the user:
+
 1. Proposed PR title
 2. Full PR body in a code block
 3. Ask: "Does this look good, or would you like me to revise anything?"
@@ -116,6 +124,7 @@ Iterate until the user approves.
 Before submitting, ask the user: "Who would you like to review this PR?"
 
 The user may provide:
+
 - GitHub usernames
 - Team names (e.g., "platform team" → `org/platform`)
 - People's real names (look up their GitHub username)

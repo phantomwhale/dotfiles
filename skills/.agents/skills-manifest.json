@@ -10,6 +10,11 @@
       "source": "https://github.com/buildkite/skills"
     },
     {
+      "name": "buildkite/slopcannon",
+      "source": "git@github.com:buildkite/slopcannon.git",
+      "skills": ["slopcannon"]
+    },
+    {
       "name": "data-analyst-agent",
       "source": "git@github.com:buildkite/data-analyst-agent.git",
       "skills": [

@@ -47,29 +47,45 @@ end
 vim.keymap.set('n', '<leader>rd', function() RD.rubocop_disable() end, {})
 
 return {
-  -- Resolve `cmd` lazily so we can layer a project-local personal overlay
-  -- (`.rubocop_personal.yml` at the workspace root) on top of the project's
-  -- rubocop config when present. The overlay file is expected to be gitignored
-  -- locally (e.g. via `.git/info/exclude`) so it never leaks into the repo.
-  -- When the file is absent we fall back to plain `rubocop --lsp` and the
-  -- project's own `.rubocop.yml` is picked up normally.
+  -- A project with its own `.rubocop.yml` (or a gitignored
+  -- `.rubocop_personal.yml` overlay) uses the project's bundled rubocop;
+  -- otherwise the global rubocop is pointed at ~/.rubocop.yml. The no-config
+  -- branch must avoid `bundle exec`: it errors without a Gemfile and lacks the
+  -- global plugin gems ~/.rubocop.yml needs, so the config would fail to load.
   cmd = function(dispatchers, config)
-    -- `bundle exec` under mise keeps rubocop on the project's pinned
-    -- version (Gemfile.lock), not mise's global gem.
-    local rubocop_exec = lsp_utils.check_executable({
-      { cmd = { "mise", "x", "--", "bundle", "exec", "rubocop", "--lsp" } },
-      { cmd = { "bundle", "exec", "rubocop", "--lsp" } },
-      { cmd = { "rubocop", "--lsp" } },
-    })
+    local root = config.root_dir or vim.fn.getcwd()
+
+    local has_project_config = vim.fn.filereadable(vim.fs.joinpath(root, '.rubocop.yml')) == 1
+    local personal = vim.fs.joinpath(root, '.rubocop_personal.yml')
+    local has_personal = vim.fn.filereadable(personal) == 1
+
+    local rubocop_exec
+    if has_project_config or has_personal then
+      rubocop_exec = lsp_utils.check_executable({
+        { cmd = { "mise", "x", "--", "bundle", "exec", "rubocop", "--lsp" } },
+        { cmd = { "bundle", "exec", "rubocop", "--lsp" } },
+        { cmd = { "rubocop", "--lsp" } },
+      })
+    else
+      rubocop_exec = lsp_utils.check_executable({
+        { cmd = { "rubocop", "--lsp" } },
+        { cmd = { "mise", "x", "--", "rubocop", "--lsp" } },
+      })
+
+      local global = vim.fn.expand('~/.rubocop.yml')
+      if vim.fn.filereadable(global) == 1 then
+        table.insert(rubocop_exec, '--config')
+        table.insert(rubocop_exec, global)
+      end
+    end
 
     table.insert(rubocop_exec, "--ignore-unrecognized-cops")
 
-    local root = config.root_dir or vim.fn.getcwd()
-    local personal = vim.fs.joinpath(root, '.rubocop_personal.yml')
-    if vim.fn.filereadable(personal) == 1 then
+    if has_personal then
       table.insert(rubocop_exec, '--config')
       table.insert(rubocop_exec, personal)
     end
+
     return vim.lsp.rpc.start(rubocop_exec, dispatchers, { cwd = root })
   end,
   filetypes = { "ruby" },

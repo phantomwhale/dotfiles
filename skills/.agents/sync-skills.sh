@@ -58,8 +58,14 @@ fi
 agent_flags=()
 while IFS= read -r a; do agent_flags+=(-a "$a"); done < <(jq -r '.agents[]' "$MANIFEST")
 
+# Buffer all repos up front. Reading them lazily via `while … < <(jq …)` is unsafe:
+# `npx skills add` reads stdin for its TUI, draining the loop's feed and silently
+# skipping every repo after the first. The </dev/null on npx below is a second guard.
+repos=()
+while IFS= read -r repo; do repos+=("$repo"); done < <(jq -c '.repos[]' "$MANIFEST")
+
 failed=0
-while IFS= read -r repo; do
+for repo in "${repos[@]}"; do
   source=$(jq -r '.source' <<<"$repo")
   name=$(jq -r '.name // .source' <<<"$repo")
   args=("$source" -g -y "${agent_flags[@]}")
@@ -73,10 +79,10 @@ while IFS= read -r repo; do
     printf '  npx skills add'
     printf ' %q' "${args[@]}"
     echo
-  elif ! npx skills add "${args[@]}"; then
+  elif ! npx skills add "${args[@]}" </dev/null; then
     echo "✗ failed: $name" >&2
     failed=$((failed + 1))
   fi
-done < <(jq -c '.repos[]' "$MANIFEST")
+done
 
 [[ $failed -eq 0 ]] || exit 1

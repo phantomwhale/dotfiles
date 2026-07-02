@@ -15,6 +15,11 @@
       "skills": ["slopcannon"]
     },
     {
+      "name": "benjaminwestern/google-engineer-skills",
+      "source": "git@github.com:benjaminwestern/google-engineer-skills.git",
+      "skills": ["worktrunk"]
+    },
+    {
       "name": "data-analyst-agent",
       "source": "git@github.com:buildkite/data-analyst-agent.git",
       "skills": [

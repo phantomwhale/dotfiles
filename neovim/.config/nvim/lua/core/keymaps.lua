@@ -30,6 +30,30 @@ vim.keymap.set("n", "<leader>l", "<cmd>nohlsearch<CR>")
 -- Apparently, this changed @tpope's life
 vim.keymap.set("n", "<C-w>z", "<cmd>wincmd z<Bar>cclose<Bar>lclose<CR>", { silent = true })
 
+-- Git: list changed files in the quickfix via :DiffRev (defined in init.lua)
+vim.keymap.set("n", "<leader>gc", "<cmd>DiffRev HEAD~1 HEAD<CR>", { desc = "Git [c]ommit changed files (latest commit)" })
+
+-- Resolve the repo's default branch from origin/HEAD (a purely local read), falling
+-- back to the first well-known base ref that actually exists. Exact ref verification
+-- avoids false matches on lookalikes such as a branch named "origin/someone/main".
+local function git_default_branch()
+  local head = vim.trim(vim.fn.system("git symbolic-ref --quiet --short refs/remotes/origin/HEAD 2>/dev/null"))
+  if vim.v.shell_error == 0 and head ~= "" then
+    return head
+  end
+  for _, ref in ipairs({ "origin/main", "origin/master", "main", "master" }) do
+    vim.fn.system("git rev-parse --verify --quiet " .. ref .. " 2>/dev/null")
+    if vim.v.shell_error == 0 then
+      return ref
+    end
+  end
+  return "main"
+end
+
+vim.keymap.set("n", "<leader>gB", function()
+  vim.cmd("DiffRev " .. git_default_branch() .. "...HEAD")
+end, { desc = "Git [B]ranch changed files (vs default branch)" })
+
 vim.cmd([[
 " Leader took away our comma - remap to \
 noremap \ ,

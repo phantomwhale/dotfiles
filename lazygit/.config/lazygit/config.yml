@@ -1,0 +1,14 @@
+# Lazygit configuration
+# Docs: https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
+
+customCommands:
+  # PR-style branch diff.
+  # In the Local Branches panel (press `3`), highlight the BASE branch (e.g. main)
+  # then press `D` to see the full diff your current branch introduces against it.
+  # Uses three-dot notation (diff against the merge base), matching what GitHub
+  # shows on a pull request.
+  - key: "D"
+    context: "localBranches"
+    description: "PR-style diff (current branch vs selected base)"
+    command: "git diff {{.SelectedLocalBranch.Name | quote}}...HEAD"
+    output: terminal

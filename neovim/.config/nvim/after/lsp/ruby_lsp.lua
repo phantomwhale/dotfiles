@@ -15,6 +15,13 @@ return {
   filetypes = { 'ruby', 'eruby' },
   root_markers = { 'Gemfile', '.git' },
   init_options = {
-    formatter = 'auto',
+    -- rubocop formatting and linting are owned by the dedicated `rubocop` LSP
+    -- (see after/lsp/rubocop.lua). Disabling them here keeps a single rubocop in
+    -- play: otherwise both servers format on save (double work) and publish the
+    -- same offences (duplicate diagnostics). ruby_lsp still drives navigation,
+    -- completion, hover, rename, etc. Empty `linters = {}` encodes to JSON `[]`,
+    -- which ruby-lsp reads as "no linters" instead of auto-detecting rubocop.
+    formatter = 'none',
+    linters = {},
   },
 }

@@ -17,11 +17,15 @@ end
 return {
   'nvim-mini/mini.nvim',
   version = false,
+  -- `keys` makes lazy.nvim defer the whole plugin until <leader>o; force eager load
+  -- so mini.notify's $/progress handler catches Ruby LSP indexing progress at boot.
+  lazy = false,
   config = function()
     require('mini.ai').setup()
     require('mini.bracketed').setup()
     require('mini.diff').setup()
     require('mini.files').setup()
+    require('mini.notify').setup()
     require('mini.operators').setup()
     require('mini.pairs').setup()
     require('mini.splitjoin').setup()

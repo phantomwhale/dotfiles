@@ -11,6 +11,31 @@ vim.lsp.enable({
   'yamlls'
 })
 
+-- Ruby LSP returns empty definitions while it builds its initial index, which
+-- renders as a misleading "no definition found". Track its indexing progress
+-- (token "indexing-progress") so gd can report the real reason instead.
+local indexing = {}
+
+vim.api.nvim_create_autocmd('LspProgress', {
+  group = vim.api.nvim_create_augroup('my.lsp.indexing', {}),
+  callback = function(args)
+    local value = args.data and args.data.params and args.data.params.value
+    if not (value and args.data.params.token == 'indexing-progress') then
+      return
+    end
+    indexing[args.data.client_id] = value.kind ~= 'end'
+  end,
+})
+
+local function ruby_lsp_indexing(bufnr)
+  for _, client in ipairs(vim.lsp.get_clients({ bufnr = bufnr, name = 'ruby_lsp' })) do
+    if indexing[client.id] then
+      return true
+    end
+  end
+  return false
+end
+
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('my.lsp', {}),
   callback = function(args)
@@ -25,7 +50,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
 
     opts.desc = "Go to definition"
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+    vim.keymap.set('n', 'gd', function()
+      if ruby_lsp_indexing(0) then
+        vim.notify('Ruby LSP is still indexing, definitions not ready yet', vim.log.levels.WARN)
+        return
+      end
+      vim.lsp.buf.definition()
+    end, opts)
 
     -- opts.desc = "Show documentation for what is under cursor"
     -- keymap.set('n', 'K', vim.lsp.buf.hover, opts)

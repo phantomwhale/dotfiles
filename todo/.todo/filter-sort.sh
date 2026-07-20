@@ -5,7 +5,7 @@
 
 today=$(date +%Y-%m-%d)
 
-while IFS= read -r line; do
+while IFS= read -r line || [[ -n "$line" ]]; do
     # Strip creation date: "NN (X) YYYY-MM-DD " or "NN YYYY-MM-DD "
     line=$(echo "$line" | sed -E 's/^([0-9]+ )(\([A-Z]\) )?[0-9]{4}-[0-9]{2}-[0-9]{2} /\1\2/')
 
